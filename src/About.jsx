@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tabs, Icon, Layout, Typography, Divider } from 'antd';
+import my from './Images/me.jpg'
 import sfu4 from './Images/SFU4.jpg'
 
 const { Title, Paragraph, Text } = Typography;
@@ -20,8 +21,11 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "24px"}}> A little about me.... </Header>
 				    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
-				    			<Title>Siddharth Gupta</Title>
+				    			<center>
+				    				<img src={my} className="my-img" alt=''/>
+				    			</center>
 				    			<Divider/>
 							   	<Paragraph>
 							      I am a undergraduate student studying computing science. I have experience in managing and developing software in both individual and team enviornments. I am fueled by my passion for understanding the working of technologies in the field of computing science and by my fascination of how two bits 0 and 1 have transformed the world of technolgy and software today. I considers myself a <Text strong>‘forever student’</Text> eager to both build on my academic foundations and stay in tune with the latest software technologies and strategies through continuous learning.

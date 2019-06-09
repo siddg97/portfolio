@@ -27,9 +27,19 @@
 	font-size: 25px;
 }
 
-.sfu-img{
+.sfu-img {
 	height: 20%;
 	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: none;
+}
+
+.my-img {
+	height: 100%;
+	width: 30%;
+	margin-right: auto;
+	margin-left: auto;
 	background-position: center;
 	background-size: cover;
 	background-repeat: none;

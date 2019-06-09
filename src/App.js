@@ -50,25 +50,25 @@ class App extends Component {
               <Menu.Item key="1">
                 <Link to="/">
                 <Icon type="home" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">Home</span>
+                <span className="nav-text nav_Text hvr-underline-from-center">Home</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to="/about">
                 <Icon type="user" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">About</span>
+                <span className="nav-text nav_Text hvr-underline-from-center">About</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="3">
                 <Link to="/portfolio">
                 <Icon type="solution" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">Portfolio</span>
+                <span className="nav-text nav_Text hvr-underline-from-center">Portfolio</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="4">
                 <Link to="/contact">
                 <Icon type="contacts" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">Contact</span>
+                <span className="nav-text nav_Text hvr-underline-from-center">Contact</span>
                 </Link>
               </Menu.Item>
             </Menu>
