@@ -13,11 +13,13 @@ const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     theme: 'dark',
+    page:'1'
   }
 
   changeTheme = value => {
     this.setState({
       theme: value ? 'dark' : 'light',
+      page: this.state.page
     });
   };
 
@@ -37,7 +39,7 @@ class App extends Component {
             theme={this.state.theme}
             className="sider"
           >
-            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px"}}>
+            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px"}} defaultSelectedKeys={['1']}>
               <center>
                 <Switch
                   checked={this.state.theme === 'dark'}

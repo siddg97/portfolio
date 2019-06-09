@@ -60,14 +60,30 @@
 .kernel-img{
 	width: 100%;
 	background-image: url("./Images/kernel.png");
-	/*background-position: center;*/
-	background-size: cover;
+	background-position: center;
+	background-size: contain;
 	background-repeat: none;
 }
 
 .shell-img{
 	width: 100%;
 	background-image: url("./Images/shell.png");
+	/*background-position: center;*/
+	background-size: cover;
+	background-repeat: none;
+}
+
+.mm-img{
+	width: 100%;
+	background-image: url("./Images/mm.jpg");
+	/*background-position: center;*/
+	background-size: cover;
+	background-repeat: none;
+}
+
+.ee-img{
+	width: 100%;
+	background-image: url("./Images/ee.png");
 	/*background-position: center;*/
 	background-size: cover;
 	background-repeat: none;

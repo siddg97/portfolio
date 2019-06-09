@@ -47,7 +47,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Simulation of the Producer-Consumer Problem </Header>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Linux Command Shell with a few built-in commands </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item shell-img" />
 				    			<div className="flex-item">
@@ -75,7 +75,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Simulation of the Producer-Consumer Problem </Header>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Linux Kernel Patch with 2 system calls </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item kernel-img" />
 				    			<div className="flex-item">
@@ -85,6 +85,62 @@ class Portfolio extends React.Component {
 									    </Paragraph>
 									    <Paragraph>
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/Custom-Linux-Kernel-Patch" className="hvr-grow" target="_blank">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
+									    </Paragraph>
+						    		</Typography>
+						    	</div>
+					    	</div>
+				    	</Content>
+				    </Layout>
+			    </TabPane>
+			    <TabPane
+			      tab={
+			        <span>
+			          <Icon type="cluster" style={{"fontSize":"25px"}} />
+			          Memory Management Interface
+			        </span>
+			      }
+			      key="4"
+			    >
+			    	<Layout>
+				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Memory Allocation and Deallocation Interfaces </Header>
+				    		<div className="flex-container">
+				    			<div className="flex-item mm-img" />
+				    			<div className="flex-item">
+						    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
+									   	<Paragraph>
+									    	While studying the course CMPT300 (Operating Systems I) at Simon Fraser University in the Spring 2019 session, I implemented my own version of the free() and malloc() functions available in the C language to manage virtual memory. The implementation of these interfaces can work with three allocation algorithms, namely FIRST-FIT, WORST-FIT and BEST-FIT. The deallocation interface also supports compaction and actively looks for possible reallocation of stored memory to eliminate holes in contigious memory. There are also interfaces to access certain helpful statistics about the chunk of memory being used for allocation and deallocation.
+									    </Paragraph>
+									    <Paragraph>
+									    	You can find the source code for this project on <a href="https://github.com/siddg97/Memory-management-interfaces-C" className="hvr-grow" target="_blank">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
+									    </Paragraph>
+						    		</Typography>
+						    	</div>
+					    	</div>
+				    	</Content>
+				    </Layout>
+			    </TabPane>
+			    <TabPane
+			      tab={
+			        <span>
+			          <Icon type="interaction" style={{"fontSize":"25px"}} />
+			          Expression Evaluator and Simplifier
+			        </span>
+			      }
+			      key="5"
+			    >
+			    	<Layout>
+				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> A Scheme Expression Evaluator </Header>
+				    		<div className="flex-container">
+				    			<div className="flex-item ee-img" />
+				    			<div className="flex-item">
+						    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
+									   	<Paragraph>
+									    	While studying the course CMPT383 (Comparative Programming Languages) at Simon Fraser University in the Summer 2019 session, I implemented an expression evaluator and simplifier in scheme. I set up 2 enviornments in which variables can be stored and their value as well. Each of these enviornments are compatible with the expression evaluator and simplifier. The expression it can evaluate are similar to the Go expression syntax and the simplification rules are also similar to the Go language. I also modularized the code to simplify refactoring and improve readability.
+									    </Paragraph>
+									    <Paragraph>
+									    	You can find the source code for this project on <a href="https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier" className="hvr-grow" target="_blank">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph>
 						    		</Typography>
 						    	</div>
