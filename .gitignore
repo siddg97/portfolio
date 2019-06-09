@@ -1,0 +1,14 @@
+# Logs
+logs
+*.Logs
+
+# Compiled directory and file
+build/
+bundle.js
+
+# Dependency directories
+node_modules/
+
+# Other misc files
+package-lock.json
+npm-debug.log
