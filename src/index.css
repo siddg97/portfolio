@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo|Poppins:500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+  overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
