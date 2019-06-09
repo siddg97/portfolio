@@ -1,114 +1,98 @@
 import React from "react"
-import { Tabs, Icon, Layout, Typography, Divider, Radio } from 'antd';
+import { Tabs, Icon, Layout, Typography} from 'antd';
 
-const { Title, Paragraph, Text } = Typography;
+const { Paragraph, Text } = Typography;
 const { TabPane } = Tabs;
 const { Header, Content } = Layout
 class Portfolio extends React.Component {
-	constructor(props) {
-	    super(props);
-	    this.state = {
-	      mode: 'top',
-	    };
-	}
-
-	handleModeChange = e => {
-	    const mode = e.target.value;
-	    this.setState({ mode });
-	};
-
 	render(){
-		const { mode } = this.state;
 		return(
-			 <Layout>
-			 	<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "24px"}}> Siddharth's Portfolio </Header>
-			 	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-			 		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
-				 		<Text strong>Layout: </Text>
-				        <Radio.Group onChange={this.handleModeChange} value={mode} style={{ marginBottom: "15px" }}>
-				          <Radio.Button value="top">Horizontal</Radio.Button>
-				          <Radio.Button value="left">Vertical</Radio.Button>
-				        </Radio.Group>
-				        <br/>
-				        <Text> The project tabs with a loading icon are the projects that I am currently working on. </Text>
-				        <br/><br/>
-				        <Tabs defaultActiveKey="1" tabPosition={mode} style={{ height: "100vh" }}>
-				           	<TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 1
-				        			</span>
-				        		}key="1">
-				              Content of tab 1
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 2
-				        			</span>
-				        		}key="2">
-				              Content of tab 2
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 3
-				        			</span>
-				        		}key="3">
-				              Content of tab 3
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 4
-				        			</span>
-				        		}key="4">
-				              Content of tab 4
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 5
-				        			</span>
-				        		}key="5">
-				              Content of tab 5
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 6
-				        			</span>
-				        		}key="6">
-				              Content of tab 6
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 7
-				        			</span>
-				        		}key="7">
-				              Content of tab 7
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 8
-				        			</span>
-				        		}key="8">
-				              Content of tab 8
-				            </TabPane>
-				            <TabPane tab={
-				           		<span style={{fontFamily:"Poppins"}}>
-				          			<Icon type="loading" style={{"fontSize":"25px"}} />
-				         				Project 9
-				        			</span>
-				        		}key="9">
-				              Content of tab 9
-				            </TabPane>
-				        </Tabs>
-			        </Typography>
-		        </Content>
-		    </Layout>
+			<Tabs defaultActiveKey="1" size="large" type="line">
+			    <TabPane
+			      tab={
+			        <span style={{fontFamily:"Poppins"}}>
+			          <Icon type="box-plot" style={{"fontSize":"25px"}} />
+			          Bounded - Buffer Problem
+			        </span>
+			      }
+			      key="1"
+			    >
+			        <Layout>
+				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Simulation of the Producer-Consumer Problem </Header>
+				    		<div className="flex-container">
+				    			<div className="flex-item pcp-img" />
+				    			<div className="flex-item">
+						    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
+									   	<Paragraph>
+									    	While studying the course CMPT300 (Operating Systems I) at Simon Fraser University in the Spring 2019 session, I made a mutli-threaded C program called candykids. candykids simulated the producer-consumer problem in which children ate candies from a bounded-buffer and factories produced candies in the same bounded-buffer. The aim of the simulation was to avoid any type of race conditions and prevent a deadlock from occuring. I used the POSIX Threads library to be able to satisfy the synchronization of the use of the common bounded buffer between factories and children using pthread mutex locks and semaphores.
+									    </Paragraph>
+									    <Paragraph>
+									    	You can find the source code for this project on <a href="https://github.com/siddg97/Producer-Consumer-Problem" className="hvr-grow" target="_blank">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
+									    </Paragraph>
+						    		</Typography>
+						    	</div>
+					    	</div>
+				    	</Content>
+				    </Layout>
+			    </TabPane>
+			    <TabPane
+			      tab={
+			        <span>
+			          <Icon type="scan" style={{"fontSize":"25px"}} />
+			          GNU/Linux Bash Shell C-Script
+			        </span>
+			      }
+			      key="2"
+			    >
+			    	<Layout>
+				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Simulation of the Producer-Consumer Problem </Header>
+				    		<div className="flex-container">
+				    			<div className="flex-item shell-img" />
+				    			<div className="flex-item">
+						    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
+									   	<Paragraph>
+									    	While studying the course CMPT300 (Operating Systems I) at Simon Fraser University in the Spring 2019 session, I made my very first C-script shell for the UNIX Bash Terminal. This shell is able to perform 7 different built-in commands using the fork() and the execvp() functions provided in C. This shell also has a custom signal handling function for when the SIGINT (Ctrl + C) signal is detected. The shell is also able to perform commands in the background as well. I also performed unit tests on every built-in command the shell supports and also used valgrind to test for memory leaks. 	
+									    </Paragraph>
+									    <Paragraph>
+									    	You can find the source code for this project on <a href="https://github.com/siddg97/LinuxCustomShell-C" className="hvr-grow" target="_blank">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
+									    </Paragraph>
+						    		</Typography>
+						    	</div>
+					    	</div>
+				    	</Content>
+				    </Layout>
+			    </TabPane>
+			    <TabPane
+			      tab={
+			        <span>
+			          <Icon type="deployment-unit" style={{"fontSize":"25px"}} />
+			          Custom Linux Kernel
+			        </span>
+			      }
+			      key="3"
+			    >
+			    	<Layout>
+				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "15px"}}> Simulation of the Producer-Consumer Problem </Header>
+				    		<div className="flex-container">
+				    			<div className="flex-item kernel-img" />
+				    			<div className="flex-item">
+						    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
+									   	<Paragraph>
+									    	While studying the course CMPT300 (Operating Systems I) at Simon Fraser University in the Spring 2019 session, I made my very first custom Linux Kernel Patch. I cloned the entire linux kernel (v4.20.13) from Linus Trovalds original git repository and implemented 2 of my own system calls. The first system call would sum up a given an array of integers. The second system call I implemented showed all the information of a processes ancestors processes and isplayed helpful stats. The stats dont include data about zombie processes that might be running. I also tested these system calls on a virtual QEMU machine with a command line version of linux and used valgrind to check for memory leaks. This was (at that time) by far the most intriguing project I had ever done!
+									    </Paragraph>
+									    <Paragraph>
+									    	You can find the source code for this project on <a href="https://github.com/siddg97/Custom-Linux-Kernel-Patch" className="hvr-grow" target="_blank">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
+									    </Paragraph>
+						    		</Typography>
+						    	</div>
+					    	</div>
+				    	</Content>
+				    </Layout>
+			    </TabPane>
+			</Tabs>
 		);
 	}
 }

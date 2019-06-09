@@ -13,6 +13,7 @@
 
 .header {
 	font-family: Poppins;
+	display: block;
 }
 
 .toggle-theme {
@@ -22,7 +23,7 @@
 
 .home-content {
 	padding: 24px;
-	height: auto;
+	/*height: auto;*/
 	font-family: Arvo;
 	font-size: 25px;
 }
@@ -36,8 +37,6 @@
 }
 
 .my-img {
-	height: 100%;
-	width: 30%;
 	margin-right: auto;
 	margin-left: auto;
 	background-position: center;
@@ -47,4 +46,37 @@
 
 .sider {
 	z-index: 99;
+}
+
+
+.pcp-img{
+	width: 100%;
+	background-image: url("./Images/pcp.png");
+	/*background-position: center;*/
+	background-size: cover;
+	background-repeat: none;
+}
+
+.kernel-img{
+	width: 100%;
+	background-image: url("./Images/kernel.png");
+	/*background-position: center;*/
+	background-size: cover;
+	background-repeat: none;
+}
+
+.shell-img{
+	width: 100%;
+	background-image: url("./Images/shell.png");
+	/*background-position: center;*/
+	background-size: cover;
+	background-repeat: none;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.flex-item {
+	flex: 50%;
 }

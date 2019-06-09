@@ -90,7 +90,7 @@ class App extends Component {
                   <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" target="_blank"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px"}}/></a>
                 </center>
               </div><br/>
-             Created by - Siddharth Gupta ©2019
+             Created by - Siddharth Gupta © 2019
             </Footer>
           </Layout>
         </Layout>
