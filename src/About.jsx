@@ -21,8 +21,8 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "24px"}}> A little about me.... </Header>
-				    		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)'}}>
+				    		<Header className="header"> A little about me.... </Header>
+				    		<Typography className="home-content">
 				    			<center>
 				    				<img src={my} className="my-img" alt=''/>
 				    			</center>
@@ -48,9 +48,9 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				       	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				       		<Header className="header" style={{"fontSize":"40px","color":"white", height: "auto", padding: "24px"}}> Simon Fraser university, Burnaby, BC </Header>
+				       		<Header className="header"> Simon Fraser university, Burnaby, BC </Header>
 							<img src={sfu4} className="sfu-img" alt=''/>
-				       		<Typography className="home-content"style={{ padding: 24, background: 'rgba(202, 211, 200,1.0)', color:'white'}}>				       		
+				       		<Typography className="home-content">				       		
 				       			<Title>Siddharth Gupta</Title>
 				    			<Divider/>
 				    			<Paragraph>

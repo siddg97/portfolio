@@ -14,6 +14,10 @@
 .header {
 	font-family: Poppins;
 	display: block;
+	padding: 15px;
+	height: auto;
+	color: white;
+	font-size: 40px;
 }
 
 .toggle-theme {
@@ -24,8 +28,9 @@
 .home-content {
 	padding: 24px;
 	/*height: auto;*/
-	font-family: Arvo;
+	font-family: Poppins;
 	font-size: 25px;
+	background: rgba(202, 211, 200,1.0);
 }
 
 .sfu-img {
@@ -50,7 +55,7 @@
 
 
 .pcp-img{
-	width: 100%;
+	/*width: 100%;*/
 	background-image: url("./Images/pcp.png");
 	/*background-position: center;*/
 	background-size: cover;
@@ -58,7 +63,7 @@
 }
 
 .kernel-img{
-	width: 100%;
+	/*width: 100%;*/
 	background-image: url("./Images/kernel.png");
 	background-position: center;
 	background-size: contain;
@@ -66,7 +71,7 @@
 }
 
 .shell-img{
-	width: 100%;
+	/*width: 100%;*/
 	background-image: url("./Images/shell.png");
 	/*background-position: center;*/
 	background-size: cover;
@@ -74,7 +79,7 @@
 }
 
 .mm-img{
-	width: 100%;
+	/*width: 100%;*/
 	background-image: url("./Images/mm.jpg");
 	/*background-position: center;*/
 	background-size: cover;
@@ -82,10 +87,26 @@
 }
 
 .ee-img{
-	width: 100%;
+	/*width: 100%;*/
 	background-image: url("./Images/ee.png");
-	/*background-position: center;*/
+	background-position: center;
 	background-size: cover;
+	background-repeat: none;
+}
+
+.ep-img{
+	/*width: 100%;*/
+	background-image: url("./Images/ep.jpg");
+	background-position: right;
+	background-size: cover;
+	background-repeat: none;
+}
+
+.ip-img{
+	/*width: 100%;*/
+	background-image: url("./Images/ip.png");
+	background-position: center;
+	background-size: contain;
 	background-repeat: none;
 }
 
