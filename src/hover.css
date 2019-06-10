@@ -7,6 +7,8 @@
 
  * Hover.css Copyright Ian Lunn 2017. Generated with Sass.
  */
+
+ 
 /* 2D TRANSITIONS */
 /* Grow */
 .hvr-grow {
@@ -38,8 +40,8 @@
   transition-property: transform;
 }
 .hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85);
 }
 
 /* Pulse */
