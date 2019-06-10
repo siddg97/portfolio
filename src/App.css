@@ -16,8 +16,9 @@
 	display: block;
 	padding: 15px;
 	height: auto;
-	color: white;
+	color: black;
 	font-size: 40px;
+	background-color: white;
 }
 
 .toggle-theme {
@@ -29,7 +30,7 @@
 	padding: 24px;
 	/*height: auto;*/
 	font-family: Poppins;
-	font-size: 25px;
+	font-size: 18px;
 	background: rgba(202, 211, 200,1.0);
 }
 

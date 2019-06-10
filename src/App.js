@@ -13,13 +13,11 @@ const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     theme: 'dark',
-    page:'1'
   }
 
   changeTheme = value => {
     this.setState({
       theme: value ? 'dark' : 'light',
-      page: this.state.page
     });
   };
 
@@ -39,7 +37,7 @@ class App extends Component {
             theme={this.state.theme}
             className="sider"
           >
-            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px"}} defaultSelectedKeys={['1']}>
+            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px"}}>
               <center>
                 <Switch
                   checked={this.state.theme === 'dark'}
@@ -87,9 +85,9 @@ class App extends Component {
             <Footer style={{ textAlign: 'center' }}>
               <div>
                 <center>
-                  <a href="https://github.com/siddg97/" target="_blank"><Icon theme="outlined" type="github" style={{"fontSize":"40px"}}/></a>
-                  <a href="https://www.facebook.com/siddharth.gupta.1997" target="_blank"><Icon theme="filled" type="facebook" style={{"fontSize":"40px"}}/></a>
-                  <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" target="_blank"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px"}}/></a>
+                  <a href="https://github.com/siddg97/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
+                  <a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: 'blue'}}/></a>
+                  <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: 'blue'}}/></a>
                 </center>
               </div><br/>
              Created by - Siddharth Gupta © 2019
