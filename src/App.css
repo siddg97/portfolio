@@ -89,7 +89,7 @@
 .ee-img{
 	/*width: 100%;*/
 	background-image: url("./Images/ee.png");
-	background-position: center;
+	/*background-position: center;*/
 	background-size: cover;
 	background-repeat: none;
 }
