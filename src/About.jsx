@@ -3,7 +3,7 @@ import { Tabs, Icon, Layout, Typography, Divider } from 'antd';
 import my from './Images/me.jpg'
 import sfu4 from './Images/SFU4.jpg'
 
-const { Title, Paragraph, Text } = Typography;
+const { Paragraph, Text } = Typography;
 const { TabPane } = Tabs;
 const { Content, Header } = Layout
 class About extends React.Component {
@@ -22,8 +22,8 @@ class About extends React.Component {
 				    <Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
 				    		<Header className="header hvr-underline-from-right"> A little about me.... </Header>
-				    		<Typography className="home-content">
-				    			<img src={my} className="my-img" alt=''/>
+				    		<Typography className="about-content">
+				    			<center><img src={my} className="my-img" alt=''/></center>
 				    			<Divider/>
 							   	<Paragraph>
 							      I am a undergraduate student studying computing science. I have experience in managing and developing software in both individual and team enviornments. I am fueled by my passion for understanding the working of technologies in the field of computing science and by my fascination of how two bits 0 and 1 have transformed the world of technolgy and software today. I considers myself a <Text strong>‘forever student’</Text> eager to both build on my academic foundations and stay in tune with the latest software technologies and strategies through continuous learning.
@@ -48,7 +48,7 @@ class About extends React.Component {
 				       	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
 				       		<Header className="header hvr-underline-from-right"> Simon Fraser university, Burnaby, BC </Header>
 							<img src={sfu4} className="sfu-img" alt=''/>
-				       		<Typography className="home-content">
+				       		<Typography className="about-content">
 				    			<Divider/>
 				    			<Paragraph>
 				    			I started my post-secondary education in the fall term of 2015 and started pursuing my goal of getting a Bachelors in Computing Science. I was very excited to have been given the oppurtunity to travel halfway around the globe from India to British Columbia, Canada to pursue my university career. I had litlle to no formal programming knowledege nor any experience of sort in working with computer software(s).

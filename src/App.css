@@ -1,8 +1,11 @@
 /*@import '~antd/dist/antd.css';*/
 @import url('https://fonts.googleapis.com/css?family=Arvo|Poppins:500&display=swap');
 
+*{
+	box-sizing: border-box;
+}
 .App {
-  height:100vh;
+  min-height:100vh;
   width: 100vw;
 }
 
@@ -28,24 +31,33 @@
 
 .home-content {
 	padding: 24px;
-	/*height: auto;*/
+	/*height: 50vh;*/
+	font-family: Poppins;
+	font-size: 18px;
+	background: rgba(202, 211, 200,1.0);
+}
+
+.about-content {
+	padding: 24px;
 	font-family: Poppins;
 	font-size: 18px;
 	background: rgba(202, 211, 200,1.0);
 }
 
 .sfu-img {
-	height: 20%;
+	height: 120vh;
 	width: 100%;
+	object-fit: cover;
 	background-position: center;
 	background-size: cover;
 	background-repeat: none;
 }
 
 .my-img {
-	height: 20%;
-	width: 30%;
+	height: 60vh;
+	width: 30vw;
 	margin: auto;
+	object-fit: cover;
 	background-position: center;
 	background-size: cover;
 	background-repeat: none;
@@ -57,7 +69,8 @@
 
 
 .pcp-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/pcp.png");
 	/*background-position: center;*/
 	background-size: cover;
@@ -65,15 +78,17 @@
 }
 
 .kernel-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/kernel.png");
 	background-position: center;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: none;
 }
 
 .shell-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/shell.png");
 	/*background-position: center;*/
 	background-size: cover;
@@ -81,7 +96,8 @@
 }
 
 .mm-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/mm.jpg");
 	/*background-position: center;*/
 	background-size: cover;
@@ -89,7 +105,8 @@
 }
 
 .ee-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/ee.png");
 	/*background-position: center;*/
 	background-size: cover;
@@ -97,7 +114,8 @@
 }
 
 .ep-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/ep.jpg");
 	background-position: right;
 	background-size: cover;
@@ -105,15 +123,30 @@
 }
 
 .ip-img{
-	/*width: 100%;*/
+	/*height: auto;*/
+	width: 100%;
 	background-image: url("./Images/ip.png");
 	background-position: center;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: none;
 }
 
 .flex-container {
 	display: flex;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  /*.flex-item {
+    flex: 100%;
+    max-width: 100%;
+    flex-direction: column;
+  }*/
+  .flex-container {
+  	/*display: block;*/
+  	flex-direction: column;
+  }
+
 }
 
 .flex-item {
