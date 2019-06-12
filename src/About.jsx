@@ -21,11 +21,9 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> A little about me.... </Header>
+				    		<Header className="header hvr-underline-from-right"> A little about me.... </Header>
 				    		<Typography className="home-content">
-				    			<center>
-				    				<img src={my} className="my-img" alt=''/>
-				    			</center>
+				    			<img src={my} className="my-img" alt=''/>
 				    			<Divider/>
 							   	<Paragraph>
 							      I am a undergraduate student studying computing science. I have experience in managing and developing software in both individual and team enviornments. I am fueled by my passion for understanding the working of technologies in the field of computing science and by my fascination of how two bits 0 and 1 have transformed the world of technolgy and software today. I considers myself a <Text strong>‘forever student’</Text> eager to both build on my academic foundations and stay in tune with the latest software technologies and strategies through continuous learning.
@@ -48,10 +46,9 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				       	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				       		<Header className="header"> Simon Fraser university, Burnaby, BC </Header>
+				       		<Header className="header hvr-underline-from-right"> Simon Fraser university, Burnaby, BC </Header>
 							<img src={sfu4} className="sfu-img" alt=''/>
-				       		<Typography className="home-content">				       		
-				       			<Title>Siddharth Gupta</Title>
+				       		<Typography className="home-content">
 				    			<Divider/>
 				    			<Paragraph>
 				    			I started my post-secondary education in the fall term of 2015 and started pursuing my goal of getting a Bachelors in Computing Science. I was very excited to have been given the oppurtunity to travel halfway around the globe from India to British Columbia, Canada to pursue my university career. I had litlle to no formal programming knowledege nor any experience of sort in working with computer software(s).

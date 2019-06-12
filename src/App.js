@@ -47,28 +47,31 @@ class App extends Component {
                   className="toggle-theme"
                 />
               </center>
-              <Menu.Item key="1">
+              <Menu.Item key="1" className="hvr-underline-from-center">
                 <Link to="/">
                 <Icon type="home" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text hvr-underline-from-center">Home</span>
+                <span className="nav-text nav_Text">Home</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="2">
+              <br/>
+              <Menu.Item key="2" className="hvr-underline-from-center">
                 <Link to="/about">
                 <Icon type="user" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text hvr-underline-from-center">About</span>
+                <span className="nav-text nav_Text">About</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="3">
+              <br/>
+              <Menu.Item key="3" className="hvr-underline-from-center">
                 <Link to="/portfolio">
                 <Icon type="solution" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text hvr-underline-from-center">Portfolio</span>
+                <span className="nav-text nav_Text">Portfolio</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="4">
+              <br/>
+              <Menu.Item key="4" className="hvr-underline-from-center">
                 <Link to="/contact">
                 <Icon type="contacts" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text hvr-underline-from-center">Contact</span>
+                <span className="nav-text nav_Text">Contact</span>
                 </Link>
               </Menu.Item>
             </Menu>

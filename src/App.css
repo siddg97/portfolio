@@ -43,8 +43,9 @@
 }
 
 .my-img {
-	margin-right: auto;
-	margin-left: auto;
+	height: 20%;
+	width: 30%;
+	margin: auto;
 	background-position: center;
 	background-size: cover;
 	background-repeat: none;

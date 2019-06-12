@@ -10,7 +10,7 @@ module.exports = override(
    		javascriptEnabled: true,
    		modifyVars: {
    			'@primary-color': '#eb2f06',
-        '@layout-body-background': '#f1f2f6',
+        '@layout-body-background': '#FFF',
         '@layout-sider-background-light' : '#ced6e0',
         '@menu-bg': '#ced6e0',
    		},

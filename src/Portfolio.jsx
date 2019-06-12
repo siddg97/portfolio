@@ -19,7 +19,7 @@ class Portfolio extends React.Component {
 			    >
 			        <Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> Simulation of the Producer-Consumer Problem </Header>
+				    		<Header className="header hvr-underline-from-right"> Simulation of the Producer-Consumer Problem </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item pcp-img" />
 				    			<div className="flex-item">
@@ -30,7 +30,7 @@ class Portfolio extends React.Component {
 									    <Paragraph>
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/Producer-Consumer-Problem" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph><br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/Producer-Consumer-Problem" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/Producer-Consumer-Problem" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
@@ -39,7 +39,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span>
+			        <span style={{fontFamily:"Poppins"}}>
 			          <Icon type="code" style={{"fontSize":"25px"}} />
 			        	Bash Shell Script
 			        </span>
@@ -48,7 +48,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> Linux Command Shell with a few built-in commands in C </Header>
+				    		<Header className="header hvr-underline-from-right"> Linux Command Shell with a few built-in commands in C </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item shell-img" />
 				    			<div className="flex-item">
@@ -59,7 +59,7 @@ class Portfolio extends React.Component {
 									    <Paragraph>
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/LinuxCustomShell-C" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph><br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/LinuxCustomShell-C" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/LinuxCustomShell-C" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
@@ -68,7 +68,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span>
+			        <span style={{fontFamily:"Poppins"}}>
 			          <Icon type="deployment-unit" style={{"fontSize":"25px"}} />
 			          Custom Linux Kernel
 			        </span>
@@ -77,7 +77,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> Linux Kernel Patch with 2 system calls </Header>
+				    		<Header className="header hvr-underline-from-right"> Linux Kernel Patch with 2 system calls </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item kernel-img" />
 				    			<div className="flex-item">
@@ -88,7 +88,7 @@ class Portfolio extends React.Component {
 									    <Paragraph>
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/Custom-Linux-Kernel-Patch" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph><br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/Custom-Linux-Kernel-Patch" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/Custom-Linux-Kernel-Patch" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
@@ -97,7 +97,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span>
+			        <span style={{fontFamily:"Poppins"}}>
 			          <Icon type="cluster" style={{"fontSize":"25px"}} />
 			          Memory Management Interface
 			        </span>
@@ -106,7 +106,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> Memory Allocation and Deallocation Interfaces </Header>
+				    		<Header className="header hvr-underline-from-right"> Memory Allocation and Deallocation Interfaces </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item mm-img" />
 				    			<div className="flex-item">
@@ -117,7 +117,7 @@ class Portfolio extends React.Component {
 									    <Paragraph>
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/Memory-management-interfaces-C" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph><br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/Memory-management-interfaces-C" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/Memory-management-interfaces-C" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
@@ -126,7 +126,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span>
+			        <span style={{fontFamily:"Poppins"}}>
 			          <Icon type="interaction" style={{"fontSize":"25px"}} />
 			          Expression Evaluator
 			        </span>
@@ -135,7 +135,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> A Scheme Expression Evaluator </Header>
+				    		<Header className="header hvr-underline-from-right"> A Scheme Expression Evaluator </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ee-img" />
 				    			<div className="flex-item">
@@ -146,7 +146,7 @@ class Portfolio extends React.Component {
 									    <Paragraph>
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph><br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
@@ -155,7 +155,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span>
+			        <span style={{fontFamily:"Poppins"}}>
 			          <Icon type="table" style={{"fontSize":"25px"}} />
 			          8-Puzzle Problem Experiment
 			        </span>
@@ -164,7 +164,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> Search Algorithms and Heuristics </Header>
+				    		<Header className="header hvr-underline-from-right"> Search Algorithms and Heuristics </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ep-img" />
 				    			<div className="flex-item">
@@ -176,7 +176,7 @@ class Portfolio extends React.Component {
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/aima-python/tree/a1" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph>
 									    <br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/aima-python/tree/a1" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/aima-python/tree/a1" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
@@ -185,7 +185,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span>
+			        <span style={{fontFamily:"Poppins"}}>
 			          <Icon type="radar-chart" style={{"fontSize":"25px"}} />
 			          Ice-Breaker Problem Experiment
 			        </span>
@@ -194,7 +194,7 @@ class Portfolio extends React.Component {
 			    >
 			    	<Layout>
 				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
-				    		<Header className="header"> Search Algorithms and Heuristics </Header>
+				    		<Header className="header hvr-underline-from-right"> Search Algorithms and Heuristics </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ip-img" />
 				    			<div className="flex-item">
@@ -206,7 +206,7 @@ class Portfolio extends React.Component {
 									    	You can find the source code for this project on <a href="https://github.com/siddg97/aima-python/tree/a2" className="hvr-grow" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
 									    </Paragraph>
 									    <br/><br/><br/>
-									    <center><a href="https://github.com/siddg97/aima-python/tree/a2" className="hvr-shrink" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+									    <center><a href="https://github.com/siddg97/aima-python/tree/a2" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>
