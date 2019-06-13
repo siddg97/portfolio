@@ -12,15 +12,15 @@ class About extends React.Component {
 			<Tabs defaultActiveKey="1" size="large" type="line">
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="smile" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="smile"/>
 			          About Me
 			        </span>
 			      }
 			      key="1"
 			    >
 				    <Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> A little about me.... </Header>
 				    		<Typography className="about-content">
 				    			<center><img src={my} className="my-img" alt=''/></center>
@@ -37,15 +37,15 @@ class About extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="book" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="book"/>
 			          Education
 			        </span>
 			      }
 			      key="2"
 			    >
 				    <Layout>
-				       	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				       	<Content className="content-style">
 				       		<Header className="header hvr-underline-from-right"> Simon Fraser university, Burnaby, BC </Header>
 							<img src={sfu4} className="sfu-img" alt=''/>
 				       		<Typography className="about-content">

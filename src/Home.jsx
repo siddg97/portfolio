@@ -8,9 +8,9 @@ class Home extends React.Component {
 	render(){
 		return(
 			<Layout>
-				<Header className="header hvr-underline-from-right"> Welcome to "My Domain" on the Internet </Header>
+				<Header className="header hvr-underline-from-right"> Siddharth Gupta </Header>
 	            <Content style={{ margin: '24px 16px 0', padding:'24px' }}>
-	            	<Header className="header hvr-underline-from-right"> SIDDHARTH GUPTA </Header>
+	            	<Header className="header hvr-underline-from-right"> Welcome!! </Header>
 	              	<Typography className="home-content">
 		              	<Paragraph> I'm an international student from india studying computing science at Simon Fraser University, Burnaby, BC, Canada. </Paragraph>
 		              	<Paragraph> I have a passion for technology and I enjoy programming to solve real world problems! <br/>I also play video games and enjoy weighlifting in my free time.</Paragraph>

@@ -24,6 +24,17 @@
 	background-color: white;
 }
 
+.content-style {
+	margin: 24px 16px 0;
+	padding: 24px;
+}
+
+.card-header {
+	font-family: Poppins;
+	font-size: 25px;
+}
+
+
 .toggle-theme {
 	margin-top: 20px;
 	margin-bottom: 20px;

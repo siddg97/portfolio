@@ -37,7 +37,7 @@ class App extends Component {
             theme={this.state.theme}
             className="sider"
           >
-            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px"}}>
+            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px", "fontSize":"25px"}}>
               <center>
                 <Switch
                   checked={this.state.theme === 'dark'}
@@ -70,7 +70,7 @@ class App extends Component {
               <br/>
               <Menu.Item key="4" className="hvr-underline-from-center">
                 <Link to="/contact">
-                <Icon type="contacts" style={{"fontSize":"25px"}} />
+                <Icon type="message" style={{"fontSize":"25px"}} />
                 <span className="nav-text nav_Text">Contact</span>
                 </Link>
               </Menu.Item>
@@ -89,8 +89,8 @@ class App extends Component {
               <div>
                 <center>
                   <a href="https://github.com/siddg97/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
-                  <a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: 'blue'}}/></a>
-                  <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: 'blue'}}/></a>
+                  <a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: '#3C5A99'}}/></a>
+                  <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: '#0077B5'}}/></a>
                 </center>
               </div><br/>
              Created by - Siddharth Gupta © 2019

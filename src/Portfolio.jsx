@@ -10,15 +10,15 @@ class Portfolio extends React.Component {
 			<Tabs defaultActiveKey="1" size="large" type="line">
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="box-plot" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="box-plot" />
 			          Bounded - Buffer Problem
 			        </span>
 			      }
 			      key="1"
 			    >
 			        <Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> Simulation of the Producer-Consumer Problem </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item pcp-img" />
@@ -39,15 +39,15 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="code" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="code" />
 			        	Bash Shell Script
 			        </span>
 			      }
 			      key="2"
 			    >
 			    	<Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> Linux Command Shell with a few built-in commands in C </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item shell-img" />
@@ -68,15 +68,15 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="deployment-unit" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="deployment-unit" />
 			          Custom Linux Kernel
 			        </span>
 			      }
 			      key="3"
 			    >
 			    	<Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> Linux Kernel Patch with 2 system calls </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item kernel-img" />
@@ -97,15 +97,15 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="cluster" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="cluster" />
 			          Memory Management Interface
 			        </span>
 			      }
 			      key="4"
 			    >
 			    	<Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> Memory Allocation and Deallocation Interfaces </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item mm-img" />
@@ -126,15 +126,15 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="interaction" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="interaction" />
 			          Expression Evaluator
 			        </span>
 			      }
 			      key="5"
 			    >
 			    	<Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> A Scheme Expression Evaluator </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ee-img" />
@@ -155,15 +155,15 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="table" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="table" />
 			          8-Puzzle Problem Experiment
 			        </span>
 			      }
 			      key="6"
 			    >
 			    	<Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> Search Algorithms and Heuristics </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ep-img" />
@@ -185,15 +185,15 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span style={{fontFamily:"Poppins"}}>
-			          <Icon type="radar-chart" style={{"fontSize":"25px"}} />
+			        <span className="card-header">
+			          <Icon type="radar-chart" />
 			          Ice-Breaker Problem Experiment
 			        </span>
 			      }
 			      key="7"
 			    >
 			    	<Layout>
-				    	<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				    	<Content className="content-style">
 				    		<Header className="header hvr-underline-from-right"> Search Algorithms and Heuristics </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ip-img" />
