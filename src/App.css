@@ -55,7 +55,7 @@
 
 .my-img {
 	height: 60vh;
-	width: 30vw;
+	/*width: 30vw;*/
 	margin: auto;
 	object-fit: cover;
 	background-position: center;

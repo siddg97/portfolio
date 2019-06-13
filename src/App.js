@@ -6,7 +6,7 @@ import {Layout, Menu, Icon, Switch} from 'antd';
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Portfolio from './Portfolio.jsx'
-
+import Contact from './Contact.jsx'
 
 const { Content, Footer, Sider } = Layout;
 
@@ -82,7 +82,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/portfolio" component={Portfolio} />
-                <Route path="/contact" />
+                <Route path="/contact" component={Contact} />
               </RouteSwitch>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
