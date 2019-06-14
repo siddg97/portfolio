@@ -29,11 +29,27 @@
 	padding: 24px;
 }
 
-.card-header {
+.card-header, .card-header h3 {
+	font-family: Poppins;
+	font-size: 30px;
+	color: red;
+}
+
+.contact-card {
 	font-family: Poppins;
 	font-size: 25px;
 }
 
+.links {
+	color: green;
+}
+
+.email-bg {
+	background-image: url('./Images/email.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: none;
+}
 
 .toggle-theme {
 	margin-top: 20px;
