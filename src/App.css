@@ -32,7 +32,7 @@
 .card-header, .card-header h3 {
 	font-family: Poppins;
 	font-size: 30px;
-	color: yellow;
+	color: #ffa801;
 }
 
 .contact-card {
@@ -50,6 +50,7 @@
 	background-size: cover;
 	background-repeat: none;
 	object-fit: cover;
+	margin: 0;
 }
 
 .forum-bg {
@@ -181,11 +182,6 @@
 }
 
 @media (max-width: 600px) {
-  /*.flex-item {
-    flex: 100%;
-    max-width: 100%;
-    flex-direction: column;
-  }*/
   .flex-container {
   	/*display: block;*/
   	flex-direction: column;

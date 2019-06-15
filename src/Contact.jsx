@@ -28,7 +28,20 @@ const email = [
 	'g.sidd97@gmail.com',
 	'sg8797@gmail.com',
 	'sga94@sfu.ca',
+];
+
+const forums = [
+	['Github','https://github.com/siddg97'],
+	['StackOverflow','https://stackoverflow.com/users/11591930/giddharthsupta'],
+	['LinkedIn','https://www.linkedin.com/in/siddharth-gupta-b0245b113/']
+];
+
+const social = [
+	['Facebook','https://www.facebook.com/siddharth.gupta.1997'],
+	['Twitter','https://twitter.com/siddgupta97'],
+	['Instagram','https://www.instagram.com/?hl=en']
 ]
+
 
 class Contact extends React.Component {
 	constructor() {
@@ -49,11 +62,11 @@ class Contact extends React.Component {
 	}
 
 	render(){
-		const cardStyle = {margin:24, padding:0}
+		const cardStyle = {margin:16, padding:0}
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout>
-				<Header className="header hvr-underline-from-right"> Get in touch with me... </Header>
+				<Header className="header hvr-underline-from-right"> Lets get in touch! </Header>
 				<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
@@ -61,7 +74,7 @@ class Contact extends React.Component {
 								<center>
 									<span className="card-header hvr-grow">
 								        <b><Icon type="mail"/></b>
-								       	<h3> E-Mail </h3>
+								       	<h3> Email </h3>
 							        </span>
 						        </center>
 					        </div>
@@ -77,7 +90,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'> 
-							        <a href={'mailto:'+ item} className='contact-card links hvr-grow'>
+							        <a href={'mailto:'+ item} className='contact-card links hvr-grow' target='_blank'>
 							        	{item}
 							        </a>
 							        </p>
@@ -98,6 +111,19 @@ class Contact extends React.Component {
 						bordered={true} 
 						hoverable={true}
 						style={cardStyle}>
+							<List
+							    bordered
+							    dataSource={forums}
+							    renderItem={item => (
+							    <List.Item>
+							    	<p className='contact-card'>
+							        <a href={item[1]} className='contact-card links hvr-grow' target='_blank'>
+							        	{item[0]}
+							        </a>
+							        </p>
+							    </List.Item>
+							    )}
+							/>
 						</Card>
 						<Card title={
 							<div className='sm-bg'>
@@ -112,6 +138,19 @@ class Contact extends React.Component {
 						bordered={true}
 						hoverable={true}
 						style={cardStyle}>
+							<List
+							    bordered
+							    dataSource={social}
+							    renderItem={item => (
+							    <List.Item>
+							    	<p className='contact-card'>
+							        <a href={item[1]} className='contact-card links hvr-grow' target='_blank'>
+							        	{item[0]}
+							        </a>
+							        </p>
+							    </List.Item>
+							    )}
+							/>
 						</Card>
 					</div>
 				</Content>
