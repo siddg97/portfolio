@@ -86,24 +86,28 @@ class Contact extends React.Component {
 							/>
 						</Card>
 						<Card title={
-							<center>
-								<span className="card-header hvr-grow">
-							        <b><Icon type="bars"/></b>
-							       	<h3> Forums </h3>
-						        </span>
-					        </center>
+							<div className='forum-bg'>
+								<center>
+									<span className="card-header hvr-grow">
+								        <b><Icon type="bars"/></b>
+								       	<h3> Forums </h3>
+							        </span>
+						        </center>
+					       	</div>
 						} 
 						bordered={true} 
 						hoverable={true}
 						style={cardStyle}>
 						</Card>
 						<Card title={
-							<center>
-								<span className="card-header hvr-grow">
-							        <b><Icon type="team"/></b>
-							       	<h3> Social Media </h3>
-						        </span>
-					        </center>
+							<div className='sm-bg'>
+								<center>
+									<span className="card-header hvr-grow">
+								        <b><Icon type="team"/></b>
+								       	<h3> Social Media </h3>
+							        </span>
+						        </center>
+					      	</div>
 						} 
 						bordered={true}
 						hoverable={true}

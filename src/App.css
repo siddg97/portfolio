@@ -32,7 +32,7 @@
 .card-header, .card-header h3 {
 	font-family: Poppins;
 	font-size: 30px;
-	color: red;
+	color: yellow;
 }
 
 .contact-card {
@@ -49,6 +49,23 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: none;
+	object-fit: cover;
+}
+
+.forum-bg {
+	background-image: url('./Images/forum.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: none;
+	object-fit: cover;
+}
+
+.sm-bg {
+	background-image: url('./Images/sm.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: none;
+	object-fit: cover;
 }
 
 .toggle-theme {
