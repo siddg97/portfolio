@@ -1,8 +1,10 @@
 import React from 'react';
-import {Card, List, Layout, Icon} from 'antd';
+import {Card, List, Layout,Typography, Icon} from 'antd';
 // import Typist from 'react-typist';
 
 const {Header, Content} = Layout;
+const {Paragraph, Text} = Typography;
+
 
 const messages = [
 	'saying hi!',
@@ -80,7 +82,7 @@ class Contact extends React.Component {
 						hoverable={false}
 						style={cardStyle}
 						>
-							<p className="contact-card">Mail me <b style={{color:'blue'}}>{dText}</b> at:</p>
+							<Paragraph className="contact-card">Mail me <b style={{color:'blue'}}>{dText}</b> at:</Paragraph>
 							<List
 							    bordered
 							    dataSource={email}
