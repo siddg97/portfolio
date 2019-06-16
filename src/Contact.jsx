@@ -25,9 +25,7 @@ const messages = [
 ];
 
 const email = [
-	'g.sidd97@gmail.com',
-	'sg8797@gmail.com',
-	'sga94@sfu.ca',
+	'g.sidd97@gmail.com'
 ];
 
 const forums = [
@@ -47,7 +45,6 @@ class Contact extends React.Component {
 	constructor() {
     	super();
     	this.state = { textIdx: 0 };
-    	this.componentDidMount = this.componentDidMount.bind(this)
 	}
 
 	componentDidMount() {
@@ -62,25 +59,25 @@ class Contact extends React.Component {
 	}
 
 	render(){
-		const cardStyle = {margin:16, padding:0}
+		const cardStyle = {margin:16, padding:0, boxSizing:'border-box'}
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout>
 				<Header className="header hvr-underline-from-right"> Lets get in touch! </Header>
-				<Content style={{ margin: '24px 16px 0', padding: '24px' }}>
+				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
-							<div className='email-bg'>
+							<div className='email-bg' style={{margin:0, boxSizing:'border-box'}}>
 								<center>
-									<span className="card-header hvr-grow">
+									<span className="hvr-grow card-header">
 								        <b><Icon type="mail"/></b>
 								       	<h3> Email </h3>
 							        </span>
 						        </center>
 					        </div>
 						}
-						bordered={true} 
-						hoverable={true}
+						bordered={false} 
+						hoverable={false}
 						style={cardStyle}
 						>
 							<p className="contact-card">Mail me <b style={{color:'blue'}}>{dText}</b> at:</p>
@@ -90,7 +87,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'> 
-							        <a href={'mailto:'+ item} className='contact-card links hvr-grow' target='_blank'>
+							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
 							        	{item}
 							        </a>
 							        </p>
@@ -117,7 +114,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'>
-							        <a href={item[1]} className='contact-card links hvr-grow' target='_blank'>
+							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
 							        	{item[0]}
 							        </a>
 							        </p>
@@ -144,7 +141,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'>
-							        <a href={item[1]} className='contact-card links hvr-grow' target='_blank'>
+							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
 							        	{item[0]}
 							        </a>
 							        </p>
@@ -160,4 +157,3 @@ class Contact extends React.Component {
 }
 
 export default Contact
-

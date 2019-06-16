@@ -10,7 +10,7 @@ class Home extends React.Component {
 		return(
 			<Layout>
 				<Header className="header hvr-underline-from-right"> Siddharth Gupta </Header>
-	            <Content style={{ margin: '24px 16px 0', padding:'24px' }}>
+	            <Content>
 	            <center>
 	            	<Header className="header hvr-underline-from-right"> Welcome!! </Header>
 	              	<Typography className="home-content">
