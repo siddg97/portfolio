@@ -47,31 +47,35 @@ class App extends Component {
                   className="toggle-theme"
                 />
               </center>
+              <Menu.Item key="0">
+                <Icon type="menu" style={{"fontSize":"25px"}} />
+                <span className=" nav_Text">NAVIGATION</span>
+              </Menu.Item>
               <Menu.Item key="1" className="hvr-underline-from-center">
                 <Link to="/">
                 <Icon type="home" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">Home</span>
+                <span className=" nav_Text">Home</span>
                 </Link>
               </Menu.Item>
               <br/>
               <Menu.Item key="2" className="hvr-underline-from-center">
                 <Link to="/about">
                 <Icon type="user" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">About</span>
+                <span className=" nav_Text">About</span>
                 </Link>
               </Menu.Item>
               <br/>
               <Menu.Item key="3" className="hvr-underline-from-center">
                 <Link to="/portfolio">
                 <Icon type="solution" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">Portfolio</span>
+                <span className=" nav_Text">Portfolio</span>
                 </Link>
               </Menu.Item>
               <br/>
               <Menu.Item key="4" className="hvr-underline-from-center">
                 <Link to="/contact">
                 <Icon type="message" style={{"fontSize":"25px"}} />
-                <span className="nav-text nav_Text">Contact</span>
+                <span className=" nav_Text">Contact</span>
                 </Link>
               </Menu.Item>
             </Menu>
