@@ -90,13 +90,12 @@ class App extends Component {
               </RouteSwitch>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
-              <div>
-                <center>
-                  <a href="https://github.com/siddg97/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
-                  <a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: '#3C5A99'}}/></a>
-                  <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float hvr-grow" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: '#0077B5'}}/></a>
-                </center>
-              </div><br/>
+              <center>
+                <a href="https://github.com/siddg97/" className="hvr-float" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
+                <a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: '#3C5A99'}}/></a>
+                <a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: '#0077B5'}}/></a>
+              </center>
+              <br/>
              Created by - Siddharth Gupta © 2019
             </Footer>
           </Layout>
