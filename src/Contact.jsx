@@ -90,7 +90,7 @@ class Contact extends React.Component {
 							    <List.Item>
 							    	<p className='contact-card'> 
 							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
-							        	{item}
+							        	gsidd97@gmail
 							        </a>
 							        </p>
 							    </List.Item>
