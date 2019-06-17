@@ -27,7 +27,7 @@ class App extends Component {
       <div className="App">
         <Layout>
           <Sider
-            breakpoint="sm"
+            breakpoint="lg"
             collapsedWidth="0"
             onBreakpoint={broken => {
               console.log(broken);
