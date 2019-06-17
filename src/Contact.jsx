@@ -89,7 +89,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'> 
-							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
+							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
 							        	gsidd97@gmail
 							        </a>
 							        </p>
@@ -116,7 +116,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'>
-							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
+							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
 							        	{item[0]}
 							        </a>
 							        </p>
@@ -143,7 +143,7 @@ class Contact extends React.Component {
 							    renderItem={item => (
 							    <List.Item>
 							    	<p className='contact-card'>
-							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card links hvr-grow' target='_blank'>
+							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
 							        	{item[0]}
 							        </a>
 							        </p>

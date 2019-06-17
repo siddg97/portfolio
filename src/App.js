@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {Link, Route} from "react-router-dom";
 import {Switch as RouteSwitch} from 'react-router-dom';
-import {Layout, Menu, Icon, Switch} from 'antd';
+import {Layout, Menu, Divider, Icon, Switch} from 'antd';
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Portfolio from './Portfolio.jsx'
@@ -22,11 +22,12 @@ class App extends Component {
   };
 
   render() {
+    const mStyle = {height:"100vh","paddingTop":"15px", "fontSize":"25px"};
     return (
       <div className="App">
         <Layout>
           <Sider
-            breakpoint="lg"
+            breakpoint="sm"
             collapsedWidth="0"
             onBreakpoint={broken => {
               console.log(broken);
@@ -36,8 +37,9 @@ class App extends Component {
             }}
             theme={this.state.theme}
             className="sider"
+            width={"auto"}
           >
-            <Menu theme={this.state.theme} mode="inline" style={{height:"100vh","paddingTop":"15px", "fontSize":"25px"}}>
+            <Menu theme={this.state.theme} mode="inline" style={mStyle}>
               <center>
                 <Switch
                   checked={this.state.theme === 'dark'}
@@ -47,10 +49,12 @@ class App extends Component {
                   className="toggle-theme"
                 />
               </center>
+              <Divider/>
               <Menu.Item key="0">
                 <Icon type="menu" style={{"fontSize":"25px"}} />
                 <span className=" nav_Text">NAVIGATION</span>
               </Menu.Item>
+              <Divider/>
               <Menu.Item key="1" className="hvr-underline-from-center">
                 <Link to="/">
                 <Icon type="home" style={{"fontSize":"25px"}} />

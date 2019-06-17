@@ -9,8 +9,14 @@
 	width: 100vw;
 }
 
+.nav_Head {
+	color: white;
+	font-size: 25px;
+	font-family: Poppins;
+}
+
 .nav_Text {
-	font-size: 20px;
+	font-size: 25px;
 	font-family: Poppins;
 }
 
@@ -40,9 +46,6 @@
 	font-size: 25px;
 }
 
-.links {
-	color: green;
-}
 
 .email-bg {
 	background-image: url('./Images/email.png');
@@ -111,7 +114,6 @@
 .sider {
 	z-index: 99;
 }
-
 
 .pcp-img{
 	/*height: auto;*/
