@@ -30,14 +30,9 @@
 	background-color: white;
 }
 
-/*.content-style {
-	margin: 24px 16px 0;
-	padding: 24px;
-}*/
-
 .card-header, .card-header h3 {
 	font-family: Poppins;
-	font-size: 20px;
+	font-size: 30px;
 	color: black;
 }
 
