@@ -11,8 +11,8 @@ module.exports = override(
    		modifyVars: {
    			'@primary-color': '#FF0000',
         '@layout-body-background': '#FFF',
-        '@layout-sider-background-light' : '#ced6e0',
-        '@menu-bg': '#ced6e0',
+        '@layout-sider-background-light' : '#BFBFBF',
+        '@menu-bg': '#BFBFBF',
    		},
    	}),
 );
