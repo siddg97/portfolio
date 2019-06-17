@@ -37,7 +37,6 @@ class App extends Component {
             }}
             theme={this.state.theme}
             className="sider"
-            width={"auto"}
           >
             <Menu theme={this.state.theme} mode="inline" style={mStyle}>
               <center>
