@@ -71,9 +71,9 @@ class Contact extends React.Component {
 						<Card title={
 							<div className='email-bg' style={{margin:0, boxSizing:'border-box'}}>
 								<center>
-									<span className="hvr-grow card-header">
+									<span className="hvr-grow card-header" style={{color:'yellow'}}>
 								        <b><Icon type="mail"/></b>
-								       	<h3> Email </h3>
+								       	<h3 style={{color:'yellow'}}> Email </h3>
 							        </span>
 						        </center>
 					        </div>
@@ -100,9 +100,9 @@ class Contact extends React.Component {
 						<Card title={
 							<div className='forum-bg'>
 								<center>
-									<span className="card-header hvr-grow">
+									<span className="card-header hvr-grow" style={{color:'yellow'}}>
 								        <b><Icon type="bars"/></b>
-								       	<h3> Forums </h3>
+								       	<h3 style={{color:'yellow'}}> Forums </h3>
 							        </span>
 						        </center>
 					       	</div>
@@ -127,9 +127,9 @@ class Contact extends React.Component {
 						<Card title={
 							<div className='sm-bg'>
 								<center>
-									<span className="card-header hvr-grow">
+									<span className="card-header hvr-grow" style={{color:'yellow'}}>
 								        <b><Icon type="team"/></b>
-								       	<h3> Social Media </h3>
+								       	<h3 style={{color:'yellow'}}> Social Media </h3>
 							        </span>
 						        </center>
 					      	</div>
