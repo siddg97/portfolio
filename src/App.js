@@ -48,12 +48,10 @@ class App extends Component {
                   className="toggle-theme"
                 />
               </center>
-              <Divider/>
               <Menu.Item key="0">
                 <Icon type="menu" style={{"fontSize":"25px"}} />
                 <span className=" nav_Text">NAVIGATION</span>
               </Menu.Item>
-              <Divider/>
               <Menu.Item key="1" className="hvr-underline-from-center">
                 <Link to="/">
                 <Icon type="home" style={{"fontSize":"25px"}} />
