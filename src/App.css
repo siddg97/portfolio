@@ -16,7 +16,7 @@
 }
 
 .nav_Text {
-	font-size: 20px;
+	font-size: 15px;
 	font-family: Poppins;
 }
 
@@ -38,18 +38,18 @@
 .card-header, .card-header h3 {
 	align-items: center;
 	font-family: Poppins;
-	font-size: 30px;
+	font-size: 27px;
 	color: black;
 }
 
 .contact-card {
 	font-family: Poppins;
-	font-size: 25px;
+	font-size: 18px;
 }
 
 .toggle-theme {
 	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 .home-content {

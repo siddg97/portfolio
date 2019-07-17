@@ -27,7 +27,8 @@ const messages = [
 ];
 
 const email = [
-	'g.sidd97@gmail.com'
+	'g.sidd97@gmail.com',
+	'sg8797@gmail.com',
 ];
 
 const forums = [
@@ -86,7 +87,7 @@ class Contact extends React.Component {
 							    <List.Item>
 							    	<p className='contact-card'> 
 							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
-							        	gsidd97@gmail
+							        	{item}
 							        </a>
 							        </p>
 							    </List.Item>
