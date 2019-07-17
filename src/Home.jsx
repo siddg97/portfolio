@@ -20,7 +20,7 @@ class Home extends React.Component {
 		              	<br/>
 		              	<center>
 		              		<Text strong> To know more about me, view the About page on this website. You can also view my resume by clicking below!</Text><br/><br/>
-		              		<a href="https://docs.google.com/document/d/1GGBiwiZ6pfAMN4LKOUTdFmDGCc1ohPnhJBodfgwD0EY/edit?usp=sharing" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="container" style={{fontSize: 80}} /></a>
+		              		<a href="https://docs.google.com/document/d/14Z7tUfuLhwx0lKbJViNPtkLvyQ2UkHJis1XB7bExJeI/edit?usp=sharing" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="container" style={{fontSize: 80}} /></a>
 		              	</center>
 	              </Typography>
 	            </center>
