@@ -13,7 +13,7 @@ const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     theme: 'dark',
-    collapsed: false
+    collapsed: true
   }
 
   changeTheme = value => {
@@ -52,8 +52,8 @@ class App extends Component {
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
-                <Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} />
-                <span className="nav_Header">NAVIGATION</span>
+                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} /></center>
+                <span className="nav_Header">Expand Navigation</span>
               </Menu.Item>
               <Menu.Item key="1" className="hvr-underline-from-center">
                 <Link to="/">
