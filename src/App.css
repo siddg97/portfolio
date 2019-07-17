@@ -20,6 +20,11 @@
 	font-family: Poppins;
 }
 
+.nav_Header {
+	font-size: 21px;
+	font-family: Poppins
+}
+
 .header {
 	font-family: Poppins;
 	display: block;
@@ -31,6 +36,7 @@
 }
 
 .card-header, .card-header h3 {
+	align-items: center;
 	font-family: Poppins;
 	font-size: 30px;
 	color: black;
@@ -41,32 +47,6 @@
 	font-size: 25px;
 }
 
-
-.email-bg {
-	background-image: url('./Images/email.png');
-	background-position: center;
-	background-size: cover;
-	background-repeat: none;
-	object-fit: cover;
-	margin: 0;
-}
-
-.forum-bg {
-	background-image: url('./Images/forum.jpg');
-	background-position: right;
-	background-size: cover;
-	background-repeat: none;
-	object-fit: cover;
-}
-
-.sm-bg {
-	background-image: url('./Images/sm.jpg');
-	background-position: right;
-	background-size: cover;
-	background-repeat: none;
-	object-fit: cover;
-}
-
 .toggle-theme {
 	margin-top: 20px;
 	margin-bottom: 5px;
@@ -74,7 +54,6 @@
 
 .home-content {
 	padding: 24px;
-	/*height: 50vh;*/
 	font-family: Poppins;
 	font-size: 18px;
 	background: rgba(202, 211, 200,1.0);
