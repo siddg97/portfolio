@@ -13,11 +13,18 @@ const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     theme: 'dark',
+    collapsed: false
   }
 
   changeTheme = value => {
     this.setState({
       theme: value ? 'dark' : 'light',
+    });
+  };
+
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
     });
   };
 
@@ -28,29 +35,24 @@ class App extends Component {
         <Layout>
           <Sider
             breakpoint="lg"
-            collapsedWidth="0"
-            onBreakpoint={broken => {
-              console.log(broken);
-            }}
-            onCollapse={(collapsed, type) => {
-              console.log(collapsed, type);
-            }}
+            collapsible={true}
+            trigger={null}
+            collapsed={this.state.collapsed}
             theme={this.state.theme}
             className="sider"
           >
-            <Menu theme={this.state.theme} mode="inline" style={mStyle}>
+            <Menu theme={this.state.theme} mode="inline" style={mStyle} defaultSelectedKeys={['0']}>
               <center>
                 <Switch
                   checked={this.state.theme === 'dark'}
                   onChange={this.changeTheme}
-                  checkedChildren="Dark Mode"
-                  unCheckedChildren="Light Mode"
+                  checkedChildren={this.state.collapsed ? 'Dark':'Dark Mode'}
+                  unCheckedChildren={this.state.collapsed ? 'Light':'Light Mode'}
                   className="toggle-theme"
                 />
               </center>
-              <Divider/>
-              <Menu.Item key="0">
-                <Icon type="menu" style={{"fontSize":"20px"}} />
+              <Menu.Item key="0" onClick={this.toggle}>
+                <Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} />
                 <span className="nav_Header">NAVIGATION</span>
               </Menu.Item>
               <Menu.Item key="1" className="hvr-underline-from-center">
