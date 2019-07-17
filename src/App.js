@@ -13,7 +13,8 @@ const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     theme: 'dark',
-    collapsed: true
+    collapsed: true,
+    key:'0'
   }
 
   changeTheme = value => {
@@ -48,7 +49,7 @@ class App extends Component {
                   onChange={this.changeTheme}
                   checkedChildren={this.state.collapsed ? 'Dark':'Dark Mode'}
                   unCheckedChildren={this.state.collapsed ? 'Light':'Light Mode'}
-                  className="toggle-theme flow-text"
+                  className="toggle-theme"
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>

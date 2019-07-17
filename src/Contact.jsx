@@ -66,7 +66,7 @@ class Contact extends React.Component {
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout className="l">
-				<Header className="header hvr-underline-from-right"> Lets get in touch! </Header>
+				<Header className="hvr-underline-from-right header"> Lets get in touch! </Header>
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
@@ -85,11 +85,11 @@ class Contact extends React.Component {
 							    dataSource={email}
 							    renderItem={item => (
 							    <List.Item>
-							    	<p className='contact-card'> 
-							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
+							    	<Paragraph className='contact-card hvr-grow'>
+							        <a href={'mailto:'+ item}  rel="noopener noreferrer" target='_blank'>
 							        	{item}
 							        </a>
-							        </p>
+							        </Paragraph>
 							    </List.Item>
 							    )}
 							/>
@@ -108,11 +108,11 @@ class Contact extends React.Component {
 							    dataSource={forums}
 							    renderItem={item => (
 							    <List.Item>
-							    	<p className='contact-card'>
-							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
+							    	<Paragraph className='contact-card hvr-grow'>
+							        <a href={item[1]}  rel="noopener noreferrer" target='_blank'>
 							        	{item[0]}
 							        </a>
-							        </p>
+									</Paragraph>
 							    </List.Item>
 							    )}
 							/>
@@ -131,11 +131,11 @@ class Contact extends React.Component {
 							    dataSource={social}
 							    renderItem={item => (
 							    <List.Item>
-							    	<p className='contact-card'>
-							        <a href={item[1]}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
+							    	<Paragraph className='contact-card hvr-grow'>
+							        <a href={item[1]}  rel="noopener noreferrer" target='_blank'>
 							        	{item[0]}
 							        </a>
-							        </p>
+							        </Paragraph>
 							    </List.Item>
 							    )}
 							/>
