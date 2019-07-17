@@ -20,8 +20,8 @@ class About extends React.Component {
 			      key="1"
 			    >
 				    <Layout>
+				    	<Header className="hvr-underline-from-right header"> A little about me </Header>
 				    	<Content className="content-style">
-				    		<Header className="hvr-underline-from-right header"> A little about me.... </Header>
 				    		<Typography className="about-content">
 				    			<center><img src={my} className="my-img" alt=''/></center>
 				    			<Divider/>
@@ -45,8 +45,8 @@ class About extends React.Component {
 			      key="2"
 			    >
 				    <Layout>
+				    	<Header className="hvr-underline-from-right header"> Simon Fraser University</Header>
 				       	<Content className="content-style">
-				       		<Header className="hvr-underline-from-right header"> Simon Fraser University</Header>
 							<img src={sfu4} className="sfu-img" alt=''/>
 				       		<Typography className="about-content">
 				    			<Divider/>
