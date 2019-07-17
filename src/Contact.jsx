@@ -3,7 +3,7 @@ import {Card, List, Layout,Typography, Icon} from 'antd';
 // import Typist from 'react-typist';
 
 const {Header, Content} = Layout;
-const {Paragraph, Text} = Typography;
+const {Paragraph} = Typography;
 
 
 const messages = [
@@ -57,7 +57,7 @@ class Contact extends React.Component {
 	    }, 2500);
   	}
 
-  	componentDidUnmount() {
+  	componentWillUnmount() {
 	    clearInterval(this.timeout);
 	}
 
@@ -65,7 +65,7 @@ class Contact extends React.Component {
 		const cardStyle = {margin:10, padding:0, boxSizing:'border-box'}
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
-			<Layout>
+			<Layout className="l">
 				<Header className="header hvr-underline-from-right"> Lets get in touch! </Header>
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
