@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px"};
     return (
-      <div className="App">
+      <div className="App flow-text">
         <Layout>
           <Sider
             breakpoint="lg"
@@ -48,7 +48,7 @@ class App extends Component {
                   onChange={this.changeTheme}
                   checkedChildren={this.state.collapsed ? 'Dark':'Dark Mode'}
                   unCheckedChildren={this.state.collapsed ? 'Light':'Light Mode'}
-                  className="toggle-theme"
+                  className="toggle-theme flow-text"
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
