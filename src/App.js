@@ -2,20 +2,26 @@ import React, { Component } from 'react';
 import './App.css';
 import {Link, Route} from "react-router-dom";
 import {Switch as RouteSwitch} from 'react-router-dom';
-import {Layout, Menu, Divider, Icon, Switch} from 'antd';
+import {Layout, Menu, Icon, Switch} from 'antd';
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Portfolio from './Portfolio.jsx'
 import Contact from './Contact.jsx'
 
-const { Content, Footer, Sider } = Layout;
+const { Footer, Sider } = Layout;
 
 class App extends Component {
   state = {
     theme: 'dark',
     collapsed: true,
-    key:'0'
-  }
+    selectedKeys:[]
+  };
+
+  handleMenuClick = value => {
+    this.setState({
+      selectedKeys:value.keyPath
+    });
+  };
 
   changeTheme = value => {
     this.setState({
@@ -25,7 +31,19 @@ class App extends Component {
 
   toggle = () => {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapsed: !this.state.collapsed,
+    });
+  };
+
+  componentDidMount(){
+    let curr_path = window.location.pathname;
+    const path_map = {};
+    path_map['/']='1';
+    path_map['/about']='2';
+    path_map['/portfolio']='3';
+    path_map['/contact']='4';
+    this.setState({
+      selectedKeys:[path_map[curr_path]]
     });
   };
 
@@ -40,9 +58,10 @@ class App extends Component {
             trigger={null}
             collapsed={this.state.collapsed}
             theme={this.state.theme}
+            collapsedWidth={84}
             className="sider"
           >
-            <Menu theme={this.state.theme} mode="inline" style={mStyle} defaultSelectedKeys={['0']}>
+            <Menu theme={this.state.theme} mode="inline" style={mStyle} selectedKeys={this.state.selectedKeys}>
               <center>
                 <Switch
                   checked={this.state.theme === 'dark'}
@@ -53,31 +72,31 @@ class App extends Component {
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
-                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} /></center>
-                <span className="nav_Header">Expand Navigation</span>
+                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"30px"}} /></center>
+                <span className="nav_Header">Expand Navbar</span>
               </Menu.Item>
-              <Menu.Item key="1" className="hvr-underline-from-center">
+              <Menu.Item key="1" onClick={this.handleMenuClick}className="hvr-underline-from-center">
                 <Link to="/">
-                <Icon type="home" style={{"fontSize":"20px"}} />
-                <span className="nav_Text">Home</span>
+                  <Icon type="home" style={{"fontSize":"20px"}} />
+                  <span className="nav_Text">Home</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="2" className="hvr-underline-from-center">
+              <Menu.Item key="2" onClick={this.handleMenuClick}className="hvr-underline-from-center">
                 <Link to="/about">
-                <Icon type="user" style={{"fontSize":"20px"}} />
-                <span className="nav_Text">About</span>
+                  <Icon type="user" style={{"fontSize":"20px"}} />
+                  <span className="nav_Text">About</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="3" className="hvr-underline-from-center">
+              <Menu.Item key="3" onClick={this.handleMenuClick}className="hvr-underline-from-center">
                 <Link to="/portfolio">
-                <Icon type="solution" style={{"fontSize":"20px"}} />
-                <span className="nav_Text">Portfolio</span>
+                  <Icon type="solution" style={{"fontSize":"20px"}} />
+                  <span className="nav_Text">Portfolio</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="4" className="hvr-underline-from-center">
+              <Menu.Item key="4" onClick={this.handleMenuClick}className="hvr-underline-from-center">
                 <Link to="/contact">
-                <Icon type="message" style={{"fontSize":"20px"}} />
-                <span className="nav_Text">Contact</span>
+                  <Icon type="message" style={{"fontSize":"20px"}} />
+                  <span className="nav_Text">Contact</span>
                 </Link>
               </Menu.Item>
             </Menu>
