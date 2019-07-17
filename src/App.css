@@ -10,6 +10,7 @@
 
 .l{
 	min-height: 87.8vh;
+	width: auto;
 }
 
 .nav_Head {
@@ -50,11 +51,22 @@
 	background-color: white;
 }
 
+.port-header {
+	font-family: Poppins;
+	display: block;
+	padding: 5px;
+	color: black;
+	height: auto;
+	font-size: 18px;
+	background-color: white;
+}
+
 .card-header, .card-header h3 {
 	align-items: center;
 	font-family: Poppins;
 	font-size: 23px;
 	color: black;
+	padding-left: 15px;
 }
 
 .contact-card {
@@ -84,6 +96,7 @@
 .sfu-img {
 	height: 120vh;
 	width: 100%;
+	margin: auto;
 	object-fit: cover;
 	background-position: center;
 	background-size: cover;
@@ -178,8 +191,12 @@
 		flex-direction: column;
 	}
 
-	.my-img{
+	.my-img {
 		width: 95%;
+	}
+
+	.sfu-img {
+		height: 40vh;
 	}
 
 }

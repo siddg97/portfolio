@@ -2,13 +2,13 @@ import React from 'react';
 import {Layout, Typography, Icon, Divider} from 'antd';
 
 const {Header, Content} = Layout;
-const {Paragraph, Text} = Typography;
+const {Text} = Typography;
 
 class Home extends React.Component {
 	render(){
 		return(
 			<Layout className="l">
-				<Header className="hvr-underline-from-right header"><center> Siddharth Gupta </center></Header>
+				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Siddharth Gupta </Header>
 	            <Content>
 	              	<Typography className="home-content">
 	              		<b className="hvr-pulse greeting">Welcome!</b>

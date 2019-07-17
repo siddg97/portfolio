@@ -7,7 +7,7 @@ const { Header, Content } = Layout
 class Portfolio extends React.Component {
 	render(){
 		return(
-			<Tabs defaultActiveKey="1" size="default" tabBarGutter={10} style={{minHeight:"87.8vh"}}>
+			<Tabs defaultActiveKey="1" size="large" tabBarGutter={10} style={{minHeight:"87.8vh"}}>
 			    <TabPane
 			      tab={
 			        <span>
@@ -18,7 +18,7 @@ class Portfolio extends React.Component {
 			      key="1"
 			    >
 			        <Layout>
-			        	<Header className="hvr-underline-from-right header"> Simulation of the Producer-Consumer Problem </Header>
+			        	<Header className="hvr-underline-from-right port-header"> Producer-Consumer Problem </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item pcp-img" />
@@ -47,7 +47,7 @@ class Portfolio extends React.Component {
 			      key="2"
 			    >
 			    	<Layout>
-			    		<Header className="hvr-underline-from-right header"> Linux Command Shell with a few built-in commands in C </Header>
+			    		<Header className="hvr-underline-from-right port-header"> Linux Command C-Shell </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item shell-img" />
@@ -76,7 +76,7 @@ class Portfolio extends React.Component {
 			      key="3"
 			    >
 			    	<Layout>
-			    		<Header className="hvr-underline-from-right header"> Linux Kernel Patch with 2 system calls </Header>
+			    		<Header className="hvr-underline-from-right port-header"> Custom Linux Kernel Patch </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item kernel-img" />
@@ -105,7 +105,7 @@ class Portfolio extends React.Component {
 			      key="4"
 			    >
 			    	<Layout>
-			    		<Header className="hvr-underline-from-right header"> Memory Allocation and Deallocation Interfaces </Header>
+			    		<Header className="hvr-underline-from-right port-header"> Dynamic Memory Interfaces </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item mm-img" />
@@ -134,7 +134,7 @@ class Portfolio extends React.Component {
 			      key="5"
 			    >
 			    	<Layout>
-			    		<Header className="hvr-underline-from-right header"> A Scheme Expression Evaluator </Header>
+			    		<Header className="hvr-underline-from-right port-header"> Scheme Expression Evaluator </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item ee-img" />
@@ -163,7 +163,7 @@ class Portfolio extends React.Component {
 			      key="6"
 			    >
 			    	<Layout>
-			    	<Header className="hvr-underline-from-right header"> Search Algorithms and Heuristics </Header>
+			    	<Header className="hvr-underline-from-right port-header"> Search Algorithms and Heuristics </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item ep-img" />
@@ -193,7 +193,7 @@ class Portfolio extends React.Component {
 			      key="7"
 			    >
 			    	<Layout>
-			    	<Header className="hvr-underline-from-right header"> Search Algorithms and Heuristics </Header>
+			    	<Header className="hvr-underline-from-right port-header"> A-Star Search Algorithm </Header>
 				    	<Content>
 				    		<div className="flex-container">
 				    			<div className="flex-item ip-img" />

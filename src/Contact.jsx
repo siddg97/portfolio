@@ -70,7 +70,7 @@ class Contact extends React.Component {
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
-							<span className="card-header hvr-float">
+							<span className="card-header hvr-pulse">
 						        <b><Icon type="mail"/></b>
 						       	<b> Email </b>
 					        </span>
@@ -95,7 +95,7 @@ class Contact extends React.Component {
 							/>
 						</Card>
 						<Card title={
-							<span className="card-header hvr-float">
+							<span className="card-header hvr-pulse">
 						        <b><Icon type="bars"/></b>
 						       	<b> Forums </b>
 					        </span>
@@ -118,7 +118,7 @@ class Contact extends React.Component {
 							/>
 						</Card>
 						<Card title={
-							<span className="card-header hvr-float">
+							<span className="card-header hvr-pulse">
 						        <b><Icon type="team"/></b>
 						       	<b> Social Media </b>
 					        </span>
