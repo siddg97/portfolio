@@ -5,8 +5,11 @@
 	box-sizing: border-box;
 }
 .App {
-	min-height:100vh;
-	width: 100vw;
+	min-height: 100vh;
+}
+
+.l{
+	min-height: 87.8vh;
 }
 
 .nav_Head {
@@ -25,6 +28,7 @@
 	font-family: Poppins
 }
 
+
 .header {
 	font-family: Poppins;
 	display: block;
@@ -38,18 +42,18 @@
 .card-header, .card-header h3 {
 	align-items: center;
 	font-family: Poppins;
-	font-size: 30px;
+	font-size: 27px;
 	color: black;
 }
 
 .contact-card {
 	font-family: Poppins;
-	font-size: 25px;
+	font-size: 18px;
 }
 
 .toggle-theme {
 	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 .home-content {

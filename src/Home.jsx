@@ -6,14 +6,14 @@ const {Paragraph, Text} = Typography;
 
 class Home extends React.Component {
 	render(){
-		
 		return(
-			<Layout>
-				<Header className="header hvr-underline-from-right"> Siddharth Gupta </Header>
+			<Layout className="l">
+				<Header className="hvr-underline-from-right header"> Siddharth Gupta </Header>
 	            <Content>
 	            <center>
-	            	<Header className="header hvr-underline-from-right"> Welcome!! </Header>
+	            	<Header className="hvr-underline-from-right header"> Welcome!! </Header>
 	              	<Typography className="home-content">
+	              		<br/>
 		              	<Paragraph> I'm an international student from india studying computing science at Simon Fraser University, Burnaby, BC, Canada. I have a passion for technology and I enjoy programming to solve real world problems!</Paragraph>
 		              	<br/>
 		              	<Divider/>

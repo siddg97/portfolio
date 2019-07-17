@@ -3,7 +3,7 @@ import {Card, List, Layout,Typography, Icon} from 'antd';
 // import Typist from 'react-typist';
 
 const {Header, Content} = Layout;
-const {Paragraph, Text} = Typography;
+const {Paragraph} = Typography;
 
 
 const messages = [
@@ -27,7 +27,8 @@ const messages = [
 ];
 
 const email = [
-	'g.sidd97@gmail.com'
+	'g.sidd97@gmail.com',
+	'sg8797@gmail.com',
 ];
 
 const forums = [
@@ -56,22 +57,22 @@ class Contact extends React.Component {
 	    }, 2500);
   	}
 
-  	componentDidUnmount() {
+  	componentWillUnmount() {
 	    clearInterval(this.timeout);
 	}
 
 	render(){
-		const cardStyle = {margin:16, padding:0, boxSizing:'border-box'}
+		const cardStyle = {margin:10, padding:0, boxSizing:'border-box'}
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
-			<Layout>
+			<Layout className="l">
 				<Header className="header hvr-underline-from-right"> Lets get in touch! </Header>
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
 							<span className="hvr-float card-header">
 						        <b><Icon type="mail"/></b>
-						       	<h3> Email </h3>
+						       	<b> Email </b>
 					        </span>
 						}
 						bordered={false} 
@@ -86,7 +87,7 @@ class Contact extends React.Component {
 							    <List.Item>
 							    	<p className='contact-card'> 
 							        <a href={'mailto:'+ item}  rel="noopener noreferrer" className='contact-card hvr-grow' target='_blank'>
-							        	gsidd97@gmail
+							        	{item}
 							        </a>
 							        </p>
 							    </List.Item>
@@ -96,7 +97,7 @@ class Contact extends React.Component {
 						<Card title={
 							<span className="card-header hvr-float">
 						        <b><Icon type="bars"/></b>
-						       	<h3> Forums </h3>
+						       	<b> Forums </b>
 					        </span>
 						} 
 						bordered={true} 
@@ -119,7 +120,7 @@ class Contact extends React.Component {
 						<Card title={
 							<span className="card-header hvr-float">
 						        <b><Icon type="team"/></b>
-						       	<h3> Social Media </h3>
+						       	<b> Social Media </b>
 					        </span>
 						} 
 						bordered={true}
