@@ -61,7 +61,7 @@ class Contact extends React.Component {
 	}
 
 	render(){
-		const cardStyle = {margin:16, padding:0, boxSizing:'border-box'}
+		const cardStyle = {margin:10, padding:0, boxSizing:'border-box'}
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout>
@@ -71,7 +71,7 @@ class Contact extends React.Component {
 						<Card title={
 							<span className="hvr-float card-header">
 						        <b><Icon type="mail"/></b>
-						       	<h3> Email </h3>
+						       	<b> Email </b>
 					        </span>
 						}
 						bordered={false} 
@@ -96,7 +96,7 @@ class Contact extends React.Component {
 						<Card title={
 							<span className="card-header hvr-float">
 						        <b><Icon type="bars"/></b>
-						       	<h3> Forums </h3>
+						       	<b> Forums </b>
 					        </span>
 						} 
 						bordered={true} 
@@ -119,7 +119,7 @@ class Contact extends React.Component {
 						<Card title={
 							<span className="card-header hvr-float">
 						        <b><Icon type="team"/></b>
-						       	<h3> Social Media </h3>
+						       	<b> Social Media </b>
 					        </span>
 						} 
 						bordered={true}
