@@ -28,27 +28,38 @@
 	font-family: Poppins
 }
 
+.greeting {
+	font-family: Poppins;
+	display: block;
+	padding: 15px;
+	padding-top: 7px;
+	padding-left: 0px;
+	height: auto;
+	color: red;
+	font-size: 23px;
+	background: rgba(202, 211, 200,1.0);
+}
 
 .header {
 	font-family: Poppins;
 	display: block;
-	padding: 15px;
+	padding: 10px;
 	height: auto;
 	color: black;
-	font-size: 40px;
+	font-size: 23px;
 	background-color: white;
 }
 
 .card-header, .card-header h3 {
 	align-items: center;
 	font-family: Poppins;
-	font-size: 27px;
+	font-size: 23px;
 	color: black;
 }
 
 .contact-card {
 	font-family: Poppins;
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .toggle-theme {
@@ -81,7 +92,7 @@
 
 .my-img {
 	height: 60vh;
-	/*width: 30vw;*/
+	/*width: 90%;*/
 	margin: auto;
 	object-fit: cover;
 	background-position: center;
@@ -165,6 +176,10 @@
 	.flex-container {
 		/*display: block;*/
 		flex-direction: column;
+	}
+
+	.my-img{
+		width: 95%;
 	}
 
 }

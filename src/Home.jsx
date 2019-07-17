@@ -8,22 +8,16 @@ class Home extends React.Component {
 	render(){
 		return(
 			<Layout className="l">
-				<Header className="hvr-underline-from-right header"> Siddharth Gupta </Header>
+				<Header className="hvr-underline-from-right header"><center> Siddharth Gupta </center></Header>
 	            <Content>
-	            <center>
-	            	<Header className="hvr-underline-from-right header"> Welcome!! </Header>
 	              	<Typography className="home-content">
+	              		<b className="hvr-pulse greeting">Welcome!</b>
 	              		<br/>
-		              	<Paragraph> I'm an international student from india studying computing science at Simon Fraser University, Burnaby, BC, Canada. I have a passion for technology and I enjoy programming to solve real world problems!</Paragraph>
-		              	<br/>
+		              	Hi, my name is <b>Siddharth Gupta</b>.<br/>I am a <b>Software Developer</b>, <b>Thinker</b> and an undergraduate student.<br/> I also love to build things. One could say I am a <b>Builder</b>.<br/> I am originally from <b>India</b> but am currently studying in <b>Vancouver, Canada</b>.<br/>
 		              	<Divider/>
-		              	<br/>
-		              	<center>
-		              		<Text strong> To know more about me, view the About page on this website. You can also view my resume by clicking below!</Text><br/><br/>
-		              		<a href="https://docs.google.com/document/d/14Z7tUfuLhwx0lKbJViNPtkLvyQ2UkHJis1XB7bExJeI/edit?usp=sharing" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="container" style={{fontSize: 80}} /></a>
-		              	</center>
-	              </Typography>
-	            </center>
+	              		<center><Text strong> To know more about me, view the About page on this website. You can also view my resume by clicking below!</Text><br/><br/></center>
+	              		<center><a href="https://docs.google.com/document/d/14Z7tUfuLhwx0lKbJViNPtkLvyQ2UkHJis1XB7bExJeI/edit?usp=sharing" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="container" style={{fontSize: 80}} /></a></center>
+	              	</Typography>
 	            </Content>
 	        </Layout>
 		)

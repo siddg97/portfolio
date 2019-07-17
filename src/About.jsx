@@ -13,7 +13,7 @@ class About extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="smile"/>
+			          <Icon type="user"/>
 			          About Me
 			        </span>
 			      }
@@ -21,7 +21,7 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right"> A little about me.... </Header>
+				    		<Header className="hvr-underline-from-right header"> A little about me.... </Header>
 				    		<Typography className="about-content">
 				    			<center><img src={my} className="my-img" alt=''/></center>
 				    			<Divider/>
@@ -46,7 +46,7 @@ class About extends React.Component {
 			    >
 				    <Layout>
 				       	<Content className="content-style">
-				       		<Header className="header hvr-underline-from-right"> Simon Fraser university, Burnaby, BC </Header>
+				       		<Header className="hvr-underline-from-right header"> Simon Fraser University</Header>
 							<img src={sfu4} className="sfu-img" alt=''/>
 				       		<Typography className="about-content">
 				    			<Divider/>

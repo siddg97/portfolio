@@ -7,7 +7,7 @@ const { Header, Content } = Layout
 class Portfolio extends React.Component {
 	render(){
 		return(
-			<Tabs defaultActiveKey="1" size="large" tabBarGutter={20} style={{minHeight:"87.8vh"}}>
+			<Tabs defaultActiveKey="1" size="default" tabBarGutter={10} style={{minHeight:"87.8vh"}}>
 			    <TabPane
 			      tab={
 			        <span>
@@ -18,8 +18,8 @@ class Portfolio extends React.Component {
 			      key="1"
 			    >
 			        <Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> Simulation of the Producer-Consumer Problem </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> Simulation of the Producer-Consumer Problem </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item pcp-img" />
 				    			<div className="flex-item">
@@ -47,8 +47,8 @@ class Portfolio extends React.Component {
 			      key="2"
 			    >
 			    	<Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> Linux Command Shell with a few built-in commands in C </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> Linux Command Shell with a few built-in commands in C </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item shell-img" />
 				    			<div className="flex-item">
@@ -76,8 +76,8 @@ class Portfolio extends React.Component {
 			      key="3"
 			    >
 			    	<Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> Linux Kernel Patch with 2 system calls </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> Linux Kernel Patch with 2 system calls </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item kernel-img" />
 				    			<div className="flex-item">
@@ -105,8 +105,8 @@ class Portfolio extends React.Component {
 			      key="4"
 			    >
 			    	<Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> Memory Allocation and Deallocation Interfaces </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> Memory Allocation and Deallocation Interfaces </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item mm-img" />
 				    			<div className="flex-item">
@@ -134,8 +134,8 @@ class Portfolio extends React.Component {
 			      key="5"
 			    >
 			    	<Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> A Scheme Expression Evaluator </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> A Scheme Expression Evaluator </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ee-img" />
 				    			<div className="flex-item">
@@ -163,8 +163,8 @@ class Portfolio extends React.Component {
 			      key="6"
 			    >
 			    	<Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> Search Algorithms and Heuristics </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> Search Algorithms and Heuristics </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ep-img" />
 				    			<div className="flex-item">
@@ -193,8 +193,8 @@ class Portfolio extends React.Component {
 			      key="7"
 			    >
 			    	<Layout>
-				    	<Content className="content-style">
-				    		<Header className="header hvr-underline-from-right flow-text"> Search Algorithms and Heuristics </Header>
+				    	<Content>
+				    		<Header className="hvr-underline-from-right header"> Search Algorithms and Heuristics </Header>
 				    		<div className="flex-container">
 				    			<div className="flex-item ip-img" />
 				    			<div className="flex-item">
