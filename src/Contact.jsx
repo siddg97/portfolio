@@ -69,14 +69,10 @@ class Contact extends React.Component {
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
-							<div className='email-bg' style={{margin:0, boxSizing:'border-box'}}>
-								<center>
-									<span className="hvr-grow card-header" style={{color:'yellow'}}>
-								        <b><Icon type="mail"/></b>
-								       	<h3 style={{color:'yellow'}}> Email </h3>
-							        </span>
-						        </center>
-					        </div>
+							<span className="hvr-float card-header">
+						        <b><Icon type="mail"/></b>
+						       	<h3> Email </h3>
+					        </span>
 						}
 						bordered={false} 
 						hoverable={false}
@@ -98,14 +94,10 @@ class Contact extends React.Component {
 							/>
 						</Card>
 						<Card title={
-							<div className='forum-bg'>
-								<center>
-									<span className="card-header hvr-grow" style={{color:'yellow'}}>
-								        <b><Icon type="bars"/></b>
-								       	<h3 style={{color:'yellow'}}> Forums </h3>
-							        </span>
-						        </center>
-					       	</div>
+							<span className="card-header hvr-float">
+						        <b><Icon type="bars"/></b>
+						       	<h3> Forums </h3>
+					        </span>
 						} 
 						bordered={true} 
 						hoverable={true}
@@ -125,14 +117,10 @@ class Contact extends React.Component {
 							/>
 						</Card>
 						<Card title={
-							<div className='sm-bg'>
-								<center>
-									<span className="card-header hvr-grow" style={{color:'yellow'}}>
-								        <b><Icon type="team"/></b>
-								       	<h3 style={{color:'yellow'}}> Social Media </h3>
-							        </span>
-						        </center>
-					      	</div>
+							<span className="card-header hvr-float">
+						        <b><Icon type="team"/></b>
+						       	<h3> Social Media </h3>
+					        </span>
 						} 
 						bordered={true}
 						hoverable={true}
