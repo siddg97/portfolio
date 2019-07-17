@@ -10,7 +10,7 @@ class Portfolio extends React.Component {
 			<Tabs defaultActiveKey="1" size="large" tabBarGutter={20} style={{minHeight:"87.8vh"}}>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="box-plot" />
 			          Bounded - Buffer Problem
 			        </span>
@@ -23,7 +23,7 @@ class Portfolio extends React.Component {
 				    		<div className="flex-container">
 				    			<div className="flex-item pcp-img" />
 				    			<div className="flex-item">
-						    		<Typography className="about-content flow-text">
+						    		<Typography className="about-content">
 									   	<Paragraph>
 									    	While studying the course CMPT300 (Operating Systems I) at Simon Fraser University in the Spring 2019 session, I made a mutli-threaded C program called candykids. candykids simulated the producer-consumer problem in which children ate candies from a bounded-buffer and factories produced candies in the same bounded-buffer. The aim of the simulation was to avoid any type of race conditions and prevent a deadlock from occuring. I used the POSIX Threads library to be able to satisfy the synchronization of the use of the common bounded buffer between factories and children using pthread mutex locks and semaphores.
 									    </Paragraph>
@@ -39,7 +39,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="code" />
 			        	Bash Shell Script
 			        </span>
@@ -68,7 +68,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="deployment-unit" />
 			          Custom Linux Kernel
 			        </span>
@@ -97,7 +97,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="cluster" />
 			          Memory Management Interface
 			        </span>
@@ -126,7 +126,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="interaction" />
 			          Expression Evaluator
 			        </span>
@@ -155,7 +155,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="table" />
 			          8-Puzzle Problem Experiment
 			        </span>
@@ -185,7 +185,7 @@ class Portfolio extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header flow-text">
+			        <span>
 			          <Icon type="radar-chart" />
 			          Ice-Breaker Problem Experiment
 			        </span>

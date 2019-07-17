@@ -171,6 +171,7 @@
 
 .flex-item {
 	flex: 50%;
+	/*min-height: 87.8vh; */
 }
 
 /* Underline From Center */
