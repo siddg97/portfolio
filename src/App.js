@@ -13,7 +13,7 @@ const { Content, Footer, Sider } = Layout;
 class App extends Component {
   state = {
     theme: 'dark',
-    collapsed: false
+    collapsed: true
   }
 
   changeTheme = value => {
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px"};
     return (
-      <div className="App">
+      <div className="App flow-text">
         <Layout>
           <Sider
             breakpoint="lg"
@@ -48,12 +48,12 @@ class App extends Component {
                   onChange={this.changeTheme}
                   checkedChildren={this.state.collapsed ? 'Dark':'Dark Mode'}
                   unCheckedChildren={this.state.collapsed ? 'Light':'Light Mode'}
-                  className="toggle-theme"
+                  className="toggle-theme flow-text"
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
-                <Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} />
-                <span className="nav_Header">NAVIGATION</span>
+                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} /></center>
+                <span className="nav_Header">Expand Navigation</span>
               </Menu.Item>
               <Menu.Item key="1" className="hvr-underline-from-center">
                 <Link to="/">

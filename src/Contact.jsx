@@ -70,13 +70,13 @@ class Contact extends React.Component {
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
-							<span className="hvr-float card-header">
+							<span className="card-header hvr-float">
 						        <b><Icon type="mail"/></b>
 						       	<b> Email </b>
 					        </span>
 						}
-						bordered={false} 
-						hoverable={false}
+						bordered={true} 
+						hoverable={true}
 						style={cardStyle}
 						>
 							<Paragraph className="contact-card">Mail me <b style={{color:'blue'}}>{dText}</b> at:</Paragraph>

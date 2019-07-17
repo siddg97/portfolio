@@ -12,7 +12,7 @@ class About extends React.Component {
 			<Tabs defaultActiveKey="1" size="large" type="line">
 			    <TabPane
 			      tab={
-			        <span className="card-header">
+			        <span>
 			          <Icon type="smile"/>
 			          About Me
 			        </span>
@@ -37,9 +37,9 @@ class About extends React.Component {
 			    </TabPane>
 			    <TabPane
 			      tab={
-			        <span className="card-header">
+			        <span>
 			          <Icon type="book"/>
-			          Education
+			          My Education
 			        </span>
 			      }
 			      key="2"

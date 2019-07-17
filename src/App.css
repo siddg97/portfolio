@@ -1,9 +1,9 @@
-/*@import '~antd/dist/antd.css';*/
 @import url('https://fonts.googleapis.com/css?family=Arvo|Poppins:500&display=swap');
 
 *{
 	box-sizing: border-box;
 }
+
 .App {
 	min-height: 100vh;
 }
@@ -171,6 +171,7 @@
 
 .flex-item {
 	flex: 50%;
+	/*min-height: 87.8vh; */
 }
 
 /* Underline From Center */
@@ -309,3 +310,28 @@
 	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
 }
+
+/*
+.card-container > .ant-tabs-card > .ant-tabs-content {
+  height: 120px;
+  margin-top: -16px;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+  background: #fff;
+  padding: 16px;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar {
+  border-color: #fff;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+  border-color: transparent;
+  background: transparent;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+  border-color: #fff;
+  background: #fff;
+}*/
