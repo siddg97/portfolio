@@ -6,13 +6,14 @@ const { TabPane } = Tabs;
 const { Header, Content } = Layout
 class APort extends React.Component {
 	render(){
+		const iStyle={fontSize:25,color:'blue'};
 		return(
 			<Tabs defaultActiveKey="1" size="large" tabBarGutter={10} tabPosition={'left'} style={{minHeight:"87.8vh"}}>
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="box-plot" />
-			          Bounded - Buffer Problem
+			        	Bounded - Buffer Problem{"   "}
+			        	<Icon type="box-plot" style={iStyle} />
 			        </span>
 			      }
 			      key="1"
@@ -40,8 +41,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="code" />
-			        	Bash Shell Script
+			        	Bash Shell Script{"   "}
+			        	<Icon type="code" style={iStyle}/>
 			        </span>
 			      }
 			      key="2"
@@ -69,8 +70,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="deployment-unit" />
-			          Custom Linux Kernel
+			        	Custom Linux Kernel{"   "}
+			        	<Icon type="deployment-unit" style={iStyle}/>
 			        </span>
 			      }
 			      key="3"
@@ -98,8 +99,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="cluster" />
-			          Memory Management Interface
+			        Memory Management Interface{"   "}
+			        <Icon type="cluster" style={iStyle}/>
 			        </span>
 			      }
 			      key="4"
@@ -127,8 +128,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="interaction" />
-			          Expression Evaluator
+				        Expression Evaluator{"   "}
+				        <Icon type="interaction" style={iStyle}/>
 			        </span>
 			      }
 			      key="5"
@@ -156,8 +157,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="table" />
-			          8-Puzzle Problem Experiment
+			        	8-Puzzle Problem Experiment{"   "}
+			        	<Icon type="table" style={iStyle}/>
 			        </span>
 			      }
 			      key="6"
@@ -186,8 +187,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="radar-chart" />
-			          Ice-Breaker Problem Experiment
+			        	Ice-Breaker Problem Experiment{"   "}
+			        	<Icon type="radar-chart" style={iStyle}/>
 			        </span>
 			      }
 			      key="7"
@@ -216,8 +217,8 @@ class APort extends React.Component {
 			    <TabPane
 			      tab={
 			        <span>
-			          <Icon type="calculator" />
-			          RPN Calculator
+			        	RPN Calculator{"   "}
+			        	<Icon type="calculator" style={iStyle}/>
 			        </span>
 			      }
 			      key="8"
