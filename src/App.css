@@ -105,7 +105,6 @@
 
 .my-img {
 	height: 60vh;
-	/*width: 90%;*/
 	margin: auto;
 	object-fit: cover;
 	background-position: center;
@@ -118,16 +117,13 @@
 }
 
 .pcp-img{
-	/*height: auto;*/
 	width: 100%;
 	background-image: url("./Images/pcp.png");
-	/*background-position: center;*/
-	background-size: cover;
+	background-size: fit;
 	background-repeat: none;
 }
 
 .kernel-img{
-	/*height: auto;*/
 	width: 100%;
 	background-image: url("./Images/kernel.png");
 	background-position: center;
@@ -136,45 +132,38 @@
 }
 
 .shell-img{
-	/*height: auto;*/
 	width: 100%;
 	background-image: url("./Images/shell.png");
-	/*background-position: center;*/
 	background-size: cover;
 	background-repeat: none;
 }
 
 .mm-img{
-	/*height: auto;*/
 	width: 100%;
 	background-image: url("./Images/mm.jpg");
-	/*background-position: center;*/
 	background-size: cover;
 	background-repeat: none;
 }
 
 .ee-img{
-	/*height: auto;*/
 	width: 100%;
 	background-image: url("./Images/ee.png");
-	/*background-position: center;*/
-	background-size: cover;
+	background-size: fit;
 	background-repeat: none;
 }
 
 .ep-img{
-	/*height: auto;*/
+	height: auto;
 	width: 100%;
-	background-image: url("./Images/ep.jpg");
-	background-position: right;
+	background-image: url("./Images/ep.png");
+	background-position: center;
 	background-size: cover;
 	background-repeat: none;
 }
 
 .ip-img{
-	/*height: auto;*/
 	width: 100%;
-	background-image: url("./Images/ip.png");
+	background-image: url("./Images/ibp.png");
 	background-position: center;
 	background-size: cover;
 	background-repeat: none;
@@ -187,7 +176,6 @@
 
 @media (max-width: 600px) {
 	.flex-container {
-		/*display: block;*/
 		flex-direction: column;
 	}
 
@@ -203,7 +191,6 @@
 
 .flex-item {
 	flex: 50%;
-	/*min-height: 87.8vh; */
 }
 
 /* Underline From Center */
