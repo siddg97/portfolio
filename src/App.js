@@ -50,7 +50,7 @@ class App extends Component {
   render() {
     const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px",border:0};
     return (
-      <div className="App flow-text">
+      <div className="App">
         <Layout>
           <Sider
             breakpoint="lg"
@@ -72,7 +72,7 @@ class App extends Component {
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
-                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"30px"}} /></center>
+                <center><Icon type={this.state.collapsed ? 'menu':'close'} style={{"fontSize":"20px"}} /></center>
                 <span className="nav_Header">Expand Navbar</span>
               </Menu.Item>
               <Menu.Item key="1" onClick={this.handleMenuClick}className="hvr-underline-from-center">
