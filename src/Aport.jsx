@@ -17,7 +17,7 @@ class APort extends React.Component {
 			      }
 			      key="1"
 			    >
-			        <Layout>
+			        <Layout style={{minHeight:"90vh"}}>
 			        	<Header className="hvr-underline-from-right port-header"> Producer-Consumer Problem </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -46,7 +46,7 @@ class APort extends React.Component {
 			      }
 			      key="2"
 			    >
-			    	<Layout>
+			    	<Layout style={{minHeight:"90vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Linux Command C-Shell </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -75,7 +75,7 @@ class APort extends React.Component {
 			      }
 			      key="3"
 			    >
-			    	<Layout>
+			    	<Layout style={{minHeight:"90vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Custom Linux Kernel Patch </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -104,7 +104,7 @@ class APort extends React.Component {
 			      }
 			      key="4"
 			    >
-			    	<Layout>
+			    	<Layout style={{minHeight:"90vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Dynamic Memory Interfaces </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -133,7 +133,7 @@ class APort extends React.Component {
 			      }
 			      key="5"
 			    >
-			    	<Layout>
+			    	<Layout style={{minHeight:"90vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Scheme Expression Evaluator </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -162,7 +162,7 @@ class APort extends React.Component {
 			      }
 			      key="6"
 			    >
-			    	<Layout>
+			    	<Layout style={{minHeight:"90vh"}}>
 			    	<Header className="hvr-underline-from-right port-header"> Search Algorithms and Heuristics </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -192,7 +192,7 @@ class APort extends React.Component {
 			      }
 			      key="7"
 			    >
-			    	<Layout>
+			    	<Layout style={{minHeight:"90vh"}}>
 			    	<Header className="hvr-underline-from-right port-header"> A-Star Search Algorithm </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -207,6 +207,35 @@ class APort extends React.Component {
 									    </Paragraph>
 									    <br/><br/><br/>
 									    <center><a href="https://github.com/siddg97/aima-python/tree/a2" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
+						    		</Typography>
+						    	</div>
+					    	</div>
+				    	</Content>
+				    </Layout>
+			    </TabPane>
+			    <TabPane
+			      tab={
+			        <span>
+			          <Icon type="calculator" />
+			          RPN Calculator
+			        </span>
+			      }
+			      key="8"
+			    >
+			    	<Layout style={{minHeight:"90vh"}}>
+			    		<Header className="hvr-underline-from-right port-header"> Haskell Postfix Calculator </Header>
+				    	<Content>
+				    		<div className="flex-container">
+				    			<div className="flex-item hc-img" />
+				    			<div className="flex-item">
+						    		<Typography className="about-content flow-text">
+									   	<Paragraph>
+									    	While studying the course CMPT383 (Comparative Programming Languages) at Simon Fraser University in the Summer 2019 session, I implemented a calculator in Haskell. I set up a stack ADT in which arguments can be stored and then certain operations can be performed on them. The expressions it can evaluate are similar to the RPN or Postfix expression syntax and supports several operations.
+									    </Paragraph>
+									    <Paragraph>
+									    	You can find the source code for this project on <a href="https://github.com/siddg97/RPN-Calculator" target="_blank" rel="noopener noreferrer">GitHub</a>. If you like this project do star the GitHub repository. If you would like to suggest ammends to this project you can fork the repository, make ammends and then open a pull request. All contributions are appreciated!
+									    </Paragraph><br/><br/><br/>
+									    <center><a href="https://github.com/siddg97/RPN-Calculator" className="hvr-pulse" target="_blank" rel="noopener noreferrer"><Icon type="github" style={{fontSize:80, color:'black'}}/></a></center>
 						    		</Typography>
 						    	</div>
 					    	</div>

@@ -169,6 +169,13 @@
 	background-repeat: none;
 }
 
+.hc-img{
+	width: 100%;
+	background-image: url("./Images/hc.png");
+	background-size: cover;
+	background-repeat: none;
+}
+
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;
