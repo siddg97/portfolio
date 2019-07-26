@@ -48,7 +48,7 @@ class App extends Component {
   };
 
   render() {
-    const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px"};
+    const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px",border:0};
     return (
       <div className="App flow-text">
         <Layout>
