@@ -8,6 +8,19 @@
 	min-height: 100vh;
 }
 
+.h-timeline {
+	padding: 30px;
+}
+
+.top-btn {
+	background-color: #FF0000;
+	color: white;
+	text-align: center;
+	border-radius: 99px;
+	font-size: 20px;
+	width: auto;
+}
+
 .l{
 	min-height: 87.8vh;
 	width: auto;
