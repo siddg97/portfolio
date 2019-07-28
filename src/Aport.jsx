@@ -6,7 +6,7 @@ const { TabPane } = Tabs;
 const { Header, Content } = Layout
 class APort extends React.Component {
 	render(){
-		const iStyle={fontSize:25,color:'blue'};
+		const iStyle={fontSize:25};
 		return(
 			<Tabs defaultActiveKey="1" size="large" tabBarGutter={10} tabPosition={'left'} style={{minHeight:"87.8vh"}}>
 			    <TabPane
@@ -18,7 +18,7 @@ class APort extends React.Component {
 			      }
 			      key="1"
 			    >
-			        <Layout style={{minHeight:"90vh"}}>
+			        <Layout style={{minHeight:"95vh"}}>
 			        	<Header className="hvr-underline-from-right port-header"> Producer-Consumer Problem </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -47,7 +47,7 @@ class APort extends React.Component {
 			      }
 			      key="2"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Linux Command C-Shell </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -76,7 +76,7 @@ class APort extends React.Component {
 			      }
 			      key="3"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Custom Linux Kernel Patch </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -105,7 +105,7 @@ class APort extends React.Component {
 			      }
 			      key="4"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Dynamic Memory Interfaces </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -134,7 +134,7 @@ class APort extends React.Component {
 			      }
 			      key="5"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Scheme Expression Evaluator </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -163,7 +163,7 @@ class APort extends React.Component {
 			      }
 			      key="6"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    	<Header className="hvr-underline-from-right port-header"> Search Algorithms and Heuristics </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -193,7 +193,7 @@ class APort extends React.Component {
 			      }
 			      key="7"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    	<Header className="hvr-underline-from-right port-header"> A-Star Search Algorithm </Header>
 				    	<Content>
 				    		<div className="flex-container">
@@ -223,7 +223,7 @@ class APort extends React.Component {
 			      }
 			      key="8"
 			    >
-			    	<Layout style={{minHeight:"90vh"}}>
+			    	<Layout style={{minHeight:"95vh"}}>
 			    		<Header className="hvr-underline-from-right port-header"> Haskell Postfix Calculator </Header>
 				    	<Content>
 				    		<div className="flex-container">

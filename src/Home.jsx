@@ -12,7 +12,7 @@ class Home extends React.Component {
 		return(
 			<Layout className="l">
 				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> My Story</Header>
-	            <Content className="h-timeline">
+	            <Content className="timeline">
 	              	<Timeline mode={this.props.mode}>
 	              		<Timeline.Item color="black">
 	              			<strong style={{fontSize:20, color:"black"}}>Hi !</strong>
