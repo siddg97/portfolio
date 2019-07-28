@@ -11,11 +11,11 @@ class Home extends React.Component {
 	render(){
 		return(
 			<Layout className="l">
-				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> My Story</Header>
+				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Welcome</Header>
 	            <Content className="timeline">
 	              	<Timeline mode={this.props.mode}>
-	              		<Timeline.Item color="black">
-	              			<strong style={{fontSize:20, color:"black"}}>Hi !</strong>
+	              		<Timeline.Item color="gray">
+	              			<strong style={{fontSize:20, color:"gray"}}>This is my story</strong>
 	              		</Timeline.Item>
 	              		<Timeline.Item color="green">
 	              			<Text strong>{"  "}My name is  <br/><strong style={{fontSize:20, color:"#52c41a"}}>Siddharth Gupta</strong></Text>
