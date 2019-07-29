@@ -6,9 +6,9 @@ const { TabPane } = Tabs;
 const { Header, Content } = Layout
 class APort extends React.Component {
 	render(){
-		const iStyle={fontSize:25, color:'blue'};
+		const iStyle={fontSize:20, color:'blue'};
 		return(
-			<Tabs defaultActiveKey="1" size="large" tabBarGutter={10} tabPosition={'left'} style={{minHeight:"87.8vh"}}>
+			<Tabs tabBarGutter={45} tabPosition={'top'} style={{minHeight:"87.8vh"}}>
 				<TabPane
 				  tab={
 					<span>
@@ -99,7 +99,7 @@ class APort extends React.Component {
 				<TabPane
 				  tab={
 					<span>
-					Memory Management Interface{"   "}
+					Memory Management {"   "}
 					<Icon type="cluster" style={iStyle}/>
 					</span>
 				  }
@@ -157,7 +157,7 @@ class APort extends React.Component {
 				<TabPane
 				  tab={
 					<span>
-						8-Puzzle Problem Experiment{"   "}
+						8-Puzzle Problem {"   "}
 						<Icon type="table" style={iStyle}/>
 					</span>
 				  }
@@ -187,7 +187,7 @@ class APort extends React.Component {
 				<TabPane
 				  tab={
 					<span>
-						Ice-Breaker Problem Experiment{"   "}
+						Ice-Breaker Problem{"   "}
 						<Icon type="radar-chart" style={iStyle}/>
 					</span>
 				  }

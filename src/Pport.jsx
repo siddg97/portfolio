@@ -9,7 +9,7 @@ class Pport extends React.Component {
 	render(){
 		const iStyle = {fontSize:25, color:'green'}
 		return(
-			<Tabs defaultActiveKey="1" size="large" tabBarGutter={10} tabPosition={'left'} style={{minHeight:"87.8vh"}}>
+			<Tabs defaultActiveKey="1" tabPosition={'top'} style={{minHeight:"87.8vh"}}>
 				<TabPane
 				  tab={
 					<span>
