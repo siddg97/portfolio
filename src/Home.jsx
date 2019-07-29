@@ -5,9 +5,6 @@ const {Header, Content} = Layout;
 const {Text} = Typography;
 
 class Home extends React.Component {
-	// constructor(props){
-	// 	super(props);
-	// }
 	render(){
 		return(
 			<Layout className="l">
@@ -51,7 +48,7 @@ class Home extends React.Component {
 	              			<Text strong>{"  "}Here is my <br/>
 		              			<a href="https://docs.google.com/document/d/14Z7tUfuLhwx0lKbJViNPtkLvyQ2UkHJis1XB7bExJeI/edit?usp=sharing" className="hvr-pulse" target="_blank" rel="noopener noreferrer">
 		              				<strong style={{fontSize:20, color:"#1890ff"}}> 
-		              					Resume
+		              					<underline>Resume</underline>
 		              				</strong>
 		              			</a>
 	              			</Text>

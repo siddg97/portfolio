@@ -102,8 +102,8 @@
 .about-content {
 	padding: 24px;
 	font-family: Poppins;
-	font-size: 18px;
-	background: rgba(202, 211, 200,1.0);
+	font-size: 16px;
+	/*background: rgba(202, 211, 200,1.0);*/
 	min-height:75vh;
 }
 
@@ -133,31 +133,34 @@
 .pcp-img{
 	width: 100%;
 	background-image: url("./Images/pcp.png");
-	background-size: fit;
-	background-repeat: none;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .kernel-img{
 	width: 100%;
 	background-image: url("./Images/kernel.png");
-	background-position: center;
-	background-size: cover;
-	background-repeat: none;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .shell-img{
 	width: 100%;
 	background-image: url("./Images/shell.png");
-	background-size: cover;
-	background-repeat: none;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .mm-img{
 	width: 100%;
 	background-image: url("./Images/mm.jpg");
 	background-size: cover;
-	background-repeat: none;
-	background-position: center;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .ee-img{
@@ -171,24 +174,31 @@
 	height: auto;
 	width: 100%;
 	background-image: url("./Images/ep.png");
-	background-position: center;
-	background-size: cover;
-	background-repeat: none;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .ip-img{
 	width: 100%;
 	background-image: url("./Images/ibp.png");
-	background-position: center;
-	background-size: cover;
-	background-repeat: none;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .hc-img{
-	width: 100%;
 	background-image: url("./Images/hc.png");
-	background-size: cover;
-	background-repeat: none;
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.cp-img{
+	background-image: url("./Images/cp.png");
+	background-size: contain;
+	background-position: top;
+	background-repeat: no-repeat;
 }
 
 .flex-container {
