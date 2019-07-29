@@ -8,7 +8,7 @@ const { TabPane } = Tabs;
 class Portfolio extends React.Component {
 	render(){
 		return(
-			<Tabs size="large" tabBarGutter={10} style={{minHeight:"87.8vh"}}>
+			<Tabs size="large" style={{minHeight:"87.8vh"}}>
 			    <TabPane 
 			    	tab={
 			    		<span>
