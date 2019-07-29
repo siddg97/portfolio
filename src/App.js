@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {Link, Route} from "react-router-dom";
 import {Switch as RouteSwitch} from 'react-router-dom';
-import {Layout, Menu, Icon, Switch} from 'antd';
+import {Layout, Menu, Icon, Switch, BackTop, Tooltip} from 'antd';
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Portfolio from './Portfolio.jsx'
@@ -14,7 +14,8 @@ class App extends Component {
   state = {
     theme: 'dark',
     collapsed: true,
-    selectedKeys:[]
+    selectedKeys:[],
+    hmode:'left'
   };
 
   handleMenuClick = value => {
@@ -43,14 +44,20 @@ class App extends Component {
     path_map['/portfolio']='3';
     path_map['/contact']='4';
     this.setState({
-      selectedKeys:[path_map[curr_path]]
+      selectedKeys:[path_map[curr_path]],
+      hmode: window.screen.width < 457 ? "left" : "alternate"
     });
   };
 
   render() {
-    const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px"};
+    const mStyle = {height:"100vh","paddingTop":"13px", "fontSize":"25px",border:0};
     return (
-      <div className="App flow-text">
+      <div className="App">
+        <Tooltip title="Top of page">
+          <BackTop visibilityHeight={50}>
+            <div className="top-btn"><Icon type="up-circle"/></div>
+          </BackTop>
+        </Tooltip>
         <Layout>
           <Sider
             breakpoint="lg"
@@ -72,7 +79,7 @@ class App extends Component {
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
-                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"30px"}} /></center>
+                <center><Icon type={this.state.collapsed ? 'menu':'close'} style={{"fontSize":"20px"}} /></center>
                 <span className="nav_Header">Expand Navbar</span>
               </Menu.Item>
               <Menu.Item key="1" onClick={this.handleMenuClick}className="hvr-underline-from-center">
@@ -103,7 +110,7 @@ class App extends Component {
           </Sider>
           <Layout>
             <RouteSwitch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={(props) => <Home {...props} mode={this.state.hmode} />} />
               <Route path="/about" component={About} />
               <Route path="/portfolio" component={Portfolio} />
               <Route path="/contact" component={Contact} />
