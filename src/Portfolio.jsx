@@ -1,35 +1,27 @@
 import React from "react";
-import { Tabs } from 'antd';
+import { Layout,Collapse } from 'antd';
 import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 
-const { TabPane } = Tabs;
+const { Panel } = Collapse;
+const {Header,Content} = Layout;
 
 class Portfolio extends React.Component {
 	render(){
 		return(
-			<Tabs size="large" style={{minHeight:"87.8vh"}}>
-			    <TabPane 
-			    	tab={
-			    		<span>
-				          Academic Projects
-				        </span>
-			    	}
-			    	key="1"
-			    >
-			    	<Aport/>
-			    </TabPane>
-			    <TabPane
-			    	tab={
-			        	<span>
-			    			Personal Projects
-			    		</span>
-			    	}
-			    	key="2"
-			    >
-			    	<Pport />	
-			    </TabPane>
-			</Tabs>
+			<Layout className="l">
+				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Portfolio </Header>
+				<Content>
+					<Collapse accordion defaultActiveKey="1">
+						<Panel header="Academic Projects" key="1">
+							<Aport/>
+						</Panel>
+						<Panel header="Personal Projects" key="2">
+							<Pport/>
+						</Panel>
+					</Collapse>
+				</Content>
+			</Layout>
 		);
 	}
 }

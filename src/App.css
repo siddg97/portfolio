@@ -104,7 +104,7 @@
 	font-family: Poppins;
 	font-size: 16px;
 	/*background: rgba(202, 211, 200,1.0);*/
-	min-height:75vh;
+	/*min-height:75vh;*/
 }
 
 .sfu-img {
@@ -196,9 +196,9 @@
 
 .cp-img{
 	background-image: url("./Images/cp.png");
-	background-size: contain;
+	/*background-size: contain;
 	background-position: top;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;*/
 }
 
 .flex-container {
