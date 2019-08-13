@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, List, Layout,Typography, Icon} from 'antd';
-// import Typist from 'react-typist';
 
 const {Header, Content} = Layout;
 const {Paragraph} = Typography;
@@ -66,7 +65,7 @@ class Contact extends React.Component {
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout className="l">
-				<Header className="hvr-underline-from-right header"> Lets get in touch! </Header>
+				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Lets get in touch! </Header>
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
