@@ -12,7 +12,7 @@ class Portfolio extends React.Component {
 			<Layout className="l">
 				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Portfolio </Header>
 				<Content>
-					<Collapse accordion defaultActiveKey="1">
+					<Collapse accordion >
 						<Panel header="Academic Projects" key="1">
 							<Aport/>
 						</Panel>
