@@ -24,7 +24,7 @@ class Pport extends React.Component {
 				projects.map((item,i) => 
 					<Col xs={20} sm={18} md={7} key={i}>
 						<Card hoverable title={item.header} style={{width:'auto',height:'650px'}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
-							<Paragraph> {item.descr} </Paragraph>
+							<Paragraph> {item.descr} </Paragraph><br/><br/>
 							<center>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a>
 							</center>

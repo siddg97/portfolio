@@ -4,7 +4,7 @@ import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 
 const { Panel } = Collapse;
-const {Header,Content} = Layout;
+const { Header,Content } = Layout;
 
 class Portfolio extends React.Component {
 	render(){

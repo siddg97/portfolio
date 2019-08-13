@@ -64,13 +64,11 @@
 	background-color: white;
 }
 
-.port-header {
+.about-header {
 	font-family: Poppins;
 	display: block;
-	padding: 5px;
 	color: black;
-	height: auto;
-	font-size: 18px;
+	font-size: 22px;
 	background-color: white;
 }
 
@@ -105,10 +103,8 @@
 	font-size: 16px;
 }
 
-
-
 .sfu-img {
-	height: 120vh;
+	height: 100vh;
 	width: 100%;
 	margin: auto;
 	object-fit: cover;
