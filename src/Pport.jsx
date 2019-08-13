@@ -10,25 +10,30 @@ const projects = [
 			iconType:"bg-colors",
 			git:"https://github.com/siddg97/colorP",
 			metaLink:"https://pypi.org/project/colorp/",
-			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles"
+			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
+			imgsrc:cp
 		},
 ];
 
 class Pport extends React.Component {
 	render(){
-		const iStyle = {fontSize:25, color:'black'}
+		const iStyle={fontSize:40, color:'black'};
 		return(
-			<Row>
-				<Col>
-					<Card hoverable title={projects[0].header} style={{width:240}} cover={<img alt="Image" className="hvr-grow" src={cp}/>}>
-						<Paragraph className=""> {projects[0].descr} </Paragraph>
-						<a href={projects[0].git} target="_blank" rel="noopener noreferrer" style={{color:"black"}} className="hvr-pulse"><Icon type="github" style={iStyle} /> </a>
-						<br/><a href={projects[0].metaLink} target="_blank" rel="noopener noreferrer"> More Info </a>
-					</Card>
-				</Col>
-				<Col>
-				</Col>
-			</Row>
+			<Row type="flex" justify="center" gutter={36}>
+				{
+				projects.map((item,i) => 
+					<Col xs={20} sm={18} md={7} key={i}>
+						<Card hoverable title={item.header} style={{width:'auto',height:'650px'}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
+							<Paragraph> {item.descr} </Paragraph>
+							<center>
+								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a>
+							</center>
+						</Card>
+					</Col>
+					)
+				}
+				
+			</Row>	
 		);
 	}
 }

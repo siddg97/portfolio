@@ -103,9 +103,9 @@
 	padding: 24px;
 	font-family: Poppins;
 	font-size: 16px;
-	/*background: rgba(202, 211, 200,1.0);*/
-	/*min-height:75vh;*/
 }
+
+
 
 .sfu-img {
 	height: 120vh;
@@ -126,85 +126,19 @@
 	background-repeat: none;
 }
 
+.card-img {
+	height: 40vh;
+	/*margin: auto;*/
+	object-fit: contain;
+	/*background-position: center;*/
+	background-size: cover;
+	background-repeat: none;
+}
+
 .sider {
 	z-index: 99;
 }
 
-.pcp-img{
-	width: 100%;
-	background-image: url("./Images/pcp.png");
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.kernel-img{
-	width: 100%;
-	background-image: url("./Images/kernel.png");
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.shell-img{
-	width: 100%;
-	background-image: url("./Images/shell.png");
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.mm-img{
-	width: 100%;
-	background-image: url("./Images/mm.jpg");
-	background-size: cover;
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.ee-img{
-	width: 100%;
-	background-image: url("./Images/ee.png");
-	background-size: fit;
-	background-repeat: none;
-}
-
-.ep-img{
-	height: auto;
-	width: 100%;
-	background-image: url("./Images/ep.png");
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.ip-img{
-	width: 100%;
-	background-image: url("./Images/ibp.png");
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.hc-img{
-	background-image: url("./Images/hc.png");
-	background-position: top;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.cp-img{
-	background-image: url("./Images/cp.png");
-	/*background-size: contain;
-	background-position: top;
-	background-repeat: no-repeat;*/
-}
-
-.flex-container {
-	display: flex;
-	flex-wrap: wrap;
-}
 
 @media (max-width: 600px) {
 	.flex-container {
@@ -219,12 +153,12 @@
 		height: 40vh;
 	}
 
+	.card-img {
+		height: 300px;
+	}
+
 }
 
-.flex-item {
-	flex: 50%;
-	height: 75vh;
-}
 
 /* Underline From Center */
 .hvr-underline-from-center {
