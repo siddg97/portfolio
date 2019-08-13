@@ -24,7 +24,7 @@ class Portfolio extends React.Component {
 			<Layout className="l">
 				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Portfolio </Header>
 				<Content>
-					<Collapse accordion defaultActiveKey="1">
+					<Collapse defaultActiveKey="1">
 						<Panel header="Github Contributions" key="1">
 							<div style={{padding:'16px'}}>
 								<center>
