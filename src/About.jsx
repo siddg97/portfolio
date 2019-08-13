@@ -15,7 +15,7 @@ class About extends React.Component {
 				<Content>
 					<Collapse defaultActiveKey="1">
 						<Panel header="About Me" key="1">
-							<Layout>
+							<Layout style={{backgroundColor:'#ececec'}}>
 								<Header className="hvr-underline-from-center about-header"> A little about me </Header>
 								<Content className="about-content">
 									<Text>
@@ -31,7 +31,7 @@ class About extends React.Component {
 							</Layout>
 						</Panel>
 						<Panel header="Education" key="2">
-							<Layout>
+							<Layout style={{backgroundColor:'#ececec'}}>
 								<Header className="hvr-underline-from-center about-header"> Simon Fraser University</Header>
 							   	<Content className="about-content">
 									<Text>

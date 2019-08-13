@@ -115,7 +115,7 @@ class App extends Component {
               <Route path="/portfolio" component={Portfolio} />
               <Route path="/contact" component={Contact} />
             </RouteSwitch>
-            <Footer>
+            <Footer style={{backgroundColor:'#fff'}}>
               <center>
                 <a href="https://github.com/siddg97/" className="hvr-float" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
                 <a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: '#3C5A99'}}/></a>

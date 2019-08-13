@@ -51,7 +51,7 @@ const projects=[
 		header:"IDA* Npuzzle Solver",
 		iconType:"table",
 		git:"https://github.com/siddg97/Npuzzle",
-		descr:"Programmed a C++ program for a memory efficient version of the A* algorithm to solve a given N-puzzle problem.",
+		descr:"Programmed a memory efficient version of the A* algorithm to solve a given N-puzzle problem in C++.",
 		imgsrc:ep
 	},
 	{
@@ -70,8 +70,8 @@ class APort extends React.Component {
 			<Row type="flex" justify="center" gutter={36}>
 				{
 				projects.map((item,i) => 
-					<Col xs={20} sm={18} md={7} key={i}>
-						<Card hoverable title={item.header} style={{width:'auto',height:'650px'}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
+					<Col xs={20} sm={18} md={12} key={i}>
+						<Card hoverable title={item.header} style={{width:'auto',height:'auto',margin:16}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
 							<Paragraph> {item.descr} </Paragraph><br/><br/>
 							<center>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a>

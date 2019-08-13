@@ -10,9 +10,10 @@ module.exports = override(
    		javascriptEnabled: true,
    		modifyVars: {
    			'@primary-color': '#B22222',
-        '@layout-body-background': '#f1f2f6',
+        '@layout-body-background': '#fff',
         '@layout-sider-background-light' : '#FFF',
         '@menu-bg': '#FFF',
+        '@collapse-content-padding':'0px'
    		},
    	}),
 );
