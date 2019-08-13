@@ -79,7 +79,7 @@ class App extends Component {
                 />
               </center>
               <Menu.Item key="0" onClick={this.toggle}>
-                <center><Icon type={this.state.collapsed ? 'menu':'close'} style={{"fontSize":"20px"}} /></center>
+                <center><Icon type={this.state.collapsed ? 'menu-unfold':'menu-fold'} style={{"fontSize":"20px"}} /></center>
                 <span className="nav_Header">Expand Navbar</span>
               </Menu.Item>
               <Menu.Item key="1" onClick={this.handleMenuClick}className="hvr-underline-from-center">
@@ -96,7 +96,7 @@ class App extends Component {
               </Menu.Item>
               <Menu.Item key="3" onClick={this.handleMenuClick}className="hvr-underline-from-center">
                 <Link to="/portfolio">
-                  <Icon type="solution" style={{"fontSize":"20px"}} />
+                  <Icon type="area-chart" style={{"fontSize":"20px"}} />
                   <span className="nav_Text">Portfolio</span>
                 </Link>
               </Menu.Item>
