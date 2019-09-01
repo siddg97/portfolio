@@ -8,9 +8,6 @@
 	min-height: 100vh;
 }
 
-.timeline {
-	padding: 30px;
-}
 
 .top-btn {
 	background-color: #FF0000;
@@ -33,13 +30,16 @@
 }
 
 .nav_Text {
-	font-size: 20px;
+	font-size: 24px;
 	font-family: Poppins;
 }
 
 .nav_Header {
-	font-size: 21px;
-	font-family: Poppins
+	font-size: 22px;
+	font-family: Poppins;
+	color: white;
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .greeting {
@@ -66,7 +66,7 @@
 
 .about-header {
 	font-family: Poppins;
-	display: block;
+	display: inline-block;
 	color: black;
 	font-size: 22px;
 	background-color: white;
@@ -124,6 +124,8 @@
 
 .card-img {
 	height: 20vh;
+	width: 100%;
+	box-sizing: border-box;
 	/*margin: auto;*/
 	object-fit: contain;
 	/*background-position: center;*/

@@ -19,22 +19,23 @@ class Pport extends React.Component {
 	render(){
 		const iStyle={fontSize:40, color:'black'};
 		return(
-			<Row type="flex" justify="center" gutter={36}>
+			<div>
+				<Row type="flex"gutter={36}>
 				{
 				projects.map((item,i) => 
-					<Col xs={20} sm={18} md={12} key={i}>
-						<Card hoverable title={item.header} style={{width:'auto',height:'auto',margin:16}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
-							<Paragraph> {item.descr} </Paragraph>
+					<Col xs={24} sm={24} md={6} key={i}>
+						<Card hoverable title={item.header} style={{minWidth:'20vw',minHeight:'50vh',marginBottom:16}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
 							<center>
-								<a href={item.metaLink} target="_blank" rel="noreferrer noopener">More Info</a><br/>
-								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a>
+								<Paragraph> {item.descr} </Paragraph>
+								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a><br/>
+								<a href={item.metaLink} target="_blank" rel="noreferrer noopener">More Info</a>
 							</center>
 						</Card>
 					</Col>
 					)
 				}
-				
-			</Row>	
+				</Row>
+			</div>	
 		);
 	}
 }

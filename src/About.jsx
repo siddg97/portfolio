@@ -1,22 +1,29 @@
 import React from 'react';
-import { Collapse, Layout, Typography, Divider } from 'antd';
+import { Card, Icon, Layout, Typography, Divider } from 'antd';
 import my from './Images/me.jpg'
 import sfu4 from './Images/SFU4.jpg'
 
 const { Text } = Typography;
-const { Content, Header } = Layout
-const { Panel } = Collapse;
+const { Content } = Layout
 
 class About extends React.Component {
 	render(){
+		const cardStyle = {margin:10, padding:0, boxSizing:'border-box'}
 		return (
 			<Layout className="l">
-				<Header className="hvr-underline-from-right header" style={{fontSize:"30px"}}> Siddharth Gupta </Header>
 				<Content>
-					<Collapse defaultActiveKey="1">
-						<Panel header="About Me" key="1">
-							<Layout style={{backgroundColor:'#ececec'}}>
-								<Header className="hvr-underline-from-center about-header"> A little about me </Header>
+					<div style={{padding:15,backgroundColor:'#ececec'}}>
+						<Card title={
+							<span className="card-header hvr-pulse">
+								<b><Icon type="edit"/></b>
+								<b> About Me </b>
+							</span>	
+						}
+						bordered={true}
+						hoverable={true}
+						style={cardStyle}
+						>
+							<Layout style={{backgroundColor:'#fff'}}>
 								<Content className="about-content">
 									<Text>
 										I am a undergraduate student studying computing science. I have experience in managing and developing software in both individual and team enviornments. I am fueled by my passion for understanding the working of technologies in the field of computing science and by my fascination of how two bits 0 and 1 have transformed the world of technolgy and software today. I considers myself a <Text strong>‘forever student’</Text> eager to both build on my academic foundations and stay in tune with the latest software technologies and strategies through continuous learning.
@@ -29,13 +36,21 @@ class About extends React.Component {
 									<center><img src={my} className="my-img" alt=''/></center>
 								</Content>
 							</Layout>
-						</Panel>
-						<Panel header="Education" key="2">
-							<Layout style={{backgroundColor:'#ececec'}}>
-								<Header className="hvr-underline-from-center about-header"> Simon Fraser University</Header>
-							   	<Content className="about-content">
+						</Card>
+						<Card title={
+							<span className="card-header hvr-pulse">
+								<b><Icon type="read"/></b>
+								<b> My Education </b>
+							</span>	
+						}
+						bordered={true}
+						hoverable={true}
+						style={cardStyle}
+						>
+							<Layout style={{backgroundColor:'#fff'}}>
+								<Content className="about-content">
 									<Text>
-									I started my post-secondary education in the fall term of 2015 and started pursuing my goal of getting a Bachelors in Computing Science. I was very excited to have been given the oppurtunity to travel halfway around the globe from India to British Columbia, Canada to pursue my university career. I had litlle to no formal programming knowledege nor any experience of sort in working with computer software(s).
+									I started my post-secondary education in the fall term of 2015 and started pursuing my goal of getting a Bachelors in Computing Science. I was very excited to have been given the oppurtunity to travel halfway around the globe from India to British Columbia, Canada to pursue my university career at <Text strong> Simon Fraser University, Burnaby</Text>. I had litlle to no formal programming knowledege nor any experience of sort in working with computer software(s).
 									</Text>
 									<br/><br/>
 									<Text>
@@ -49,8 +64,8 @@ class About extends React.Component {
 									<img src={sfu4} className="sfu-img" alt=''/>
 								</Content>
 							</Layout>
-						</Panel>
-					</Collapse>
+						</Card>
+					</div>
 				</Content>
 			</Layout>
 		)

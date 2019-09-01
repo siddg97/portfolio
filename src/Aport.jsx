@@ -20,32 +20,18 @@ const projects=[
 		imgsrc:hc
 	},
 	{
-		header:"Custom C UNIX Shell",
+		header:"UNIX Shell",
 		iconType:"code",
 		git:"https://github.com/siddg97/Producer-Consumer-Problem",
 		descr:"A UNIX shell in C with custom built-in commmands and signal handling.",
 		imgsrc:shell
 	},
 	{
-		header:"Custom Linux Kernel",
+		header:"Kernel Patch",
 		iconType:"deployment-unit",
 		git:"https://github.com/siddg97/Custom-Linux-Kernel-Patch",
-		descr:"Developed a git patch for the linux kernel v4.20.13. Patch includes 2 built-in system calls.",
+		descr:"Developed a git patch for the linux kernel v4.20.13. Patch includes 2 built-in system calls in C.",
 		imgsrc:kernel
-	},
-	{
-		header:"Expression Evaluator",
-		iconType:"interaction",
-		git:"https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier",
-		descr:"Developed a Scheme program to evaluate binary infix expression based on the Go ENBF language.",
-		imgsrc:ee
-	},
-	{
-		header:"Memory Management Interfaces",
-		iconType:"cluster",
-		git:"https://github.com/siddg97/Memory-management-interfaces-C",
-		descr:"Implemented the free() and malloc() functions in C using pointer arithmetic and linked lists to manage memory.",
-		imgsrc:mm
 	},
 	{
 		header:"IDA* Npuzzle Solver",
@@ -55,10 +41,24 @@ const projects=[
 		imgsrc:ep
 	},
 	{
-		header:"Producer-Consumer-Problem",
+		header:"Expression Evaluator",
+		iconType:"interaction",
+		git:"https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier",
+		descr:"Developed a Scheme program to evaluate and simplify binary infix expressions in the Go ENBF language.",
+		imgsrc:ee
+	},
+	{
+		header:"Memory Interfaces",
+		iconType:"cluster",
+		git:"https://github.com/siddg97/Memory-management-interfaces-C",
+		descr:"Implemented the free() and malloc() functions in C using pointer arithmetic and linked lists to manage memory.",
+		imgsrc:mm
+	},
+	{
+		header:"Bounded-buffer Problem",
 		iconType:"box-plot",
 		git:"https://github.com/siddg97/Producer-Consumer-Problem",
-		descr:"Simulation of a bounded-buffer problem by programming a mutli-thread C program synchonized using locks and seamaphores.",
+		descr:"Simulation of the producer-consumer problem by programming a mutli-thread C program which is synchonized using locks and seamaphores.",
 		imgsrc:pcp
 	},
 ];
@@ -67,21 +67,22 @@ class APort extends React.Component {
 	render(){
 		const iStyle={fontSize:40, color:'black'};
 		return(
-			<Row type="flex" justify="center" gutter={36}>
+			<div>
+				<Row type="flex" gutter={36}>
 				{
 				projects.map((item,i) => 
-					<Col xs={20} sm={18} md={12} key={i}>
-						<Card hoverable title={item.header} style={{width:'auto',height:'auto',margin:16}} cover={<img alt="" className="card-img" src={item.imgsrc}/>}>
-							<Paragraph> {item.descr} </Paragraph><br/><br/>
+					<Col xs={24} sm={24} md={6} key={i}>
+						<Card hoverable title={item.header} style={{'minHeight':'54vh','marginBottom':15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
+								<Paragraph> {item.descr} </Paragraph>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a>
 							</center>
 						</Card>
 					</Col>
 					)
 				}
-				
-			</Row>	
+				</Row>
+			</div>	
 		);
 	}
 }
