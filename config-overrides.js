@@ -11,9 +11,12 @@ module.exports = override(
    		modifyVars: {
    			'@primary-color': '#B22222',
         '@layout-body-background': '#fff',
-        '@layout-sider-background-light' : '#FFF',
         '@menu-bg': '#FFF',
-        '@collapse-content-padding':'0px'
+        '@collapse-content-padding':'0px',
+        '@menu-dark-bg':'black',
+        '@drawer-body-padding': '0px',
+        '@menu-item-active-border-width':'8px',
+        '@menu-item-height':'55px'
    		},
    	}),
 );

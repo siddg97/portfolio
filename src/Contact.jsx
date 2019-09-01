@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, List, Layout,Typography, Icon} from 'antd';
 
-const {Header, Content} = Layout;
+const {Content} = Layout;
 const {Paragraph} = Typography;
 
 
@@ -53,7 +53,7 @@ class Contact extends React.Component {
 	    this.timeout = setInterval(() => {
 	    	let currentIdx = this.state.textIdx;
 	      	this.setState({ textIdx: currentIdx + 1 });
-	    }, 2500);
+	    }, 1500);
   	}
 
   	componentWillUnmount() {
@@ -65,7 +65,6 @@ class Contact extends React.Component {
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout className="l">
-				<Header className="hvr-underline-from-right header" style={{fontSize:'30px'}}> Lets get in touch! </Header>
 				<Content >
 					<div style={{background:'#ececec', padding:15}}>
 						<Card title={
