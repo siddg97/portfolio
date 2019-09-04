@@ -4,18 +4,18 @@
 	box-sizing: border-box;
 }
 
-.App {
-	min-height: 100vh;
+.logo-invert {
+	-webkit-filter: invert(1);
+	filter: invert(1);
 }
 
+.footer-nav-text {
+	font-size: 16px;
+	font-family: Poppins;
+}
 
-.top-btn {
-	background-color: #FF0000;
-	color: white;
-	text-align: center;
-	border-radius: 99px;
-	font-size: 20px;
-	width: auto;
+.App {
+	min-height: 100vh;
 }
 
 .l{
@@ -75,7 +75,7 @@
 .card-header, .card-header h3 {
 	align-items: center;
 	font-family: Poppins;
-	font-size: 23px;
+	font-size: 20px;
 	color: black;
 	padding-left: 15px;
 }

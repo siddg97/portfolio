@@ -11,7 +11,7 @@ class Home extends React.Component {
 				<Content>
 					<div style={{padding:25,backgroundColor:'#ececec'}}>
 						<div style={{padding:30,backgroundColor:'#fff'}}>
-							<center><span style={{fontSize:'30px',padding:0,color:'black','fontWeight':20}}> Welcome</span></center>
+							<center><strong style={{fontSize:30,color:'black'}}> Welcome</strong></center>
 							<Divider/>
 							<Timeline mode={this.props.mode}>
 								<Timeline.Item color="gray">
