@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {Link, Route} from "react-router-dom";
 import {Switch as RouteSwitch} from 'react-router-dom';
-import {Row, Col, Button, Drawer, Divider, Layout, Menu, Icon, BackTop, Tooltip} from 'antd';
+import {Row, Col, Button, Drawer, Layout, Menu, Icon, BackTop, Tooltip} from 'antd';
 import Home from './Home.jsx'
 import About from './About.jsx'
 import Portfolio from './Portfolio.jsx'
