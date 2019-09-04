@@ -77,7 +77,7 @@ class Contact extends React.Component {
 						hoverable={true}
 						style={cardStyle}
 						>
-							<Paragraph className="contact-card">Mail me <b style={{color:'blue'}}>{dText}</b> at:</Paragraph>
+							<Paragraph className="contact-card">Mail me <b style={{color:'blue'}}>{dText}</b></Paragraph>
 							<List
 							    bordered
 							    dataSource={email}
