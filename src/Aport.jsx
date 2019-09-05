@@ -18,7 +18,7 @@ const projects=[
 		header:"RPN Calculator",
 		iconType:"calculator",
 		git:"https://github.com/siddg97/RPN-Calculator",
-		descr:"A Reverse-Polish Notation (postfix) expression calculator in Haskell.",
+		descr:"A Reverse-Polish Notation (postfix) expression calculator in Haskell using stacks.",
 		imgsrc:hc
 	},
 	{
@@ -60,7 +60,7 @@ const projects=[
 		header:"Bounded-buffer Problem",
 		iconType:"box-plot",
 		git:"https://github.com/siddg97/Producer-Consumer-Problem",
-		descr:"Simulation of the producer-consumer problem by programming a mutli-thread C program which is synchonized using locks and seamaphores.",
+		descr:"A mutlithreaded C program synchonized using locks and seamaphores to simluate a Bounded-buffer problem",
 		imgsrc:pcp
 	},
 	{
@@ -76,7 +76,8 @@ const projects=[
 		git:"https://github.com/siddg97/tictactoe",
 		descr:"Developed a python CLI based game of tic tac toe which never looses against a smart human opponent.",
 		imgsrc:ttt
-	}
+	},
+	
 ];
 
 class APort extends React.Component {
@@ -87,7 +88,7 @@ class APort extends React.Component {
 				<Row type="flex" gutter={24}>
 				{
 				projects.map((item,i) => 
-					<Col xs={24} sm={24} md={6} key={i}>
+					<Col xs={24} sm={24} md={12} lg={6} key={i}>
 						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} style={{'marginBottom':15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
 								<Paragraph> {item.descr} </Paragraph>

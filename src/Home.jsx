@@ -42,10 +42,10 @@ class Home extends React.Component {
 									<Text strong>{""}Currently living in <br/><a href="https://en.wikipedia.org/wiki/Burnaby"><strong className="hvr-bounce-out" style={{fontSize:24, color:"#52c41a"}}> Burnaby, British Columbia</strong></a></Text>
 								</Timeline.Item>
 								<Timeline.Item>
-									<Text strong>{""}I love to <br/><strong className="hvr-bounce-out" style={{fontSize:24, color:"#FF0000"}}> Build Stuff</strong></Text>
+									<Text strong>{""}I love to <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a", cursor:'pointer'}}> Build Stuff</strong></Text>
 								</Timeline.Item>
 								<Timeline.Item>
-									<Text strong>{""}One could say that <br/><strong className="hvr-bounce-out" style={{fontSize:24, color:"#FF0000"}}> I am a builder</strong></Text>
+									<Text strong>{""}One could say that <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a", cursor:'pointer'}}> I am a builder</strong></Text>
 								</Timeline.Item>
 								<Timeline.Item color="#1890ff">
 									<Text strong>{""}Here is my <br/>

@@ -8,14 +8,6 @@ const { Paragraph } = Typography;
 
 const projects = [
 		{
-			header:"colorP",
-			iconType:"bg-colors",
-			git:"https://github.com/siddg97/colorP",
-			metaLink:"https://pypi.org/project/colorp/",
-			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
-			imgsrc:cp
-		},
-		{
 			header:"LetWork",
 			iconType:"code",
 			git:"https://github.com/siddg97/letWork-server",
@@ -31,6 +23,14 @@ const projects = [
 			descr:"A vanilla JavaScript discord chatbot which fetches present weather conditions of any city and forecasts as well.",
 			imgsrc:cb
 		},
+		{
+			header:"colorP",
+			iconType:"bg-colors",
+			git:"https://github.com/siddg97/colorP",
+			metaLink:"https://pypi.org/project/colorp/",
+			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
+			imgsrc:cp
+		},
 ];
 
 class Pport extends React.Component {
@@ -41,7 +41,7 @@ class Pport extends React.Component {
 				<Row type="flex"gutter={24}>
 				{
 				projects.map((item,i) => 
-					<Col xs={24} sm={24} md={6} key={i}>
+					<Col xs={24} sm={24} md={12} lg={6} key={i}>
 						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} style={{marginBottom:15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
 								<Paragraph> {item.descr} </Paragraph>
