@@ -1,13 +1,13 @@
 import React from "react"
 import { Row, Col, Card, Icon, Typography} from 'antd';
-import pcp from './Images/pcp.png';
+import pcp from './Images/pcp.svg';
 import shell from './Images/shell.png';
-import mm from './Images/mm.jpg';
+import mm from './Images/mm.png';
 import kernel from './Images/kernel.png';
 import ee from './Images/ee.png';
 import ep from './Images/ep.png';
 import hc from './Images/hc.png';
-import trackit from './Images/trackit.png';
+import trackit from './Images/trackit.jpg';
 import ttt from './Images/ttt.png';
 
 const { Paragraph } = Typography;
@@ -72,7 +72,7 @@ const projects=[
 	},
 	{
 		header:"pMCTS Tic Tac Toe",
-		iconType:"table",
+		iconType:"number",
 		git:"https://github.com/siddg97/tictactoe",
 		descr:"Developed a python CLI based game of tic tac toe which never looses against a smart human opponent.",
 		imgsrc:ttt
