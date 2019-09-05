@@ -7,6 +7,8 @@ import kernel from './Images/kernel.png';
 import ee from './Images/ee.png';
 import ep from './Images/ep.png';
 import hc from './Images/hc.png';
+import trackit from './Images/trackit.png';
+import ttt from './Images/ttt.png';
 
 const { Paragraph } = Typography;
 
@@ -61,6 +63,20 @@ const projects=[
 		descr:"Simulation of the producer-consumer problem by programming a mutli-thread C program which is synchonized using locks and seamaphores.",
 		imgsrc:pcp
 	},
+	{
+		header:"TrackIT",
+		iconType:"pie-chart",
+		git:"https://github.com/JackTheWright/CMPT276Group9",
+		descr:"An iOS application focused on providing a simple way to track their DASH diet on a meal-to-meal basis and giving suggestions.",
+		imgsrc:trackit
+	},
+	{
+		header:"pMCTS Tic Tac Toe",
+		iconType:"table",
+		git:"https://github.com/siddg97/tictactoe",
+		descr:"Developed a python CLI based game of tic tac toe which never looses against a smart human opponent.",
+		imgsrc:ttt
+	}
 ];
 
 class APort extends React.Component {
@@ -68,11 +84,11 @@ class APort extends React.Component {
 		const iStyle={fontSize:40, color:'black'};
 		return(
 			<div>
-				<Row type="flex" gutter={36}>
+				<Row type="flex" gutter={24}>
 				{
 				projects.map((item,i) => 
 					<Col xs={24} sm={24} md={6} key={i}>
-						<Card hoverable title={item.header} style={{'minHeight':'54vh','marginBottom':15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
+						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} style={{'marginBottom':15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
 								<Paragraph> {item.descr} </Paragraph>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a>

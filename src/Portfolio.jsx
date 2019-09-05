@@ -24,7 +24,7 @@ class Portfolio extends React.Component {
 				<Content>
 					<div style={{padding:15,backgroundColor:'#ececec'}}>
 						<Card title={
-							<span className="card-header hvr-pulse">
+							<span className="card-header hvr-bounce-out">
 						        <b><Icon type="project"/></b>
 						       	<b> Academic Projects </b>
 					        </span>
@@ -37,7 +37,7 @@ class Portfolio extends React.Component {
 						</Card>
 
 						<Card title={
-							<span className="card-header hvr-pulse">
+							<span className="card-header hvr-bounce-out">
 						        <b><Icon type="solution"/></b>
 						       	<b> Personal Projects </b>
 					        </span>
@@ -49,7 +49,7 @@ class Portfolio extends React.Component {
 							<Pport/>
 						</Card>
 						<Card title={
-							<span className="card-header hvr-pulse">
+							<span className="card-header hvr-bounce-out">
 						        <b><Icon type="github"/></b>
 						       	<b> Github Contributions </b>
 					        </span>
