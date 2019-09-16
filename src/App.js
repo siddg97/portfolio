@@ -129,9 +129,9 @@ class App extends Component {
 										<a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: 'black'}}/></a>
 										<a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: 'black'}}/></a>
 										<br/><br/>
-										<span style={{color:'#fff',fontSize:16}}>Created with <Icon type="heart" theme="filled" style={{color:'red',fontSize:28}} className="hvr-pop"/> by - <a href="http://siddg.info"><span style={{color:'red'}} className="hvr-underline-reveal">Siddharth Gupta</span></a> © 2019</span>
+										<span style={{color:'#fff',fontSize:16}}>Created with <Icon type="heart" theme="filled" style={{color:'red',fontSize:28}} className="hvr-pop"/> by - <a href="http://siddg.info" target="_blank" rel="noopener noreferrer"><span style={{color:'red'}} className="hvr-underline-reveal">Siddharth Gupta</span></a> © 2019</span>
 										<br/>
-										<span style={{color:'#fff',fontSize:10,bottom:0}}> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+										<span style={{color:'#fff',fontSize:10,bottom:0}}> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></span>
 									</center>
 								</Col>
 							</Row>
