@@ -3,6 +3,7 @@ import { Row, Col, Card, Icon, Tag, Typography } from 'antd';
 import cp from './Images/cp.png';
 import lw from './Images/lw.png';
 import cb from './Images/cb.png';
+import pw from './Images/pw.png';
 
 const { Paragraph } = Typography;
 
@@ -32,8 +33,17 @@ const projects = [
 			metaLink:"",
 			descr:"A MERN stack app which serves as a platform to connect students of similar intersts to collaborate and create meaningful projects",
 			imgsrc:lw,
-			tags:["MERN stack","HTML","CSS","API"]
+			tags:["MERN","API","Full-stack"]
 		},
+		{
+			header:"Portfolio Website",
+			iconType:"profile",
+			git:"https://github.com/siddg97/portfolio",
+			metaLink:"http://www.siddg.info",
+			descr:"A single page react app with minimalistic design for a neat and immersive personal portfolio website. Deployed on Heroku.",
+			imgsrc:pw,
+			tags:["ReactJS","Heroku","HTML","CSS"]
+		}
 ];
 
 class Pport extends React.Component {

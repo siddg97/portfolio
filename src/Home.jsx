@@ -42,10 +42,10 @@ class Home extends React.Component {
 									<Text strong>{""}Currently living in <br/><a href="https://en.wikipedia.org/wiki/Burnaby" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}> Burnaby, British Columbia</strong></a></Text>
 								</Timeline.Item>
 								<Timeline.Item>
-									<Text strong>{""}I love to <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a", cursor:'pointer'}}> Build Stuff</strong></Text>
+									<Text strong>{""}I love to <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#FF0000", cursor:'pointer'}}> Build Stuff</strong></Text>
 								</Timeline.Item>
 								<Timeline.Item>
-									<Text strong>{""}Some say that <br/><a href="https://en.wikipedia.org/wiki/Robot" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a", cursor:'pointer'}}> I am a Robot</strong></a></Text>
+									<Text strong>{""}Some say that <br/><a href="https://en.wikipedia.org/wiki/Robot" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#FF0000", cursor:'pointer'}}> I am a Robot</strong></a></Text>
 								</Timeline.Item>
 								<Timeline.Item color="#1890ff">
 									<Text strong>{""}Here is my <br/>
