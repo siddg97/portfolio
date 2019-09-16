@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Card, Icon, Typography } from 'antd';
+import { Row, Col, Card, Icon, Tag, Typography } from 'antd';
 import cp from './Images/cp.png';
 import lw from './Images/lw.png';
 import cb from './Images/cb.png';
@@ -8,20 +8,13 @@ const { Paragraph } = Typography;
 
 const projects = [
 		{
-			header:"LetWork",
-			iconType:"code",
-			git:"https://github.com/siddg97/letWork-server",
-			metaLink:"",
-			descr:"A MERN stack app which serves as a platform to connect students of similar intersts to collaborate and create meaningful projects",
-			imgsrc:lw
-		},
-		{
 			header:"CasterBot",
 			iconType:"robot",
 			git:"https://github.com/siddg97/CasterBot",
 			metaLink:"",
 			descr:"A vanilla JavaScript discord chatbot which fetches present weather conditions of any city and forecasts as well.",
-			imgsrc:cb
+			imgsrc:cb,
+			tags:["OWM","JavaScript","Discord","API","node"]
 		},
 		{
 			header:"colorP",
@@ -29,7 +22,17 @@ const projects = [
 			git:"https://github.com/siddg97/colorP",
 			metaLink:"https://pypi.org/project/colorp/",
 			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
-			imgsrc:cp
+			imgsrc:cp,
+			tags:["python3","pip","ANSI","API"]
+		},
+		{
+			header:"LetWork",
+			iconType:"code",
+			git:"https://github.com/siddg97/letWork-server",
+			metaLink:"",
+			descr:"A MERN stack app which serves as a platform to connect students of similar intersts to collaborate and create meaningful projects",
+			imgsrc:lw,
+			tags:["MERN stack","HTML","CSS","API"]
 		},
 ];
 
@@ -45,6 +48,11 @@ class Pport extends React.Component {
 						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} style={{marginBottom:15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
 								<Paragraph> {item.descr} </Paragraph>
+								{
+									item.tags.map((elem,i) =>
+										<Tag color="green">{elem}</Tag>
+									)
+								}<br/>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a><br/>
 								<a href={item.metaLink} target="_blank" rel="noreferrer noopener">More Info</a>
 							</center>
