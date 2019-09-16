@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Icon, Layout, Tag } from 'antd';
+import { Row, Col, Card, Icon, Layout } from 'antd';
 import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 import GithubCalendar from 'react-github-calendar';
