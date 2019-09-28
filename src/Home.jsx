@@ -10,13 +10,10 @@ class Home extends React.Component {
 			<Layout className="l">
 				<Content>
 					<div style={{padding:25,backgroundColor:'#ececec'}}>
-						<div style={{padding:30,backgroundColor:'#fff'}}>
-							<center><strong style={{fontSize:30,color:'black'}}> Welcome</strong></center>
+						<div style={{padding:30,backgroundColor:'#fff',margin:'auto',marginBottom:2,width:'80vw'}}>
+							<center><strong style={{fontSize:30,color:'black'}}>This is MY story</strong></center>
 							<Divider/>
 							<Timeline mode={this.props.mode}>
-								<Timeline.Item color="gray">
-									<strong style={{fontSize:24, color:"gray"}}>This is my story</strong>
-								</Timeline.Item>
 								<Timeline.Item color="green">
 									<Text strong>{""}My name is<br/><a href="http://siddg.info" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}>Siddharth Gupta</strong></a></Text>
 								</Timeline.Item>
@@ -39,18 +36,15 @@ class Home extends React.Component {
 									<Text strong>{""}I am from <br/><a href="https://en.wikipedia.org/wiki/India" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}>India</strong></a></Text>
 								</Timeline.Item>
 								<Timeline.Item color="green">
-									<Text strong>{""}Currently living in <br/><a href="https://en.wikipedia.org/wiki/Burnaby" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}> Burnaby, British Columbia</strong></a></Text>
+									<Text strong>{""}Currently living in <br/><a href="https://en.wikipedia.org/wiki/Burnaby" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}> Burnaby, BC</strong></a></Text>
 								</Timeline.Item>
 								<Timeline.Item>
 									<Text strong>{""}I love to <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#FF0000", cursor:'pointer'}}> Build Stuff</strong></Text>
 								</Timeline.Item>
 								<Timeline.Item>
-									<Text strong>{""}Some say that <br/><a href="https://en.wikipedia.org/wiki/Robot" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#FF0000", cursor:'pointer'}}> I am a Robot</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item color="#1890ff">
 									<Text strong>{""}Here is my <br/>
 										<a href="https://docs.google.com/document/d/1U3GHViVozx8BPzE52-nt053n3f3U4MWmGGIr5X_hSyo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-											<strong style={{fontSize:24, color:"#1890ff"}} className="hvr-underline-reveal"> 
+											<strong style={{fontSize:24, color:"#FF0000",cursor:'pointer'}} className="hvr-underline-reveal"> 
 												Resume
 											</strong>
 										</a>

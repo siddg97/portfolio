@@ -18,7 +18,7 @@ class Portfolio extends React.Component {
 			grade1: '#B0E0E6',
 			grade0: '#ececec',
 		};
-		const cardStyle = {margin:10, padding:0, boxSizing:'border-box'}
+		const cardStyle = {margin:'auto',marginBottom:24,marginTop:24,padding:0, boxSizing:'border-box',width:'80vw'}
 		return(
 			<Layout className="l">
 				<Content>
@@ -51,7 +51,7 @@ class Portfolio extends React.Component {
 						<Card title={
 							<span className="card-header hvr-underline-reveal">
 						        <b><Icon type="radar-chart"/></b>
-						       	<b> Miscellaneous </b>
+						       	<b> Skills </b>
 					        </span>
 						}
 						bordered={true} 

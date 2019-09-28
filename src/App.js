@@ -56,12 +56,7 @@ class App extends Component {
 					<Header style={{paddingLeft:16, height:'auto'}}>
 						<Button type="primary" size='large' shape="circle" onClick={this.showNav}><Icon type="menu" /></Button>
 						<Drawer placement='left' closable={false} onClose={this.hideNav} visible={this.state.nav}>
-							<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={{height:'100vh'}}>
-								<Menu.Item key="0" disabled={true}>
-									<Icon type="menu" style={{"fontSize":"20px"}} />
-									<span className="nav_Text">Navigation</span>
-								</Menu.Item>
-								<Menu.Divider/>
+							<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={{paddingTop:'30px',height:'100vh'}}>
 								<Menu.Item key="Home" onClick={this.handleMenuClick}>
 									<Link to="/">
 										<Icon type="home" style={{"fontSize":"20px"}} />

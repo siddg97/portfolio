@@ -61,7 +61,7 @@ class Contact extends React.Component {
 	}
 
 	render(){
-		const cardStyle = {margin:10, padding:0, boxSizing:'border-box'}
+		const cardStyle = {margin:'auto',marginBottom:24,marginTop:24,padding:0, boxSizing:'border-box',width:'80vw'}
 		let dText = messages[this.state.textIdx % messages.length];
 		return(
 			<Layout className="l">
