@@ -137,7 +137,6 @@
 	z-index: 99;
 }
 
-
 @media (max-width: 600px) {
 	.flex-container {
 		flex-direction: column;

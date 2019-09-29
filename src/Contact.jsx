@@ -66,7 +66,7 @@ class Contact extends React.Component {
 		return(
 			<Layout className="l">
 				<Content >
-					<div style={{background:'#ececec', padding:15}}>
+					<div style={{background:'#ececec',paddingTop:'32px',paddingBottom:'32px'}}>
 						<Card title={
 							<span className="card-header hvr-pulse">
 						        <b><Icon type="mail"/></b>

@@ -12,7 +12,7 @@ class About extends React.Component {
 		return (
 			<Layout className="l">
 				<Content>
-					<div style={{padding:15,backgroundColor:'#ececec'}}>
+					<div style={{paddingTop:'32px',paddingBottom:'32px',backgroundColor:'#ececec'}}>
 						<Card title={
 							<span className="card-header hvr-pulse">
 								<b><Icon type="edit"/></b>

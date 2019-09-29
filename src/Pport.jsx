@@ -15,7 +15,7 @@ const projects = [
 			metaLink:"",
 			descr:"A vanilla JavaScript discord chatbot which fetches present weather conditions of any city and forecasts as well.",
 			imgsrc:cb,
-			tags:["OWM","JavaScript","Discord","API","node"]
+			tags:["OWM","JavaScript","Discord","node"]
 		},
 		{
 			header:"colorP",
@@ -57,14 +57,16 @@ class Pport extends React.Component {
 					<Col xs={24} sm={24} md={12} lg={6} key={i}>
 						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} style={{marginBottom:15}} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
-								<Paragraph> {item.descr} </Paragraph>
+								<Paragraph ellipsis={{ rows: 3, expandable: true}}> {item.descr} </Paragraph>
+								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pop"><Icon type="github"/> </a>
+								<br/>
+								<a href={item.metaLink} target="_blank" rel="noreferrer noopener">More Info</a>
+								<br/>
 								{
 									item.tags.map((elem,i) =>
-										<Tag color="green">{elem}</Tag>
+										<Tag color="green" key={i}>{elem}</Tag>
 									)
-								}<br/>
-								<a href={item.git} target="_blank" rel="noopener noreferrer" style={iStyle} className="hvr-pulse"><Icon type="github"/> </a><br/>
-								<a href={item.metaLink} target="_blank" rel="noreferrer noopener">More Info</a>
+								}
 							</center>
 						</Card>
 					</Col>
