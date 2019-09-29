@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Icon, Layout, Timeline } from 'antd';
+import { Button, Row, Col, Card, Icon, Layout, Timeline } from 'antd';
 import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 import GithubCalendar from 'react-github-calendar';
@@ -13,7 +13,7 @@ const skills = {
 	tools:["GitHub","Heroku","Docker","yarn","Postman","Chrome DevTools"],
 	profiles:[
 				['fa-github-square','https://github.com/siddg97','#211F1F'],
-				['fa-stack-overflow','https://stackoverflow.com/users/11591930/giddharthsupta','#f48024'],
+				['fa-stack-overflow','https://stackoverflow.com/story/sg97','#f48024'],
 				['fa-linkedin-square','https://www.linkedin.com/in/siddharth-gupta-b0245b113/','#0077b5'],
 				['fa-facebook-square','https://www.facebook.com/siddharth.gupta.1997','#3b5998'],
 				['fa-twitter-square','https://twitter.com/siddgupta97','#1da1f2'],
@@ -126,7 +126,9 @@ class Portfolio extends React.Component {
 											skills.profiles.map((item,i) => 
 												<Col xs={24} sm={8} key={i}>
 													<Card hoverable bordered={false} style={{textAlign:'center',backgroundColor:item[2],borderRadius:0}}>
-														<i className={"fa "+item[0]} style={{fontSize:51,color:'#fff'}}/>
+														<a href={item[1]} className="hvr-float" target="_blank" rel="noopener noreferrer">
+															<i className={"fa "+item[0]} style={{fontSize:50,color:'#fff'}}/>
+														</a>
 													</Card>
 												</Col>
 											)
@@ -136,7 +138,7 @@ class Portfolio extends React.Component {
 								</Col>
 								<Col xs={24} sm={24} md={12}>
 									<Card title={<b>Github Contributions</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
-											<center><GithubCalendar username="siddg97" blockSize={16} blockMargin={2} theme={defaultTheme} fontSize={16} style={{padding:6}}>
+											<center><GithubCalendar username="siddg97" blockSize={16} blockMargin={2} theme={defaultTheme} fontSize={16} style={{padding:5}}>
 												<ReactToolTip delayShow={25} html />
 											</GithubCalendar></center>
 									</Card>
