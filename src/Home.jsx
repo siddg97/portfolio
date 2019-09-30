@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Typography, Timeline, Divider} from 'antd';
+import { Alert, Layout, Typography, Timeline, Divider} from 'antd';
 
 const {Content} = Layout;
 const {Text} = Typography;
@@ -9,7 +9,7 @@ class Home extends React.Component {
 		return(
 			<Layout className="l">
 				<Content>
-					<div style={{paddingTop:'32px',paddingBottom:'32px',backgroundColor:'#ececec'}}>
+					<div style={{paddingTop:32, paddingBottom:32, backgroundColor:'#ececec'}}>
 						<div style={{padding:30,backgroundColor:'#fff',margin:'auto',marginBottom:2,width:'80vw'}}>
 							<center><strong style={{fontSize:30,color:'black'}}>This is my story</strong></center>
 							<Divider/>
@@ -51,6 +51,13 @@ class Home extends React.Component {
 									</Text>
 								</Timeline.Item>
 							</Timeline>
+							<Alert
+								message="Note"
+								description="Colored texts are hyperlinks."
+								type="info"
+								showIcon
+								closable
+							/>
 						</div>
 					</div>
 				</Content>

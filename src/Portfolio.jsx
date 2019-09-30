@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Divider, Icon, Layout, Timeline } from 'antd';
+import { Alert, Row, Col, Card, Divider, Icon, Layout, Timeline } from 'antd';
 import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 import GithubCalendar from 'react-github-calendar';
@@ -41,42 +41,60 @@ class Portfolio extends React.Component {
 					<div style={{padding:15,backgroundColor:'#ececec'}}>
 						<Card title={
 							<span className="card-header">
-						        <b><Icon type="project"/></b>
-						       	<b> Academic Projects </b>
-					        </span>
+								<b><Icon type="project"/></b>
+								<b> Academic Projects </b>
+							</span>
 						}
 						bordered={true} 
 						hoverable={false}
 						style={cardStyle}
 						>
+							<div style={{paddingBottom:8}}>
+								<Alert
+									message="Note"
+									description="Click expand to view full description."
+									type="info"
+									showIcon
+									closable
+								/>
+							</div>
 							<Aport/>
 						</Card>
 
 						<Card title={
 							<span className="card-header">
-						        <b><Icon type="solution"/></b>
-						       	<b> Personal Projects </b>
-					        </span>
+								<b><Icon type="solution"/></b>
+								<b> Personal Projects </b>
+							</span>
 						}
 						bordered={true} 
 						hoverable={false}
 						style={cardStyle}
 						>
+							<div style={{paddingBottom:8}}>
+								<Alert
+									message="Note"
+									description="Click expand to view full description."
+									type="info"
+									showIcon
+									closable
+								/>
+							</div>
 							<Pport/>
 						</Card>
 						<Card title={
 							<span className="card-header">
-						        <b><Icon type="radar-chart"/></b>
-						       	<b> Skills and Profiles </b>
-					        </span>
+								<b><Icon type="radar-chart"/></b>
+								<b> Skills and Profiles </b>
+							</span>
 						}
 						bordered={true}
 						hoverable={false}
 						style={cardStyle}
 						>
 							<Row type="flex" gutter={24} align="top" justify="center">
-								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
-									<Card title={<b>Front-End</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={12} xxl={6}>
+									<Card title={<b>Front-End</b>} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
 											skills.frontend.map((item,i) => 
@@ -86,8 +104,8 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
-									<Card title={<b>Back-End</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={12} xxl={6}>
+									<Card title={<b>Back-End</b>} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
 											skills.backend.map((item,i) => 
@@ -97,8 +115,8 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
-									<Card title={<b>Languages</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={12} xxl={6}>
+									<Card title={<b>Languages</b>} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
 											skills.lang.map((item,i) => 
@@ -108,8 +126,8 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
-									<Card title={<b>Tools</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={12} xxl={6}>
+									<Card title={<b>Tools</b>} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
 											skills.tools.map((item,i) => 
@@ -123,7 +141,16 @@ class Portfolio extends React.Component {
 							<Divider/>
 							<Row type="flex" gutter={24} align="top" justify="center">
 								<Col xs={24} sm={24} md={24}>
-									<Card title={<b>Profiles</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
+									<Card title={<b>Profiles</b>} style={skillStyle} headStyle={cardHeadStyle}>
+										<div style={{paddingBottom:8}}>
+											<Alert
+												message="Note"
+												description="Click icons to view profiles."
+												type="info"
+												showIcon
+												closable
+											/>
+										</div>
 										<Row type="flex" justify="center" align="middle">
 										{
 											skills.profiles.map((item,i) => 
@@ -141,9 +168,9 @@ class Portfolio extends React.Component {
 								</Col>
 								<Col xs={24} sm={24} md={24}>
 									<Card title={<b>Github Contributions</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
-											<center><GithubCalendar username="siddg97" blockSize={16} blockMargin={2} theme={defaultTheme} fontSize={16} style={{padding:5}}>
-												<ReactToolTip delayShow={25} html />
-											</GithubCalendar></center>
+										<center><GithubCalendar username="siddg97" blockSize={16} blockMargin={2} theme={defaultTheme} fontSize={16} style={{padding:5}}>
+											<ReactToolTip delayShow={25} html />
+										</GithubCalendar></center>
 									</Card>
 								</Col>
 							</Row>							
