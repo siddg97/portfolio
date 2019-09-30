@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Row, Col, Card, Icon, Layout, Timeline } from 'antd';
+import { Row, Col, Card, Icon, Layout, Timeline } from 'antd';
 import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 import GithubCalendar from 'react-github-calendar';
@@ -34,7 +34,7 @@ class Portfolio extends React.Component {
 		};
 		const cardStyle = {margin:'auto',marginBottom:24,marginTop:24,padding:0, boxSizing:'border-box',width:'80vw'}
 		const cardHeadStyle = {textAlign:'center',backgroundColor:'#fff'}
-		const skillStyle = {marginBottom:15}
+		const skillStyle = {marginBottom:24}
 		return(
 			<Layout className="l">
 				<Content>
@@ -70,12 +70,12 @@ class Portfolio extends React.Component {
 						       	<b> Skills and Profiles </b>
 					        </span>
 						}
-						bordered={true} 
+						bordered={true}
 						hoverable={false}
 						style={cardStyle}
 						>
-							<Row type="flex" gutter={24} align="top">
-								<Col xs={24} sm={24} md={12}>
+							<Row type="flex" gutter={24} align="top" justify="center">
+								<Col xs={24} sm={24} md={8} lg={6}>
 									<Card title={<b>Front-End</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -86,7 +86,7 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={12}>
+								<Col xs={24} sm={24} md={8} lg={6}>
 									<Card title={<b>Back-End</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -97,7 +97,7 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={12}>
+								<Col xs={24} sm={24} md={8} lg={6}>
 									<Card title={<b>Languages</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -108,7 +108,7 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={12}>
+								<Col xs={24} sm={24} md={8} lg={6}>
 									<Card title={<b>Tools</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -119,7 +119,9 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={24}>
+							</Row>
+							<Row type="flex" gutter={24} align="top" justify="center">
+								<Col xs={24} sm={24} md={12}>
 									<Card title={<b>Profiles</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
 										<Row type="flex" align="middle">
 										{
@@ -136,7 +138,7 @@ class Portfolio extends React.Component {
 										</Row>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={24}>
+								<Col xs={24} sm={24} md={12}>
 									<Card title={<b>Github Contributions</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
 											<center><GithubCalendar username="siddg97" blockSize={16} blockMargin={2} theme={defaultTheme} fontSize={16} style={{padding:5}}>
 												<ReactToolTip delayShow={25} html />
