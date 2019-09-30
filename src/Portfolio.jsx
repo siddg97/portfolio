@@ -41,28 +41,6 @@ class Portfolio extends React.Component {
 					<div style={{padding:15,backgroundColor:'#ececec'}}>
 						<Card title={
 							<span className="card-header">
-								<b><Icon type="project"/></b>
-								<b> Academic Projects </b>
-							</span>
-						}
-						bordered={true} 
-						hoverable={false}
-						style={cardStyle}
-						>
-							<div style={{paddingBottom:8}}>
-								<Alert
-									message="Note"
-									description="Click expand to view full description."
-									type="info"
-									showIcon
-									closable
-								/>
-							</div>
-							<Aport/>
-						</Card>
-
-						<Card title={
-							<span className="card-header">
 								<b><Icon type="solution"/></b>
 								<b> Personal Projects </b>
 							</span>
@@ -71,16 +49,33 @@ class Portfolio extends React.Component {
 						hoverable={false}
 						style={cardStyle}
 						>
-							<div style={{paddingBottom:8}}>
-								<Alert
-									message="Note"
-									description="Click expand to view full description."
-									type="info"
-									showIcon
-									closable
-								/>
-							</div>
 							<Pport/>
+							<Alert
+								message="Note"
+								description="Click on expand to view full description."
+								type="info"
+								showIcon
+								closable
+							/>
+						</Card>
+						<Card title={
+							<span className="card-header">
+								<b><Icon type="project"/></b>
+								<b> Academic Projects </b> - Simon Fraser University
+							</span>
+						}
+						bordered={true} 
+						hoverable={false}
+						style={cardStyle}
+						>
+							<Aport/>
+							<Alert
+								message="Note"
+								description="Click on expand to view full description."
+								type="info"
+								showIcon
+								closable
+							/>
 						</Card>
 						<Card title={
 							<span className="card-header">
@@ -142,15 +137,6 @@ class Portfolio extends React.Component {
 							<Row type="flex" gutter={24} align="top" justify="center">
 								<Col xs={24} sm={24} md={24}>
 									<Card title={<b>Profiles</b>} style={skillStyle} headStyle={cardHeadStyle}>
-										<div style={{paddingBottom:8}}>
-											<Alert
-												message="Note"
-												description="Click icons to view profiles."
-												type="info"
-												showIcon
-												closable
-											/>
-										</div>
 										<Row type="flex" justify="center" align="middle">
 										{
 											skills.profiles.map((item,i) => 
@@ -164,6 +150,15 @@ class Portfolio extends React.Component {
 											)
 										}
 										</Row>
+										<div style={{paddingTop:24}}>
+											<Alert
+												message="Note"
+												description="Click icons to view profiles."
+												type="info"
+												showIcon
+												closable
+											/>
+										</div>
 									</Card>
 								</Col>
 								<Col xs={24} sm={24} md={24}>
