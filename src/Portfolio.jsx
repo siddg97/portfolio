@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Icon, Layout, Timeline } from 'antd';
+import { Row, Col, Card, Divider, Icon, Layout, Timeline } from 'antd';
 import Aport from './Aport.jsx';
 import Pport from './Pport.jsx';
 import GithubCalendar from 'react-github-calendar';
@@ -75,7 +75,7 @@ class Portfolio extends React.Component {
 						style={cardStyle}
 						>
 							<Row type="flex" gutter={24} align="top" justify="center">
-								<Col xs={24} sm={24} md={8} lg={6}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
 									<Card title={<b>Front-End</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -86,7 +86,7 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={8} lg={6}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
 									<Card title={<b>Back-End</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -97,7 +97,7 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={8} lg={6}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
 									<Card title={<b>Languages</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -108,7 +108,7 @@ class Portfolio extends React.Component {
 										</Timeline>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={8} lg={6}>
+								<Col xs={24} sm={18} md={12} lg={12} xl={10} xxl={9}>
 									<Card title={<b>Tools</b>} hoverable={true} style={skillStyle}  headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
@@ -120,15 +120,16 @@ class Portfolio extends React.Component {
 									</Card>
 								</Col>
 							</Row>
+							<Divider/>
 							<Row type="flex" gutter={24} align="top" justify="center">
-								<Col xs={24} sm={24} md={12}>
+								<Col xs={24} sm={24} md={24}>
 									<Card title={<b>Profiles</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
-										<Row type="flex" align="middle">
+										<Row type="flex" justify="center" align="middle">
 										{
 											skills.profiles.map((item,i) => 
-												<Col xs={24} sm={8} key={i}>
-													<Card hoverable bordered={false} style={{textAlign:'center',backgroundColor:item[2],borderRadius:0}}>
-														<a href={item[1]} className="hvr-float" target="_blank" rel="noopener noreferrer">
+												<Col xs={24} sm={24} md={12} lg={8} key={i}>
+													<Card hoverable bordered={false} style={{textAlign:'center',backgroundColor:item[2],borderRadius:0,paddingRight:0,paddingLeft:0}}>
+														<a href={item[1]} className="hvr-grow" target="_blank" rel="noopener noreferrer">
 															<i className={"fa "+item[0]} style={{fontSize:50,color:'#fff'}}/>
 														</a>
 													</Card>
@@ -138,7 +139,7 @@ class Portfolio extends React.Component {
 										</Row>
 									</Card>
 								</Col>
-								<Col xs={24} sm={24} md={12}>
+								<Col xs={24} sm={24} md={24}>
 									<Card title={<b>Github Contributions</b>} hoverable={true} style={skillStyle} headStyle={cardHeadStyle}>
 											<center><GithubCalendar username="siddg97" blockSize={16} blockMargin={2} theme={defaultTheme} fontSize={16} style={{padding:5}}>
 												<ReactToolTip delayShow={25} html />

@@ -15,7 +15,7 @@ const projects = [
 			metaLink:"",
 			descr:"A vanilla JavaScript discord chatbot which fetches present weather conditions of any city and forecasts as well.",
 			imgsrc:cb,
-			tags:["OWM","JavaScript","Discord","node"]
+			tags:["OWM","JavaScript"]
 		},
 		{
 			header:"colorP",
@@ -24,7 +24,7 @@ const projects = [
 			metaLink:"https://pypi.org/project/colorp/",
 			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
 			imgsrc:cp,
-			tags:["python3","pip","ANSI","API"]
+			tags:["python","pip","ANSI"]
 		},
 		{
 			header:"LetWork",
@@ -33,7 +33,7 @@ const projects = [
 			metaLink:"",
 			descr:"A MERN stack app which serves as a platform to connect students of similar intersts to collaborate and create meaningful projects",
 			imgsrc:lw,
-			tags:["MERN","API","Full-stack"]
+			tags:["MERN","REST"]
 		},
 		{
 			header:"Portfolio Website",
@@ -42,7 +42,7 @@ const projects = [
 			metaLink:"http://www.siddg.info",
 			descr:"A single page react app with minimalistic design for a neat and immersive personal portfolio website. Deployed on Heroku.",
 			imgsrc:pw,
-			tags:["ReactJS","Heroku","HTML","CSS"]
+			tags:["reactJS","heroku","HTML","CSS"]
 		}
 ];
 
@@ -56,7 +56,7 @@ class Pport extends React.Component {
 				<Row type="flex" justify="center" gutter={24}>
 				{
 				projects.map((item,i) => 
-					<Col xs={24} sm={24} md={12} lg={6} key={i}>
+					<Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={i}>
 						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} headStyle={cardHeadStyle} style={projStyle} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
 								<Paragraph ellipsis={{ rows: 3, expandable: true}}> {item.descr} </Paragraph>

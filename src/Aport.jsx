@@ -20,7 +20,7 @@ const projects=[
 		git:"https://github.com/siddg97/RPN-Calculator",
 		descr:"A Reverse-Polish Notation (postfix) expression calculator in Haskell using stacks.",
 		imgsrc:hc,
-		tags:["haskell","RPN","stacks"],
+		tags:["haskell","RPN"],
 	},
 	{
 		header:"UNIX Shell",
@@ -44,7 +44,7 @@ const projects=[
 		git:"https://github.com/siddg97/Npuzzle",
 		descr:"Programmed a memory efficient version of the A* algorithm to solve a given N-puzzle problem in C++.",
 		imgsrc:ep,
-		tags:["C++","A-star search","Sliding-puzzle"],
+		tags:["C++","A*"],
 	},
 	{
 		header:"Expression Evaluator",
@@ -52,7 +52,7 @@ const projects=[
 		git:"https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier",
 		descr:"Developed a Scheme program to evaluate and simplify binary infix expressions in the Go ENBF language.",
 		imgsrc:ee,
-		tags:["scheme","mit-scheme","ENBF"],
+		tags:["scheme","ENBF"],
 	},
 	{
 		header:"Memory Interfaces",
@@ -60,7 +60,7 @@ const projects=[
 		git:"https://github.com/siddg97/Memory-management-interfaces-C",
 		descr:"Implemented the free() and malloc() functions in C using pointer arithmetic and linked lists to manage memory.",
 		imgsrc:mm,
-		tags:["C","memory management","malloc/free"],
+		tags:["C","malloc","free"],
 	},
 	{
 		header:"Bounded-buffer Problem",
@@ -68,7 +68,7 @@ const projects=[
 		git:"https://github.com/siddg97/Producer-Consumer-Problem",
 		descr:"A mutlithreaded C program synchonized using locks and seamaphores to simluate a Bounded-buffer problem",
 		imgsrc:pcp,
-		tags:["C","multithreading","fork/exec"],
+		tags:["C","POSIXt","fork/exec"],
 	},
 	{
 		header:"TrackIT",
@@ -76,7 +76,7 @@ const projects=[
 		git:"https://github.com/JackTheWright/CMPT276Group9",
 		descr:"An iOS application focused on providing a simple way to track their DASH diet on a meal-to-meal basis and giving suggestions.",
 		imgsrc:trackit,
-		tags:["Swift","SQL","iOS"],
+		tags:["swift","SQL","iOS"],
 	},
 	{
 		header:"pMCTS Tic Tac Toe",
@@ -84,7 +84,7 @@ const projects=[
 		git:"https://github.com/siddg97/tictactoe",
 		descr:"Developed a python CLI based game of tic tac toe which never looses against a smart human opponent.",
 		imgsrc:ttt,
-		tags:["python3","Pure Monte-Carlo"],
+		tags:["python","pMCTS"],
 	},
 	
 ];
@@ -100,7 +100,7 @@ class APort extends React.Component {
 				<Row type="flex" justify="center" gutter={24}>
 				{
 				projects.map((item,i) => 
-					<Col xs={24} sm={24} md={12} lg={6} key={i}>
+					<Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={i}>
 						<Card hoverable title={<span> <Icon type={item.iconType}/>{" "+item.header}</span>} headStyle={cardHeadStyle} style={projStyle} cover={<div style={{padding:3}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
 								<Paragraph ellipsis={{ rows: 2, expandable: true }}> {item.descr} </Paragraph>
