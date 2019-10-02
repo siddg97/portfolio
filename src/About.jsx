@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Card, Icon, Row, Col, Layout, Typography, Divider } from 'antd';
+import { Avatar, Card, Icon, Row, Col, Layout, Typography} from 'antd';
 import my from './Images/me.jpg'
 import sfu4 from './Images/SFU4.jpg'
 
@@ -11,7 +11,6 @@ class About extends React.Component {
 		const cardStyle = {margin:'auto',marginBottom:24,marginTop:24,width:'80vw'}
 		const wrapperStyle = {paddingTop:32, paddingBottom:32, backgroundColor:'#ececec'}
 		const contentStyle = {marginBottom:24}
-		const imgStyle = {padding:0}
 		return (
 			<Layout className="l">
 				<Content>
@@ -27,7 +26,7 @@ class About extends React.Component {
 						>
 							<Row type="flex" gutter={24} justify="center" align="middle">
 								<Col xs={24} sm={24} md={24} lg={24} xl={8}>
-										<center><Avatar src={my} style={{minHeight:'30vh',minWidth:'30vh',marginBottom:24}}/></center>				
+										<center><Avatar src={my} style={{minHeight:'30vh',minWidth:'30vh',marginBottom:24}} className="hvr-grow"/></center>				
 								</Col>
 								<Col xs={24} sm={24} md={24} lg={24} xl={16}>
 									<Card hoverable style={contentStyle}>

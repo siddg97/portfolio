@@ -1,5 +1,6 @@
 import React from "react"
-import { Row, Col, Card, Icon, Tag, Typography} from 'antd';
+import { Row, Col, Card, Icon, Tag } from 'antd';
+import ToggleEllipsis from './ToggleEllipsis.jsx';
 import pcp from './Images/pcp.svg';
 import shell from './Images/shell.png';
 import mm from './Images/mm.png';
@@ -9,8 +10,6 @@ import ep from './Images/ep.png';
 import hc from './Images/hc.png';
 import trackit from './Images/trackit.jpg';
 import ttt from './Images/ttt.png';
-
-const { Paragraph } = Typography;
 
 const projects=[
 	
@@ -89,7 +88,6 @@ const projects=[
 	
 ];
 
-
 class APort extends React.Component {
 	render(){
 		const picStyle={fontSize:40, color:'black'};
@@ -103,7 +101,7 @@ class APort extends React.Component {
 					<Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={i}>
 						<Card hoverable title={<span> <Icon type={item.iconType}/>{" "+item.header}</span>} headStyle={cardHeadStyle} style={projStyle} cover={<div style={{padding:3}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
-								<Paragraph ellipsis={{ rows: 2, expandable: true }}> {item.descr} </Paragraph>
+								<ToggleEllipsis text={item.descr} rows={2}/>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={picStyle} className="hvr-pop"><Icon type="github"/> </a>
 								<br/>
 								{

@@ -51,7 +51,6 @@ class Portfolio extends React.Component {
 						>
 							<Pport/>
 							<Alert
-								message="Note"
 								description="Click on expand to view full description."
 								type="info"
 								showIcon
@@ -70,7 +69,6 @@ class Portfolio extends React.Component {
 						>
 							<Aport/>
 							<Alert
-								message="Note"
 								description="Click on expand to view full description."
 								type="info"
 								showIcon
@@ -152,7 +150,6 @@ class Portfolio extends React.Component {
 										</Row>
 										<div style={{paddingTop:24}}>
 											<Alert
-												message="Note"
 												description="Click icons to view profiles."
 												type="info"
 												showIcon

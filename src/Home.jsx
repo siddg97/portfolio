@@ -1,64 +1,108 @@
 import React from 'react';
-import { Alert, Layout, Typography, Timeline, Divider} from 'antd';
+import { Alert, Card, Layout, Typography, Timeline } from 'antd';
 
 const {Content} = Layout;
 const {Text} = Typography;
 
+const story = [
+	{
+		text:"My name is",
+		link:"http://siddg.info/",
+		header:"Siddharth Gupta",
+		color:"#ec6b2d"
+	},
+	{
+		text:"People also call me",
+		link:"http://siddg.info/",
+		header:"Sidd",
+		color:"#ec6b2d"
+	},
+	{
+		text:"I'm currently an",
+		link:"https://www.vocabulary.com/dictionary/undergraduate",
+		header:"Undergraduate student",
+		color:"#0d0f05"
+	},
+	{
+		text:"Expected to graduate",
+		link:"https://www.calendar-365.com/calendar/2020/June.html",
+		header:"June 2020",
+		color:"#0d0f05"
+	},
+	{
+		text:"I am attending",
+		link:"https://www.sfu.ca/",
+		header:"Simon Fraser University",
+		color:"#1890ff"
+	},
+	{
+		text:"Pursuing my bachelors in",
+		link:"http://www.sfu.ca/computing.html",
+		header:"Computing Science",
+		color:"#1890ff"
+	},
+	{
+		text:"I am from",
+		link:"https://en.wikipedia.org/wiki/India",
+		header:"India",
+		color:"#52c41a"
+	},
+	{
+		text:"Currently living in",
+		link:"https://en.wikipedia.org/wiki/Burnaby",
+		header:"Burnaby",
+		color:"#52c41a"
+	},
+	{
+		text:"I am a",
+		link:"https://en.wikipedia.org/wiki/Software_engineer",
+		header:"Software Developer",
+		color:"red"
+	},
+	{
+		text:"Here is my",
+		link:"https://docs.google.com/document/d/1U3GHViVozx8BPzE52-nt053n3f3U4MWmGGIr5X_hSyo/edit?usp=sharing",
+		header:"Resume",
+		color:"red"
+	},
+];
+
 class Home extends React.Component {
 	render(){
+		const wrapperStyle = {paddingTop:32, paddingBottom:32, backgroundColor:'#ececec'};
+		const cardStyle = {margin:'auto',marginBottom:24,marginTop:24,width:'80vw'}
 		return(
 			<Layout className="l">
 				<Content>
-					<div style={{paddingTop:32, paddingBottom:32, backgroundColor:'#ececec'}}>
-						<div style={{padding:30,backgroundColor:'#fff',margin:'auto',marginBottom:2,width:'80vw'}}>
-							<center><strong style={{fontSize:30,color:'black'}}>This is my story</strong></center>
-							<Divider/>
+					<div style={wrapperStyle}>
+						<Card title={<center><strong style={{fontSize:30}}>This is my story</strong></center>}
+							bordered={true}
+							hoverable={true}
+							style={cardStyle}
+						>
 							<Timeline mode={this.props.mode}>
-								<Timeline.Item color="#ec6b2d">
-									<Text strong>{""}My name is<br/><a href="http://siddg.info/" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#ec6b2d"}}>Siddharth Gupta</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item color="#ec6b2d">
-									<Text strong>{""}My friends call me <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#ec6b2d", cursor:'pointer'}}>Sidd</strong></Text>
-								</Timeline.Item>
-								<Timeline.Item color="#0d0f05">
-									<Text strong>{""}I'm currently an <br/><a href="https://www.vocabulary.com/dictionary/undergraduate" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#0d0f05",cursor:'pointer'}}>Undergraduate student</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item color="#0d0f05">
-									<Text strong>{""}Expected to graduate <br/><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#0d0f05",cursor:'pointer'}}>June 2020</strong></Text>
-								</Timeline.Item>
-								<Timeline.Item color="#1890ff">
-									<Text strong>{""}I am attending <br/><a href="https://www.sfu.ca/" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#1890ff"}}> Simon Fraser University</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item color="#1890ff">
-									<Text strong>{""}Pursuing my bachelors in<br/><a href="http://www.sfu.ca/computing.html" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#1890ff"}}>Computing Science</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item color="green">
-									<Text strong>{""}I am from <br/><a href="https://en.wikipedia.org/wiki/India" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}>India</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item color="green">
-									<Text strong>{""}Currently living in <br/><a href="https://en.wikipedia.org/wiki/Burnaby" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#52c41a"}}> Burnaby</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item>
-									<Text strong>{""}I am a <br/><a href="https://en.wikipedia.org/wiki/Software_engineer" target="_blank" rel="noopener noreferrer"><strong className="hvr-underline-reveal" style={{fontSize:24, color:"#FF0000", cursor:'pointer'}}>Software Developer</strong></a></Text>
-								</Timeline.Item>
-								<Timeline.Item>
-									<Text strong>{""}Here is my <br/>
-										<a href="https://docs.google.com/document/d/1U3GHViVozx8BPzE52-nt053n3f3U4MWmGGIr5X_hSyo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-											<strong style={{fontSize:24, color:"#FF0000",cursor:'pointer'}} className="hvr-underline-reveal"> 
-												Resume
-											</strong>
-										</a>
-									</Text>
-								</Timeline.Item>
+								{
+									story.map((item,i) => 
+										<Timeline.Item color={item.color} key={i}>
+											<Text strong>
+												{item.text}<br/>
+												<a href={item.link} target="_blank" rel="noopener noreferrer">
+													<strong className="hvr-underline-reveal" style={{fontSize:24,color:item.color,cursor:'pointer'}}>
+														{item.header}
+													</strong>
+												</a>
+											</Text>
+										</Timeline.Item>
+									)
+								}
 							</Timeline>
 							<Alert
-								message="Note"
 								description="Colored texts are hyperlinks."
 								type="info"
 								showIcon
 								closable
 							/>
-						</div>
+						</Card>
 					</div>
 				</Content>
 			</Layout>

@@ -10,27 +10,63 @@ import Contact from './Contact.jsx'
 
 const { Footer, Header } = Layout;
 
+const menu = [
+	{
+		header:"Home",
+		path:"/",
+		icon:"home"
+	},
+	{
+		header:"About",
+		path:"/about",
+		icon:"user"
+	},
+	{
+		header:"Portfolio",
+		path:"/portfolio",
+		icon:"area-chart"
+	},
+	{
+		header:"Contact",
+		path:"/contact",
+		icon:"message"
+	}
+];
+
 class App extends Component {
 	constructor(){
 		super();
-		let curr_path = window.location.pathname;
-		const path_map = {};
-		path_map['/']='Home';
-		path_map['/about']='About';
-		path_map['/portfolio']='Portfolio';
-		path_map['/contact']='Contact';
+		let path = window.location.pathname;
+		let selectedKey = []
+		let title = ""
+		if (path === '/'){
+			selectedKey = ['0']
+			title = "Home"
+		} else if (path === '/about') {
+			selectedKey = ['1']
+			title = "About"
+		} else if (path === '/portfolio') {
+			selectedKey = ['2']
+			title = "Portfolio"
+		} else if (path==='/contact') {
+			selectedKey = ['3']
+			title = "Contact"
+		} else {
+			selectedKey = ['0']
+			title = "Home"
+		}
 		this.state = {
 			nav: false,
-			selectedKeys:[path_map[curr_path]],
-			title:path_map[curr_path],
+			selectedKeys:selectedKey,
+			title:title
 		};
 	}
 
 	handleMenuClick = e => {
 		this.setState({
-			selectedKeys:e.keyPath,
 			nav:false,
-			title:e.key
+			selectedKeys:[e.key],
+			title:menu[e.key].header
 		});
 		window.scrollTo(0,0);
 	};
@@ -46,7 +82,11 @@ class App extends Component {
 	render() {
 		let hmode = window.screen.width < 580 ? "left" : "alternate";
 		const mItemStyle = {height:'140px',padding:24,textAlign:'center',margin:0};
-		const iconStyle = {"fontSize":"50px",marginRight:0}
+		const iconStyle = {"fontSize":"50px",marginRight:0};
+		const headerStyle = {height:'auto',lineHeight:0,padding:16,backgroundColor:'#2D2926FF'};
+		const footerStyle = {backgroundColor:'#2D2926FF',paddingLeft:24, paddingRight:24};
+		const fMenuStyle = {backgroundColor:"#2D2926FF"};
+		const navStyle = {backgroundColor:"#2D2926FF",minHeight:"100vh"}
 		return (
 			<div className="App">
 				<Tooltip title="Top of page">
@@ -56,70 +96,48 @@ class App extends Component {
 				</Tooltip>
 				<Layout>
 					<Affix>
-					<Header style={{paddingLeft:16, height:'auto'}}>
-						<Button type="primary" size='large' shape="circle" onClick={this.showNav}><Icon type="menu" /></Button>
-						<Drawer placement='left' closable={false} onClose={this.hideNav} visible={this.state.nav} width={150}>
-							<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={{minHeight:'100vh'}}>
-								<Menu.Item key="Home" onClick={this.handleMenuClick} style={mItemStyle}>
-									<Link to="/">
-										<Icon type="home" style={iconStyle} /><br/>
-										<span className="nav_Text">Home</span>
-									</Link>
-								</Menu.Item>
-								<Menu.Item key="About" onClick={this.handleMenuClick} style={mItemStyle}>
-									<Link to="/about">
-										<Icon type="user" style={iconStyle} /><br/>
-										<span className="nav_Text">About</span>	
-									</Link>
-								</Menu.Item>
-								<Menu.Item key="Portfolio" onClick={this.handleMenuClick} style={mItemStyle}>
-									<Link to="/portfolio">
-										<Icon type="area-chart" style={iconStyle} /><br/>
-										<span className="nav_Text">Portfolio</span>
-									</Link>
-								</Menu.Item>
-								<Menu.Item key="Contact" onClick={this.handleMenuClick} style={mItemStyle}>
-									<Link to="/contact">
-										<Icon type="message" style={iconStyle} /><br/>
-										<span className="nav_Text">Contact</span>
-									</Link>
-								</Menu.Item>
-							</Menu>
-						</Drawer>
-						<span className="nav_Header">{' '+this.state.title}</span>
-					</Header>
+						<Header style={headerStyle}>
+							<Button type="primary" size='large' shape="round" onClick={this.showNav}>
+								<Icon type="menu" size="large"/>
+								<span className="nav-head">{this.state.title}</span>
+							</Button>
+							<Drawer placement='left' closable={false} onClose={this.hideNav} visible={this.state.nav} width={144}>
+								<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={navStyle}>
+									{
+										menu.map((item,i) =>
+											<Menu.Item key={i} onClick={this.handleMenuClick} style={mItemStyle}>
+												<Link to={item.path}>
+													<Icon type={item.icon} style={iconStyle} />
+													<br/>
+													<span className="nav_Text">{item.header}</span>
+												</Link>
+											</Menu.Item>
+										)
+									}
+								</Menu>
+							</Drawer>
+						</Header>
 					</Affix>
 				<Layout>
 						<RouteSwitch>
-							<Route exact path="/" render={(props) => <Home {...props} mode={hmode} />} />
+							<Route exact path="/" render={() => <Home mode={hmode}/>} />
 							<Route path="/about" component={About} />
 							<Route path="/portfolio" component={Portfolio} />
 							<Route path="/contact" component={Contact} />
 						</RouteSwitch>
-						<Footer style={{backgroundColor:'black',paddingLeft:24, paddingRight:24}}>
-							<Row type="flex" align="middle">
+						<Footer style={footerStyle}>
+							<Row type="flex" justify="center" align="top">
 								<Col xs={24} sm={24} md={4}>
-									<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys}>
-										<Menu.Item key="Home" onClick={this.handleMenuClick}>
-												<Link to="/">
-													<span className="footer-nav-text">Home</span>
-												</Link>
-										</Menu.Item>
-										<Menu.Item key="About" onClick={this.handleMenuClick}>
-												<Link to="/about">
-													<span className="footer-nav-text">About</span>
-												</Link>
-										</Menu.Item>
-										<Menu.Item key="Portfolio" onClick={this.handleMenuClick}>
-												<Link to="/portfolio">
-													<span className="footer-nav-text">Portfolio</span>
-												</Link>
-										</Menu.Item>
-										<Menu.Item key="Contact" onClick={this.handleMenuClick}>
-												<Link to="/contact">
-													<span className="footer-nav-text">Contact</span>
-												</Link>
-										</Menu.Item>
+									<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={fMenuStyle}>
+										{
+											menu.map((item,i) =>
+												<Menu.Item key={i} onClick={this.handleMenuClick}>
+													<Link to={item.path}>
+														<span className="footer-nav-text">{item.header}</span>
+													</Link>
+												</Menu.Item>
+											)
+										}
 									</Menu>
 								</Col>
 								<Col xs={24} sm={24} md={20}>
