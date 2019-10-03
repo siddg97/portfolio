@@ -71,14 +71,14 @@ class ContactForm extends React.Component {
 		event.preventDefault();
 		axios({
 			method: "POST",
-			url: "http://gsidd97.herokuapp.com/send-mail",
+			url: "https://gsidd97.herokuapp.com/send-mail",
 			headers:{
 				"Content-Type": "application/json"
 			},
 			data: {
 				name: this.state.name,
 				email: this.state.email,
-				subject: this.state.subject,
+				subject: '[Personal Webiste]:'+this.state.subject,
 				message: this.state.message
 			}
 		})
