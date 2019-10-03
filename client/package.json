@@ -17,6 +17,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-tooltip": "^3.10.0",
+    "sweetalert2": "^8.18.0",
     "validator": "^11.1.0"
   },
   "proxy": "https://gsidd97.herokuapp.com",

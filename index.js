@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'client/build')));
 
 app.use(cors({
-	origin: "http://localhost:3000",
+	origin: "https://siddg.info",
 	methods: "POST"
 }));
 

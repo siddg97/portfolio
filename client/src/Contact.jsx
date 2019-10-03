@@ -1,7 +1,8 @@
 import React from 'react';
 import { Alert, Button, Card, Input, Row, Col, Layout,Typography, Icon} from 'antd';
 import isEmail from 'validator/lib/isEmail';
-import axios from 'axios'
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const {Content} = Layout;
 const {Paragraph, Text} = Typography;
@@ -84,13 +85,25 @@ class ContactForm extends React.Component {
 		})
 		.then((res) => {
 			if(res.data.msg === 'success'){
-				alert('Your Email was sent successfully!');
+				Swal.fire({
+					text:'Your email has been sent! I will get back to you soon.',
+					type:'success'
+				})
 				this.clearForm();
 			} else if(res.data.msg === 'fail'){
-				alert("Email could not be sent successfully. Please try again in some time.");
+				Swal.fire({
+					type:'error',
+					html:"Your message failed to be sent successfully, please try again. If problem persists, send me an email at <a href='mailto:g.sidd97@gmail.com'>g.sidd97@gmail.com</a> or message me on <a href='www.linkedin.com/in/siddg97'>LinkedIn</a>"
+				});
 			}
+		})
+		.catch((err) => {
+			console.error(err.msg);
+			Swal.fire({
+				type: 'error',
+				html: "Your message failed to be sent successfully, please try again. If problem persists, send me an email at <a href='mailto:g.sidd97@gmail.com'>g.sidd97@gmail.com</a> or message me on <a href='www.linkedin.com/in/siddg97'>LinkedIn</a>"
+			});
 		});
-
 	};
 
 	render(){
