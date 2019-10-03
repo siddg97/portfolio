@@ -71,7 +71,7 @@ class ContactForm extends React.Component {
 		event.preventDefault();
 		axios({
 			method: "POST",
-			url: "http://localhost:5000/send-mail",
+			url: "http://gsidd97.herokuapp.com/send-mail",
 			headers:{
 				"Content-Type": "application/json"
 			},
