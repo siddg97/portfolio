@@ -1,19 +1,19 @@
 {
-  "name": "pserver",
-  "version": "1.0.0",
-  "description": "backend for portfolio website",
-  "main": "index.js",
-  "author": "Siddharth Gupta",
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "nodemailer": "^6.3.0"
-  },
-  "scripts":{
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
-  },
+	"name": "pserver",
+	"version": "1.0.0",
+	"description": "backend for portfolio website",
+	"main": "index.js",
+	"author": "Siddharth Gupta",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"nodemailer": "^6.3.0"
+	},
+	"scripts":{
+		"start": "node index.js",
+		"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+	}
 }
