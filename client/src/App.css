@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo|Poppins:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Poppins;
+  font-family: 'IBM Plex Serif', serif;
   overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@ body {
 
 .footer-nav-text {
 	font-size: 24px;
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 }
 
 .App {
@@ -38,19 +38,19 @@ body {
 
 .nav_Text {
 	font-size: 24px;
-	font-family: Arvo;
+	font-family: 'IBM Plex Serif',serif;
 }
 
 .nav_Header {
 	font-size: 22px;
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	color: white;
 	margin-left: auto;
 	margin-right: 0;
 }
 
 .greeting {
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	display: block;
 	padding: 15px;
 	padding-top: 7px;
@@ -62,7 +62,7 @@ body {
 }
 
 .header {
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	display: block;
 	padding: 10px;
 	height: auto;
@@ -72,7 +72,7 @@ body {
 }
 
 .about-header {
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	display: inline-block;
 	color: black;
 	font-size: 22px;
@@ -81,26 +81,26 @@ body {
 
 .card-header {
 	align-items: center;
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	font-size: 20px;
 	color: black;
 	padding-left: 15px;
 }
 
 .contact-card {
-	font-family: Poppins;
-	font-size: 16px;
+	font-family: 'IBM Plex Serif', serif;
+	font-size: 18px;
 }
 
 .home-content {
 	padding: 24px;
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	font-size: 18px;
 	background: rgba(202, 211, 200,1.0);
 }
 
 .about-content {
-	font-family: Poppins;
+	font-family: 'IBM Plex Serif', serif;
 	font-size: 16px;
 }
 

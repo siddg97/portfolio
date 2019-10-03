@@ -127,7 +127,7 @@ class App extends Component {
 						</RouteSwitch>
 						<Footer style={footerStyle}>
 							<Row type="flex" justify="center" align="top">
-								<Col xs={24} sm={24} md={4}>
+								<Col xs={24} sm={24} md={8} lg={6}>
 									<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={fMenuStyle}>
 										{
 											menu.map((item,i) =>
@@ -140,7 +140,7 @@ class App extends Component {
 										}
 									</Menu>
 								</Col>
-								<Col xs={24} sm={24} md={20}>
+								<Col xs={24} sm={24} md={16} lg={18}>
 									<div style={{textAlign:'center',padding:32}}>
 										<a href="https://github.com/siddg97/" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
 										<a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: 'black'}}/></a>
