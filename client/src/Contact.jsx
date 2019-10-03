@@ -99,7 +99,10 @@ class ContactForm extends React.Component {
 		return (
 			<form>
 				<Row type="flex" justify="center" gutter={8} align="middle">
-					<Col xs={24} sm={24} style={formStyle}>
+					<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
+						<Icon type="mail" style={{fontSize:64}}/>
+					</Col>
+					<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
 						<Paragraph className="contact-card">
 							If you would like to contact me, please fill and submit the form below and I will reply to your email as soon as possible.
 						</Paragraph>
