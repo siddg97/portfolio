@@ -19,7 +19,7 @@
     "react-tooltip": "^3.10.0",
     "validator": "^11.1.0"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://gsidd97.herokuapp.com",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
