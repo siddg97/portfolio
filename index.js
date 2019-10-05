@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -10,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'client/build')));
 
 app.use(cors({
-	origin: "https://www.siddg.info",
+	origin: process.env.CORS_ORIGIN || 'localhost:3000',
 	methods: "POST"
 }));
 
@@ -20,6 +21,6 @@ app.get('*',(req,res) => {
 	res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 app.listen(port,console.log("Server listening on port "+ port));

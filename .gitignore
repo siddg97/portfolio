@@ -12,3 +12,4 @@ node_modules/
 # Other misc files
 package-lock.json
 npm-debug.log
+.env
