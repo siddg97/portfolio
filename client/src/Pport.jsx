@@ -18,7 +18,7 @@ const projects = [
 			git:"https://github.com/siddg97/colorP",
 			metaLink:"https://pypi.org/project/colorp/",
 			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
-			imgsrc:'0/assets/cp.png',
+			imgsrc:'/assets/cp.png',
 			tags:["python","pip","ANSI"]
 		},
 		{
