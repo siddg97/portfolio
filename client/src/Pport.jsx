@@ -9,7 +9,7 @@ const projects = [
 			git:"https://github.com/siddg97/CasterBot",
 			metaLink:"",
 			descr:"A vanilla JavaScript discord chatbot which fetches present weather conditions of any city and forecasts as well.",
-			imgsrc:'http://localhost:5000/assets/cb.png',
+			imgsrc:'/assets/cb.png',
 			tags:["OWM","JavaScript"]
 		},
 		{
@@ -18,7 +18,7 @@ const projects = [
 			git:"https://github.com/siddg97/colorP",
 			metaLink:"https://pypi.org/project/colorp/",
 			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
-			imgsrc:'http://localhost:5000/assets/cp.png',
+			imgsrc:'0/assets/cp.png',
 			tags:["python","pip","ANSI"]
 		},
 		{
@@ -27,7 +27,7 @@ const projects = [
 			git:"https://github.com/siddg97/letWork-server",
 			metaLink:"",
 			descr:"A MERN stack app which serves as a platform to connect students of similar intersts to collaborate and create meaningful projects",
-			imgsrc:'http://localhost:5000/assets/lw.png',
+			imgsrc:'/assets/lw.png',
 			tags:["MERN","REST"]
 		},
 		{
@@ -36,7 +36,7 @@ const projects = [
 			git:"https://github.com/siddg97/portfolio",
 			metaLink:"http://www.siddg.info",
 			descr:"A single page react app with minimalistic design for a neat and immersive personal portfolio website. Deployed on Heroku.",
-			imgsrc:'http://localhost:5000/assets/pw.png',
+			imgsrc:'/assets/pw.png',
 			tags:["reactJS","heroku","HTML","CSS"]
 		}
 ];

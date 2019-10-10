@@ -24,7 +24,7 @@ class About extends React.Component {
 						>
 							<Row type="flex" gutter={24} justify="center" align="middle">
 								<Col xs={24} sm={24} md={24} lg={24} xl={8}>
-										<center><Avatar src={'http://localhost:5000/assets/me.jpg'} style={{minHeight:'30vh',minWidth:'30vh',marginBottom:24}} className="hvr-grow"/></center>
+										<center><Avatar src={'/assets/me.jpg'} style={{minHeight:'30vh',minWidth:'30vh',marginBottom:24}} className="hvr-grow"/></center>
 								</Col>
 								<Col xs={24} sm={24} md={24} lg={24} xl={16}>
 									<Card hoverable style={contentStyle}>
@@ -48,7 +48,7 @@ class About extends React.Component {
 							<Row type="flex" gutter={24} justify="center" align="middle">
 								<Col xs={24} sm={24}>
 									<div style={contentStyle}>
-										<center><img src={'http://localhost:5000/assets/SFU4.jpg'} className="sfu-img" alt=''/></center>
+										<center><img src={'/assets/SFU4.jpg'} className="sfu-img" alt=''/></center>
 									</div>
 								</Col>
 								<Col xs={24} sm={24}>
