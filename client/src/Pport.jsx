@@ -23,10 +23,10 @@ const projects = [
 		},
 		{
 			header:"Links",
-			iconType:"code",
+			iconType:"link",
 			git:"https://github.com/siddg97/Links",
 			metaLink:"",
-			descr:"A MERN stack app which helps in organizing and saving important URLs and hyperlinks for future use",
+			descr:"A MERN stack app where users can organize and save bookmarked URLs and hyperlinks. It also allows for easier sharing of links between users.",
 			imgsrc:'/assets/links.png',
 			tags:["MERN","REST"]
 		},
@@ -54,7 +54,7 @@ class Pport extends React.Component {
 					<Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={i}>
 						<Card hoverable title={<center><span> <Icon type={item.iconType}/>{" "+item.header}</span></center>} headStyle={cardHeadStyle} style={projStyle} cover={<div style={{'padding':1}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
-								<ToggleEllipsis text={item.descr} rows={3}/>
+								<ToggleEllipsis text={item.descr} rows={2}/>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={picStyle} className="hvr-pop"><Icon type="github"/> </a>
 								<br/>
 								<a href={item.metaLink} target="_blank" rel="noreferrer noopener">More Info</a>

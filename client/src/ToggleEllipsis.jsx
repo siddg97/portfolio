@@ -40,7 +40,7 @@ class ToggleEllipsis extends React.Component {
 		return (
 			<div>
 				{this.renderEllip(this.props.text)}
-				{this.state.expand && <Button type="primary" onClick={this.ellipClose}>Collapse</Button>}
+				{this.state.expand && <Button type="link" onClick={this.ellipClose}>Collapse</Button>}
 			</div>
 		)
 	}
