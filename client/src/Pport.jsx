@@ -22,12 +22,12 @@ const projects = [
 			tags:["python","pip","ANSI"]
 		},
 		{
-			header:"LetWork",
+			header:"Links",
 			iconType:"code",
-			git:"https://github.com/siddg97/letWork-server",
+			git:"https://github.com/siddg97/Links",
 			metaLink:"",
-			descr:"A MERN stack app which serves as a platform to connect students of similar intersts to collaborate and create meaningful projects",
-			imgsrc:'/assets/lw.png',
+			descr:"A MERN stack app which helps in organizing and saving important URLs and hyperlinks for future use",
+			imgsrc:'/assets/links.png',
 			tags:["MERN","REST"]
 		},
 		{
@@ -38,7 +38,7 @@ const projects = [
 			descr:"A single page react app with minimalistic design for a neat and immersive personal portfolio website. Deployed on Heroku.",
 			imgsrc:'/assets/pw.png',
 			tags:["reactJS","heroku","HTML","CSS"]
-		}
+		},
 ];
 
 class Pport extends React.Component {
