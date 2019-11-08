@@ -92,7 +92,7 @@ class APort extends React.Component {
 					<Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={i}>
 						<Card hoverable title={<span> <Icon type={item.iconType}/>{" "+item.header}</span>} headStyle={cardHeadStyle} style={projStyle} cover={<div style={{padding:3}}><img alt="" className="card-img" src={item.imgsrc}/></div>}>
 							<center>
-								<ToggleEllipsis text={item.descr} rows={2}/>
+								<ToggleEllipsis text={item.descr} rows={1}/>
 								<a href={item.git} target="_blank" rel="noopener noreferrer" style={picStyle} className="hvr-pop"><Icon type="github"/> </a>
 								<br/>
 								{
