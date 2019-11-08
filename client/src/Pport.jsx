@@ -22,12 +22,12 @@ const projects = [
 			tags:["python","pip","ANSI"]
 		},
 		{
-			header:"Links",
-			iconType:"link",
-			git:"https://github.com/siddg97/Links",
+			header:"bugDB",
+			iconType:"bug",
+			git:"https://github.com/siddg97/BugDB",
 			metaLink:"",
-			descr:"A MERN stack app where users can organize and save bookmarked URLs and hyperlinks. It also allows for easier sharing of links between users.",
-			imgsrc:'/assets/links.png',
+			descr:"A MERN stack app for effortless bug tracking",
+			imgsrc:'/assets/bug.png',
 			tags:["MERN","REST"]
 		},
 		{
