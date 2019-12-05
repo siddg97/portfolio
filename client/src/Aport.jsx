@@ -76,6 +76,14 @@ const projects=[
 		imgsrc:'/assets/ttt.png',
 		tags:["python","pMCTS"],
 	},
+	{
+		header:"Anomaly Detection",
+		iconType:"monitor",
+		git:"https://github.com/siddg97/cmpt318-term-project",
+		descr:"Anomaly detection for household electricity consumption in R",
+		imgsrc:'/assets/detection.png',
+		tags:["R","HMM"]
+	}
 
 ];
 

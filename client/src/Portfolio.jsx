@@ -9,7 +9,7 @@ const { Content } = Layout;
 const skills = {
 	frontend:["HTML","CSS","ReactJS","Redux","Bootstrap","UI/UX"],
 	backend:["SQL","NoSQL","NodeJS","RESTful APIs","Flask","NGINX"],
-	lang:["C/C++","Go","JavaScript","Python","SQL","R"],
+	lang:["C/C++","Haskell","JavaScript","Python","MATLAB","R"],
 	tools:["GitHub","Heroku","Docker","yarn","Postman","Chrome DevTools"],
 	profiles:[
 				['fa-github-square','https://github.com/siddg97','#211F1F'],
@@ -87,7 +87,7 @@ class Portfolio extends React.Component {
 						>
 							<Row type="flex" gutter={24} align="top" justify="center">
 								<Col xs={24} sm={18} md={12} lg={12} xl={12} xxl={6}>
-									<Card title={<b>Front-End</b>} style={skillStyle} headStyle={cardHeadStyle}>
+									<Card title={<b>Frontend</b>} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
 											skills.frontend.map((item,i) => 
@@ -98,7 +98,7 @@ class Portfolio extends React.Component {
 									</Card>
 								</Col>
 								<Col xs={24} sm={18} md={12} lg={12} xl={12} xxl={6}>
-									<Card title={<b>Back-End</b>} style={skillStyle} headStyle={cardHeadStyle}>
+									<Card title={<b>Backend</b>} style={skillStyle} headStyle={cardHeadStyle}>
 										<Timeline mode="alternate">
 										{
 											skills.backend.map((item,i) => 

@@ -110,7 +110,7 @@ class ContactForm extends React.Component {
 		const formStyle={marginBottom:24}
 		const {nameErr,emailErr,subErr,msgErr} = this.state;
 		return (
-			<form>
+			<div>
 				<Row type="flex" justify="center" gutter={8} align="middle">
 					<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
 						<Icon type="mail" style={{fontSize:64}}/>
@@ -121,78 +121,85 @@ class ContactForm extends React.Component {
 						</Paragraph>
 					</Col>
 				</Row>
-				<Row type="flex" justify="center" gutter={8} align="top">
-					<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
-						<span>Name<Text type="danger">*</Text></span>
-					</Col>
-					<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
-						<Input 
-							name="name" 
-							value={this.state.name} 
-							onChange={this.onInput} 
-							placeholder="Enter Full Name" 
-							allowClear
-						/>
-						<br/>
-						{this.state.nameErr ? <Alert message="Name is a required field" type="error" showIcon /> : null}
-					</Col>
-				</Row>
-				<Row type="flex" justify="center" gutter={8} align="top">
-					<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
-						<span>Email<Text type="danger">*</Text></span>
-					</Col>
-					<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
-						<Input 
-							name="email" 
-							value={this.state.email} 
-							onChange={this.onInput} 
-							placeholder="Enter Email" 
-							allowClear
-						/>
-						<br/>
-						{this.state.emailErr ? <Alert message="Null or invalid email provided" type="error" showIcon /> : null}
-					</Col>
-				</Row>
-				<Row type="flex" justify="center" gutter={8} align="top">
-					<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
-						<span>Subject<Text type="danger">*</Text></span>
-					</Col>
-					<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
-						<Input 
-							name="subject" 
-							value={this.state.subject} 
-							onChange={this.onInput} 
-							placeholder="Enter Subject line" 
-							allowClear
-						/>
-						<br/>
-						{this.state.subErr ? <Alert message="Subject is a required field" type="error" showIcon /> : null}
-					</Col>
-				</Row>
-				<Row type="flex" justify="center" gutter={8} align="top">
-					<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
-						<span>Message<Text type="danger">*</Text></span>
-					</Col>
-					<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
-						<TextArea 
-							name="message" 
-							value={this.state.message} 
-							onChange={this.onInput} 
-							placeholder="Enter Message" 
-							autosize={{minRows:10,maxRows:100}} 
-							required
-						/>
-						<br/>
-						{this.state.msgErr ? <Alert message="Message is a required field" type="error" showIcon /> : null}
-					</Col>
-				</Row>
-				<Row type="flex" justify="center" gutter={8} align="top">
-					<Col xs={24} sm={{span:18,offset:6}} md={{span:20,offset:4}} lg={{span:14,offset:3}} xl={{span:16,offset:2}} style={formStyle}>
-						<br/>
-						<Button disabled={nameErr || emailErr || subErr || msgErr} size="large" type="primary" block onClick={this.onSubmit}>Send Email</Button>
-					</Col>
-				</Row>
-			</form>
+				<form>
+
+					<Row type="flex" justify="center" gutter={8} align="top">
+						<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
+							<span>Name<Text type="danger">*</Text></span>
+						</Col>
+						<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
+							<Input 
+								name="name" 
+								value={this.state.name} 
+								onChange={this.onInput} 
+								placeholder="Enter Full Name" 
+								allowClear
+							/>
+							<br/>
+							{this.state.nameErr ? <Alert message="Name is a required field" type="error" showIcon /> : null}
+						</Col>
+					</Row>
+					<Row type="flex" justify="center" gutter={8} align="top">
+						<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
+							<span>Email<Text type="danger">*</Text></span>
+						</Col>
+						<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
+							<Input 
+								name="email" 
+								value={this.state.email} 
+								onChange={this.onInput} 
+								placeholder="Enter Email" 
+								allowClear
+							/>
+							<br/>
+							{this.state.emailErr ? <Alert message="Null or invalid email provided" type="error" showIcon /> : null}
+						</Col>
+					</Row>
+					<Row type="flex" justify="center" gutter={8} align="top">
+						<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
+							<span>Subject<Text type="danger">*</Text></span>
+						</Col>
+						<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
+							<Input 
+								name="subject" 
+								value={this.state.subject} 
+								onChange={this.onInput} 
+								placeholder="Enter Subject line" 
+								allowClear
+							/>
+							<br/>
+							{this.state.subErr ? <Alert message="Subject is a required field" type="error" showIcon /> : null}
+						</Col>
+					</Row>
+					<Row type="flex" justify="center" gutter={8} align="top">
+						<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
+							<span>Message<Text type="danger">*</Text></span>
+						</Col>
+						<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
+							<TextArea 
+								name="message" 
+								value={this.state.message} 
+								onChange={this.onInput} 
+								placeholder="Enter Message" 
+								autosize={{minRows:10,maxRows:100}} 
+								required
+							/>
+							<br/>
+							{this.state.msgErr ? <Alert message="Message is a required field" type="error" showIcon /> : null}
+						</Col>
+					</Row>
+					<Row type="flex" justify="center" gutter={8} align="top">
+						<Col xs={24} sm={6} md={4} lg={3} xl={2} style={formStyle}>
+							<br/>
+							<Button type='secondary' block onClick={this.clearForm}>Reset</Button>
+						</Col>
+						<Col xs={24} sm={18} md={20} lg={14} xl={16} style={formStyle}>
+							<br/>
+							<Button disabled={nameErr || emailErr || subErr || msgErr} type="primary" block onClick={this.onSubmit}>Send Message</Button>
+						</Col>
+					</Row>
+				</form>
+			</div>
 		)
 	}
 }

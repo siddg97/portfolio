@@ -61,7 +61,7 @@ const story = [
 	},
 	{
 		text:"Here is my",
-		link:"https://docs.google.com/document/d/1U3GHViVozx8BPzE52-nt053n3f3U4MWmGGIr5X_hSyo/edit?usp=sharing",
+		link:"https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing",
 		header:"Resume",
 		color:"red"
 	},
