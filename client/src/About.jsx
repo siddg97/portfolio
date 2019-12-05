@@ -4,6 +4,32 @@ import { Avatar, Card, Icon, Row, Col, Layout, Typography} from 'antd';
 const { Text } = Typography;
 const { Content } = Layout
 
+const data = {
+	about: 
+		<Text className="about-content">
+			I am currently an undergarduate student majoring in Computing Science. My relevant experiences include managing and developing software in individual 
+			and team enviornments. My passion is fueled by my understanding of technologies in the field of computing science and fascination of how two bits 0 and 1 
+			have transformed technolgy and software today. I consider myself a <Text strong>forever student</Text>. I am eager to build on my academic foundations 
+			and stay in tune with the latest software technologies and strategies through continuous learning.
+			<br/><br/>
+			My hunger for knowledge and determination to produce actionable information has contributed greatly in my university career. I believe in mindfulness is 
+			the key to success - a tenet I live throughout my interests in programming, problem-solving, and even while palying video games. I have worked on a number 
+			of academic projects and am currently working on a few personal projects but I am always interested in a challenge!
+		</Text>
+	,
+	education:
+		<Text className="about-content">
+			I began my undergarduate carrer by traveling halfway around the globe from Delhi, India to Vancouver, Canada to study at <Text strong> Simon Fraser University,
+			Burnaby</Text>. After my first year of studies I had a grip on a handful of programming languages and some software techniques and tools. Throughout the subsequent
+			years my grip has become stronger and stronger. I consider myself really happy to have chosen this field of studies and have started developed a passion for CS.
+			<br/><br/>
+			I am currently in my last year of studies before grafuating with my Bachelors in Computing Science. My expected graduation date is mid <Text strong>June 2021</Text>. 
+			Throughout my current university experience at SFU I have developed several technical and soft skills. I have met a great deal of bright and geniuine people at SFU 
+			who also play an important role in my education.
+		</Text>
+
+}
+
 class About extends React.Component {
 	render(){
 		const cardStyle = {margin:'auto',marginBottom:24,marginTop:24,width:'80vw'}
@@ -28,10 +54,7 @@ class About extends React.Component {
 								</Col>
 								<Col xs={24} sm={24} md={24} lg={24} xl={16}>
 									<Card hoverable style={contentStyle}>
-										<Text className="about-content">
-											I am a undergraduate student studying computing science. I have experience in managing and developing software in both individual and team enviornments. I am fueled by my passion for understanding the working of technologies in the field of computing science and by my fascination of how two bits 0 and 1 have transformed the world of technolgy and software today. I considers myself a <Text strong>forever student</Text> eager to both build on my academic foundations and stay in tune with the latest software technologies and strategies through continuous learning.
-											<br/><br/>My hunger for knowledge and determination to turn information into action has contributed greatly in my university career. I believe in mindfulness is the key to success - a tenet I live throughout my interests in weightlifting, programming, problem-solving, and even while palying video games. I have worked on a number of academic projects and am currently working on a few personal projects but I am always interested in a challenge!
-										</Text>
+										{data.about}
 									</Card>
 								</Col>
 							</Row>
@@ -46,19 +69,15 @@ class About extends React.Component {
 							style={cardStyle}
 						>
 							<Row type="flex" gutter={24} justify="center" align="middle">
-								<Col xs={24} sm={24}>
+								<Col xs={24} sm={24} md={24} lg={12}>
+									<Card hoverable style={contentStyle}>
+										{data.education}
+									</Card>
+								</Col>
+								<Col xs={24} sm={24} md={24} lg={12}>
 									<div style={contentStyle}>
 										<center><img src={'/assets/SFU4.jpg'} className="sfu-img" alt=''/></center>
 									</div>
-								</Col>
-								<Col xs={24} sm={24}>
-									<Card hoverable style={contentStyle}>
-										<Text className="about-content">
-											I started my post-secondary education in the fall term of 2015 and started pursuing my goal of getting a Bachelors in Computing Science. I was very excited to have been given the oppurtunity to travel halfway around the globe from India to British Columbia, Canada to pursue my university career at <Text strong> Simon Fraser University, Burnaby</Text>. I had litlle to no formal programming knowledege nor any experience of sort in working with computer software(s).
-											<br/><br/>After my first year of studying Computing Sciences I started forming a grip on a handful of programming languages, techniques and tools. Even though I still have a lot to still learn, throughout the subsequent years my grip in this field has become stronger and stronger. There is one thing for cetain that I can say with confidence is that I consider myself really happy to have chosen this field of studies while pursuing my post-secondary education and have started to develop a passion for CS.
-											<br/><br/>I am currently in my last year of studies before completing my Bachelors in Computing Science. My expected graduation date is mid June 2020. Throughout my university experience till now at SFU I have developed several technical and soft skills, which I strongly believe I could not have developed in India simply due to the lack of infrastructure, appropiate exposures and stimulii which I have experienced here in Canada. I have met a great deal of geniuine and bright people here at SFU and they have also played a major role in my metamorphis from a freshman international CS student to one who is constantly looking for different ways to exercise the skills and techniques learnt in academia to solve real-word problems and help the world become a more modern place with more modern experiences.
-										</Text>
-									</Card>
 								</Col>
 							</Row>
 						</Card>
