@@ -1,30 +1,39 @@
 import React from 'react';
 import './App.css';
 
-import { Label, Button, Sidebar, Segment, Menu, Icon } from 'semantic-ui-react';
+import { Label, Button, Sidebar, Segment, Menu, Icon, Image } from 'semantic-ui-react';
 import { Switch, Route, Link } from 'react-router-dom';
+
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Portfolio from './pages/Portfolio.jsx';
+import Contact from './pages/Contact.jsx';
 
 
 const routes = [
   {
     path:'/',
     exact:true,
-    head: () => <span>Home</span>
+    head: () => <span>Home</span>,
+    comp: Home
   },
   {
     path:'/about',
     exact:true,
-    head: () => <span>About</span>
+    head: () => <span>About</span>,
+    comp: About
   },
   {
     path:'/portfolio',
     exact:true,
-    head: () => <span>Portfolio</span>
+    head: () => <span>Portfolio</span>,
+    comp: Portfolio
   },
   {
     path:'/contact',
     exact:true,
-    head: () => <span>Contact</span>
+    head: () => <span>Contact</span>,
+    comp: Contact
   },
 ];
 
@@ -93,6 +102,15 @@ class App extends React.Component {
           borderless
           visible={menu}
         >
+          <Menu.Item 
+            as={Link} 
+            to='/' 
+            name='home' 
+            onClick={this.handleMenuClick}
+          >
+            {/* Avatar */}
+            <Image src='http://localhost:5000/assets/me.jpg' size='small' avatar/>
+          </Menu.Item>
           <Menu.Item
             as={Link}
             to='/'
@@ -145,10 +163,9 @@ class App extends React.Component {
         >
           {/* MAIN HEADER */}
           <Segment size='massive' inverted style={headSegStyle}>
-            {/* MENU BUTTON and LABEL */}
-            <Button as='div' labelPosition='right'>
-              <Button inverted positive size='large' icon={ menu ? 'outdent' : 'indent' } primary onClick={this.showMenu} />
-              <Label basic pointing='left'>
+            {/* MENU BUTTON */}
+            <Button color='orange' circular inverted size='large' onClick={this.showMenu} animated>
+              <Button.Content visible> 
                 <Switch>
                 {
                   routes.map((route,index) => (
@@ -161,17 +178,36 @@ class App extends React.Component {
                   ))
                 }
                 </Switch>
-              </Label>
+              </Button.Content>
+              <Button.Content hidden>
+                <Icon name='list layout'/>
+              </Button.Content>
             </Button>
+            
+            {/* Avatar */}
+            <Image floated='right' src='http://localhost:5000/assets/me.jpg' avatar/>
 
             {/* SOCIAL LINKS */}
             {
               social.map((item,index) => 
-                <Button  inverted floated='right' key={index} circular size='huge' icon={item.icon} href={item.href}/>
+                <Button inverted floated='right' key={index} circular size='huge' icon={item.icon} href={item.href}/>
               )
             }
-            
           </Segment>
+
+          {/* CONTENT SECTION*/}
+          <Switch>
+          {
+            routes.map((route,i) => (
+              <Route 
+                key={i}
+                path={route.path}
+                exact={route.exact}
+                component={route.comp}
+              />
+            ))
+          }
+          </Switch>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     );
