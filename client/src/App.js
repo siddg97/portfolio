@@ -157,7 +157,7 @@ class App extends React.Component {
           </Menu.Item>
         </Sidebar>
 
-        {/* CONTENT */}
+        {/* MAIN DISPLAY OF PAGE */}
         <Sidebar.Pusher
           dimmed={menu}
         >
