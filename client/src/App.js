@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Label, Button, Sidebar, Segment, Menu, Icon, Image } from 'semantic-ui-react';
+import { Button, Sidebar, Segment, Menu, Icon, Image } from 'semantic-ui-react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
