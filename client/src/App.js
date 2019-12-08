@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Button, Sidebar, Segment, Menu, Icon } from 'semantic-ui-react';
+import { Label, Button, Sidebar, Segment, Menu, Icon } from 'semantic-ui-react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 
@@ -9,24 +9,48 @@ const routes = [
   {
     path:'/',
     exact:true,
-    head: () => <h2>Home</h2>
+    head: () => <span>Home</span>
   },
   {
     path:'/about',
     exact:true,
-    head: () => <h2>About</h2>
+    head: () => <span>About</span>
   },
   {
     path:'/portfolio',
     exact:true,
-    head: () => <h2>Portfolio</h2>
+    head: () => <span>Portfolio</span>
   },
   {
     path:'/contact',
     exact:true,
-    head: () => <h2>Contact</h2>
+    head: () => <span>Contact</span>
   },
 ];
+
+const social = [
+  {
+    icon:'instagram',
+    href:'https://www.instagram.com/?hl=en'
+  },
+  {
+    icon:'stack overflow',
+    href:'https://stackoverflow.com/story/sg97'
+  },
+  {
+    icon:'linkedin',
+    href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/'
+  },
+  {
+    icon:'github',
+    href:'https://github.com/siddg97'
+  },
+  {
+    icon:'facebook',
+    href:'https://www.facebook.com/siddharth.gupta.1997'
+  },
+];
+
 
 class App extends React.Component {
   constructor(){
@@ -47,18 +71,19 @@ class App extends React.Component {
 
   handleMenuClick = (e, {name}) => {
     this.setState( {active:name} );
+    this.closeMenu();
   }
 
   render(){
     const pageStyle={height:'100vh', border:0, borderRadius:0};
-
+    const headSegStyle={height:'auto', border:0, borderRadius:0};
     const { menu, active } = this.state;
     return (
       <Sidebar.Pushable as={Segment} style={pageStyle}>
         {/* NAV MENU */}
         <Sidebar
           as={Menu}
-          animation='scale down'
+          animation='overlay'
           inverted
           size='huge'
           width='thin'
@@ -114,20 +139,39 @@ class App extends React.Component {
           </Menu.Item>
         </Sidebar>
 
-        <Sidebar.Pusher>
-          <Button onClick={this.showMenu}>Menu</Button>
-          <Switch>
-          {
-            routes.map((route,index) => (
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.head />}
-              />
-            ))
-          }
-          </Switch>
+        {/* CONTENT */}
+        <Sidebar.Pusher
+          dimmed={menu}
+        >
+          {/* MAIN HEADER */}
+          <Segment size='massive' inverted style={headSegStyle}>
+            {/* MENU BUTTON and LABEL */}
+            <Button as='div' labelPosition='right'>
+              <Button inverted positive size='large' icon={ menu ? 'outdent' : 'indent' } primary onClick={this.showMenu} />
+              <Label basic pointing='left'>
+                <Switch>
+                {
+                  routes.map((route,index) => (
+                    <Route
+                      key={index}
+                      path={route.path}
+                      exact={route.exact}
+                      children={<route.head />}
+                    />
+                  ))
+                }
+                </Switch>
+              </Label>
+            </Button>
+
+            {/* SOCIAL LINKS */}
+            {
+              social.map((item,index) => 
+                <Button  inverted floated='right' key={index} circular size='huge' icon={item.icon} href={item.href}/>
+              )
+            }
+            
+          </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     );
