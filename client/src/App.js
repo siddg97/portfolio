@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Button, Sidebar, Segment, Menu, Icon, Image } from 'semantic-ui-react';
+import { Button, Sidebar, Segment, Menu, Icon, Image, Label } from 'semantic-ui-react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
@@ -56,7 +56,7 @@ const social = [
   {
     icon:'github',
     href:'https://github.com/siddg97',
-    color:'violet'
+    color:'yellow'
   },
   {
     icon:'facebook',
@@ -170,7 +170,7 @@ class App extends React.Component {
           {/* MAIN HEADER */}
           <Segment size='massive' inverted style={headSegStyle}>
             {/* MENU BUTTON */}
-            <Button color='orange' circular inverted size='large' onClick={this.showMenu} animated>
+            <Button color='violet' circular inverted size='large' onClick={this.showMenu} animated>
               <Button.Content visible> 
                 <Switch>
                 {
@@ -189,17 +189,19 @@ class App extends React.Component {
                 <Icon name='list layout'/>
               </Button.Content>
             </Button>
+
             
-            {/* Avatar */}
-            <Link to='/'>
-              <Image floated='right' src='http://localhost:5000/assets/me.jpg' avatar/>
-            </Link>
             {/* SOCIAL LINKS */}
             {
               social.map((item,index) => 
                 <Button color={item.color} inverted floated='right' key={index} circular size='large' icon={item.icon} href={item.href} />
               )
             }
+
+            {/* Avatar */}
+            <Label as={Link} to='/' size='huge' color='black' circular>
+              Siddharth Gupta
+            </Label>
           </Segment>
 
           {/* CONTENT SECTION*/}
