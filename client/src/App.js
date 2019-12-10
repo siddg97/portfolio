@@ -40,23 +40,28 @@ const routes = [
 const social = [
   {
     icon:'instagram',
-    href:'https://www.instagram.com/?hl=en'
+    href:'https://www.instagram.com/?hl=en',
+    color:'purple'
   },
   {
     icon:'stack overflow',
-    href:'https://stackoverflow.com/story/sg97'
+    href:'https://stackoverflow.com/story/sg97',
+    color:'orange'
   },
   {
     icon:'linkedin',
-    href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/'
+    href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/',
+    color:'blue'
   },
   {
     icon:'github',
-    href:'https://github.com/siddg97'
+    href:'https://github.com/siddg97',
+    color:'violet'
   },
   {
     icon:'facebook',
-    href:'https://www.facebook.com/siddharth.gupta.1997'
+    href:'https://www.facebook.com/siddharth.gupta.1997',
+    color:'red'
   },
 ];
 
@@ -185,12 +190,13 @@ class App extends React.Component {
             </Button>
             
             {/* Avatar */}
-            <Image floated='right' src='http://localhost:5000/assets/me.jpg' avatar/>
-
+            <Link to='/'>
+              <Image floated='right' src='http://localhost:5000/assets/me.jpg' avatar/>
+            </Link>
             {/* SOCIAL LINKS */}
             {
               social.map((item,index) => 
-                <Button inverted floated='right' key={index} circular size='huge' icon={item.icon} href={item.href}/>
+                <Button color={item.color} inverted floated='right' key={index} circular size='large' icon={item.icon} href={item.href} />
               )
             }
           </Segment>
