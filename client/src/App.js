@@ -89,8 +89,9 @@ class App extends React.Component {
   }
 
   render(){
-    const pageStyle={height:'100vh', border:0, borderRadius:0};
-    const headSegStyle={height:'auto', border:0, borderRadius:0};
+    const pageStyle={minHeight:'100vh', border:0, borderRadius:0};
+    const headSegStyle={border:0, borderRadius:0, margin:0, minHeight:'5vh'};
+    const footSegStyle={minHeight:'10vh', border:0, borderRadius:0, margin:0};
     const { menu, active } = this.state;
     return (
       <Sidebar.Pushable as={Segment} style={pageStyle}>
@@ -214,6 +215,11 @@ class App extends React.Component {
             ))
           }
           </Switch>
+
+          {/* FOOTER SECTION */}
+          <Segment size='massive' inverted style={footSegStyle}>
+            <h2> FOOTER GOES HERE.... </h2>
+          </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     );
