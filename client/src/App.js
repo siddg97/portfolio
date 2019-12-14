@@ -15,25 +15,41 @@ const routes = [
     path:'/',
     exact:true,
     head: () => <span>Home</span>,
-    comp: Home
+    comp: Home,
+    name:'home',
+    icon:'home',
+    text:'Home',
+    color:'red'
   },
   {
     path:'/about',
     exact:true,
     head: () => <span>About</span>,
-    comp: About
+    comp: About,
+    name:'about',
+    icon:'user',
+    text:'About',
+    color:'blue'
   },
   {
     path:'/portfolio',
     exact:true,
     head: () => <span>Portfolio</span>,
-    comp: Portfolio
+    comp: Portfolio,
+    name:'portfolio',
+    icon:'trophy',
+    text:'Portfolio',
+    color:'green'
   },
   {
     path:'/contact',
     exact:true,
     head: () => <span>Contact</span>,
-    comp: Contact
+    comp: Contact,
+    name:'contact',
+    icon:'discussions',
+    text:'Contact',
+    color:'violet'
   },
 ];
 
@@ -117,50 +133,26 @@ class App extends React.Component {
             {/* Avatar */}
             <Image src='http://localhost:5000/assets/me.jpg' size='small' avatar/>
           </Menu.Item>
-          <Menu.Item
-            as={Link}
-            to='/'
-            active={active==='home'}
-            name='home'
-            fitted='horizontally'
-            onClick={this.handleMenuClick}
-          >
-            <Icon inverted color='red' name='home' />
-            Home
-          </Menu.Item>
-          <Menu.Item
-            as={Link}
-            to='/about'
-            active={active==='about'}
-            name='about'
-            fitted='horizontally'
-            onClick={this.handleMenuClick}
-          >
-            <Icon inverted color='blue' name='user' />
-            About
-          </Menu.Item>
-          <Menu.Item
-            as={Link}
-            to='/portfolio'
-            active={active==='portfolio'}
-            name='portfolio'
-            fitted='horizontally'
-            onClick={this.handleMenuClick}
-          >
-            <Icon inverted color='green' name='trophy' />
-            Portfolio
-          </Menu.Item>
-          <Menu.Item
-            as={Link}
-            to='/contact'
-            active={active==='contact'}
-            name='contact'
-            fitted='horizontally'
-            onClick={this.handleMenuClick}
-          >
-            <Icon inverted color='violet' name='discussions' />
-            Contact
-          </Menu.Item>
+          {
+            routes.map((route,i) => 
+              <Menu.Item
+                key={i}
+                as={Link}
+                to={route.path}
+                name={route.name}
+                active={active===route.name}
+                fitted='horizontally'
+                onClick={this.handleMenuClick}
+              >
+                <Icon 
+                  inverted
+                  color={route.color}
+                  name={route.icon}
+                />
+                {route.text}
+              </Menu.Item>
+            )
+          }
         </Sidebar>
 
         {/* MAIN DISPLAY OF PAGE */}
