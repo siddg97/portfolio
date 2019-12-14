@@ -94,7 +94,7 @@ const social = [
 
 // function to get width for responsive containers
 const getWidth = () => {
-  return typeof window === 'undefined' ? Responsive.onlyComputer.minWidth : window.innerWidth
+  return typeof window === 'undefined' ? Responsive.onlyTablet.minWidth : window.innerWidth
 }
 
 
@@ -345,6 +345,5 @@ const App = () => (
     </Switch>
   </ResponsiveView>
 )
-
 
 export default App;
