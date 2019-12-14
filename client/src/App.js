@@ -1,21 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
-
-import { Button, Sidebar, Segment, Menu, Icon, Image, Label } from 'semantic-ui-react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { 
+  Container, 
+  Button, 
+  Sidebar, 
+  Segment, 
+  Menu, 
+  Icon, 
+  Image, 
+  Responsive, 
+  Visibility 
+} from 'semantic-ui-react';
 
+
+// Pages component
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
-
 
 const routes = [
   {
     path:'/',
     exact:true,
     head: () => <span>Home</span>,
-    comp: Home,
+    comp: () => <Home mobile />,
     name:'home',
     icon:'home',
     text:'Home',
@@ -25,7 +36,7 @@ const routes = [
     path:'/about',
     exact:true,
     head: () => <span>About</span>,
-    comp: About,
+    comp: () => <About mobile />,
     name:'about',
     icon:'user',
     text:'About',
@@ -35,7 +46,7 @@ const routes = [
     path:'/portfolio',
     exact:true,
     head: () => <span>Portfolio</span>,
-    comp: Portfolio,
+    comp: () => <Portfolio mobile />,
     name:'portfolio',
     icon:'trophy',
     text:'Portfolio',
@@ -45,7 +56,7 @@ const routes = [
     path:'/contact',
     exact:true,
     head: () => <span>Contact</span>,
-    comp: Contact,
+    comp: () => <Contact mobile />,
     name:'contact',
     icon:'discussions',
     text:'Contact',
@@ -55,19 +66,9 @@ const routes = [
 
 const social = [
   {
-    icon:'instagram',
-    href:'https://www.instagram.com/?hl=en',
-    color:'purple'
-  },
-  {
-    icon:'stack overflow',
-    href:'https://stackoverflow.com/story/sg97',
-    color:'orange'
-  },
-  {
-    icon:'linkedin',
-    href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/',
-    color:'blue'
+    icon:'facebook',
+    href:'https://www.facebook.com/siddharth.gupta.1997',
+    color:'red'
   },
   {
     icon:'github',
@@ -75,150 +76,275 @@ const social = [
     color:'yellow'
   },
   {
-    icon:'facebook',
-    href:'https://www.facebook.com/siddharth.gupta.1997',
-    color:'red'
+    icon:'linkedin',
+    href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/',
+    color:'blue'
   },
+  {
+    icon:'stack overflow',
+    href:'https://stackoverflow.com/story/sg97',
+    color:'orange'
+  },
+  {
+    icon:'instagram',
+    href:'https://www.instagram.com/?hl=en',
+    color:'purple'
+  } 
 ];
 
+// function to get width for responsive containers
+const getWidth = () => {
+  return typeof window === 'undefined' ? Responsive.onlyComputer.minWidth : window.innerWidth
+}
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state={
-      menu: false,
-      active: 'home',
+
+class DesktopMenu extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      active: 'home'
     }
   }
 
-  closeMenu = () => {
-    this.setState( {menu:false} );
+  hideMenu = () => this.setState({ menu: false })
+  showMenu = () => this.setState({ menu: true })
+  handleMenuClick = (e, {name}) => this.setState( {active: name} );
+
+  render() {
+    const { menu, active } = this.state;
+    const { children } = this.props;
+    const segStyle = {padding:'1em 0em', border:0, borderRadius:0, margin:0, minHeight:'10vh'};
+    return (
+      <Responsive
+        getWidth={getWidth}
+        minWidth={Responsive.onlyComputer.minWidth}
+      >
+        <Visibility
+          once={false}
+          onBottomPassed={this.showMenu}
+          onBottomPassedReverse={this.hideMenu}
+        >
+          <Segment
+            inverted
+            style={segStyle}
+          >
+            <Menu
+              fixed={menu ? 'top': null}
+              inverted
+              pointing
+              secondary
+              size='large'
+            >
+
+              <Container>
+              {
+                routes.map((item,i) => 
+                  <Menu.Item 
+                    key={i}
+                    as={Link}
+                    to={item.path}
+                    name={item.name}
+                    active={active===item.name}
+                    fitted='horizontally'
+                    onClick={this.handleMenuClick}
+                  >
+                    <Icon 
+                      inverted 
+                      color={item.color} 
+                      name={item.icon}
+                    />
+                    {item.text}
+                  </Menu.Item>
+                )
+              }
+              </Container>
+              {/* SOCIAL LINKS */}
+              {
+                social.map((item,index) =>
+                  <Menu.Item 
+                    position='right'
+                    fitted='horizontally'
+                    key={index}
+                  >
+                    <Button 
+                      color={item.color} 
+                      inverted 
+                      circular
+                      size='large' 
+                      icon={item.icon} 
+                      href={item.href} 
+                    />
+                  </Menu.Item>
+                )
+              }
+            </Menu>
+          </Segment>
+        </Visibility>
+        { children }
+      </Responsive>
+    )
+  }
+}
+
+DesktopMenu.propTypes = {
+  children: PropTypes.node,
+}
+
+
+class MobileMenu extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      active: 'home'
+    };
   }
 
-  showMenu = () => {
-    this.setState( {menu:true} );
-  }
-
+  hideSideBar = () => this.setState({ open: false })
+  showSideBar = () => this.setState({ open: true })
   handleMenuClick = (e, {name}) => {
     this.setState( {active:name} );
-    this.closeMenu();
+    this.hideSideBar();
   }
 
-  render(){
-    const pageStyle={minHeight:'100vh', border:0, borderRadius:0};
-    const headSegStyle={border:0, borderRadius:0, margin:0, minHeight:'5vh'};
-    const footSegStyle={minHeight:'10vh', border:0, borderRadius:0, margin:0};
-    const { menu, active } = this.state;
+  render() {
+    const { children } = this.props;
+    const { open, active } = this.state;
+    const headSegStyle = {border:0, borderRadius:0, margin:0}
     return (
-      <Sidebar.Pushable as={Segment} style={pageStyle}>
-        {/* NAV MENU */}
+      <Responsive
+        as={Sidebar.Pushable}
+        getWidth={getWidth}
+        maxWidth={Responsive.onlyTablet.maxWidth}
+      >
         <Sidebar
           as={Menu}
-          animation='overlay'
+          animation='push'
           inverted
           size='huge'
           width='thin'
           icon='labeled'
-          onHide={this.closeMenu}
+          onHide={this.hideSideBar}
           vertical
           borderless
-          visible={menu}
+          visible={open}
         >
-          <Menu.Item 
-            as={Link} 
-            to='/' 
-            name='home' 
+          {/* AVATAR */}
+          <Menu.Item
+            as={Link}
+            to='/'
+            name='home'
             onClick={this.handleMenuClick}
           >
-            {/* Avatar */}
-            <Image src='http://localhost:5000/assets/me.jpg' size='small' avatar/>
+            <Image 
+              src='http://localhost:5000/assets/me.jpg' 
+              size='small' 
+              avatar
+            />
           </Menu.Item>
           {
-            routes.map((route,i) => 
-              <Menu.Item
+            routes.map((item,i) =>
+              <Menu.Item 
                 key={i}
                 as={Link}
-                to={route.path}
-                name={route.name}
-                active={active===route.name}
+                to={item.path}
+                name={item.name}
+                active={active===item.name}
                 fitted='horizontally'
                 onClick={this.handleMenuClick}
               >
-                <Icon 
+                <Icon
                   inverted
-                  color={route.color}
-                  name={route.icon}
+                  color={item.color}
+                  name={item.icon}
                 />
-                {route.text}
+                {item.text}
               </Menu.Item>
             )
           }
         </Sidebar>
 
-        {/* MAIN DISPLAY OF PAGE */}
-        <Sidebar.Pusher
-          dimmed={menu}
-        >
-          {/* MAIN HEADER */}
-          <Segment size='massive' inverted style={headSegStyle}>
-            {/* MENU BUTTON */}
-            <Button color='violet' circular inverted size='large' onClick={this.showMenu} animated>
-              <Button.Content visible> 
-                <Switch>
-                {
-                  routes.map((route,index) => (
-                    <Route
-                      key={index}
-                      path={route.path}
-                      exact={route.exact}
-                      children={<route.head />}
-                    />
-                  ))
-                }
-                </Switch>
-              </Button.Content>
-              <Button.Content hidden>
-                <Icon name='list layout'/>
-              </Button.Content>
+        <Sidebar.Pusher dimmed={open}>
+          <Segment
+            size='massive'
+            inverted
+            style={headSegStyle}
+          >
+            <Button 
+              color='violet'
+              circular
+              inverted
+              size='small'
+              onClick={this.showSideBar}
+            >
+              <Switch>
+              {
+                routes.map((item,i) => 
+                  <Route
+                    key={i}
+                    path={item.path}
+                    exact={item.exact}
+                    children={<item.head />}
+                  />
+                )
+              }
+              </Switch>
             </Button>
 
-            
             {/* SOCIAL LINKS */}
             {
               social.map((item,index) => 
-                <Button color={item.color} inverted floated='right' key={index} circular size='large' icon={item.icon} href={item.href} />
+                <Button 
+                  color={item.color} 
+                  inverted 
+                  floated='right' 
+                  key={index} 
+                  circular
+                  size='tiny' 
+                  icon={item.icon} 
+                  href={item.href} 
+                />
               )
             }
-
-            {/* Avatar */}
-            <Label as={Link} to='/' size='huge' color='black' circular>
-              Siddharth Gupta
-            </Label>
           </Segment>
 
-          {/* CONTENT SECTION*/}
-          <Switch>
-          {
-            routes.map((route,i) => (
-              <Route 
-                key={i}
-                path={route.path}
-                exact={route.exact}
-                component={route.comp}
-              />
-            ))
-          }
-          </Switch>
-
-          {/* FOOTER SECTION */}
-          <Segment size='massive' inverted style={footSegStyle}>
-            <h2> FOOTER GOES HERE.... </h2>
-          </Segment>
+          { children }
         </Sidebar.Pusher>
-      </Sidebar.Pushable>
-    );
+      </Responsive>
+    )
   }
-  
 }
+
+MobileMenu.propTypes = {
+  children: PropTypes.node,
+}
+
+const ResponsiveView = ({ children }) => (
+  <div>
+    <DesktopMenu>{children}</DesktopMenu>
+    <MobileMenu>{children}</MobileMenu>
+  </div>
+)
+
+ResponsiveView.propTypes = {
+  children: PropTypes.node,
+}
+
+const App = () => (
+  <ResponsiveView>
+    <Switch>
+    {
+      routes.map((route,i) => (
+        <Route 
+          key={i}
+          path={route.path}
+          exact={route.exact}
+          render={route.comp}
+        />
+      ))
+    }
+    </Switch>
+  </ResponsiveView>
+)
+
 
 export default App;
