@@ -114,7 +114,7 @@ class DesktopMenu extends React.Component {
   handleMenuClick = (e, {name}) => this.setState( {active: name} );
 
   render() {
-    const { menu, active } = this.state;
+    const { active } = this.state;
     const { children } = this.props;
     const segStyle = {border:0, borderRadius:0, margin:0, minHeight:'5vh'};
     return (
