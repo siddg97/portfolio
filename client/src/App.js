@@ -11,8 +11,11 @@ import {
   Icon, 
   Image, 
   Responsive, 
-  Visibility 
+  Visibility,
+  Grid,
+  Header 
 } from 'semantic-ui-react';
+
 
 
 // Pages component
@@ -113,7 +116,7 @@ class DesktopMenu extends React.Component {
   render() {
     const { menu, active } = this.state;
     const { children } = this.props;
-    const segStyle = {padding:'1em 0em', border:0, borderRadius:0, margin:0, minHeight:'10vh'};
+    const segStyle = {border:0, borderRadius:0, margin:0, minHeight:'5vh'};
     return (
       <Responsive
         getWidth={getWidth}
@@ -126,14 +129,14 @@ class DesktopMenu extends React.Component {
         >
           <Segment
             inverted
+            size='large'
             style={segStyle}
           >
             <Menu
-              fixed={menu ? 'top': null}
               inverted
               pointing
               secondary
-              size='large'
+              size='huge'
             >
 
               <Container>
@@ -145,7 +148,6 @@ class DesktopMenu extends React.Component {
                     to={item.path}
                     name={item.name}
                     active={active===item.name}
-                    fitted='horizontally'
                     onClick={this.handleMenuClick}
                   >
                     <Icon 
@@ -168,7 +170,7 @@ class DesktopMenu extends React.Component {
                   >
                     <Button 
                       color={item.color} 
-                      inverted 
+                      inverted
                       circular
                       size='large' 
                       icon={item.icon} 
@@ -343,6 +345,33 @@ const App = () => (
       ))
     }
     </Switch>
+    <Segment inverted vertical style={{minHeight:'10vh', padding:'4em', border:0, borderRadius:0}}>
+      <Container>
+        <Grid divided stackable celled='internally'>
+          <Grid.Row >
+            <Grid.Column width={6} textAlign='center' verticalAlign='middle'>
+            {
+              social.map((item,i) =>
+                <Button size='large' key={i} circular color={item.color} icon={item.icon} href={item.href} />
+              )
+            }
+            </Grid.Column>
+            <Grid.Column width={10} textAlign='center' verticalAlign='middle'>
+              <Header as='span' color='grey' size='medium'>
+                Created with {' '}
+              </Header>
+              <Icon name='like' color='red' size='large' />
+              <Header as='span' inverted size='medium'>
+                by Siddharth Gupta
+              </Header>
+              <Header as='h3' size='small' inverted>
+                Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </Segment>
   </ResponsiveView>
 )
 
