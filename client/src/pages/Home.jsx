@@ -5,9 +5,8 @@ import { Divider, Segment, Container, Header } from 'semantic-ui-react';
 const content = [
 	{
 		header:
-			<span>
-				Hi, I am <Header as='span' color='yellow'>Siddharth Gupta</Header>
-			</span>,
+			<Header as='span' color='yellow'>I'm <Header as='span' inverted>Siddharth Gupta</Header></Header> 
+			,
 		subheader:
 			<span>
 				I am a <Header as='a' size='small' inverted color='yellow' href='https://en.wikipedia.org/wiki/Software_engineer'>Software Engineer</Header> rooted in the Greater Vancouver Area. 
@@ -15,23 +14,23 @@ const content = [
 	},
 	{
 		header:
-			<span>
+			<Header as='span' inverted>
 				I am interested in
-			</span>
+			</Header>
 		,
 		subheader:
 			<span>
 				<Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Embedded_software'>Embedded Development</Header>, 
-				{' '}<Header as='a' size='small' inverted color='blue' href='https://en.wikipedia.org/wiki/Web_development'>Web Development</Header>, 
-				{' '}<Header as='a' size='small' inverted color='olive' href='https://en.wikipedia.org/wiki/Artificial_intelligence'>Artificial Intelligence</Header> 
-				{' '}and{' '} <Header as='a' size='small' inverted color='teal' href='https://en.wikipedia.org/wiki/Machine_learning'>Machine Learning</Header>.
+				{' '}<Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Web_development'>Web Development</Header>, 
+				{' '}<Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Artificial_intelligence'>Artificial Intelligence</Header> 
+				{' '}and{' '} <Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Machine_learning'>Machine Learning</Header>.
 			</span>
 	},
 	{
 		header:
-			<span>
-				My expected graduate date is <Header as='span' color='red'>June 2021</Header>
-			</span>
+			<Header as='span' inverted>
+				Expected graduate date: <Header as='span' inverted color='red'>June 2021</Header>
+			</Header>
 		,
 		subheader:
 			<span>
@@ -41,13 +40,13 @@ const content = [
 	},
 	{
 		header:
-			<span>
-				I currently live in <Header as='a' inverted href='https://en.wikipedia.org/wiki/Burnaby' color='green'>Burnaby</Header>
-			</span>
+			<Header as='span' inverted>
+				I currently live in <Header as='a' inverted href='https://en.wikipedia.org/wiki/Burnaby' color='blue'>Burnaby</Header>
+			</Header>
 		,
 		subheader:
 			<span>
-				Originally from <Header as='a' inverted color='green' href='https://en.wikipedia.org/wiki/India'> India</Header>.
+				Originally from <Header as='a' inverted color='blue' href='https://en.wikipedia.org/wiki/India'> India</Header>.
 			</span>
 	},
 ];
@@ -56,12 +55,13 @@ const content = [
 const Home = ({ mobile }) => {
 	const pageStyle={minHeight:'80vh',border:0, borderRadius:0, margin:0};
 	const headStyle={
-		fontSize: '3em', 
+		fontSize: '2em', 
 		marginBottom: 0,
 	};
 	const subHeadStyle={
-		fontSize: '1.5em',
+		fontSize: '1.75em',
 	    fontWeight:'normal',
+	    marginBottom:'1.5em'
 	
 	};
 	return (
@@ -87,7 +87,6 @@ const Home = ({ mobile }) => {
 						>
 							{item.subheader}
 						</Header>
-						<Divider/>
 					</div>
 				)
 			}
