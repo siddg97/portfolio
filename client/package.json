@@ -11,7 +11,9 @@
     "react-scripts": "3.3.0",
     "react-tooltip": "^3.11.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.1"
+    "semantic-ui-react": "^0.88.1",
+    "sweetalert2": "^9.5.3",
+    "validator": "^12.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

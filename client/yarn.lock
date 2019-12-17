@@ -9711,6 +9711,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+sweetalert2@^9.5.3:
+  version "9.5.3"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.5.3.tgz#b280e218dc387a96fa2b6175b50d75421a708f7d"
+  integrity sha512-4wzLUCmVby3NPQC8XHp0HRJgTm5tbAO7OOaqabATNe0U6JN/oyBTS7iJJG9V83MpcP6MLDUEWcGO/Y8i6g2jYw==
+
 symbol-tree@^3.2.2:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
@@ -10198,6 +10203,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-12.1.0.tgz#a3a7315d5238cbc15e46ad8d5e479aafa7119925"
+  integrity sha512-gIC2RBuFRi574Rb9vewGCJ7TCLxHXNx6EKthEgs+Iz0pYa9a9Te1VLG/bGLsAyGWrqR5FfR7tbFUI7FEF2LiGA==
 
 value-equal@^1.0.1:
   version "1.0.1"

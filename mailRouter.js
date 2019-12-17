@@ -27,7 +27,7 @@ router.post('/', (req,res,next) => {
 	var mailContent = 'Name: '+name+' \nEmail: '+email+' \nMessage: \n'+message+'\n';
 
 	var mail = {
-		from: name,
+		from: email,
 		to: 'g.sidd97@gmail.com',
 		text: mailContent,
 		subject:subject

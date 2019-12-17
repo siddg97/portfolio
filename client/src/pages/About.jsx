@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Divider, Segment, Container, Header, Image } from 'semantic-ui-react';
+import { Grid, Divider, Container, Header, Image } from 'semantic-ui-react';
 
 const content ={
 	about:
@@ -30,7 +30,6 @@ const content ={
 };
 
 const About = ({ mobile }) => {
-	const pageStyle={minHeight:'90vh', width:'100vw', border:0, borderRadius:0, margin:0}
 	const headStyle={
 		fontSize: '3em',
 		marginBottom: 0,
@@ -38,59 +37,85 @@ const About = ({ mobile }) => {
 	const subHeadStyle={
 		fontSize: '1.5em',
 		fontWeight:'normal',
+		paddingBottom: '1em'
 	};
 	return (
-		<Segment
-			inverted
-			style={pageStyle}
+		<Grid 
+			columns={2} 
+			inverted 
+			stretched 
+			stackable 
+			container  
+			relaxed
+			verticalAlign='middle'
 		>
-			<Grid 
-				columns={2} 
-				inverted 
+			<Grid.Row 
 				stretched 
-				stackable 
-				container 
-				divided 
-				relaxed
-				verticalAlign='middle'
+				centered
 			>
-				<Grid.Row stretched centered celled='internally'>
-					<Grid.Column width={10}>
-						<Container>
-							<Header color='yellow' size='huge' inverted floating='left' style={headStyle}>About Me</Header>
-							<Header inverted style={subHeadStyle}>{content.about}</Header>
-						</Container>
-					</Grid.Column>
-					<Grid.Column width={6}>
-						<center>
-							<Image 
-					            src='http://localhost:5000/assets/me.jpg' 
-					            size='medium' 
-					            avatar
-				            />
-				        </center>
-					</Grid.Column>
-				</Grid.Row>
-				<Divider/>
-				<Grid.Row stretched centered>
-					<Grid.Column width={10}>
-						<Container>
-							<Header color='yellow' size='huge' inverted floating='left' style={headStyle}>Education</Header>
-							<Header inverted style={subHeadStyle}>{content.education}</Header>
-						</Container>
-					</Grid.Column>
-					<Grid.Column width={6}>
-						<center>
-							<Image
-								src='http://localhost:5000/assets/SFU4.jpg'
-								size='large'
-							/>
-						</center>
-					</Grid.Column>
-				</Grid.Row>
-				<Divider/>
-			</Grid>
-		</Segment>
+				<Grid.Column width={10}>
+					<Container>
+						<Header 
+							color='yellow' 
+							size='huge' 
+							inverted 
+							floating='left' 
+							style={headStyle}
+						>
+							About Me
+						</Header>
+						<Header 
+							inverted 
+							style={subHeadStyle}
+						>
+							{content.about}
+						</Header>
+					</Container>
+				</Grid.Column>
+				<Grid.Column width={6}>
+					<center>
+						<Image 
+				            src='http://localhost:5000/assets/me.jpg' 
+				            size='medium' 
+				            avatar
+			            />
+			        </center>
+				</Grid.Column>
+			</Grid.Row>
+			<Divider/>
+			<Grid.Row 
+				stretched 
+				centered
+			>
+				<Grid.Column width={10}>
+					<Container>
+						<Header 
+							color='yellow' 
+							size='huge' 
+							inverted 
+							floating='left' 
+							style={headStyle}
+						>
+							Education
+						</Header>
+						<Header 
+							inverted 
+							style={subHeadStyle}
+						>
+							{content.education}
+						</Header>
+					</Container>
+				</Grid.Column>
+				<Grid.Column width={6}>
+					<center>
+						<Image
+							src='http://localhost:5000/assets/SFU4.jpg'
+							size='large'
+						/>
+					</center>
+				</Grid.Column>
+			</Grid.Row>
+		</Grid>
 	)
 }
 

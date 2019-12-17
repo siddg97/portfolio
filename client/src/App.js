@@ -67,27 +67,32 @@ const social = [
   {
     icon:'facebook',
     href:'https://www.facebook.com/siddharth.gupta.1997',
-    color:'red'
+    color:'red',
+    color2:'facebook'
   },
   {
     icon:'github',
     href:'https://github.com/siddg97',
-    color:'yellow'
+    color:'yellow',
+    color2:'black'
   },
   {
     icon:'linkedin',
     href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/',
-    color:'blue'
+    color:'blue',
+    color2:'linkedin'
   },
   {
     icon:'stack overflow',
     href:'https://stackoverflow.com/story/sg97',
-    color:'orange'
+    color:'orange',
+    color2:'orange'
   },
   {
     icon:'instagram',
     href:'https://www.instagram.com/?hl=en',
-    color:'purple'
+    color:'purple',
+    color2:'instagram'
   } 
 ];
 
@@ -104,6 +109,7 @@ ResponsiveView.propTypes = {
 
 const Footer = () => (
   <Segment 
+    color='olive'
     inverted 
     vertical 
     style={{minHeight:'10vh', padding:'4em', border:0, borderRadius:0}}
@@ -122,7 +128,7 @@ const Footer = () => (
           >
           {
             social.map((item,i) =>
-              <Button size='large' key={i} circular color={item.color} icon={item.icon} href={item.href} />
+              <Button size='large' key={i} circular color={item.color2} icon={item.icon} href={item.href} />
             )
           }
           </Grid.Column>
@@ -133,7 +139,6 @@ const Footer = () => (
           >
             <Header 
               as='span' 
-              color='grey' 
               size='medium'
             >
               Created with {' '}
@@ -145,15 +150,13 @@ const Footer = () => (
             />
             <Header 
               as='span' 
-              inverted 
               size='medium'
             >
               by Siddharth Gupta
             </Header>
             <Header 
               as='h3' 
-              size='small' 
-              inverted
+              size='tiny' 
             >
               Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
             </Header>
@@ -164,20 +167,27 @@ const Footer = () => (
   </Segment>
 )
 
+const pageStyle={minHeight:'80vh',border:0, borderRadius:0, margin:0, padding: '1.5em 0.5em 4em 0.5em'};
+
 const App = () => (
   <ResponsiveView>
-    <Switch>
-    {
-      routes.map((route,i) => (
-        <Route 
-          key={i}
-          path={route.path}
-          exact={route.exact}
-          component={route.comp}
-        />
-      ))
-    }
-    </Switch>
+    <Segment 
+      inverted
+      style={pageStyle}
+    >
+      <Switch>
+      {
+        routes.map((route,i) => (
+          <Route 
+            key={i}
+            path={route.path}
+            exact={route.exact}
+            component={route.comp}
+          />
+        ))
+      }
+      </Switch>
+    </Segment>
     <Footer />
   </ResponsiveView>
 )
