@@ -6,9 +6,6 @@ import {
 	Button,
 	Icon
 } from 'semantic-ui-react';
-
-import isEmail from 'validator/lib/isEmail';
-import isEmpty from 'validator/lib/isEmpty';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -40,64 +37,37 @@ class Contact extends React.Component {
 		errors:{}
 	});
 
-	validateForm = ({name, email, subject, message}) => {
-		let err = {}
-		if (isEmpty(name)){
-			err.name = 'Name is required'
-		} 
-		if (isEmpty(email)){
-			err.email = 'Email is required'
-		} else {
-			if(!isEmail(email)){
-				err.email = 'Invalid email'
-			}
-		}
-
-		if (isEmpty(subject)){
-			err.subject = 'Subject is required'
-		} 
-		if (isEmpty(message)){
-			err.message = 'Message is required'
-		}
-		this.setState({errors: {...err}});
-		return err==={}
-	}
-
 	sendMessage = () => {
 		const { name, email, subject, message } = this.state;
 		const data = { name, email, subject, message };
-		const isValid = this.validateForm(data);
-		if(isValid){
-			axios({
-				method: "POST",
-				url: 'http://localhost:5000/send-mail',
-				headers:{
-					"Content-Type": "application/json"
-				},
-				data: data
-			})
-			.then((res) => {
-				if(res.data.msg === 'success'){
-					Swal.fire({
-						text: 'Your message has been sent! I will get back to you on my first convinience',
-						type: 'success'
-					});
-					this.resetForm();
-				} else {
-					Swal.fire({
-						type: 'error',
-						html: 'Your message failed to send. Please try again in some time.'
-					});
-				}
-			})
-			.catch(err => {
-				console.error(err.msg);
+		axios({
+			method: "POST",
+			url: 'http://localhost:5000/send-mail',
+			headers:{
+				"Content-Type": "application/json"
+			},
+			data: data,
+		})
+		.then((res) => {
+			if(res.data.msg === 'success'){
 				Swal.fire({
-					type: 'error',
-					html: 'Your message failed to send. Please try again in some time.'
+					text: 'Your message has been sent! I will get back to you on my first convinience',
+					type: 'success'
 				});
-			})
-		}	
+				this.resetForm();
+			}
+
+			if(res.data.msg === 'fail'){
+				this.setState({errors: res.data.errors})
+			}
+		})
+		.catch(err => {
+			console.error(err.msg);
+			Swal.fire({
+				type: 'error',
+				html: 'Your message failed to send. Please try again in some time.'
+			});
+		})
 	}
 
 	render() {
@@ -106,7 +76,7 @@ class Contact extends React.Component {
 			<Container>
 				<DIV>
 					<Icon name='envelope' size='huge' color='violet' />
-					<Header as='span' inverted>To get in touch with send me a message using the form below and I will get back to you as soon as possible.</Header>
+					<Header as='span' size='medium' inverted>To get in touch with send me a message using the form below and I will get back to you as soon as possible.</Header>
 				</DIV>
 				<Form 
 					inverted
