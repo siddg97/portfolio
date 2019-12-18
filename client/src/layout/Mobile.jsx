@@ -123,7 +123,6 @@ class MobileMenu extends React.Component {
               )
             }
           </Segment>
-
           { children }
         </Sidebar.Pusher>
       </Responsive>

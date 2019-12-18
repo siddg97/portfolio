@@ -7,8 +7,7 @@ import {
 	Button,
 	Menu,
 	Segment,
-	Container,
-	Visibility
+	Container
 } from 'semantic-ui-react';
 
 // function to get width for responsive containers
@@ -22,9 +21,6 @@ class DesktopMenu extends React.Component {
     this.state = {};
   }
 
-  hideMenu = () => this.setState({ menu: false })
-  showMenu = () => this.setState({ menu: true })
-
   render() {
     const { routes, children, social } = this.props;
     const segStyle = {border:0, borderRadius:0, margin:0, minHeight:'5vh'};
@@ -33,64 +29,57 @@ class DesktopMenu extends React.Component {
         getWidth={getWidth}
         minWidth={Responsive.onlyComputer.minWidth}
       >
-        <Visibility
-          once={false}
-          onBottomPassed={this.showMenu}
-          onBottomPassedReverse={this.hideMenu}
+        <Segment
+          inverted
+          size='huge'
+          style={segStyle}
+          vertical
         >
-          <Segment
+          <Menu
             inverted
-            size='large'
-            style={segStyle}
+            secondary
+            size='huge'
           >
-            <Menu
-              inverted
-              pointing
-              secondary
-              size='huge'
-            >
 
-              <Container>
-              {
-                routes.map((item,i) => 
-                  <Menu.Item 
-                    key={i}
-                    as={NavLink}
-                    exact
-                    to={item.path}
-                  >
-                    <Icon 
-                      inverted 
-                      color={item.color} 
-                      name={item.icon}
-                    />
-                    {item.text}
-                  </Menu.Item>
-                )
-              }
-              </Container>
-              {/* SOCIAL LINKS */}
-              {
-                social.map((item,index) =>
-                  <Menu.Item 
-                    position='right'
-                    fitted='horizontally'
-                    key={index}
-                  >
-                    <Button 
-                      color={item.color} 
-                      inverted
-                      circular
-                      size='large' 
-                      icon={item.icon} 
-                      href={item.href} 
-                    />
-                  </Menu.Item>
-                )
-              }
-            </Menu>
-          </Segment>
-        </Visibility>
+            <Container>
+            {
+              routes.map((item,i) => 
+                <Menu.Item 
+                  key={i}
+                  as={NavLink}
+                  exact
+                  to={item.path}
+                >
+                  <Icon  
+                    color={item.color} 
+                    name={item.icon}
+                  />
+                  {item.text}
+                </Menu.Item>
+              )
+            }
+            </Container>
+            {/* SOCIAL LINKS */}
+            {
+              social.map((item,index) =>
+                <Menu.Item 
+                  position='right'
+                  fitted='horizontally'
+                  key={index}
+                >
+                  <Button 
+                    color={item.color} 
+                    inverted
+                    circular
+                    size='large' 
+                    icon={item.icon} 
+                    href={item.href} 
+                  />
+                </Menu.Item>
+              )
+            }
+          </Menu>
+        </Segment>
         { children }
       </Responsive>
     )

@@ -19,6 +19,8 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
+import Skills from './pages/Skills.jsx';
+
 
 const routes = [
   {
@@ -49,7 +51,17 @@ const routes = [
     name:'portfolio',
     icon:'trophy',
     text:'Portfolio',
-    color:'green'
+    color:'olive'
+  },
+  {
+    path:'/skills',
+    exact: true,
+    head: () => <span>Skills</span>,
+    comp: Skills,
+    name: 'skills',
+    icon: 'cogs',
+    text: 'Skills',
+    color: 'orange'
   },
   {
     path:'/contact',
@@ -61,6 +73,7 @@ const routes = [
     text:'Contact',
     color:'violet'
   },
+  
 ];
 
 const social = [
@@ -108,8 +121,8 @@ ResponsiveView.propTypes = {
 }
 
 const Footer = () => (
-  <Segment 
-    color='olive'
+  <Segment
+    color='grey'
     inverted 
     vertical 
     style={{minHeight:'10vh', padding:'4em', border:0, borderRadius:0}}
@@ -120,7 +133,7 @@ const Footer = () => (
         stackable 
         celled='internally'
       >
-        <Grid.Row >
+        <Grid.Row>
           <Grid.Column 
             width={6} 
             textAlign='center' 
@@ -128,9 +141,25 @@ const Footer = () => (
           >
           {
             social.map((item,i) =>
-              <Button size='large' key={i} circular color={item.color2} icon={item.icon} href={item.href} />
+              <Button
+                size='large' 
+                key={i} 
+                circular 
+                color={item.color2} 
+                icon={item.icon} 
+                href={item.href}
+                style={{margin:5}} 
+              />
             )
           }
+          <Button
+            circular
+            color='red'
+            icon='download'
+            content='Resume'
+            size='large'
+            href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing'
+          />
           </Grid.Column>
           <Grid.Column 
             width={10} 
@@ -154,11 +183,10 @@ const Footer = () => (
             >
               by Siddharth Gupta
             </Header>
-            <Header 
-              as='h3' 
+            <Header
               size='tiny' 
             >
-              Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+              Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer" style={{color:'#fff'}}>Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer" style={{color:'#fff'}}>www.flaticon.com</a>
             </Header>
           </Grid.Column>
         </Grid.Row>
@@ -167,7 +195,13 @@ const Footer = () => (
   </Segment>
 )
 
-const pageStyle={minHeight:'80vh',border:0, borderRadius:0, margin:0, padding: '1.5em 0.5em 4em 0.5em'};
+const pageStyle = {
+  minHeight:'90vh',
+  border:0, 
+  borderRadius:0, 
+  margin:0, 
+  padding: '1.5em 0.5em 4em 0.5em'
+};
 
 const App = () => (
   <ResponsiveView>

@@ -40,6 +40,16 @@ class Contact extends React.Component {
 	sendMessage = () => {
 		const { name, email, subject, message } = this.state;
 		const data = { name, email, subject, message };
+		
+		const successAlert = {
+			text: 'Your message has been sent! I will get back to you on my first convinience',
+			type: 'success'
+		};
+		const errorAlert = {
+			type: 'error',
+			html: 'Your message failed to send. Please try again in some time.'
+		};
+
 		axios({
 			method: "POST",
 			url: 'http://localhost:5000/send-mail',
@@ -50,10 +60,7 @@ class Contact extends React.Component {
 		})
 		.then((res) => {
 			if(res.data.msg === 'success'){
-				Swal.fire({
-					text: 'Your message has been sent! I will get back to you on my first convinience',
-					type: 'success'
-				});
+				Swal.fire(successAlert);
 				this.resetForm();
 			}
 
@@ -63,20 +70,36 @@ class Contact extends React.Component {
 		})
 		.catch(err => {
 			console.error(err.msg);
-			Swal.fire({
-				type: 'error',
-				html: 'Your message failed to send. Please try again in some time.'
-			});
+			Swal.fire(errorAlert);
 		})
 	}
 
 	render() {
 		const { name, email, subject, message, errors } = this.state;
+		const subHeadStyle = {
+			fontSize: '1.5em',
+			fontWeight:'normal',
+			paddingBottom: '1em'
+		};
 		return (
 			<Container>
 				<DIV>
-					<Icon name='envelope' size='huge' color='violet' />
-					<Header as='span' size='medium' inverted>To get in touch with send me a message using the form below and I will get back to you as soon as possible.</Header>
+					<center>
+						<Icon 
+							name='envelope' 
+							size='massive' 
+							color='violet' 
+						/>
+					</center>
+					<br/>
+					<Header 
+						as='span' 
+						size='medium' 
+						inverted
+						style={subHeadStyle}
+					>
+						To get in touch with me. Send me a message using the form below and I will get back to you as soon as possible.
+					</Header>
 				</DIV>
 				<Form 
 					inverted

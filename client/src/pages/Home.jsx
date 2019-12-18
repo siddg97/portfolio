@@ -5,32 +5,32 @@ import { Container, Header } from 'semantic-ui-react';
 const content = [
 	{
 		header:
-			<Header as='span' inverted>I'm <Header as='span' color='teal'>Siddharth Gupta</Header></Header>
+			<span>I'm Siddharth Gupta</span>
 			,
 		subheader:
 			<span>
-				I am a <Header as='a' size='small' inverted color='yellow' href='https://en.wikipedia.org/wiki/Software_engineer'>Software Engineer</Header> rooted in the Greater Vancouver Area. 
+				I am a <Header as='a' size='small' inverted color='red' href='https://en.wikipedia.org/wiki/Software_engineer'>Software Engineer</Header> rooted in the Greater Vancouver Area. 
 			</span>
 	},
 	{
 		header:
-			<Header as='span' inverted>
+			<span>
 				I am interested in
-			</Header>
+			</span>
 		,
 		subheader:
 			<span>
-				<Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Embedded_software'>Embedded Development</Header>, 
-				{' '}<Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Web_development'>Web Development</Header>, 
-				{' '}<Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Artificial_intelligence'>Artificial Intelligence</Header> 
-				{' '}and{' '} <Header as='a' size='small' inverted color='violet' href='https://en.wikipedia.org/wiki/Machine_learning'>Machine Learning</Header>.
+				<Header as='a' size='small' inverted color='red' href='https://en.wikipedia.org/wiki/Embedded_software'>Embedded Development</Header>, 
+				{' '}<Header as='a' size='small' inverted color='red' href='https://en.wikipedia.org/wiki/Web_development'>Web Development</Header>, 
+				{' '}<Header as='a' size='small' inverted color='red' href='https://en.wikipedia.org/wiki/Artificial_intelligence'>Artificial Intelligence</Header> 
+				{' '}and{' '} <Header as='a' size='small' inverted color='red' href='https://en.wikipedia.org/wiki/Machine_learning'>Machine Learning</Header>.
 			</span>
 	},
 	{
 		header:
-			<Header as='span' inverted>
+			<span>
 				Expected graduation <Header as='span' inverted color='red'>June 2021</Header>
-			</Header>
+			</span>
 		,
 		subheader:
 			<span>
@@ -40,13 +40,13 @@ const content = [
 	},
 	{
 		header:
-			<Header as='span' inverted>
-				I currently live in <Header as='a' inverted href='https://en.wikipedia.org/wiki/Burnaby' color='blue'>Burnaby</Header>
-			</Header>
+			<span>
+				I currently live in <Header as='a' inverted href='https://en.wikipedia.org/wiki/Burnaby' color='red'>Burnaby</Header>
+			</span>
 		,
 		subheader:
 			<span>
-				Originally from <Header as='a' inverted color='blue' href='https://en.wikipedia.org/wiki/India'> India</Header>.
+				Originally from <Header as='a' inverted color='red' href='https://en.wikipedia.org/wiki/India'> India</Header>.
 			</span>
 	},
 ];
@@ -58,25 +58,24 @@ const Home = ({ mobile }) => {
 		marginBottom: 0,
 	};
 	const subHeadStyle={
-		fontSize: '1.75em',
+		fontSize: '1.5em',
 	    fontWeight:'normal',
-	    marginBottom:'1.5em'
+	    marginBottom:'1.75em'
 	
 	};
 	return (
-		<Container>
+		<Container style={{paddingTop:'1.5em'}}>
 		{
 			content.map((item,i) =>
 				<div key={i}>
 					<Header
-						as='h1'
+						color='blue'
 						style={headStyle}
 						inverted
 					>
 						{item.header}
 					</Header>
 					<Header
-						as='h2'
 						style={subHeadStyle}
 						inverted
 					>
