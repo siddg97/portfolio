@@ -154,7 +154,7 @@ const Footer = () => (
           }
           <Button
             circular
-            color='red'
+            color='green'
             icon='download'
             content='Resume'
             size='large'

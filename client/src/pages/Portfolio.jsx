@@ -165,14 +165,16 @@ const Exp = () => (
 					>
 						<Item.Header>
 							<Header 
+								color='teal'
 								size='large' 
 								inverted 
 							>
 								{item.position} - {item.company}
 							</Header>
 							<Header 
-								size='tiny' 
-								color='olive' 
+								size='tiny'
+								inverted
+								color='orange' 
 								style={subHeadStyle} 
 								content={item.when} 
 							/>

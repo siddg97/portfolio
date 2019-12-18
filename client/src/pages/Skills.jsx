@@ -169,7 +169,7 @@ const headStyle = {
 
 
 const Frontend = () => (
-	<Grid.Column width={8}>
+	<Grid.Column width={6}>
 		<Grid.Row
 			stretched
 			centered
@@ -203,7 +203,7 @@ const Frontend = () => (
 )
 
 const Backend = () => (
-	<Grid.Column width={8}>
+	<Grid.Column width={6}>
 		<Grid.Row
 			stretched
 			centered
@@ -237,7 +237,7 @@ const Backend = () => (
 )
 
 const Language = () => (
-	<Grid.Column width={8}>
+	<Grid.Column width={6}>
 		<Grid.Row
 			stretched
 			centered
@@ -271,7 +271,7 @@ const Language = () => (
 )
 
 const Tools = () => (
-	<Grid.Column width={8}>
+	<Grid.Column width={6}>
 		<Grid.Row
 			stretched
 			centered
@@ -309,6 +309,7 @@ const Skills = () => (
 		inverted
 		stretched
 		stackable
+		centered
 		container
 		relaxed
 		verticalAlign='middle'

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Button } from 'semantic-ui-react';
 
 const content = [
 	{
@@ -49,6 +49,15 @@ const content = [
 				Originally from <Header as='a' inverted color='red' href='https://en.wikipedia.org/wiki/India'> India</Header>.
 			</span>
 	},
+	{
+		header:
+			<span>
+				To know more about me
+			</span>
+		,
+		subheader:
+			<Button href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing' color='red' icon='download' inverted content='Download my Resume' />
+	}
 ];
 
 
