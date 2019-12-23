@@ -9,6 +9,8 @@ import {
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+import { ThemeContext } from '../_context/store.js';
+
 const DIV = ({children}) => (
 	<div style={{padding:'0 0 24px 0'}}>
 		{children}
@@ -82,85 +84,93 @@ class Contact extends React.Component {
 			paddingBottom: '1em'
 		};
 		return (
-			<Container>
-				<DIV>
-					<center>
-						<Icon 
-							name='envelope' 
-							size='massive' 
-							color='violet' 
-						/>
-					</center>
-					<br/>
-					<Header 
-						as='span' 
-						size='medium' 
-						inverted
-						style={subHeadStyle}
-					>
-						To get in touch with me. Send me a message using the form below and I will get back to you as soon as possible.
-					</Header>
-				</DIV>
-				<Form 
-					inverted
-					as={Container} 
-				>
-					<Form.Input 
-						label={<Header color='violet' inverted>Name</Header>} 
-						value={name} 
-						name='name' 
-						onChange={this.handleChange} 
-						type='text'
-						size='small'
-						width={16}
-						error={errors && errors.name}
-					/>
-					<Form.Input 
-						label={<Header color='violet' inverted>Email</Header>} 
-						value={email} 
-						name='email' 
-						onChange={this.handleChange} 
-						type='text'
-						size='small'
-						width={16}
-						error={errors && errors.email}
-					/>
-					<Form.Input 
-						label={<Header color='violet' inverted>Subject</Header>} 
-						value={subject} 
-						name='subject' 
-						onChange={this.handleChange} 
-						type='text'
-						size='small'
-						width={16}
-						error={errors && errors.subject}
-					/>
-					<Form.TextArea
-						label={<Header color='violet' inverted>Message</Header>}
-						value={message}
-						name='message'
-						onChange={this.handleChange}
-						rows={8}
-						width={16}
-						error={errors && errors.message}
-					/>
-					<DIV>
-						<Button
-							color='violet'
-							content='Send Message'
-							size='large'
-							onClick={this.sendMessage}
-						/>
-						<Button
-							color='violet'
-							inverted
-							size='large'
-							content='Reset'
-							onClick={this.resetForm}
-						/>
-					</DIV>
-				</Form>
-			</Container>	
+			<ThemeContext.Consumer>
+			{
+				({ theme }) => (
+					<Container>
+						<DIV>
+							<center>
+								<Icon 
+									name='envelope' 
+									size='massive' 
+									color='violet' 
+								/>
+							</center>
+							<br/>
+							<Header 
+								as='span' 
+								size='medium' 
+								inverted={theme}
+								style={subHeadStyle}
+							>
+								To get in touch with me. Send me a message using the form below and I will get back to you as soon as possible.
+							</Header>
+						</DIV>
+						<Form 
+							inverted={theme}
+							as={Container} 
+						>
+							<Form.Input 
+								label={<Header color='violet' inverted={theme}>Name</Header>} 
+								value={name} 
+								name='name' 
+								onChange={this.handleChange} 
+								type='text'
+								size='small'
+								width={16}
+								error={errors && errors.name}
+							/>
+							<Form.Input 
+								label={<Header color='violet' inverted={theme}>Email</Header>} 
+								value={email} 
+								name='email' 
+								onChange={this.handleChange} 
+								type='text'
+								size='small'
+								width={16}
+								error={errors && errors.email}
+							/>
+							<Form.Input 
+								label={<Header color='violet' inverted={theme}>Subject</Header>} 
+								value={subject} 
+								name='subject' 
+								onChange={this.handleChange} 
+								type='text'
+								size='small'
+								width={16}
+								error={errors && errors.subject}
+							/>
+							<Form.TextArea
+								label={<Header color='violet' inverted={theme}>Message</Header>}
+								value={message}
+								name='message'
+								onChange={this.handleChange}
+								rows={8}
+								width={16}
+								error={errors && errors.message}
+							/>
+							<DIV>
+								<Button
+									color='violet'
+									content='Send Message'
+									size='large'
+									inverted={!theme}
+									onClick={this.sendMessage}
+								/>
+								<Button
+									color='violet'
+									inverted={theme}
+									size='large'
+									floated='right'
+									content='Reset'
+									onClick={this.resetForm}
+								/>
+							</DIV>
+						</Form>
+					</Container>
+				)
+			}
+			</ThemeContext.Consumer>
 		)
 	}
 }

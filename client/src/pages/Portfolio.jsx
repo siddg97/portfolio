@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
 	Container,
 	Item,
 	Label,
 	Header,
-	Segment,
-	Image,
 	Icon,
 	Button,
 	Divider
 } from 'semantic-ui-react';
+
+import { ThemeContext } from '../_context/store.js';
 
 
 const headStyle = {
@@ -24,13 +24,6 @@ const subHeadStyle = {
 };
 
 const academicProjects = [
-	{
-		header:"RPN Calculator",
-		git:"https://github.com/siddg97/RPN-Calculator",
-		descr:"A Reverse-Polish Notation (postfix) arithmetic expression calculator in Haskell. Computes results using stacks to preserve order of computation.",
-		imgsrc:'/assets/hc.png',
-		tags:["haskell","RPN"],
-	},
 	{
 		header:"UNIX Shell",
 		git:"https://github.com/siddg97/Producer-Consumer-Problem",
@@ -53,25 +46,11 @@ const academicProjects = [
 		tags:["C++","A*"],
 	},
 	{
-		header:"Expression Evaluator",
-		git:"https://github.com/siddg97/Simple-Expression-Evaluator-and-Simplifier",
-		descr:"Developed a Scheme program to evaluate and binary infix expressions specified by the Go ENBF language. Program is also able to simplify expressions (0 * a to 0, 1 * b to b, etc).",
-		imgsrc:'/assets/ee.png',
-		tags:["scheme","ENBF"],
-	},
-	{
 		header:"Memory Interfaces",
 		git:"https://github.com/siddg97/Memory-management-interfaces-C",
 		descr:"Implemented the free() and malloc() functions in C using pointer arithmetic and linked lists to manage memory. Developed program to use one of First Fit Algorithm, Best Fit Algorithm or Worst Fit Algorithm.",
 		imgsrc:'/assets/mm.png',
 		tags:["C","malloc","free"],
-	},
-	{
-		header:"Bounded-buffer Problem",
-		git:"https://github.com/siddg97/Producer-Consumer-Problem",
-		descr:"A mutlithreaded C program synchonized using locks and seamaphores to simluate a Bounded-buffer problem. Utlized the pthreads library to implement mutlithreaded synchronization.",
-		imgsrc:'/assets/pcp.svg',
-		tags:["C","POSIXt","fork/exec"],
 	},
 	{
 		header:"TrackIT",
@@ -88,9 +67,9 @@ const academicProjects = [
 		tags:["python","pMCTS"],
 	},
 	{
-		header:"Anomaly Detection",
+		header:"Point and Contextual Anomaly Detection",
 		git:"https://github.com/siddg97/cmpt318-term-project",
-		descr:"Anomaly detection for household electricity consumption. USed the Rstusio enviornment to detect point anomalies. Also detected contextual anomalies using Hidden Markov Models.",
+		descr:"Anomaly detection for household electricity consumption. Used the Rstudio enviornment to detect point anomalies. Also detected contextual anomalies using Hidden Markov Models.",
 		imgsrc:'/assets/detection.png',
 		tags:["R","HMM","depmixS4"]
 	}
@@ -98,14 +77,6 @@ const academicProjects = [
 
 
 const personalProjects = [
-		{
-			header:"CasterBot",	
-			git:"https://github.com/siddg97/CasterBot",
-			metaLink:"",
-			descr:"A vanilla JavaScript discord chatbot which fetches present weather conditions of any city and forecasts as well.",
-			imgsrc:'/assets/cb.png',
-			tags:["OWM","JavaScript"]
-		},
 		{
 			header:"colorP",	
 			git:"https://github.com/siddg97/colorP",
@@ -152,28 +123,26 @@ const experience = [
 ];
 
 
-const Exp = () => (
-	<Item.Group divided>
-	{
-		experience.map((item,i) => 
-			<Item key={i}>
-				<Icon name={item.icon} color='blue' size='massive' />
-				<Item.Content>
-					<Segment
-						inverted
-						style={{border:0, borderRadius:0}}
-					>
+const Exp = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Item.Group divided>
+		{
+			experience.map((item,i) => 
+				<Item key={i}>
+					<Icon name={item.icon} color='blue' size='massive' />
+					<Item.Content style={{border:0, borderRadius:0}}>
 						<Item.Header>
 							<Header 
 								color='teal'
 								size='large' 
-								inverted 
+								inverted={theme} 
 							>
 								{item.position} - {item.company}
 							</Header>
 							<Header 
 								size='tiny'
-								inverted
+								inverted={theme}
 								color='orange' 
 								style={subHeadStyle} 
 								content={item.when} 
@@ -181,63 +150,50 @@ const Exp = () => (
 						</Item.Header>
 						<Item.Description>
 							<Header 
-								inverted 
+								inverted={theme} 
 								size='small' 
 								style={subHeadStyle}
 							>
 								{item.description}
 							</Header>
 							<Button 
+								circular
 								color='blue' 
-								size='tiny' 
+								size='medium' 
 								icon='external alternate' 
-								inverted content='BlackBerry' 
+								inverted={theme} content='BlackBerry' 
 								href={item.link} 
 							/>
 						</Item.Description>
-					</Segment>
-				</Item.Content>
-			</Item>
-		)
-	}
-	</Item.Group>
-)
+					</Item.Content>
+				</Item>
+			)
+		}
+		</Item.Group>
+	)
+}
 
-const Pport = () => (
-	<Item.Group divided>
-	{
-		personalProjects.map((item,i) =>
-			<Item key={i}>
-				<Item.Image
-					as={Image}
-					size='medium'
-					src={'http://localhost:5000'+item.imgsrc}
-					style={{
-						border:'1px solid white',
-						background:'white',
-						objectFit:'contain',
-						backgroundSize:'cover',
-						backgroundPosition: 'center'
-					}}
-				/>
-				<Item.Content>
-					<Segment 
-						inverted 
-						style={{border:0, borderRadius:0}}
-					>
+const Pport = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Item.Group divided>
+		{
+			personalProjects.map((item,i) =>
+				<Item key={i}>
+					<Item.Content style={{border:0, borderRadius:0}}>
 						<Item.Header>
-							<Header inverted size='large' color='orange' style={headStyle}>
+							<Header inverted={theme} size='large' color='orange' style={headStyle}>
 								{item.header}
 							</Header>
 						</Item.Header>
 						<Item.Description>
-							<Header inverted size='medium' style={subHeadStyle}>
+							<Header inverted={theme} size='medium' style={subHeadStyle}>
 								{item.descr}
 							</Header>
 						</Item.Description>
 						<Item.Extra>
-							<Button color='olive' size='tiny' icon='github' inverted content='Github' href={item.git} />
-							<Button color='red' size='tiny' icon='info' inverted content='More' href={item.metaLink} />
+							<Button circular color='olive' size='tiny' icon='github' inverted={theme} content='Github' href={item.git} />
+							<Button circular color='red' size='tiny' icon='info' inverted={theme} content='More' href={item.metaLink} />
 							<Label.Group color='blue'>
 							{
 								item.tags.map((tag,i) => 
@@ -246,49 +202,35 @@ const Pport = () => (
 							}
 							</Label.Group>
 						</Item.Extra>
-					</Segment>
-				</Item.Content>
-			</Item>
-		)
-	}
-	</Item.Group>
-)
+					</Item.Content>
+				</Item>
+			)
+		}
+		</Item.Group>
+	)
+}
 	
 
-const Aport = () => (
-	<Item.Group divided>
-	{
-		academicProjects.map((item,i) => (
-			<Item key={i}>
-				<Item.Image
-					as={Image}
-					size='medium'
-					src={'http://localhost:5000'+item.imgsrc} 
-					style={{
-						border:'1px solid white',
-						background:'white',
-						objectFit:'contain',
-						backgroundSize:'cover',
-						backgroundPosition: 'center'
-					}} 
-				/>
-				<Item.Content>
-					<Segment 
-						inverted 
-						style={{border:0, borderRadius:0}}
-					>
+const Aport = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Item.Group divided>
+		{
+			academicProjects.map((item,i) => (
+				<Item key={i}>
+					<Item.Content style={{border:0, borderRadius:0}}>
 						<Item.Header>
-							<Header inverted size='large' color='orange' style={headStyle}>
+							<Header inverted={theme} size='large' color='orange' style={headStyle}>
 								{item.header}
 							</Header>
 						</Item.Header>
 						<Item.Description>
-							<Header inverted size='medium' style={subHeadStyle}>
+							<Header inverted={theme} size='medium' style={subHeadStyle}>
 								{item.descr}
 							</Header>
 						</Item.Description>
 						<Item.Extra>
-							<Button color='olive' inverted size='tiny' icon='github' content='Github' href={item.git} />
+							<Button circular color='olive' inverted={theme} size='tiny' icon='github' content='Github' href={item.git} />
 							<Label.Group color='blue'>
 							{
 								item.tags.map((tag,i) => 
@@ -297,25 +239,43 @@ const Aport = () => (
 							}
 							</Label.Group>
 						</Item.Extra>
-					</Segment>
-				</Item.Content>
-			</Item>
-		)		)
-	}
-	</Item.Group>
-)
+					</Item.Content>
+				</Item>
+			)		)
+		}
+		</Item.Group>
+	)
+}
 
-const Portfolio = () => (
-	<Container>
-		<Header color='olive' content='Experience' style={headStyle} />
-		<Exp />
-		<Divider />
-		<Header color='olive' content='Personal Projects' style={headStyle} />
-		<Pport />
-		<Divider />
-		<Header color='olive' content='Academic Projects' style={headStyle} />
-		<Aport />
-	</Container>
-)
+const Portfolio = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Container>
+			<Header 
+				color='olive' 
+				inverted={theme}
+				content='Experience' 
+				style={headStyle} 
+			/>
+			<Exp />
+			<Divider />
+			<Header 
+				color='olive' 
+				inverted={theme}
+				content='Personal Projects' 
+				style={headStyle} 
+			/>
+			<Pport />
+			<Divider />
+			<Header 
+				color='olive' 
+				inverted={theme}
+				content='Academic Projects' 
+				style={headStyle} 
+			/>
+			<Aport />
+		</Container>
+	)
+}
 
 export default Portfolio;

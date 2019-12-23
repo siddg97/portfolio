@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import {
@@ -10,12 +10,17 @@ import {
 	Container
 } from 'semantic-ui-react';
 
+import { ThemeContext } from '../_context/store.js';
+
 // function to get width for responsive containers
 const getWidth = () => {
   return typeof window === 'undefined' ? Responsive.onlyTablet.minWidth : window.innerWidth
 }
 
 const DesktopMenu = ({ routes, children, social }) => {
+  const { theme, dispatch } = useContext(ThemeContext);
+  const toggleTheme = () => dispatch({ type:'TOGGLE_THEME' })
+
   const segStyle = {padding: 32, border:0, borderRadius:0, margin:0, minHeight:'5vh'};
   return (
     <Responsive
@@ -23,13 +28,13 @@ const DesktopMenu = ({ routes, children, social }) => {
       minWidth={Responsive.onlyComputer.minWidth}
     >
       <Segment
-        inverted
+        inverted={theme}
         size='huge'
         style={segStyle}
         vertical
       >
         <Menu
-          inverted
+          inverted={theme}
           secondary
           size='huge'
         >
@@ -62,7 +67,7 @@ const DesktopMenu = ({ routes, children, social }) => {
               >
                 <Button 
                   color={item.color} 
-                  inverted
+                  inverted={theme}
                   circular
                   size='large' 
                   icon={item.icon} 
@@ -71,6 +76,17 @@ const DesktopMenu = ({ routes, children, social }) => {
               </Menu.Item>
             )
           }
+          <Menu.Item
+            position='right'
+            fitted='horizontally'
+          >
+            <Button
+              circular
+              inverted={theme}
+              icon={ theme ? 'lightbulb' : 'sun' }
+              onClick={toggleTheme}
+            />
+          </Menu.Item>
         </Menu>
       </Segment>
       { children }

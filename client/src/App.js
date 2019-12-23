@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
@@ -6,6 +6,9 @@ import {
   Segment 
 } from 'semantic-ui-react';
 
+import { ThemeContext } from './_context/store.js';
+
+// Menus and footer
 import Footer from './layout/Footer.jsx';
 import DesktopMenu from './layout/Computer.jsx';
 import MobileMenu from './layout/Mobile.jsx';
@@ -97,12 +100,6 @@ const social = [
     color:'orange',
     color2:'orange'
   },
-  {
-    icon:'instagram',
-    href:'https://www.instagram.com/?hl=en',
-    color:'purple',
-    color2:'instagram'
-  } 
 ];
 
 const ResponsiveView = ({ children }) => (
@@ -118,6 +115,7 @@ ResponsiveView.propTypes = {
 
 
 const App = () => {
+  const { theme } = useContext(ThemeContext);
   const pageStyle = {
     minHeight:'75vh',
     border:0, 
@@ -128,7 +126,7 @@ const App = () => {
   return (
     <ResponsiveView>
       <Segment 
-        inverted
+        inverted={theme}
         style={pageStyle}
       >
         <Switch>

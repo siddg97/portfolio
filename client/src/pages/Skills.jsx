@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
 	Grid,
 	Header,
 	List,
 	Button
 } from 'semantic-ui-react';
+
+import { ThemeContext } from '../_context/store.js';
 
 const skills = {
 	frontend:[
@@ -168,153 +170,168 @@ const headStyle = {
 };
 
 
-const Frontend = () => (
-	<Grid.Column width={6}>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<Header textAlign='center' color='orange' style={headStyle}>
-				Frontend Skills
-			</Header>
-		</Grid.Row>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<List animated>
-			{
-				skills.frontend.map((item) => 
-					<List.Item key={item.name}>
-						<Button
-							inverted
-							fluid 
-							content={item.name}
-							color={item.color}
-							href={item.href}
-						/>
-					</List.Item>
-				)
-			}
-			</List>
-		</Grid.Row>
-	</Grid.Column>
-)
+const Frontend = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Grid.Column width={6}>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<Header textAlign='center' color='orange' style={headStyle}>
+					Frontend Skills
+				</Header>
+			</Grid.Row>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<List animated>
+				{
+					skills.frontend.map((item) => 
+						<List.Item key={item.name}>
+							<Button
+								inverted={theme}
+								fluid 
+								content={item.name}
+								color={item.color}
+								href={item.href}
+							/>
+						</List.Item>
+					)
+				}
+				</List>
+			</Grid.Row>
+		</Grid.Column>
+	)
+}
 
-const Backend = () => (
-	<Grid.Column width={6}>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<Header textAlign='center' color='orange' style={headStyle}>
-				Backend Skills
-			</Header>
-		</Grid.Row>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<List animated>
-			{
-				skills.backend.map((item) => 
-					<List.Item key={item.name}>
-						<Button 
-							inverted
-							fluid 
-							content={item.name}
-							color={item.color}
-							href={item.href}
-						/>
-					</List.Item>
-				)
-			}
-			</List>
-		</Grid.Row>
-	</Grid.Column>
-)
+const Backend = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Grid.Column width={6}>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<Header textAlign='center' color='orange' style={headStyle}>
+					Backend Skills
+				</Header>
+			</Grid.Row>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<List animated>
+				{
+					skills.backend.map((item) => 
+						<List.Item key={item.name}>
+							<Button 
+								inverted={theme}
+								fluid 
+								content={item.name}
+								color={item.color}
+								href={item.href}
+							/>
+						</List.Item>
+					)
+				}
+				</List>
+			</Grid.Row>
+		</Grid.Column>
+	)
+}
 
-const Language = () => (
-	<Grid.Column width={6}>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<Header textAlign='center' color='orange' style={headStyle}>
-				Languages
-			</Header>
-		</Grid.Row>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<List animated>
-			{
-				skills.lang.map((item) => 
-					<List.Item key={item.name}>
-						<Button 
-							inverted
-							fluid 
-							content={item.name}
-							color={item.color}
-							href={item.href}
-						/>
-					</List.Item>
-				)
-			}
-			</List>
-		</Grid.Row>
-	</Grid.Column>
-)
+const Language = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Grid.Column width={6}>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<Header textAlign='center' color='orange' style={headStyle}>
+					Languages
+				</Header>
+			</Grid.Row>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<List animated>
+				{
+					skills.lang.map((item) => 
+						<List.Item key={item.name}>
+							<Button 
+								inverted={theme}
+								fluid 
+								content={item.name}
+								color={item.color}
+								href={item.href}
+							/>
+						</List.Item>
+					)
+				}
+				</List>
+			</Grid.Row>
+		</Grid.Column>
+	)
+}
 
-const Tools = () => (
-	<Grid.Column width={6}>
-		<Grid.Row
-			stretched
-			centered
-		>			
-			<Header textAlign='center' color='orange' style={headStyle}>
-				Tools
-			</Header>
-		</Grid.Row>
-		<Grid.Row
-			stretched
-			centered
-		>
-			<List animated>
-			{
-				skills.tools.map((item) => 
-					<List.Item key={item.name}>
-						<Button
-							inverted
-							fluid  
-							content={item.name}
-							color={item.color}
-							href={item.href}
-						/>
-					</List.Item>
-				)
-			}
-			</List>
-		</Grid.Row>
-	</Grid.Column>
-)
+const Tools = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Grid.Column width={6}>
+			<Grid.Row
+				stretched
+				centered
+			>			
+				<Header textAlign='center' color='orange' style={headStyle}>
+					Tools
+				</Header>
+			</Grid.Row>
+			<Grid.Row
+				stretched
+				centered
+			>
+				<List animated>
+				{
+					skills.tools.map((item) => 
+						<List.Item key={item.name}>
+							<Button
+								inverted={theme}
+								fluid  
+								content={item.name}
+								color={item.color}
+								href={item.href}
+							/>
+						</List.Item>
+					)
+				}
+				</List>
+			</Grid.Row>
+		</Grid.Column>
+	)
+}
 
-const Skills = () => (
-	<Grid
-		inverted
-		stretched
-		stackable
-		centered
-		container
-		relaxed
-		verticalAlign='middle'
-	>
-		<Frontend />
-		<Backend />
-		<Language />
-		<Tools />
-	</Grid>
-);
+const Skills = () => {
+	const { theme } = useContext(ThemeContext);
+	return (
+		<Grid
+			inverted={theme}
+			stretched
+			stackable
+			centered
+			container
+			relaxed
+			verticalAlign='middle'
+		>
+			<Frontend />
+			<Backend />
+			<Language />
+			<Tools />
+		</Grid>
+	)
+}
 
 export default Skills;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 import {
@@ -12,6 +12,8 @@ import {
 	Segment
 } from 'semantic-ui-react';
 
+import { ThemeContext } from '../_context/store.js';
+
 // function to get width for responsive containers
 const getWidth = () => {
   return typeof window === 'undefined' ? Responsive.onlyTablet.minWidth : window.innerWidth
@@ -23,6 +25,10 @@ const MobileMenu = ({ routes, children, social }) => {
   const openMenu = () => setOpen(true);
   const closeMenu = () => setOpen(false);
 
+  // theme context
+  const { theme, dispatch } = useContext(ThemeContext);
+  const toggleTheme = () => dispatch({ type: 'TOGGLE_THEME' })
+
   const headSegStyle = {border:0, borderRadius:0, margin:0}
   return (
     <Responsive
@@ -33,7 +39,7 @@ const MobileMenu = ({ routes, children, social }) => {
       <Sidebar
         as={Menu}
         animation='push'
-        inverted
+        inverted={theme}
         size='huge'
         width='thin'
         icon='labeled'
@@ -55,6 +61,13 @@ const MobileMenu = ({ routes, children, social }) => {
             avatar
           />
         </Menu.Item>
+        
+        <Menu.Item 
+          onClick={toggleTheme}
+        >
+          <Icon name={theme ? 'lightbulb' : 'sun'}/>
+        </Menu.Item>
+
         {
           routes.map((item,i) =>
             <Menu.Item 
@@ -65,7 +78,7 @@ const MobileMenu = ({ routes, children, social }) => {
               fitted='horizontally'
             >
               <Icon
-                inverted
+                inverted={theme}
                 color={item.color}
                 name={item.icon}
               />
@@ -77,11 +90,11 @@ const MobileMenu = ({ routes, children, social }) => {
 
       <Sidebar.Pusher dimmed={open}>
         <Segment
-          inverted
+          inverted={theme}
           style={headSegStyle}
         >
           <Menu 
-            inverted
+            inverted={theme}
             secondary
           >
             <Container>
@@ -91,7 +104,7 @@ const MobileMenu = ({ routes, children, social }) => {
                 <Button
                   color='violet'
                   circular
-                  inverted
+                  inverted={theme}
                   size='small'
                   onClick={openMenu}
                 >
@@ -120,7 +133,7 @@ const MobileMenu = ({ routes, children, social }) => {
                 >
                   <Button 
                     color={item.color} 
-                    inverted
+                    inverted={theme}
                     circular
                     size='medium' 
                     icon={item.icon} 
