@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import {  
-  Segment, 
+  Segment 
 } from 'semantic-ui-react';
 
 import Footer from './layout/Footer.jsx';
