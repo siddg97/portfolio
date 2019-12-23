@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Header, Button, Divider, Icon } from 'semantic-ui-react';
+import { Container, Header, Button, Icon } from 'semantic-ui-react';
 
 
 const Home = ({ mobile }) => {

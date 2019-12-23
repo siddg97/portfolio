@@ -174,7 +174,7 @@ const Frontend = () => (
 			stretched
 			centered
 		>
-			<Header color='orange' style={headStyle}>
+			<Header textAlign='center' color='orange' style={headStyle}>
 				Frontend Skills
 			</Header>
 		</Grid.Row>
@@ -188,8 +188,7 @@ const Frontend = () => (
 					<List.Item key={item.name}>
 						<Button
 							inverted
-							fluid
-							circular 
+							fluid 
 							content={item.name}
 							color={item.color}
 							href={item.href}
@@ -208,7 +207,7 @@ const Backend = () => (
 			stretched
 			centered
 		>
-			<Header color='orange' style={headStyle}>
+			<Header textAlign='center' color='orange' style={headStyle}>
 				Backend Skills
 			</Header>
 		</Grid.Row>
@@ -222,8 +221,7 @@ const Backend = () => (
 					<List.Item key={item.name}>
 						<Button 
 							inverted
-							fluid
-							circular 
+							fluid 
 							content={item.name}
 							color={item.color}
 							href={item.href}
@@ -242,7 +240,7 @@ const Language = () => (
 			stretched
 			centered
 		>
-			<Header color='orange' style={headStyle}>
+			<Header textAlign='center' color='orange' style={headStyle}>
 				Languages
 			</Header>
 		</Grid.Row>
@@ -256,8 +254,7 @@ const Language = () => (
 					<List.Item key={item.name}>
 						<Button 
 							inverted
-							fluid
-							circular 
+							fluid 
 							content={item.name}
 							color={item.color}
 							href={item.href}
@@ -276,7 +273,7 @@ const Tools = () => (
 			stretched
 			centered
 		>			
-			<Header color='orange' style={headStyle}>
+			<Header textAlign='center' color='orange' style={headStyle}>
 				Tools
 			</Header>
 		</Grid.Row>
@@ -290,8 +287,7 @@ const Tools = () => (
 					<List.Item key={item.name}>
 						<Button
 							inverted
-							fluid 
-							circular 
+							fluid  
 							content={item.name}
 							color={item.color}
 							href={item.href}
