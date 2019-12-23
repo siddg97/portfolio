@@ -15,75 +15,67 @@ const getWidth = () => {
   return typeof window === 'undefined' ? Responsive.onlyTablet.minWidth : window.innerWidth
 }
 
-class DesktopMenu extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { routes, children, social } = this.props;
-    const segStyle = {border:0, borderRadius:0, margin:0, minHeight:'5vh'};
-    return (
-      <Responsive
-        getWidth={getWidth}
-        minWidth={Responsive.onlyComputer.minWidth}
+const DesktopMenu = ({ routes, children, social }) => {
+  const segStyle = {padding: 32, border:0, borderRadius:0, margin:0, minHeight:'5vh'};
+  return (
+    <Responsive
+      getWidth={getWidth}
+      minWidth={Responsive.onlyComputer.minWidth}
+    >
+      <Segment
+        inverted
+        size='huge'
+        style={segStyle}
+        vertical
       >
-        <Segment
+        <Menu
           inverted
+          secondary
           size='huge'
-          style={segStyle}
-          vertical
         >
-          <Menu
-            inverted
-            secondary
-            size='huge'
-          >
 
-            <Container>
-            {
-              routes.map((item,i) => 
-                <Menu.Item 
-                  key={i}
-                  as={NavLink}
-                  exact
-                  to={item.path}
-                >
-                  <Icon  
-                    color={item.color} 
-                    name={item.icon}
-                  />
-                  {item.text}
-                </Menu.Item>
-              )
-            }
-            </Container>
-            {/* SOCIAL LINKS */}
-            {
-              social.map((item,index) =>
-                <Menu.Item 
-                  position='right'
-                  fitted='horizontally'
-                  key={index}
-                >
-                  <Button 
-                    color={item.color} 
-                    inverted
-                    circular
-                    size='large' 
-                    icon={item.icon} 
-                    href={item.href} 
-                  />
-                </Menu.Item>
-              )
-            }
-          </Menu>
-        </Segment>
-        { children }
-      </Responsive>
-    )
-  }
+          <Container>
+          {
+            routes.map((item,i) => 
+              <Menu.Item 
+                key={i}
+                as={NavLink}
+                exact
+                to={item.path}
+              >
+                <Icon  
+                  color={item.color} 
+                  name={item.icon}
+                />
+                {item.text}
+              </Menu.Item>
+            )
+          }
+          </Container>
+          {/* SOCIAL LINKS */}
+          {
+            social.map((item,index) =>
+              <Menu.Item 
+                position='right'
+                fitted='horizontally'
+                key={index}
+              >
+                <Button 
+                  color={item.color} 
+                  inverted
+                  circular
+                  size='large' 
+                  icon={item.icon} 
+                  href={item.href} 
+                />
+              </Menu.Item>
+            )
+          }
+        </Menu>
+      </Segment>
+      { children }
+    </Responsive>
+  )
 }
 
 DesktopMenu.propTypes = {

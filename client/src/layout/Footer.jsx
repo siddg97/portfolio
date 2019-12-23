@@ -41,14 +41,14 @@ const Footer = ({ social }) => (
               />
             )
           }
-          <Button
-            circular
-            color='green'
-            icon='download'
-            content='Resume'
-            size='large'
-            href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing'
-          />
+            <Button
+              circular
+              color='green'
+              icon='download'
+              content='Resume'
+              size='large'
+              href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing'
+            />
           </Grid.Column>
           <Grid.Column 
             width={10} 
