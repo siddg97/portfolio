@@ -12,7 +12,7 @@ import {
 const Footer = ({ social }) => {
   return (
     <Segment
-      color='yellow'
+      color='grey'
       inverted
       vertical 
       style={{ padding:'4em', border:0, borderRadius:0}}
