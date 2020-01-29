@@ -1,5 +1,7 @@
 var express = require('express');
 var nodeMailer = require('nodemailer');
+var validator = require('validator');
+var empty = require('is-empty');
 
 var router = express.Router();
 var transport = {
@@ -19,31 +21,70 @@ transporter.verify((error,success) => {
 	}
 });
 
-router.post('/', (req,res,next) => {
+function validate(data){
+	var err = {}
+	if (empty(data.name)){
+		err.name = 'Name is required'
+	} 
+	if (empty(data.email)){
+		err.email = 'Email is required'
+	} else {
+		if(!validator.isEmail(data.email)){
+			err.email = 'Invalid email'
+		}
+	}
+	if (empty(data.subject)){
+		err.subject = 'Subject is required'
+	} 
+	if (empty(data.message)){
+		err.message = 'Message is required'
+	}
+	return err
+}
+
+router.post('/', (req,res) => {
 	var name = req.body.name;
 	var email = req.body.email;
 	var subject = req.body.subject;
 	var message = req.body.message;
 	var mailContent = 'Name: '+name+' \nEmail: '+email+' \nMessage: \n'+message+'\n';
 
-	var mail = {
-		from: name,
-		to: 'g.sidd97@gmail.com',
-		text: mailContent,
-		subject:subject
-	}
+	var data = {
+		name: name,
+		email: email,
+		subject: subject,
+		message: message
+	};
+	// VALIDATION
+	const err = validate(data);
+	const isValid = empty(err);
 
-	transporter.sendMail(mail, (err,data) => {
-		if(err){
-			res.json({
-				msg:'fail'
-			});
-		} else {
-			res.json({
-				msg:'success'
-			});
+	if(isValid){ // VALID DATA
+		var mail = {
+			from: email,
+			to: 'g.sidd97@gmail.com',
+			text: mailContent,
+			subject:'[Personal Website]: '+subject
 		}
-	});
+
+		transporter.sendMail(mail, (err,data) => {
+			if(err){
+				res.json({
+					msg:'fail'
+				});
+			} else {
+				res.json({
+					msg:'success'
+				});
+			}
+		});
+	} else { // INVALID DATA
+		res.json({
+			msg:'fail',
+			errors: err,
+			payload: data
+		});
+	}
 });
 
 module.exports = router;
