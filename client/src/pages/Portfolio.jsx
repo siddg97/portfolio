@@ -13,7 +13,7 @@ import { ThemeContext } from '../_context/store.js';
 
 
 const headStyle = {
-	fontSize: '2em', 
+	fontSize: '2em',
 	marginBottom: '0.5em',
 };
 
@@ -71,21 +71,21 @@ const academicProjects = [
 
 const personalProjects = [
 		{
-			header:"colorP",	
+			header:"colorP",
 			git:"https://github.com/siddg97/colorP",
 			metaLink:"https://pypi.org/project/colorp/",
 			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
 			tags:["python","pip","ANSI"]
 		},
 		{
-			header:"bugDB",	
+			header:"bugDB",
 			git:"https://github.com/siddg97/BugDB",
 			metaLink:"",
 			descr:"A full stack web app for effortless bug tracking and squashing. MAde using the MERN technology stack.",
 			tags:["MERN","REST"]
 		},
 		{
-			header:"Portfolio Website",	
+			header:"Portfolio Website",
 			git:"https://github.com/siddg97/portfolio",
 			metaLink:"http://www.siddg.info",
 			descr:"A single page react app with minimalistic design for a neat and immersive personal portfolio website. Deployed on Heroku.",
@@ -117,41 +117,41 @@ const Exp = () => {
 	return (
 		<Item.Group divided>
 		{
-			experience.map((item,i) => 
+			experience.map((item,i) =>
 				<Item key={i}>
 					<Icon name={item.icon} color='grey' size='massive' />
 					<Item.Content style={{border:0, borderRadius:0}}>
 						<Item.Header>
-							<Header 
+							<Header
 								color='blue'
-								size='large' 
-								inverted={!theme} 
+								size='large'
+								inverted={!theme}
 							>
 								{item.position} - {item.company}
 							</Header>
-							<Header 
+							<Header
 								size='tiny'
 								inverted={!theme}
-								color='orange' 
-								style={subHeadStyle} 
-								content={item.when} 
+								color='orange'
+								style={subHeadStyle}
+								content={item.when}
 							/>
 						</Item.Header>
 						<Item.Description>
-							<Header 
-								inverted={theme} 
-								size='small' 
+							<Header
+								inverted={theme}
+								size='small'
 								style={subHeadStyle}
 							>
 								{item.description}
 							</Header>
-							<Button 
+							<Button
 								circular
-								color='blue' 
-								size='medium' 
-								icon='external alternate' 
-								inverted={!theme} content='BlackBerry' 
-								href={item.link} 
+								color='blue'
+								size='medium'
+								icon='external alternate'
+								inverted={!theme} content='BlackBerry'
+								href={item.link}
 							/>
 						</Item.Description>
 					</Item.Content>
@@ -185,7 +185,7 @@ const Pport = () => {
 							<Button circular color='red' size='tiny' icon='info' inverted={theme} content='More' href={item.metaLink} />
 							<Label.Group color='blue'>
 							{
-								item.tags.map((tag,i) => 
+								item.tags.map((tag,i) =>
 									<Label key={i}>{tag}</Label>
 								)
 							}
@@ -198,7 +198,7 @@ const Pport = () => {
 		</Item.Group>
 	)
 }
-	
+
 
 const Aport = () => {
 	const { theme } = useContext(ThemeContext);
@@ -222,7 +222,7 @@ const Aport = () => {
 							<Button circular color='olive' inverted={theme} size='tiny' icon='github' content='Github' href={item.git} />
 							<Label.Group color='blue'>
 							{
-								item.tags.map((tag,i) => 
+								item.tags.map((tag,i) =>
 									<Label key={i}>{tag}</Label>
 								)
 							}
@@ -240,27 +240,27 @@ const Portfolio = () => {
 	const { theme } = useContext(ThemeContext);
 	return (
 		<Container>
-			<Header 
-				color='red' 
+			<Header
+				color='red'
 				inverted={!theme}
-				content='Experience' 
-				style={headStyle} 
+				content='Experience'
+				style={headStyle}
 			/>
 			<Exp />
 			<Divider />
-			<Header 
-				color='red' 
+			<Header
+				color='red'
 				inverted={!theme}
-				content='Personal Projects' 
-				style={headStyle} 
+				content='Personal Projects'
+				style={headStyle}
 			/>
 			<Pport />
 			<Divider />
-			<Header 
-				color='red' 
+			<Header
+				color='red'
 				inverted={!theme}
-				content='Academic Projects' 
-				style={headStyle} 
+				content='Academic Projects'
+				style={headStyle}
 			/>
 			<Aport />
 		</Container>

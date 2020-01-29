@@ -30,7 +30,7 @@ class Contact extends React.Component {
 	}
 
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
-	
+
 	resetForm = () => this.setState({
 		name: '',
 		email: '',
@@ -42,7 +42,7 @@ class Contact extends React.Component {
 	sendMessage = () => {
 		const { name, email, subject, message } = this.state;
 		const data = { name, email, subject, message };
-		
+
 		const successAlert = {
 			text: 'Your message has been sent! I will get back to you on my first convinience',
 			type: 'success'
@@ -90,51 +90,51 @@ class Contact extends React.Component {
 					<Container style={{minHeight:'80vh'}}>
 						<DIV>
 							<center>
-								<Icon 
-									name='envelope' 
-									size='massive' 
-									color='violet' 
+								<Icon
+									name='envelope'
+									size='massive'
+									color='violet'
 								/>
 							</center>
 							<br/>
-							<Header 
-								as='span' 
-								size='medium' 
+							<Header
+								as='span'
+								size='medium'
 								inverted={theme}
 								style={subHeadStyle}
 							>
 								To get in touch with me. Send me a message using the form below and I will get back to you as soon as possible.
 							</Header>
 						</DIV>
-						<Form 
+						<Form
 							inverted={theme}
-							as={Container} 
+							as={Container}
 						>
-							<Form.Input 
-								label={<Header color='violet' inverted={theme}>Name</Header>} 
-								value={name} 
-								name='name' 
-								onChange={this.handleChange} 
+							<Form.Input
+								label={<Header color='violet' inverted={theme}>Name</Header>}
+								value={name}
+								name='name'
+								onChange={this.handleChange}
 								type='text'
 								size='small'
 								width={16}
 								error={errors && errors.name}
 							/>
-							<Form.Input 
-								label={<Header color='violet' inverted={theme}>Email</Header>} 
-								value={email} 
-								name='email' 
-								onChange={this.handleChange} 
+							<Form.Input
+								label={<Header color='violet' inverted={theme}>Email</Header>}
+								value={email}
+								name='email'
+								onChange={this.handleChange}
 								type='text'
 								size='small'
 								width={16}
 								error={errors && errors.email}
 							/>
-							<Form.Input 
-								label={<Header color='violet' inverted={theme}>Subject</Header>} 
-								value={subject} 
-								name='subject' 
-								onChange={this.handleChange} 
+							<Form.Input
+								label={<Header color='violet' inverted={theme}>Subject</Header>}
+								value={subject}
+								name='subject'
+								onChange={this.handleChange}
 								type='text'
 								size='small'
 								width={16}

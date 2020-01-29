@@ -1,164 +1,150 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
-import {Link, Route} from "react-router-dom";
-import {Switch as RouteSwitch} from 'react-router-dom';
-import { Affix, Row, Col, Button, Drawer, Layout, Menu, Icon, BackTop, Tooltip } from 'antd';
-import Home from './Home.jsx'
-import About from './About.jsx'
-import Portfolio from './Portfolio.jsx'
-import Contact from './Contact.jsx'
+import { Switch, Route } from 'react-router-dom';
+import {  
+  Segment 
+} from 'semantic-ui-react';
 
-const { Footer, Header } = Layout;
+import { ThemeContext } from './_context/store.js';
 
-const menu = [
-	{
-		header:"Home",
-		path:"/",
-		icon:"home"
-	},
-	{
-		header:"About",
-		path:"/about",
-		icon:"user"
-	},
-	{
-		header:"Portfolio",
-		path:"/portfolio",
-		icon:"area-chart"
-	},
-	{
-		header:"Contact",
-		path:"/contact",
-		icon:"message"
-	}
+// Menus and footer
+import Footer from './layout/Footer.jsx';
+import DesktopMenu from './layout/Computer.jsx';
+import MobileMenu from './layout/Mobile.jsx';
+
+// Pages component
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Portfolio from './pages/Portfolio.jsx';
+import Contact from './pages/Contact.jsx';
+import Skills from './pages/Skills.jsx';
+
+
+const routes = [
+  {
+    path:'/',
+    exact:true,
+    head: () => <span>Home</span>,
+    comp: Home,
+    name:'home',
+    icon:'home',
+    text:'Home',
+    color:'red'
+  },
+  {
+    path:'/about',
+    exact:true,
+    head: () => <span>About</span>,
+    comp: About,
+    name:'about',
+    icon:'user',
+    text:'About',
+    color:'blue'
+  },
+  {
+    path:'/portfolio',
+    exact:true,
+    head: () => <span>Portfolio</span>,
+    comp: Portfolio,
+    name:'portfolio',
+    icon:'trophy',
+    text:'Portfolio',
+    color:'olive'
+  },
+  {
+    path:'/skills',
+    exact: true,
+    head: () => <span>Skills</span>,
+    comp: Skills,
+    name: 'skills',
+    icon: 'cogs',
+    text: 'Skills',
+    color: 'orange'
+  },
+  {
+    path:'/contact',
+    exact:true,
+    head: () => <span>Contact</span>,
+    comp: Contact,
+    name:'contact',
+    icon:'discussions',
+    text:'Contact',
+    color:'violet'
+  },
+  
 ];
 
-class App extends Component {
-	constructor(){
-		super();
-		let path = window.location.pathname;
-		let selectedKey = []
-		let title = ""
-		if (path === '/'){
-			selectedKey = ['0']
-			title = "Home"
-		} else if (path === '/about') {
-			selectedKey = ['1']
-			title = "About"
-		} else if (path === '/portfolio') {
-			selectedKey = ['2']
-			title = "Portfolio"
-		} else if (path==='/contact') {
-			selectedKey = ['3']
-			title = "Contact"
-		} else {
-			selectedKey = ['0']
-			title = "Home"
-		}
-		this.state = {
-			nav: false,
-			selectedKeys:selectedKey,
-			title:title
-		};
-	}
+const social = [
+  {
+    icon:'facebook',
+    href:'https://www.facebook.com/siddharth.gupta.1997',
+    color:'red',
+    color2:'facebook'
+  },
+  {
+    icon:'github',
+    href:'https://github.com/siddg97',
+    color:'yellow',
+    color2:'black'
+  },
+  {
+    icon:'linkedin',
+    href:'https://www.linkedin.com/in/siddharth-gupta-b0245b113/',
+    color:'blue',
+    color2:'linkedin'
+  },
+  {
+    icon:'stack overflow',
+    href:'https://stackoverflow.com/story/sg97',
+    color:'orange',
+    color2:'orange'
+  },
+];
 
-	handleMenuClick = e => {
-		this.setState({
-			nav:false,
-			selectedKeys:[e.key],
-			title:menu[e.key].header
-		});
-		window.scrollTo(0,0);
-	};
+const ResponsiveView = ({ children }) => (
+  <div>
+    <DesktopMenu routes={routes} social={social}>{children}</DesktopMenu>
+    <MobileMenu routes={routes} social={social}>{children}</MobileMenu>
+  </div>
+)
 
-	showNav = () => {
-		this.setState({nav:true});
-	};
+ResponsiveView.propTypes = {
+  children: PropTypes.node,
+}
 
-	hideNav = () => {
-		this.setState({nav:false});
-	};
 
-	render() {
-		let hmode = window.screen.width < 580 ? "left" : "alternate";
-		const mItemStyle = {height:'140px',padding:24,textAlign:'center',margin:0};
-		const iconStyle = {"fontSize":"50px",marginRight:0};
-		const headerStyle = {height:'auto',lineHeight:0,padding:16,backgroundColor:'#2D2926FF'};
-		const footerStyle = {backgroundColor:'#2D2926FF',paddingLeft:24, paddingRight:24};
-		const fMenuStyle = {backgroundColor:"#2D2926FF"};
-		const navStyle = {backgroundColor:"#2D2926FF",minHeight:"100vh"}
-		return (
-			<div className="App">
-				<Tooltip title="Top of page">
-					<BackTop visibilityHeight={50}>
-						<Button type="primary" size='large' shape="circle"><Icon type="up-circle"/></Button>
-					</BackTop>
-				</Tooltip>
-				<Layout>
-					<Affix>
-						<Header style={headerStyle}>
-							<Button type="primary" size='large' shape="round" onClick={this.showNav}>
-								<Icon type="menu" size="large"/>
-								<span className="nav-head">{this.state.title}</span>
-							</Button>
-							<Drawer placement='left' closable={false} onClose={this.hideNav} visible={this.state.nav} width={144}>
-								<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={navStyle}>
-									{
-										menu.map((item,i) =>
-											<Menu.Item key={i} onClick={this.handleMenuClick} style={mItemStyle}>
-												<Link to={item.path}>
-													<Icon type={item.icon} style={iconStyle} />
-													<br/>
-													<span className="nav_Text">{item.header}</span>
-												</Link>
-											</Menu.Item>
-										)
-									}
-								</Menu>
-							</Drawer>
-						</Header>
-					</Affix>
-				<Layout>
-						<RouteSwitch>
-							<Route exact path="/" render={() => <Home mode={hmode}/>} />
-							<Route path="/about" component={About} />
-							<Route path="/portfolio" component={Portfolio} />
-							<Route path="/contact" component={Contact} />
-						</RouteSwitch>
-						<Footer style={footerStyle}>
-							<Row type="flex" justify="center" align="top">
-								<Col xs={24} sm={24} md={8} lg={6}>
-									<Menu theme="dark" mode="inline" selectedKeys={this.state.selectedKeys} style={fMenuStyle}>
-										{
-											menu.map((item,i) =>
-												<Menu.Item key={i} onClick={this.handleMenuClick}>
-													<Link to={item.path}>
-														<span className="footer-nav-text">{item.header}</span>
-													</Link>
-												</Menu.Item>
-											)
-										}
-									</Menu>
-								</Col>
-								<Col xs={24} sm={24} md={16} lg={18}>
-									<div style={{textAlign:'center',padding:32}}>
-										<a href="https://github.com/siddg97/" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="outlined" type="github" style={{"fontSize":"40px",color:'black'}}/></a>
-										<a href="https://www.facebook.com/siddharth.gupta.1997" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="facebook" style={{"fontSize":"40px", color: 'black'}}/></a>
-										<a href="https://www.linkedin.com/in/siddharth-gupta-b0245b113/" className="hvr-float logo-invert" target="_blank" rel="noopener noreferrer"><Icon theme="filled" type="linkedin" style={{"fontSize":"40px", color: 'black'}}/></a>
-										<br/><br/>
-										<span style={{color:'#fff',fontSize:16}}>Created with <Icon type="heart" theme="filled" style={{color:'red',fontSize:28}} className="hvr-pop"/> by - <a href="http://siddg.info" target="_blank" rel="noopener noreferrer">Siddharth Gupta</a> © 2019</span><br/>
-										<span style={{color:'#fff',fontSize:16}}> Powered by <a href="https://ant.design/" target="_blank" rel="noreferrer noopener">Antd{" "}<Icon type="ant-design" style={{color:"white",fontSize:28}} className="hvr-pop"/></a></span>
-										<br/>
-										<span style={{color:'#fff',fontSize:10,bottom:0}}> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></span>
-									</div>
-								</Col>
-							</Row>
-						</Footer>
-					</Layout>
-				</Layout>
-			</div>
-		);
-	}
+const App = () => {
+  const { theme } = useContext(ThemeContext);
+  const pageStyle = {
+    minHeight:'75vh',
+    border:0, 
+    borderRadius:0, 
+    margin:0, 
+    padding: '1.5em 0.5em 4em 0.5em'
+  };
+  return (
+    <ResponsiveView>
+      <Segment 
+        inverted={theme}
+        style={pageStyle}
+      >
+        <Switch>
+        {
+          routes.map((route,i) => (
+            <Route 
+              key={i}
+              path={route.path}
+              exact={route.exact}
+              component={route.comp}
+            />
+          ))
+        }
+        </Switch>
+      </Segment>
+      <Footer social={social} />
+    </ResponsiveView>
+  )
 }
 
 export default App;
