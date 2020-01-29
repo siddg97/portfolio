@@ -27,6 +27,10 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
+<<<<<<< Updated upstream
+=======
+  "proxy": "http://gsidd97.herokuapp.com",
+>>>>>>> Stashed changes
   "eslintConfig": {
     "extends": "react-app"
   },
