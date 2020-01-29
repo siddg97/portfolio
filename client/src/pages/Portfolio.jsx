@@ -82,7 +82,6 @@ const personalProjects = [
 			git:"https://github.com/siddg97/colorP",
 			metaLink:"https://pypi.org/project/colorp/",
 			descr:"A package that uses ANSI-compaitanle codes and provideds methods to beautifully format and style text which can be printed on consoles",
-			imgsrc:'/assets/cp.png',
 			tags:["python","pip","ANSI"]
 		},
 		{
@@ -90,7 +89,6 @@ const personalProjects = [
 			git:"https://github.com/siddg97/BugDB",
 			metaLink:"",
 			descr:"A full stack web app for effortless bug tracking and squashing. MAde using the MERN technology stack.",
-			imgsrc:'/assets/bug.png',
 			tags:["MERN","REST"]
 		},
 		{
@@ -98,25 +96,23 @@ const personalProjects = [
 			git:"https://github.com/siddg97/portfolio",
 			metaLink:"http://www.siddg.info",
 			descr:"A single page react app with minimalistic design for a neat and immersive personal portfolio website. Deployed on Heroku.",
-			imgsrc:'/assets/pw.png',
 			tags:["reactJS","heroku","HTML","CSS"]
 		},
-		// {
-		// 	header:"ProfRank",
-		// 	git:'',
-		// 	metaLink:'',
-		// 	descr:'',
-		// 	imgsrc:'',
-		// 	tags:[]
-		// }
+		{
+			header:"EasyTerms",
+			git:'https://github.com/hykelvinlee42/easyTerms',
+			metaLink:'https://devpost.com/software/easy-terms',
+			descr:'A full stack applications to summarize large texts developed during nwHacks 2020. This application focuses most on summarizing various terms and agreements.',
+			tags:["gcloud","reactJS","flask","machine learning"]
+		}
 ];
 
 const experience = [
 	{
 		company: 'BlackBerry Limited',
-		position: 'Acoustics Software Deveopment Intern',
+		position: 'Software Deveopment Intern',
 		when:'January 2020 - Present',
-		description: 'Embedded software for acoustic systems. Signals processing etc.',
+		description: 'Developing software for Digital Signal Processing in automobile acoustics systems.',
 		icon: 'blackberry',
 		link: 'https://www.blackberry.com/us/en?utm_expid=.QRcSSsjeQnCk6irrlAZueg.0&utm_referrer=https%3A%2F%2Fwww.blackberry.com%2Fus%2Fen'
 	}
@@ -130,19 +126,19 @@ const Exp = () => {
 		{
 			experience.map((item,i) => 
 				<Item key={i}>
-					<Icon name={item.icon} color='blue' size='massive' />
+					<Icon name={item.icon} color='grey' size='massive' />
 					<Item.Content style={{border:0, borderRadius:0}}>
 						<Item.Header>
 							<Header 
-								color='teal'
+								color='blue'
 								size='large' 
-								inverted={theme} 
+								inverted={!theme} 
 							>
 								{item.position} - {item.company}
 							</Header>
 							<Header 
 								size='tiny'
-								inverted={theme}
+								inverted={!theme}
 								color='orange' 
 								style={subHeadStyle} 
 								content={item.when} 
@@ -161,7 +157,7 @@ const Exp = () => {
 								color='blue' 
 								size='medium' 
 								icon='external alternate' 
-								inverted={theme} content='BlackBerry' 
+								inverted={!theme} content='BlackBerry' 
 								href={item.link} 
 							/>
 						</Item.Description>
@@ -252,24 +248,24 @@ const Portfolio = () => {
 	return (
 		<Container>
 			<Header 
-				color='olive' 
-				inverted={theme}
+				color='red' 
+				inverted={!theme}
 				content='Experience' 
 				style={headStyle} 
 			/>
 			<Exp />
 			<Divider />
 			<Header 
-				color='olive' 
-				inverted={theme}
+				color='red' 
+				inverted={!theme}
 				content='Personal Projects' 
 				style={headStyle} 
 			/>
 			<Pport />
 			<Divider />
 			<Header 
-				color='olive' 
-				inverted={theme}
+				color='red' 
+				inverted={!theme}
 				content='Academic Projects' 
 				style={headStyle} 
 			/>

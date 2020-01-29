@@ -67,10 +67,10 @@ const skills = {
 			href: 'https://nodejs.org/en/'
 		},
 		{
-			name: "REST",
+			name: "flask",
 			icon: '',
 			color: 'orange',
-			href: 'https://en.wikipedia.org/wiki/Representational_state_transfer'
+			href: 'https://flask.palletsprojects.com/en/1.1.x/'
 		},
 		{
 			name: "API",
@@ -325,6 +325,7 @@ const Skills = () => {
 			container
 			relaxed
 			verticalAlign='middle'
+			style={{minHeight:'85vh'}}
 		>
 			<Frontend />
 			<Backend />

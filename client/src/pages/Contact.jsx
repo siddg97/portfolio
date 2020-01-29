@@ -87,7 +87,7 @@ class Contact extends React.Component {
 			<ThemeContext.Consumer>
 			{
 				({ theme }) => (
-					<Container>
+					<Container style={{minHeight:'80vh'}}>
 						<DIV>
 							<center>
 								<Icon 

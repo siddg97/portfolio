@@ -17,6 +17,10 @@
 	},
 	"scripts": {
 		"start": "node index.js",
+		"dev": "nodemon index.js",
 		"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.2"
 	}
 }

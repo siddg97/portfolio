@@ -12,10 +12,9 @@ import {
 const Footer = ({ social }) => {
   return (
     <Segment
-      color='grey'
-      inverted
+      color='black'
       vertical 
-      style={{ padding:'4em', border:0, borderRadius:0}}
+      style={{ padding:'4em', border:0, borderRadius:0 }}
     >
       <Container>
         <Grid 
@@ -42,14 +41,6 @@ const Footer = ({ social }) => {
                 />
               )
             }
-              <Button
-                circular
-                color='red'
-                icon='download'
-                content='Resume'
-                size='large'
-                href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing'
-              />
             </Grid.Column>
             <Grid.Column 
               width={10} 
@@ -76,7 +67,7 @@ const Footer = ({ social }) => {
               <Header
                 size='tiny' 
               >
-                Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+                Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" rel="noopener noreferrer" style={{color:'red'}}>Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer" style={{color:'red'}}>www.flaticon.com</a>
               </Header>
             </Grid.Column>
           </Grid.Row>

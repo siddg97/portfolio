@@ -99,7 +99,7 @@ const About = () => {
 				<Grid.Column width={6}>
 					<center>
 						<Image
-							src='http://localhost:5000/assets/SFU4.jpg'
+							src='http://localhost:5000/assets/SFU.png'
 							size='large'
 						/>
 					</center>

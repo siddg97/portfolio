@@ -18,7 +18,7 @@ const Home = () => {
 	};
 
 	return (
-		<Container style={{paddingBottom:'2em'}}>
+		<Container style={{paddingBottom:'2em', minHeight:'80vh', paddingTop:'10vh'}}>
 			<Header 
 				size='huge' 
 				color='yellow'
@@ -43,7 +43,10 @@ const Home = () => {
 				I'm majoring in {'  '}<Header as='a' inverted={theme} color='red' size='small' href='http://www.sfu.ca/computing.html'>Computing Science</Header> and expecting to graduate by 
 				{'  '}<Header as='span' inverted={theme} color='red'>June 2021</Header>. <br/>Currently on an 8-month co-op at <Header as='a' size='small' color='grey' href='https://www.blackberry.com/us/en?utm_expid=.QRcSSsjeQnCk6irrlAZueg.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F'>BlackBerry<Icon name='blackberry'/></Header>
 			</Header>
-			<Button circular size='huge' href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing' color='red' icon='download' content='Resume' />
+			<br/><br/>
+			<center>
+				<Button circular size='huge' href='https://drive.google.com/file/d/1v808eT9XgOxtgzL02rM_HVu0gVOrxpQy/view?usp=sharing' color='red' icon='download' content='Resume' />
+			</center>
 		</Container>
 	)
 }
