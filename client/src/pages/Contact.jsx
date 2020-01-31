@@ -52,14 +52,7 @@ class Contact extends React.Component {
 			html: 'Your message failed to send. Please try again in some time.'
 		};
 
-		axios({
-			method: "POST",
-			url: 'http://gsidd97.herokuapp.com/send-mail',
-			headers:{
-				"Content-Type": "application/json"
-			},
-			data: data,
-		})
+		axios.post("/send-mail", data)
 		.then((res) => {
 			if(res.data.msg === 'success'){
 				Swal.fire(successAlert);
@@ -71,7 +64,7 @@ class Contact extends React.Component {
 			}
 		})
 		.catch(err => {
-			console.error(err.msg);
+			console.log(err.msg);
 			Swal.fire(errorAlert);
 		})
 	}
