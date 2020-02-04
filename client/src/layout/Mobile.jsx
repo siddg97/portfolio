@@ -56,7 +56,7 @@ const MobileMenu = ({ routes, children, social }) => {
           disabled
         >
           <Image 
-            src='http://localhost:5000/assets/me.jpg' 
+            src='http://gsidd97.herokuapp.com/assets/me.jpg' 
             size='small' 
             avatar
           />
@@ -142,6 +142,12 @@ const MobileMenu = ({ routes, children, social }) => {
                 </Menu.Item>
               )
             }
+	    <Button
+		circular
+		inverted={theme}
+		icon = { theme ? 'lightbulb' : 'sun' }
+		onClick={toggleTheme}
+            />
             </Menu>
         </Segment>
         { children }
