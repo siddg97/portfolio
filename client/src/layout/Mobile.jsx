@@ -141,14 +141,21 @@ const MobileMenu = ({ routes, children, social }) => {
                   />
                 </Menu.Item>
               )
-            }
-	    <Button
-		circular
-		inverted={theme}
-		icon = { theme ? 'lightbulb' : 'sun' }
-		onClick={toggleTheme}
-            />
-            </Menu>
+	    }
+	    <Menu.Item
+	      position='right'
+	      fitted='horizontally'
+	    >
+	        <Button
+		   circular
+		   inverted={theme}
+		   size='medium'
+		   href='#'
+		   icon = { theme ? 'lightbulb' : 'sun' }
+		   onClick={toggleTheme}
+		/>
+	    </Menu.Item>
+        </Menu>
         </Segment>
         { children }
       </Sidebar.Pusher>
