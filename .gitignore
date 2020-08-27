@@ -7,9 +7,9 @@ client/build/
 client/bundle.js
 
 # Dependency directories
-node_modules/
+*node_modules/
 
 # Other misc files
 package-lock.json
 npm-debug.log
-.env
+*.env

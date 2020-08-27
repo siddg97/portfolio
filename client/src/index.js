@@ -1,19 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { ThemeProvider } from './_context/store.js';
-
-import App from './App';
-
-import 'semantic-ui-css/semantic.min.css';
-
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 ReactDOM.render(
-	<ThemeProvider>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</ThemeProvider>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
