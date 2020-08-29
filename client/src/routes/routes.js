@@ -5,7 +5,7 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import HomeIcon from "@material-ui/icons/Home";
 
-import { Home, About, Resume, Contact } from "./pages";
+import { Home, About, Resume, Contact } from "../pages";
 
 const routes = [
   {
