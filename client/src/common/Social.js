@@ -1,0 +1,46 @@
+import React from "react";
+import { IconButton, makeStyles } from "@material-ui/core";
+
+import FacebookIcon from "@material-ui/icons/Facebook";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
+const social = {
+  linkedin: "https://www.linkedin.com/in/siddg97/",
+  github: "https://github.com/siddg97",
+  fb: "https://www.facebook.com/siddg97/",
+};
+
+const useStyles = makeStyles((theme) => ({
+  fb: {
+    backgroundColor: theme.palette.custom.facebook,
+    margin: theme.spacing(1),
+  },
+  linkedin: {
+    backgroundColor: theme.palette.custom.linkedin,
+    margin: theme.spacing(1),
+  },
+  github: {
+    backgroundColor: theme.palette.custom.github,
+    margin: theme.spacing(1),
+  },
+}));
+
+const SocialLinks = (props) => {
+  const css = useStyles();
+  return (
+    <React.Fragment>
+      <IconButton href={social.linkedin} className={css.linkedin}>
+        <LinkedInIcon fontSize="large" />
+      </IconButton>
+      <IconButton href={social.github} className={css.github}>
+        <GitHubIcon fontSize="large" />
+      </IconButton>
+      <IconButton href={social.fb} className={css.fb}>
+        <FacebookIcon fontSize="large" />
+      </IconButton>
+    </React.Fragment>
+  );
+};
+
+export default SocialLinks;

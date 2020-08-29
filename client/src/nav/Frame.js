@@ -5,7 +5,6 @@ import {
   Button,
   CssBaseline,
   Drawer,
-  Avatar,
   Hidden,
   IconButton,
   List,
@@ -38,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
   navBar: {
     padding: theme.spacing(1),
     backgroundColor: theme.palette.background.default,
-  },
-  avatar: {
-    backgroundColor: theme.palette.primary.main,
   },
   header: {
     flexGrow: 1,
@@ -137,7 +133,7 @@ function Frame(props) {
             noWrap
             className={classes.header}
           >
-            <Avatar className={classes.avatar}>SG</Avatar>
+            SG
           </Typography>
           <Hidden smUp implementation="js">
             <IconButton

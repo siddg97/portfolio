@@ -66,7 +66,7 @@ const FactCard = (props) => {
                   href={c[1]}
                   onClick={preventDefault}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                 >
                   <Typography variant="h5">{c[0]}</Typography>
                 </Link>
@@ -83,7 +83,7 @@ const About = (props) => {
   const css = useStyles();
   const preventDefault = (e) => e.preventDefault();
   return (
-    <Grid container spacing={3} justify="center" alignItems="flex-start">
+    <Grid container spacing={3} justify="center" alignItems="center">
       <Grid item xs={12}>
         <Typography variant="h1" color="primary" className={css.gridItem}>
           About Me
@@ -99,27 +99,27 @@ const About = (props) => {
         </Card>
       </Grid>
       <Grid item xs={12} lg={7}>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h6" color="textSecondary" gutterBottom>
           Hello! I'm Siddharth, a software engineer and developer rooted in the{" "}
           <Link
             href="https://en.wikipedia.org/wiki/Greater_Vancouver"
             onClick={preventDefault}
             className={css.place}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Greater Vancouver Area, BC, Canada
           </Link>
           .
         </Typography>
         <br />
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h6" color="textSecondary" gutterBottom>
           I enjoy building things, websites, applications and everything in
           between. I constantly strive to apply my problem-solving skills into
           the software I create and have a knack for high quality code.
         </Typography>
         <br />
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h6" color="textSecondary" gutterBottom>
           I'm currently in the final year of studies for my Bachelors in
           Computing Sciences at{" "}
           <Link
@@ -127,7 +127,7 @@ const About = (props) => {
             onClick={preventDefault}
             className={css.place}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Simon Fraser University, Burnaby
           </Link>
@@ -137,21 +137,21 @@ const About = (props) => {
             onClick={preventDefault}
             className={css.date}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             June, 2021
           </Link>
           .
         </Typography>
         <br />
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h6" color="textSecondary" gutterBottom>
           I recently completed a 8-month co-op term working at{" "}
           <Link
             href="https://www.blackberry.com/us/en"
             onClick={preventDefault}
             className={css.thing}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             BlackBerry
           </Link>
@@ -161,7 +161,7 @@ const About = (props) => {
             onClick={preventDefault}
             className={css.thing}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Software Development
           </Link>{" "}
@@ -171,14 +171,14 @@ const About = (props) => {
             onClick={preventDefault}
             className={css.place}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Burnaby, BC, Canada
           </Link>
           .
         </Typography>
         <br />
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h6" color="textSecondary" gutterBottom>
           Thanks for visiting my corner of the internet!
         </Typography>
       </Grid>

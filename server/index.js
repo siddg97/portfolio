@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "localhost:3000",
+    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
     methods: "POST",
   })
 );

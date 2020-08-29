@@ -1,10 +1,6 @@
 import React from "react";
-import { Grid, Typography, IconButton, makeStyles } from "@material-ui/core";
-
-import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
+import { SocialLinks } from "../common";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -12,26 +8,20 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "20vh",
     },
   },
-  fb: {
-    backgroundColor: theme.palette.custom.facebook,
-    margin: theme.spacing(1),
+  place: {
+    color: theme.palette.custom.location,
   },
-  instagram: {
-    backgroundColor: theme.palette.custom.instagram,
-    margin: theme.spacing(1),
+  date: {
+    color: theme.palette.custom.date,
   },
-  linkedin: {
-    backgroundColor: theme.palette.custom.linkedin,
-    margin: theme.spacing(1),
-  },
-  github: {
-    backgroundColor: theme.palette.custom.github,
-    margin: theme.spacing(1),
+  thing: {
+    color: theme.palette.custom.entity,
   },
 }));
 
 const Home = (props) => {
   const css = useStyles();
+  const preventDefault = (e) => e.preventDefault();
   return (
     <Grid
       direction="column"
@@ -48,9 +38,47 @@ const Home = (props) => {
           Siddharth Gupta
         </Typography>
         <Typography variant="h6" color="textSecondary" gutterBottom>
-          I am a software engineer and developer based in the Greater Vancouver
-          Area, BC. Previously Software Development Intern @Blackberry/QNX. My
-          interests include Web Development, Embedded Software, Mobile
+          I am a{" "}
+          <Link
+            href={"https://en.wikipedia.org/wiki/Software_engineer"}
+            onClick={preventDefault}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={css.date}
+          >
+            Software Engineer
+          </Link>{" "}
+          rooted in the{" "}
+          <Link
+            href={"https://en.wikipedia.org/wiki/Greater_Vancouver"}
+            onClick={preventDefault}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={css.place}
+          >
+            Greater Vancouver Area, BC
+          </Link>
+          . Previously{" "}
+          <Link
+            href="https://en.wikipedia.org/wiki/Software_development"
+            onClick={preventDefault}
+            className={css.thing}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Software Development
+          </Link>{" "}
+          Intern @
+          <Link
+            href="https://www.blackberry.com/us/en"
+            onClick={preventDefault}
+            className={css.thing}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            BlackBerry
+          </Link>
+          . My interests include Web Development, Embedded Software, Mobile
           Development, Cyber Security and the Cloud.
         </Typography>
         <Typography variant="h6" gutterBottom>
@@ -58,18 +86,7 @@ const Home = (props) => {
         </Typography>
       </Grid>
       <Grid item xs={12} md={10}>
-        <IconButton className={css.linkedin}>
-          <LinkedInIcon fontSize="large" />
-        </IconButton>
-        <IconButton className={css.github}>
-          <GitHubIcon fontSize="large" />
-        </IconButton>
-        <IconButton className={css.fb}>
-          <FacebookIcon fontSize="large" />
-        </IconButton>
-        <IconButton className={css.instagram}>
-          <InstagramIcon fontSize="large" />
-        </IconButton>
+        <SocialLinks />
       </Grid>
     </Grid>
   );

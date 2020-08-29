@@ -17,6 +17,7 @@ let theme = createMuiTheme({
     background: {
       default: "#14213D",
       paper: "#1E325C",
+      input: "#0A111F",
     },
     custom: {
       location: "#d50000",
