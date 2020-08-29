@@ -5,28 +5,30 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import HomeIcon from "@material-ui/icons/Home";
 
+import { Home, About, Resume, Contact } from "./pages";
+
 const routes = [
   {
     path: "/",
-    component: <div>Home page</div>,
+    component: <Home />,
     name: "Home",
     icon: <HomeIcon />,
   },
   {
     path: "/about",
-    component: <div>About page</div>,
+    component: <About />,
     name: "About",
     icon: <InfoIcon />,
   },
   {
     path: "/resume",
-    component: <div>Resume page</div>,
+    component: <Resume />,
     name: "Resume",
     icon: <AssessmentIcon />,
   },
   {
     path: "/contact",
-    component: <div>Contact page</div>,
+    component: <Contact />,
     name: "Contact",
     icon: <ContactMailIcon />,
   },
