@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Themer from "./theme.js";
-import { routes, Frame } from "./routes";
+import { routes, Frame } from "./nav";
 
 function App() {
   return (

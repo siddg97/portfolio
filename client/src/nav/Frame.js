@@ -1,6 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   AppBar,
+  Button,
   CssBaseline,
   Divider,
   Drawer,
@@ -18,8 +20,6 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
-import { NavLink } from "react-router-dom";
-
 import { routes } from "./routes.js";
 
 const drawerWidth = 240;
@@ -36,37 +36,28 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
     },
   },
-  appBar: {
-    [theme.breakpoints.up("lg")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
+  navBar: {
+    padding: theme.spacing(2),
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("lg")]: {
-      display: "none",
-    },
+  navToolbar: {
+    padding: 0,
   },
-  toolbar: theme.mixins.toolbar,
+  header: {
+    flexGrow: 1,
+  },
+  navBtn: {
+    margin: theme.spacing(1),
+  },
   drawerPaper: {
     width: drawerWidth,
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    [theme.breakpoints.up("lg")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
   },
   footer: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(3),
     marginTop: "auto",
-    [theme.breakpoints.up("lg")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
   },
 }));
 
@@ -80,10 +71,27 @@ function Frame(props) {
     setOpen(!open);
   };
 
+  const nav = (
+    <React.Fragment>
+      {routes.map((r) => (
+        <Button
+          component={NavLink}
+          to={r.path}
+          exact
+          color="primary"
+          key={r.path}
+          className={classes.navBtn}
+          activeClassName="MuiButton-containedPrimary"
+          disableElevation={true}
+        >
+          {r.name}
+        </Button>
+      ))}
+    </React.Fragment>
+  );
+
   const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
+    <React.Fragment>
       <List>
         {routes.map((r) => (
           <ListItem
@@ -100,7 +108,7 @@ function Frame(props) {
           </ListItem>
         ))}
       </List>
-    </div>
+    </React.Fragment>
   );
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -108,28 +116,43 @@ function Frame(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h5" noWrap>
-            Siddharth Gupta
+      <AppBar
+        position="sticky"
+        color="transparent"
+        className={classes.navBar}
+        elevation={0}
+      >
+        <Toolbar className={classes.navToolbar}>
+          <Typography variant="h3" noWrap className={classes.header}>
+            <Hidden lgUp implementation="js">
+              S.G.
+            </Hidden>
+            <Hidden mdDown implementation="js">
+              Siddharth Gupta
+            </Hidden>
           </Typography>
+          <Hidden lgUp implementation="js">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              className={classes.menuButton}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
+          <Hidden mdDown implementation="js">
+            {nav}
+          </Hidden>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
-        <Hidden lgUp implementation="css">
+        <Hidden lgUp implementation="js">
           <Drawer
             container={container}
             variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
+            anchor={"right"}
             open={open}
             onClose={handleDrawerToggle}
             classes={{
@@ -142,22 +165,8 @@ function Frame(props) {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden mdDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
       </nav>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        {children}
-      </main>
+      <main className={classes.content}>{children}</main>
       <footer className={classes.footer}>
         <Typography variant="body1">
           Made with <FavoriteIcon color="secondary" /> by Siddharth Gupta -{" "}

@@ -8,12 +8,15 @@ import {
 let theme = createMuiTheme({
   palette: {
     type: "dark",
-    // primary: {
-    //   main: "#d72483",
-    // },
+    primary: {
+      main: "#FCA311",
+    },
     // secondary: {
-    //   main: "#14213d",
+    //   main: "#E5E5E5",
     // },
+    background: {
+      default: "#14213D",
+    },
   },
 });
 

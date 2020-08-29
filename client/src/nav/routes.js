@@ -1,6 +1,6 @@
 import React from "react";
 
-import InfoIcon from "@material-ui/icons/Info";
+import DescriptionIcon from "@material-ui/icons/Description";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import HomeIcon from "@material-ui/icons/Home";
@@ -18,7 +18,7 @@ const routes = [
     path: "/about",
     component: <About />,
     name: "About",
-    icon: <InfoIcon />,
+    icon: <DescriptionIcon />,
   },
   {
     path: "/resume",
