@@ -19,7 +19,6 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ContactMailIcon from "@material-ui/icons/ContactMail";
 
 import { routes } from "./routes.js";
 
