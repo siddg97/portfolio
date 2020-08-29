@@ -13,8 +13,12 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+<<<<<<< HEAD
     "serve": "^11.3.2",
     "validator": "^13.1.1"
+=======
+    "serve": "^11.3.2"
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
   },
   "scripts": {
     "start": "serve -s build",

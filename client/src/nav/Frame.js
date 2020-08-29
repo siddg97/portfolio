@@ -2,11 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   AppBar,
+<<<<<<< HEAD
   Avatar,
   Button,
   CssBaseline,
   Drawer,
   Divider,
+=======
+  Button,
+  CssBaseline,
+  Divider,
+  Drawer,
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
   Hidden,
   IconButton,
   List,
@@ -16,6 +23,10 @@ import {
   Toolbar,
   Typography,
   makeStyles,
+<<<<<<< HEAD
+=======
+  useTheme,
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -31,18 +42,30 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   drawer: {
+<<<<<<< HEAD
     [theme.breakpoints.up("sm")]: {
+=======
+    [theme.breakpoints.up("lg")]: {
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
       width: drawerWidth,
       flexShrink: 0,
     },
   },
   navBar: {
+<<<<<<< HEAD
     padding: theme.spacing(1),
     backgroundColor: theme.palette.background.default,
+=======
+    padding: theme.spacing(2),
+  },
+  navToolbar: {
+    padding: 0,
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
   },
   header: {
     flexGrow: 1,
   },
+<<<<<<< HEAD
   avatar: {
     width: theme.spacing(7),
     height: theme.spacing(7),
@@ -50,6 +73,10 @@ const useStyles = makeStyles((theme) => ({
   navBtn: {
     margin: theme.spacing(0.5),
     borderRadius: 999,
+=======
+  navBtn: {
+    margin: theme.spacing(1),
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
   },
   drawerPaper: {
     width: drawerWidth,
@@ -62,14 +89,21 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     marginTop: "auto",
   },
+<<<<<<< HEAD
   heartIcon: {
     color: theme.palette.custom.tag,
   },
+=======
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
 }));
 
 function Frame(props) {
   const { window, children } = props;
   const classes = useStyles();
+<<<<<<< HEAD
+=======
+  const theme = useTheme();
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -83,14 +117,21 @@ function Frame(props) {
           component={NavLink}
           to={r.path}
           exact
+<<<<<<< HEAD
           size="large"
           color="primary"
           variant="outlined"
+=======
+          color="primary"
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
           key={r.path}
           className={classes.navBtn}
           activeClassName="MuiButton-containedPrimary"
           disableElevation={true}
+<<<<<<< HEAD
           startIcon={r.icon}
+=======
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
         >
           {r.name}
         </Button>
@@ -126,6 +167,7 @@ function Frame(props) {
       <CssBaseline />
       <AppBar
         position="sticky"
+<<<<<<< HEAD
         color="default"
         className={classes.navBar}
         elevation={0}
@@ -146,6 +188,22 @@ function Frame(props) {
             </Hidden>
           </div>
           <Hidden smUp implementation="js">
+=======
+        color="transparent"
+        className={classes.navBar}
+        elevation={0}
+      >
+        <Toolbar className={classes.navToolbar}>
+          <Typography variant="h3" noWrap className={classes.header}>
+            <Hidden lgUp implementation="js">
+              S.G.
+            </Hidden>
+            <Hidden mdDown implementation="js">
+              Siddharth Gupta
+            </Hidden>
+          </Typography>
+          <Hidden lgUp implementation="js">
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -156,13 +214,21 @@ function Frame(props) {
               <MenuIcon />
             </IconButton>
           </Hidden>
+<<<<<<< HEAD
           <Hidden xsDown implementation="js">
+=======
+          <Hidden mdDown implementation="js">
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
             {nav}
           </Hidden>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
+<<<<<<< HEAD
         <Hidden smUp implementation="js">
+=======
+        <Hidden lgUp implementation="js">
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
           <Drawer
             container={container}
             variant="temporary"
@@ -181,11 +247,18 @@ function Frame(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>{children}</main>
+<<<<<<< HEAD
       <Divider />
       <footer className={classes.footer}>
         <Typography variant="body1" align="center">
           Made with <FavoriteIcon className={classes.heartIcon} /> by Siddharth
           Gupta
+=======
+      <footer className={classes.footer}>
+        <Typography variant="body1">
+          Made with <FavoriteIcon color="secondary" /> by Siddharth Gupta -{" "}
+          {new Date().getFullYear()}
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
         </Typography>
       </footer>
     </div>

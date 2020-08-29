@@ -5,7 +5,11 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import HomeIcon from "@material-ui/icons/Home";
 
+<<<<<<< HEAD
 import { Home, About, Portfolio, Contact } from "../pages";
+=======
+import { Home, About, Resume, Contact } from "../pages";
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
 
 const routes = [
   {
@@ -21,9 +25,15 @@ const routes = [
     icon: <DescriptionIcon />,
   },
   {
+<<<<<<< HEAD
     path: "/portfolio",
     component: <Portfolio />,
     name: "Portfolio",
+=======
+    path: "/resume",
+    component: <Resume />,
+    name: "Resume",
+>>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
     icon: <AssessmentIcon />,
   },
   {
