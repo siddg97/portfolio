@@ -11,9 +11,9 @@ let theme = createMuiTheme({
     primary: {
       main: "#FCA311",
     },
-    // secondary: {
-    //   main: "#faf0ca",
-    // },
+    secondary: {
+      main: "#64ffda",
+    },
     background: {
       default: "#14213D",
       paper: "#1E325C",
@@ -27,6 +27,7 @@ let theme = createMuiTheme({
       linkedin: "#0e76a8",
       instagram: "#3f729b",
       github: "#333",
+      tag: "#9d0208",
     },
   },
 });

@@ -56,13 +56,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     marginTop: "auto",
   },
-  fab: {
-    position: "absolute",
-    bottom: theme.spacing(3),
-    right: theme.spacing(3),
-  },
-  fabIcon: {
-    marginRight: theme.spacing(1),
+  heartIcon: {
+    color: theme.palette.custom.tag,
   },
 }));
 
@@ -88,6 +83,7 @@ function Frame(props) {
           className={classes.navBtn}
           activeClassName="MuiButton-containedPrimary"
           disableElevation={true}
+          startIcon={r.icon}
         >
           {r.name}
         </Button>
@@ -175,8 +171,8 @@ function Frame(props) {
       <Divider />
       <footer className={classes.footer}>
         <Typography variant="body1" align="center">
-          Made with <FavoriteIcon color="secondary" /> by Siddharth Gupta -{" "}
-          {new Date().getFullYear()}
+          Made with <FavoriteIcon className={classes.heartIcon} /> by Siddharth
+          Gupta
         </Typography>
       </footer>
     </div>

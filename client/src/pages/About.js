@@ -84,12 +84,12 @@ const About = (props) => {
   const preventDefault = (e) => e.preventDefault();
   return (
     <Grid container spacing={3} justify="center" alignItems="center">
-      <Grid item xs={12}>
+      <Grid item xs={12} lg={10}>
         <Typography variant="h1" color="primary" className={css.gridItem}>
           About Me
         </Typography>
       </Grid>
-      <Grid item xs={12} lg={5}>
+      <Grid item xs={12} lg={4}>
         <Card>
           <CardMedia
             component="img"
@@ -98,7 +98,7 @@ const About = (props) => {
           />
         </Card>
       </Grid>
-      <Grid item xs={12} lg={7}>
+      <Grid item xs={12} lg={6}>
         <Typography variant="h6" color="textSecondary" gutterBottom>
           Hello! I'm Siddharth, a software engineer and developer rooted in the{" "}
           <Link
@@ -183,7 +183,7 @@ const About = (props) => {
         </Typography>
       </Grid>
       {factCards.map((fc) => (
-        <Grid item xs={12} sm={6} key={fc.title}>
+        <Grid item xs={12} sm={5} key={fc.title}>
           <FactCard {...fc} />
         </Grid>
       ))}
