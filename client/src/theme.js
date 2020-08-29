@@ -9,7 +9,6 @@ let theme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-<<<<<<< HEAD
       main: "#f48c06",
     },
     secondary: {
@@ -32,15 +31,6 @@ let theme = createMuiTheme({
         maxWidth: 600,
         borderRadius: 20,
       },
-=======
-      main: "#FCA311",
-    },
-    // secondary: {
-    //   main: "#faf0ca",
-    // },
-    background: {
-      default: "#14213D",
->>>>>>> a508cb2... Pushed server to it own directory. Chose custom theme for MUI. Proper nav bar setup
     },
   },
 });
