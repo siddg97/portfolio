@@ -76,7 +76,10 @@ const Contact = (props) => {
           setErrorNotification(true);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setErrorNotification(true);
+      });
   };
 
   return (

@@ -5,6 +5,7 @@ import {
   Button,
   CssBaseline,
   Drawer,
+  Divider,
   Hidden,
   IconButton,
   List,
@@ -171,8 +172,9 @@ function Frame(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>{children}</main>
+      <Divider />
       <footer className={classes.footer}>
-        <Typography variant="body1">
+        <Typography variant="body1" align="center">
           Made with <FavoriteIcon color="secondary" /> by Siddharth Gupta -{" "}
           {new Date().getFullYear()}
         </Typography>
