@@ -4,8 +4,8 @@ import {
   AppBar,
   Button,
   CssBaseline,
-  Divider,
   Drawer,
+  Fab,
   Hidden,
   IconButton,
   List,
@@ -15,10 +15,10 @@ import {
   Toolbar,
   Typography,
   makeStyles,
-  useTheme,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
 
 import { routes } from "./routes.js";
 
@@ -59,12 +59,19 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     marginTop: "auto",
   },
+  fab: {
+    position: "absolute",
+    bottom: theme.spacing(3),
+    right: theme.spacing(3),
+  },
+  fabIcon: {
+    marginRight: theme.spacing(1),
+  },
 }));
 
 function Frame(props) {
   const { window, children } = props;
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -123,13 +130,13 @@ function Frame(props) {
         elevation={0}
       >
         <Toolbar className={classes.navToolbar}>
-          <Typography variant="h3" noWrap className={classes.header}>
-            <Hidden lgUp implementation="js">
-              S.G.
-            </Hidden>
-            <Hidden mdDown implementation="js">
-              Siddharth Gupta
-            </Hidden>
+          <Typography
+            variant="h3"
+            color="primary"
+            noWrap
+            className={classes.header}
+          >
+            S.G.
           </Typography>
           <Hidden lgUp implementation="js">
             <IconButton
@@ -172,6 +179,17 @@ function Frame(props) {
           Made with <FavoriteIcon color="secondary" /> by Siddharth Gupta -{" "}
           {new Date().getFullYear()}
         </Typography>
+        <Fab
+          color="primary"
+          component={NavLink}
+          to="/contact"
+          size="medium"
+          variant="extended"
+          className={classes.fab}
+        >
+          <ContactMailIcon className={classes.fabIcon} />
+          Get In Touch
+        </Fab>
       </footer>
     </div>
   );

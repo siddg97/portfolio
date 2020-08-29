@@ -12,7 +12,7 @@ let theme = createMuiTheme({
       main: "#FCA311",
     },
     // secondary: {
-    //   main: "#E5E5E5",
+    //   main: "#faf0ca",
     // },
     background: {
       default: "#14213D",
