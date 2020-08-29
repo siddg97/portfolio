@@ -16,6 +16,16 @@ let theme = createMuiTheme({
     // },
     background: {
       default: "#14213D",
+      paper: "#1E325C",
+    },
+    custom: {
+      location: "#d50000",
+      date: "#06d6a0",
+      entity: "#09a6f3",
+      facebook: "#3b5998",
+      linkedin: "#0e76a8",
+      instagram: "#3f729b",
+      github: "#333",
     },
   },
 });

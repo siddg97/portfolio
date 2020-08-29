@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   drawer: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
       flexShrink: 0,
     },
@@ -85,6 +85,7 @@ function Frame(props) {
           component={NavLink}
           to={r.path}
           exact
+          size="large"
           color="primary"
           key={r.path}
           className={classes.navBtn}
@@ -138,7 +139,7 @@ function Frame(props) {
           >
             <Avatar className={classes.avatar}>SG</Avatar>
           </Typography>
-          <Hidden mdUp implementation="js">
+          <Hidden smUp implementation="js">
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -149,13 +150,13 @@ function Frame(props) {
               <MenuIcon />
             </IconButton>
           </Hidden>
-          <Hidden smDown implementation="js">
+          <Hidden xsDown implementation="js">
             {nav}
           </Hidden>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
-        <Hidden mdUp implementation="js">
+        <Hidden smUp implementation="js">
           <Drawer
             container={container}
             variant="temporary"

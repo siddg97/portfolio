@@ -12,6 +12,22 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "20vh",
     },
   },
+  fb: {
+    backgroundColor: theme.palette.custom.facebook,
+    margin: theme.spacing(1),
+  },
+  instagram: {
+    backgroundColor: theme.palette.custom.instagram,
+    margin: theme.spacing(1),
+  },
+  linkedin: {
+    backgroundColor: theme.palette.custom.linkedin,
+    margin: theme.spacing(1),
+  },
+  github: {
+    backgroundColor: theme.palette.custom.github,
+    margin: theme.spacing(1),
+  },
 }));
 
 const Home = (props) => {
@@ -33,7 +49,7 @@ const Home = (props) => {
         </Typography>
         <Typography variant="h6" color="textSecondary" gutterBottom>
           I am a software engineer and developer based in the Greater Vancouver
-          Area. Previously Software Development Intern @Blackberry/QNX. My
+          Area, BC. Previously Software Development Intern @Blackberry/QNX. My
           interests include Web Development, Embedded Software, Mobile
           Development, Cyber Security and the Cloud.
         </Typography>
@@ -42,17 +58,17 @@ const Home = (props) => {
         </Typography>
       </Grid>
       <Grid item xs={12} md={10}>
-        <IconButton>
-          <LinkedInIcon />
+        <IconButton className={css.linkedin}>
+          <LinkedInIcon fontSize="large" />
         </IconButton>
-        <IconButton>
-          <GitHubIcon />
+        <IconButton className={css.github}>
+          <GitHubIcon fontSize="large" />
         </IconButton>
-        <IconButton>
-          <FacebookIcon />
+        <IconButton className={css.fb}>
+          <FacebookIcon fontSize="large" />
         </IconButton>
-        <IconButton>
-          <InstagramIcon />
+        <IconButton className={css.instagram}>
+          <InstagramIcon fontSize="large" />
         </IconButton>
       </Grid>
     </Grid>
