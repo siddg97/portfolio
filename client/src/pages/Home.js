@@ -8,7 +8,9 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
-    marginTop: "20vh",
+    [theme.breakpoints.up("md")]: {
+      marginTop: "20vh",
+    },
   },
 }));
 
@@ -26,14 +28,13 @@ const Home = (props) => {
         <Typography variant="h3" color="primary">
           Hi, my name is
         </Typography>
-        <Typography variant="h1" nowWrap gutterBottom>
+        <Typography variant="h1" gutterBottom>
           Siddharth Gupta
         </Typography>
         <Typography variant="h6" color="textSecondary" gutterBottom>
           I am a software engineer and developer based in the Greater Vancouver
-          Area. <br />
-          Previously Software Development Intern @Blackberry/QNX.
-          <br /> My interests include Web Development, Embedded Software, Mobile
+          Area. Previously Software Development Intern @Blackberry/QNX. My
+          interests include Web Development, Embedded Software, Mobile
           Development, Cyber Security and the Cloud.
         </Typography>
         <Typography variant="h6" gutterBottom>

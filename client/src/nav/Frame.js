@@ -5,7 +5,7 @@ import {
   Button,
   CssBaseline,
   Drawer,
-  Fab,
+  Avatar,
   Hidden,
   IconButton,
   List,
@@ -18,7 +18,6 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ContactMailIcon from "@material-ui/icons/ContactMail";
 
 import { routes } from "./routes.js";
 
@@ -31,16 +30,17 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   drawer: {
-    [theme.breakpoints.up("lg")]: {
+    [theme.breakpoints.up("md")]: {
       width: drawerWidth,
       flexShrink: 0,
     },
   },
   navBar: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
+    backgroundColor: theme.palette.background.default,
   },
-  navToolbar: {
-    padding: 0,
+  avatar: {
+    backgroundColor: theme.palette.primary.main,
   },
   header: {
     flexGrow: 1,
@@ -125,20 +125,20 @@ function Frame(props) {
       <CssBaseline />
       <AppBar
         position="sticky"
-        color="transparent"
+        color="default"
         className={classes.navBar}
         elevation={0}
       >
-        <Toolbar className={classes.navToolbar}>
+        <Toolbar>
           <Typography
             variant="h3"
             color="primary"
             noWrap
             className={classes.header}
           >
-            S.G.
+            <Avatar className={classes.avatar}>SG</Avatar>
           </Typography>
-          <Hidden lgUp implementation="js">
+          <Hidden mdUp implementation="js">
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -149,13 +149,13 @@ function Frame(props) {
               <MenuIcon />
             </IconButton>
           </Hidden>
-          <Hidden mdDown implementation="js">
+          <Hidden smDown implementation="js">
             {nav}
           </Hidden>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
-        <Hidden lgUp implementation="js">
+        <Hidden mdUp implementation="js">
           <Drawer
             container={container}
             variant="temporary"
@@ -179,17 +179,6 @@ function Frame(props) {
           Made with <FavoriteIcon color="secondary" /> by Siddharth Gupta -{" "}
           {new Date().getFullYear()}
         </Typography>
-        <Fab
-          color="primary"
-          component={NavLink}
-          to="/contact"
-          size="medium"
-          variant="extended"
-          className={classes.fab}
-        >
-          <ContactMailIcon className={classes.fabIcon} />
-          Get In Touch
-        </Fab>
       </footer>
     </div>
   );
