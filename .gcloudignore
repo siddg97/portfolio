@@ -25,4 +25,6 @@ LICENSE
 client/node_modules
 client/src
 client/public
-client/yarn.lock
+
+# server files
+server/node_modules
