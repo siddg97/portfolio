@@ -187,11 +187,6 @@ const Contact = (props) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <center>
-            <SocialLinks />
-          </center>
-        </Grid>
       </Grid>
       <Notification
         open={successNotification}
