@@ -54,22 +54,15 @@ const getUserData = (response) => {
  * @returns: N/A
  */
 const getTopRepos = (response, sortBy, limit = 8) => {
-  axios
-    .get(`${process.env.GITHUB_API}/users/siddg97/repos`, {
-      params: {
-        per_page: 100,
-      },
-    })
-    .then((res) => res.data)
-    .then((data) => {
-      return data
-        .filter((repo) => !repo.fork)
+  (async function () {
+    try {
+      let repos = await fetchRepos();
+      const topRepos = repos
+        .filter((r) => !r.fork)
         .sort((a, b) => b[sortBy] - a[sortBy])
         .slice(0, limit);
-    })
-    .then((data) =>
       response.json({
-        topRepos: data.map((r) => {
+        topRepos: topRepos.map((r) => {
           const {
             name,
             html_url,
@@ -87,12 +80,12 @@ const getTopRepos = (response, sortBy, limit = 8) => {
             forks_count,
           };
         }),
-      })
-    )
-    .catch((err) => {
+      });
+    } catch (err) {
       console.log(err.message);
       response.status(500).json({ error: err.message });
-    });
+    }
+  })();
 };
 
 /*
@@ -112,9 +105,19 @@ const getLangStats = (response) => {
   });
 };
 
+/*
+ * Get all repos from github
+ * @name: fetchRepos
+ * @param: N/A
+ * @returns: Array of repo objects
+ */
 async function fetchRepos() {
   try {
-    var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97/repos`);
+    var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97/repos`, {
+      params: {
+        per_page: 100,
+      },
+    });
     return await res.data;
   } catch (err) {
     console.log(err.message);
