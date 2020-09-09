@@ -95,7 +95,7 @@ const projects = [
     end: "Present",
     tags: ["React", "MongoDB", "Flask", "GCE", "bit", "Postman"],
     accomplishments: [
-      "Collaborated in a team of 3 to develop an online forum designed to improves university experiences for students",
+      "Collaborated in a team of 3 to develop an online forum designed to improve university experience for students",
       "Assumed full stack developer role, contributing to frontend, backend, database administration",
       "Responsible for managing and monitoring deployments on Google Compute Engine",
       "Developed REST API endpoints with Flask in python",

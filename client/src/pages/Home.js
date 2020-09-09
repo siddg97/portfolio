@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
-import { SocialLinks } from "../common";
+import { SocialLinks, Resume } from "../common";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -48,7 +48,7 @@ const Home = (props) => {
           >
             Software Engineer
           </Link>{" "}
-          rooted in the{" "}
+          based in the{" "}
           <Link
             href={"https://en.wikipedia.org/wiki/Greater_Vancouver"}
             onClick={preventDefault}
@@ -84,6 +84,9 @@ const Home = (props) => {
         <Typography variant="h6" gutterBottom>
           Currently looking for full-time Co-op or New Graduate opportunities.
         </Typography>
+      </Grid>
+      <Grid item xs={12} md={10}>
+        <Resume />
       </Grid>
       <Grid item xs={12} md={10}>
         <SocialLinks />

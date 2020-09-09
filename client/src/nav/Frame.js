@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   AppBar,
+  Avatar,
   Button,
   CssBaseline,
   Drawer,
@@ -41,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     flexGrow: 1,
+  },
+  avatar: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
   },
   navBtn: {
     margin: theme.spacing(1),
@@ -124,14 +129,13 @@ function Frame(props) {
         elevation={0}
       >
         <Toolbar>
-          <Typography
-            variant="h3"
-            color="primary"
-            noWrap
-            className={classes.header}
-          >
-            SG
-          </Typography>
+          <div className={classes.header}>
+            <Avatar
+              alt="Siddharth Gupta"
+              src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
+              className={classes.avatar}
+            />
+          </div>
           <Hidden smUp implementation="js">
             <IconButton
               color="inherit"
