@@ -24,8 +24,4 @@ router.get("/top-repos", (req, res) => {
   getTopRepos(res, "stargazers_count");
 });
 
-// router.get("/repo-stats", (_, res) => {
-//   me.repoStats(ghCallback(res));
-// });
-
 module.exports = router;

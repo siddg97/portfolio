@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
-import { SocialLinks, Resume } from "../common";
+import { SocialLinks } from "../common";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -8,14 +8,8 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "20vh",
     },
   },
-  place: {
-    color: theme.palette.custom.location,
-  },
-  date: {
-    color: theme.palette.custom.date,
-  },
   thing: {
-    color: theme.palette.custom.entity,
+    color: theme.palette.custom.date,
   },
 }));
 
@@ -44,7 +38,7 @@ const Home = (props) => {
             onClick={preventDefault}
             target="_blank"
             rel="noreferrer noopener"
-            className={css.date}
+            className={css.thing}
           >
             Software Engineer
           </Link>{" "}
@@ -54,7 +48,7 @@ const Home = (props) => {
             onClick={preventDefault}
             target="_blank"
             rel="noreferrer noopener"
-            className={css.place}
+            className={css.thing}
           >
             Greater Vancouver Area, BC
           </Link>
@@ -68,7 +62,7 @@ const Home = (props) => {
           >
             Software Development
           </Link>{" "}
-          Intern @
+          Intern{" "}
           <Link
             href="https://www.blackberry.com/us/en"
             onClick={preventDefault}
@@ -76,7 +70,7 @@ const Home = (props) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            BlackBerry
+            @BlackBerry
           </Link>
           . My interests include Web Development, Embedded Software, Mobile
           Development, Cyber Security and the Cloud.
@@ -84,9 +78,6 @@ const Home = (props) => {
         <Typography variant="h6" gutterBottom>
           Currently looking for full-time Co-op or New Graduate opportunities.
         </Typography>
-      </Grid>
-      <Grid item xs={12} md={10}>
-        <Resume />
       </Grid>
       <Grid item xs={12} md={10}>
         <SocialLinks />

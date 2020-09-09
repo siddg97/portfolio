@@ -12,7 +12,7 @@ let theme = createMuiTheme({
       main: "#FCA311",
     },
     secondary: {
-      main: "#64ffda",
+      main: "#F7263B",
     },
     background: {
       default: "#14213D",
@@ -20,14 +20,10 @@ let theme = createMuiTheme({
       input: "#0A111F",
     },
     custom: {
-      location: "#d50000",
-      date: "#06d6a0",
-      entity: "#09a6f3",
-      facebook: "#3b5998",
+      date: "#62BE37",
       linkedin: "#0e76a8",
-      instagram: "#3f729b",
       github: "#333",
-      tag: "#9d0208",
+      tag: "#d50000",
     },
   },
 });

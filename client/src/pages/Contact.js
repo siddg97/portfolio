@@ -11,8 +11,6 @@ import {
 } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 
-import { SocialLinks } from "../common";
-
 const useStyles = makeStyles((theme) => ({
   gridItem: {
     [theme.breakpoints.up("md")]: {
@@ -154,7 +152,7 @@ const Contact = (props) => {
             className={css.input}
           />
         </Grid>
-        <Grid item xs={12} sm={3} md={3}>
+        <Grid item xs={12} sm={3}>
           <Button
             variant="contained"
             color="primary"
@@ -165,7 +163,8 @@ const Contact = (props) => {
             Send
           </Button>
         </Grid>
-        <Grid item xs={12} sm={3} md={3}>
+        <Grid item xs={false} sm={4}></Grid>
+        <Grid item xs={12} sm={3}>
           <Button
             variant="contained"
             color="secondary"
@@ -175,11 +174,6 @@ const Contact = (props) => {
           >
             Reset
           </Button>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <center>
-            <SocialLinks />
-          </center>
         </Grid>
       </Grid>
       <Notification

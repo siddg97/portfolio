@@ -1,18 +1,7 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  makeStyles,
-  Card,
-  CardHeader,
-  CardContent,
-  Link,
-  List,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core";
+import { Grid, Typography, makeStyles, Chip, Link } from "@material-ui/core";
 
-const factCards = [
+const facts = [
   {
     title: "Places I've Lived",
     content: [
@@ -20,6 +9,7 @@ const factCards = [
       ["Tehran", "https://en.wikipedia.org/wiki/Tehran"],
       ["Delhi", "https://en.wikipedia.org/wiki/Delhi"],
     ],
+    color: "primary",
   },
   {
     title: "Social Media",
@@ -28,6 +18,7 @@ const factCards = [
       ["Github", "https://github.com/siddg97"],
       ["Stack Overflow", "https://stackoverflow.com/story/sg97"],
     ],
+    color: "secondary",
   },
 ];
 
@@ -37,42 +28,36 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
   },
-  place: {
-    color: theme.palette.custom.location,
-  },
-  date: {
+  thing: {
     color: theme.palette.custom.date,
   },
-  thing: {
-    color: theme.palette.custom.entity,
+  chip: {
+    margin: theme.spacing(1),
   },
 }));
 
-const FactCard = (props) => {
-  const { title, content } = props;
-  const preventDefault = (e) => e.preventDefault();
+const FactSection = (props) => {
+  const classes = useStyles();
+  const { title, content, color } = props;
   return (
-    <Card>
-      <CardHeader title={title} />
-      <CardContent>
-        <List>
-          {content.map((c) => (
-            <ListItem key={c[0]}>
-              <ListItemText>
-                <Link
-                  href={c[1]}
-                  onClick={preventDefault}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  <Typography variant="h5">{c[0]}</Typography>
-                </Link>
-              </ListItemText>
-            </ListItem>
-          ))}
-        </List>
-      </CardContent>
-    </Card>
+    <Grid item xs={12} md={5}>
+      <Typography variant="h5" color={color} gutterBottom>
+        {title}
+      </Typography>
+      {content.map((c) => (
+        <Chip
+          key={c[1]}
+          component="a"
+          label={<Typography variant="body1">{c[0]}</Typography>}
+          color={color}
+          className={classes.chip}
+          href={c[1]}
+          target="_blank"
+          clickable
+          rel="noopener noreferrer"
+        />
+      ))}
+    </Grid>
   );
 };
 
@@ -81,18 +66,18 @@ const About = (props) => {
   const preventDefault = (e) => e.preventDefault();
   return (
     <Grid container spacing={3} justify="center" alignItems="center">
-      <Grid item xs={12} lg={10}>
+      <Grid item xs={12} md={10}>
         <Typography variant="h1" color="primary" className={css.gridItem}>
           About Me
         </Typography>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} md={10}>
         <Typography variant="h6" color="textSecondary" gutterBottom>
           Hello! I'm Siddharth, a software engineer and developer in the{" "}
           <Link
             href="https://en.wikipedia.org/wiki/Greater_Vancouver"
             onClick={preventDefault}
-            className={css.place}
+            className={css.thing}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -106,7 +91,7 @@ const About = (props) => {
           <Link
             href="https://en.wikipedia.org/wiki/Simon_Fraser_University"
             onClick={preventDefault}
-            className={css.place}
+            className={css.thing}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -116,7 +101,7 @@ const About = (props) => {
           <Link
             href="https://www.timeanddate.com/calendar/monthly.html?year=2021&month=6&country=27"
             onClick={preventDefault}
-            className={css.date}
+            className={css.thing}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -146,7 +131,7 @@ const About = (props) => {
           <Link
             href="https://en.wikipedia.org/wiki/Burnaby"
             onClick={preventDefault}
-            className={css.place}
+            className={css.thing}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -154,16 +139,15 @@ const About = (props) => {
           </Link>
           .
         </Typography>
-        <br />
+      </Grid>
+      {facts.map((fact, i) => (
+        <FactSection key={i} {...fact} />
+      ))}
+      <Grid item xs={12} md={10}>
         <Typography variant="h6" color="textSecondary" gutterBottom>
           Thanks for visiting my corner of the internet!
         </Typography>
       </Grid>
-      {factCards.map((fc) => (
-        <Grid item xs={12} sm={5} key={fc.title}>
-          <FactCard {...fc} />
-        </Grid>
-      ))}
     </Grid>
   );
 };
