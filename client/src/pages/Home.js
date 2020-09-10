@@ -31,7 +31,7 @@ const Home = (props) => {
         <Typography variant="h1" gutterBottom>
           Siddharth Gupta
         </Typography>
-        <Typography variant="h6" color="textSecondary" gutterBottom>
+        <Typography variant="body1" color="textSecondary" gutterBottom>
           I am a{" "}
           <Link
             href={"https://en.wikipedia.org/wiki/Software_engineer"}

@@ -129,13 +129,16 @@ function Frame(props) {
         elevation={0}
       >
         <Toolbar>
-          <div className={classes.header}>
+          {/* <div className={classes.header}>
             <Avatar
               alt="Siddharth Gupta"
               src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
               className={classes.avatar}
             />
-          </div>
+          </div> */}
+          <Typography variant="h4" className={classes.header}>
+            S.G.
+          </Typography>
           <Hidden smUp implementation="js">
             <IconButton
               color="inherit"

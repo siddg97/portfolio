@@ -23,7 +23,7 @@ const routes = [
   {
     path: "/portfolio",
     component: <Portfolio />,
-    name: "Portfolio",
+    name: "Projects",
     icon: <AssessmentIcon />,
   },
   {

@@ -84,13 +84,13 @@ const Contact = (props) => {
     <React.Fragment>
       <Grid container spacing={2} justify="center" alignItems="center">
         <Grid item xs={12} md={10} className={css.gridItem}>
-          <Typography variant="h1" color="primary" gutterBottom>
+          <Typography variant="h2" color="primary" gutterBottom>
             Get In Touch
           </Typography>
-          <Typography variant="h6" color="textSecondary" gutterBottom>
+          <Typography variant="body1" gutterBottom>
             I'm currently looking for full-time and co-op opportunities. If you
-            want to hire me, ask me a question or say hi, send me a message and
-            I will get back to you on my earliest convenience!
+            want to hire me, ask me a question or just say hi, send me a message
+            and I will get back to you on my earliest convenience!
           </Typography>
         </Grid>
         <Grid item xs={12} md={10}>
