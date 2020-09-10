@@ -5,6 +5,9 @@ logs
 # Compiled directory and file
 client/build/
 client/bundle.js
+client/app.yaml
+
+server/backend.yaml
 
 # Dependency directories
 *node_modules/

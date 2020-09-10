@@ -1,0 +1,37 @@
+runtime: nodejs
+env: flex
+
+network:
+  session_affinity: true
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+liveness_check:
+  check_interval_sec: 30
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+
+readiness_check:
+  check_interval_sec: 10
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+  app_start_timeout_sec: 300
+
+handlers:
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+  - url: /(.*)$
+    static_files: build/\1
+    upload: build/(.*)
+
+env_variables:
+  REACT_APP_SERVER_URL: ""

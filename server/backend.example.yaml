@@ -1,0 +1,22 @@
+runtime: nodejs
+env: flex
+service: backend
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+handlers:
+  - url: /assets
+    static_dir: assets
+
+env_variables:
+  CPASS: ""
+  CUSER: ""
+  MHOST: ""
+  CORS_ORIGIN: ""
+  GITHUB_ACCESS_TOKEN: ""
+  GITHUB_API: ""
