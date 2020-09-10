@@ -72,22 +72,6 @@ const otherSkills = [
   "Enthusiasm",
   "Problem Solver",
 ];
-const workExp = {
-  position: "Software Development Intern",
-  company: "Blackberry Ltd.",
-  location: "Burnaby, BC, Canada",
-  start: "January 2020",
-  end: "Aug 2020",
-  accomplishments: [
-    "Developed standalone programs using C and Python for acoustic analysis",
-    "Optimized existing tools in codebase to achieve over 40% performance gains",
-    "Devised test scripts to validate voice detection in audio wave files",
-    "Developed testing tools for identification of bugs in existing software",
-    "Participated extensively in code reviews",
-    "Resolved over 150+ tickets under 8 months",
-    "Completed internal training programs for the QNX Neutrino RTOS",
-  ],
-};
 const projects = [
   {
     name: "UniFYI",
@@ -151,41 +135,9 @@ const Portfolio = (props) => {
   return (
     <Grid container spacing={2} justify="center" alignItems="flex-start">
       <Grid item xs={12} md={10}>
-        <Typography variant="h1" color="primary" className={css.gridItem}>
+        <Typography variant="h2" color="primary" className={css.gridItem}>
           Portfolio
         </Typography>
-      </Grid>
-      {/* Work Experience */}
-      <Grid item xs={12} md={10}>
-        <Item title="Work Experience" paperStyle={css.paper}>
-          <br />
-          <Typography
-            variant="h5"
-            color="primary"
-            display="inline"
-            gutterBottom
-          >
-            {workExp.position}
-          </Typography>{" "}
-          <Typography variant="h5" display="inline" gutterBottom>
-            @ {workExp.company}
-          </Typography>
-          <br />
-          <Typography variant="h6" color="secondary">
-            {workExp.start} - {workExp.end} | {workExp.location}
-          </Typography>
-          <List dense disablePadding>
-            {workExp.accomplishments.map((acc) => (
-              <ListItem dense disableGutters key={acc}>
-                <ListItemText>
-                  <Typography variant="body1">
-                    <ArrowRightAltIcon fontSize="small" /> {acc}
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-            ))}
-          </List>
-        </Item>
       </Grid>
       {/* Projects */}
       <Grid item xs={12} md={10}>
