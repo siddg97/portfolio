@@ -85,6 +85,7 @@ function Frame(props) {
           exact
           size="large"
           color="primary"
+          variant="outlined"
           key={r.path}
           className={classes.navBtn}
           activeClassName="MuiButton-containedPrimary"

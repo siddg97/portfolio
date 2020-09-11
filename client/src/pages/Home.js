@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "20vh",
     },
   },
+  "font-18": {
+    fontSize: "18px",
+  },
   thing: {
     color: theme.palette.custom.date,
   },
@@ -31,7 +34,7 @@ const Home = (props) => {
         <Typography variant="h1" gutterBottom>
           Siddharth Gupta
         </Typography>
-        <Typography variant="body1" color="textSecondary" gutterBottom>
+        <Typography variant="body1" className={css["font-18"]} gutterBottom>
           I am a{" "}
           <Link
             href={"https://en.wikipedia.org/wiki/Software_engineer"}

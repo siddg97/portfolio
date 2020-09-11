@@ -1,7 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react";
-import axios from "axios";
+import React, { Fragment } from "react";
 
-import { Avatar, Grid, Typography, makeStyles, Paper } from "@material-ui/core";
+import { Grid, Typography, makeStyles, Avatar } from "@material-ui/core";
 import { HyperLink } from "../common";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,42 +15,23 @@ const useStyles = makeStyles((theme) => ({
   red: {
     color: theme.palette.custom.tag,
   },
-  chip: {
-    margin: theme.spacing(1),
+  text: {
+    fontSize: 18,
   },
-  ghAvatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    border: "5px solid " + theme.palette.primary.main,
-    margin: "0 auto",
-  },
-  paper: {
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(1),
-  },
-  ghStat: {
-    backgroundColor: "rgba(81,83,85, 0.4)",
-    padding: theme.spacing(1),
-    display: "inline-block",
-    margin: theme.spacing(0.25),
-    width: "100%",
-  },
-  ghPaper: {
-    padding: theme.spacing(2),
-  },
-  iconText: {
-    display: "flex",
-    alignItems: "center",
-    verticalAlign: "middle",
+  avatar: {
+    width: theme.spacing(35),
+    height: theme.spacing(35),
+    marginTop: theme.spacing(1),
+    border: "5px solid " + theme.palette.secondary.main,
   },
 }));
 
 const Intro = (props) => (
-  <Typography variant="body1" gutterBottom>
+  <Typography variant="body1" gutterBottom className={props.text}>
     Hello! I'm Siddharth, a software engineer and developer in the{" "}
     <HyperLink
       url="https://en.wikipedia.org/wiki/Greater_Vancouver"
-      className={props.css}
+      className={props.color}
     >
       Greater Vancouver Area, BC, Canada
     </HyperLink>
@@ -67,11 +47,11 @@ const Intro = (props) => (
 );
 
 const Education = (props) => (
-  <Typography variant="body1" gutterBottom>
+  <Typography variant="body1" gutterBottom className={props.text}>
     After completing my secondary education from{" "}
     <HyperLink
       url="https://en.wikipedia.org/wiki/Gurgaon"
-      className={props.css}
+      className={props.color}
     >
       Gurgaon, India
     </HyperLink>{" "}
@@ -80,14 +60,14 @@ const Education = (props) => (
     from{" "}
     <HyperLink
       url="https://en.wikipedia.org/wiki/Simon_Fraser_University"
-      className={props.css}
+      className={props.color}
     >
       Simon Fraser University, Burnaby
     </HyperLink>
     . My expected graduation date is{" "}
     <HyperLink
       url="https://www.timeanddate.com/calendar/monthly.html?year=2021&month=6&country=27"
-      className={props.css}
+      className={props.color}
     >
       June, 2021
     </HyperLink>
@@ -96,16 +76,19 @@ const Education = (props) => (
 );
 
 const WorkExp = (props) => {
-  const { css } = props;
+  const { color, text } = props;
   return (
     <Fragment>
-      <Typography variant="body1">
+      <Typography variant="body1" className={text}>
         Recently completed an 8 month co-op{" "}
-        <HyperLink url="https://www.blackberry.com/us/en" className={css}>
+        <HyperLink url="https://www.blackberry.com/us/en" className={color}>
           @BlackBerry Inc
         </HyperLink>{" "}
         in{" "}
-        <HyperLink url="https://en.wikipedia.org/wiki/Burnaby" className={css}>
+        <HyperLink
+          url="https://en.wikipedia.org/wiki/Burnaby"
+          className={color}
+        >
           Burnaby, BC
         </HyperLink>
         . My daily activities included development of firmware and tools used in
@@ -117,104 +100,36 @@ const WorkExp = (props) => {
   );
 };
 
-const GithubProfile = (props) => {
-  const [userData, setUserData] = useState(null);
-  const { css } = props;
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`);
-        let user = await res.data;
-        setUserData(user);
-      } catch (err) {
-        console.log(err.message);
-        setUserData(null);
-      }
-    })();
-  }, []);
-
-  return (
-    userData && (
-      <Grid item xs={12} md={10}>
-        <Paper elevation={3} className={css.ghPaper}>
-          <Grid container spacing={1} alignItems="center">
-            <Grid item xs={12}>
-              <Typography variant="h4" color="primary" gutterBottom>
-                Github Profile
-              </Typography>
-            </Grid>
-            {/* Avatar/Name/handle */}
-            <Grid item xs={12} md={4}>
-              <Avatar
-                alt="Github Avatar"
-                component={HyperLink}
-                src={userData.avatar_url}
-                className={css.ghAvatar}
-                url={userData.html_url}
-              />
-              <Typography component="center" variant="h5">
-                {userData.name}
-              </Typography>
-              <Typography component="center" variant="h6">
-                <HyperLink url={userData.html_url}>@{userData.login}</HyperLink>
-              </Typography>
-            </Grid>
-            {/* Stats */}
-            <Grid item xs={12} md={5}>
-              <Grid container spacing={1}>
-                <Grid item xs={12} md={4}>
-                  <Paper elevation={0} className={css.ghStat}>
-                    <center>
-                      <Typography variant="h6">
-                        {userData.public_repos}
-                      </Typography>
-                      <Typography variant="button">Repositories</Typography>
-                    </center>
-                  </Paper>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Paper elevation={0} className={css.ghStat}>
-                    <center>
-                      <Typography variant="h6">{userData.followers}</Typography>
-                      <Typography variant="button">Followers</Typography>
-                    </center>
-                  </Paper>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Paper elevation={0} className={css.ghStat}>
-                    <center>
-                      <Typography variant="h6">{userData.following}</Typography>
-                      <Typography variant="button">Following</Typography>
-                    </center>
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Paper>
-      </Grid>
-    )
-  );
-};
-
 const About = (props) => {
   const css = useStyles();
   return (
     <Grid container spacing={1} justify="center" alignItems="flex-start">
       <Grid item xs={12} md={10}>
-        <Paper elevation={3} className={(css.gridItem, css.paper)}>
-          <Typography variant="h2" color="primary" gutterBottom>
-            About Me
-          </Typography>
-          <Intro css={css.green} />
-          <br />
-          <Education css={css.red} />
-          <br />
-          <WorkExp />
-        </Paper>
+        <Typography
+          variant="h2"
+          color="primary"
+          gutterBottom
+          className={css.gridItem}
+        >
+          About Me
+        </Typography>
       </Grid>
-      <GithubProfile css={css} />
+      <Grid item xs={12} md={10}>
+        <Intro color={css.green} text={css.text} />
+        <br />
+        <Education color={css.red} text={css.text} />
+        <br />
+        <WorkExp text={css.text} />
+      </Grid>
+      <Grid item xs={12} md={10}>
+        <center>
+          <Avatar
+            className={css.avatar}
+            src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
+            alt="Siddharth Gupta"
+          />
+        </center>
+      </Grid>
     </Grid>
   );
 };

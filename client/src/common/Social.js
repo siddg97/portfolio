@@ -1,6 +1,6 @@
 import React from "react";
-import { IconButton, makeStyles } from "@material-ui/core";
-
+import { IconButton, makeStyles, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.custom.github,
     margin: theme.spacing(1),
   },
+  contactBtn: {
+    margin: theme.spacing(1),
+    borderRadius: 999,
+  },
 }));
 
 const SocialLinks = (props) => {
@@ -25,11 +29,22 @@ const SocialLinks = (props) => {
   return (
     <React.Fragment>
       <IconButton href={social.linkedin} className={css.linkedin}>
-        <LinkedInIcon fontSize="large" />
+        <LinkedInIcon />
       </IconButton>
       <IconButton href={social.github} className={css.github}>
-        <GitHubIcon fontSize="large" />
+        <GitHubIcon />
       </IconButton>
+      <Button
+        size="large"
+        variant="outlined"
+        rounded
+        color="secondary"
+        component={Link}
+        to="/contact"
+        className={css.contactBtn}
+      >
+        Get in touch
+      </Button>
     </React.Fragment>
   );
 };
