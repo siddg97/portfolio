@@ -7,16 +7,51 @@ axios.defaults.headers[
 ] = `token ${process.env.GITHUB_ACCESS_TOKEN}`;
 
 /*
+ * Get all repos from github
+ * @name: fetchRepos
+ * @param: N/A
+ * @returns: Array of repo objects
+ */
+async function fetchRepos() {
+  try {
+    var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97/repos`, {
+      params: {
+        per_page: 100,
+      },
+    });
+    return await res.data;
+  } catch (err) {
+    console.log(err.message);
+    return [];
+  }
+}
+
+/*
+ * Get user data from github
+ * @name: fetchUser
+ * @param: N/A
+ * @returns: user data JSON
+ */
+async function fetchUser() {
+  try {
+    var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97`);
+    return await res.data;
+  } catch (err) {
+    console.log(err.message);
+    return {};
+  }
+}
+
+/*
  * Get user data from github and send response
  * @name: getUserData
  * @param: response; express response object
  * @returns: N/A
  */
 const getUserData = (response) => {
-  axios
-    .get(`${process.env.GITHUB_API}/user`)
-    .then((res) => res.data)
-    .then((data) => {
+  (async function () {
+    try {
+      let user = await fetchUser();
       const {
         login,
         created_at,
@@ -27,8 +62,8 @@ const getUserData = (response) => {
         following,
         name,
         html_url,
-      } = data;
-      const payload = {
+      } = user;
+      payload = {
         login,
         created_at,
         avatar_url,
@@ -40,11 +75,11 @@ const getUserData = (response) => {
         html_url,
       };
       response.json(payload);
-    })
-    .catch((err) => {
-      response.status(500).json({ error: err.message });
+    } catch (err) {
       console.log(err.message);
-    });
+      response.status(500).json({ error: err.message });
+    }
+  })();
 };
 
 /*
@@ -104,26 +139,6 @@ const getLangStats = (response) => {
     }
   });
 };
-
-/*
- * Get all repos from github
- * @name: fetchRepos
- * @param: N/A
- * @returns: Array of repo objects
- */
-async function fetchRepos() {
-  try {
-    var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97/repos`, {
-      params: {
-        per_page: 100,
-      },
-    });
-    return await res.data;
-  } catch (err) {
-    console.log(err.message);
-    return [];
-  }
-}
 
 /*
  * Get stars for top languages from github and send response

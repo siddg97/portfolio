@@ -1,3 +1,4 @@
 import SocialLinks from "./Social.js";
 import Resume from "./Resume.js";
-export { SocialLinks, Resume };
+import HyperLink from "./HyperLink.js";
+export { SocialLinks, Resume, HyperLink };

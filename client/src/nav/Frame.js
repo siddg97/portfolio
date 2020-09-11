@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navBtn: {
     margin: theme.spacing(1),
+    borderRadius: 999,
   },
   drawerPaper: {
     width: drawerWidth,
@@ -129,16 +130,20 @@ function Frame(props) {
         elevation={0}
       >
         <Toolbar>
-          {/* <div className={classes.header}>
-            <Avatar
-              alt="Siddharth Gupta"
-              src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
-              className={classes.avatar}
-            />
-          </div> */}
-          <Typography variant="h4" className={classes.header}>
-            S.G.
-          </Typography>
+          <div className={classes.header}>
+            <Hidden smUp implementation="js">
+              <Avatar
+                alt="Siddharth Gupta"
+                src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
+                className={classes.avatar}
+              />
+            </Hidden>
+            <Hidden xsDown implementation="js">
+              <Typography variant="h4" className={classes.header}>
+                S.G.
+              </Typography>
+            </Hidden>
+          </div>
           <Hidden smUp implementation="js">
             <IconButton
               color="inherit"

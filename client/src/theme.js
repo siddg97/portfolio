@@ -23,7 +23,7 @@ let theme = createMuiTheme({
       date: "#62BE37",
       linkedin: "#0e76a8",
       github: "#333",
-      tag: "#d50000",
+      tag: "#DC4141",
     },
   },
 });
