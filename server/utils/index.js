@@ -144,26 +144,6 @@ const getLangStats = (response) => {
 };
 
 /*
- * Get all repos from github
- * @name: fetchRepos
- * @param: N/A
- * @returns: Array of repo objects
- */
-async function fetchRepos() {
-  try {
-    var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97/repos`, {
-      params: {
-        per_page: 100,
-      },
-    });
-    return await res.data;
-  } catch (err) {
-    console.log(err.message);
-    return [];
-  }
-}
-
-/*
  * Get stars for top languages from github and send response
  * @name: getLangStars
  * @param: response; express response object
