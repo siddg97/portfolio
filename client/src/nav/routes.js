@@ -21,9 +21,9 @@ const routes = [
     icon: <DescriptionIcon />,
   },
   {
-    path: "/portfolio",
+    path: "/profile",
     component: <Portfolio />,
-    name: "Projects",
+    name: "profile",
     icon: <AssessmentIcon />,
   },
   {

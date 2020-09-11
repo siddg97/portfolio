@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Grid,
+  Avatar,
   Typography,
   makeStyles,
   Paper,
   Chip,
-  List,
-  ListItem,
-  ListItemText,
-  Divider,
 } from "@material-ui/core";
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import { HyperLink } from "../common";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -36,7 +34,95 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
+  ghAvatar: {
+    width: theme.spacing(20),
+    height: theme.spacing(20),
+    border: "5px solid " + theme.palette.primary.main,
+    margin: "0 auto",
+  },
+  ghStat: {
+    backgroundColor: "rgba(81,83,85, 0.4)",
+    padding: theme.spacing(1),
+    display: "inline-block",
+    margin: theme.spacing(0.25),
+    width: "100%",
+  },
 }));
+
+const GithubProfile = (props) => {
+  const [userData, setUserData] = useState(null);
+  const { css } = props;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`);
+        let user = await res.data;
+        setUserData(user);
+      } catch (err) {
+        console.log(err.message);
+        setUserData(null);
+      }
+    })();
+  }, []);
+
+  return (
+    userData && (
+      <Grid item xs={12} md={10}>
+        <Grid container spacing={1} alignItems="center">
+          {/* Avatar/Name/handle */}
+          <Grid item xs={12} md={4}>
+            <Avatar
+              alt="Github Avatar"
+              component={HyperLink}
+              src={userData.avatar_url}
+              className={css.ghAvatar}
+              url={userData.html_url}
+            />
+          </Grid>
+          {/* Stats */}
+          <Grid item xs={12} md={5}>
+            <Grid container spacing={1}>
+              <Grid item xs={12} md={12}>
+                <Typography component="center" variant="h5">
+                  <HyperLink url={userData.html_url}>
+                    @{userData.login}
+                  </HyperLink>
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Paper elevation={0} className={css.ghStat}>
+                  <center>
+                    <Typography variant="h6">
+                      {userData.public_repos}
+                    </Typography>
+                    <Typography variant="button">Repositories</Typography>
+                  </center>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Paper elevation={0} className={css.ghStat}>
+                  <center>
+                    <Typography variant="h6">{userData.followers}</Typography>
+                    <Typography variant="button">Followers</Typography>
+                  </center>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Paper elevation={0} className={css.ghStat}>
+                  <center>
+                    <Typography variant="h6">{userData.following}</Typography>
+                    <Typography variant="button">Following</Typography>
+                  </center>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
+  );
+};
 
 const skills = [
   "C",
@@ -47,8 +133,9 @@ const skills = [
   "R",
   "React",
   "Redux",
-  "Flask",
   "Express",
+  "Flask",
+  "SQL",
   "MongoDB",
   "Firebase",
   "Git",
@@ -56,8 +143,6 @@ const skills = [
   "Docker",
   "GNU/Linux",
   "Windows",
-  "SQL",
-  "NoSQL",
   "Postman",
   "Heroku",
   "Google Cloud Platform",
@@ -77,45 +162,26 @@ const projects = [
     name: "UniFYI",
     start: "March 2020",
     end: "Present",
-    tags: ["React", "MongoDB", "Flask", "GCE", "bit", "Postman"],
-    accomplishments: [
-      "Collaborated in a team of 3 to develop an online forum designed to improve university experience for students",
-      "Assumed full stack developer role, contributing to frontend, backend, database administration",
-      "Responsible for managing and monitoring deployments on Google Compute Engine",
-      "Developed REST API endpoints with Flask in python",
-      "Participated in code reviews extensively",
-      "Utilized bit for UI documentation and Postman Docs for aPI documentation",
-    ],
+    tags: ["React", "MongoDB", "Flask", "GCP", "bit", "Postman", "Firebase"],
+    description:
+      "A full-stack web app with the primary focus on improving university experiences for new and existing university students",
   },
   {
     name: "Online Booking System",
     start: "May 2020",
     end: "June 2020",
-    tags: ["Firebase", "Flask", "React", "SocketIO", "GAE"],
-    accomplishments: [
-      "A full stack web application for appointment booking for nail salons",
-      "Structured frontend and backend into different services",
-      "Developed UI for both customers and salon employees",
-      "Utilized Firebase REST API to query database from flask backend",
-      "Deployed each service on Google Ap Engine for use in a real-time enviornment",
-      "Integrated socketIO on both backend and frontend to send/receive real-time updates",
-    ],
+    tags: ["Firebase", "Flask", "React", "SocketIO", "GCP"],
+    description:
+      "An online scheduling system for booking appointments for nails salons",
   },
   // {
   //   name: "",
   //   start: "",
   //   end: "",
   //   tags: [],
-  //   accomplishments: [],
+  //   description: "",
   // },
 ];
-
-const education = {
-  uni: "Simon Fraser University",
-  degree: "Bachelors in CS",
-  start: "Jan 2018",
-  end: "June 2021",
-};
 
 const Item = (props) => (
   <Paper className={props.paperStyle}>
@@ -130,52 +196,23 @@ const Item = (props) => (
   </Paper>
 );
 
+// const ProjectCard = props => {
+//   const { projects } = props;
+//   return (
+
+//   )
+// }
+
 const Portfolio = (props) => {
   const css = useStyles();
   return (
     <Grid container spacing={2} justify="center" alignItems="flex-start">
       <Grid item xs={12} md={10}>
         <Typography variant="h2" color="primary" className={css.gridItem}>
-          Portfolio
+          Github Profile
         </Typography>
       </Grid>
-      {/* Projects */}
-      <Grid item xs={12} md={10}>
-        <Item title="Projects" paperStyle={css.paper}>
-          {projects.map((p, i) => (
-            <React.Fragment key={p.name}>
-              <br />
-              <Typography variant="h5" color="primary" gutterBottom>
-                {p.name}
-              </Typography>
-              <Typography variant="h6" color="secondary">
-                {p.start} - {p.end}
-              </Typography>
-              <List dense disablePadding>
-                {p.accomplishments.map((acc) => (
-                  <ListItem dense disableGutters key={acc}>
-                    <ListItemText>
-                      <Typography variant="body1">
-                        <ArrowRightAltIcon fontSize="small" /> {acc}
-                      </Typography>
-                    </ListItemText>
-                  </ListItem>
-                ))}
-              </List>
-              {p.tags.map((t) => (
-                <Chip
-                  key={p.name + ":" + t}
-                  label={<Typography variant="button">{t}</Typography>}
-                  className={css.projectTag}
-                />
-              ))}
-              <br />
-              <br />
-              {i === 0 ? <Divider /> : null}
-            </React.Fragment>
-          ))}
-        </Item>
-      </Grid>
+      <GithubProfile css={css} />
       {/* Skills */}
       <Grid item xs={12} md={10}>
         <Item title="Skills" paperStyle={css.paper}>
@@ -200,24 +237,6 @@ const Portfolio = (props) => {
               className={css.chip}
             />
           ))}
-        </Item>
-      </Grid>
-      {/* Education */}
-      <Grid item xs={12} md={10}>
-        <Item title="Education" paperStyle={css.paper}>
-          <br />
-          <Typography variant="h5" color="primary">
-            {education.uni}{" "}
-            <Chip
-              label={
-                <Typography variant="button">{education.degree}</Typography>
-              }
-              className={css.educationTag}
-            />
-          </Typography>
-          <Typography variant="h6" color="secondary">
-            {education.start} - {education.end}
-          </Typography>
         </Item>
       </Grid>
     </Grid>

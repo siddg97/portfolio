@@ -18,30 +18,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     border: "5px solid " + theme.palette.primary.main,
   },
-  ghAvatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    border: "5px solid " + theme.palette.primary.main,
-    margin: "0 auto",
-  },
-  paper: {
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(1),
-  },
-  ghStat: {
-    backgroundColor: "rgba(81,83,85, 0.4)",
-    padding: theme.spacing(1),
-    display: "inline-block",
-    margin: theme.spacing(0.25),
-    width: "100%",
-  },
-  ghPaper: {
-    padding: theme.spacing(2),
-  },
-  iconText: {
-    display: "flex",
-    alignItems: "center",
-    verticalAlign: "middle",
+  avatar: {
+    width: theme.spacing(35),
+    height: theme.spacing(35),
+    marginTop: theme.spacing(1),
+    border: "5px solid " + theme.palette.secondary.main,
   },
 }));
 
