@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Avatar, Card, CardHeader, CardContent } from "@material-ui/core";
 import { HyperLink } from "../../common";
@@ -56,9 +56,12 @@ const GhCard = (props) => {
       <Card>
         <CardHeader
           title={
-            <HyperLink url={user.html_url} color="default">
-              Github @{user.login}
-            </HyperLink>
+            <Fragment>
+              Github{" "}
+              <HyperLink url={user.html_url} color="#0e76a8">
+                @{user.login}
+              </HyperLink>
+            </Fragment>
           }
         />
         <CardContent className={cardStyle.content}>
