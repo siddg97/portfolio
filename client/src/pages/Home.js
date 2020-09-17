@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
-import { SocialLinks } from "../common";
+import { Grid, Typography, makeStyles } from "@material-ui/core";
+import { SocialLinks, HyperLink } from "../common";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -36,50 +36,42 @@ const Home = (props) => {
         </Typography>
         <Typography variant="body1" className={css["font-18"]} gutterBottom>
           I am a{" "}
-          <Link
-            href={"https://en.wikipedia.org/wiki/Software_engineer"}
-            onClick={preventDefault}
-            target="_blank"
-            rel="noreferrer noopener"
+          <HyperLink
+            url={"https://en.wikipedia.org/wiki/Software_engineer"}
             className={css.thing}
+            color={"#62BE37"}
           >
             Software Engineer
-          </Link>{" "}
+          </HyperLink>{" "}
           based in the{" "}
-          <Link
-            href={"https://en.wikipedia.org/wiki/Greater_Vancouver"}
-            onClick={preventDefault}
-            target="_blank"
-            rel="noreferrer noopener"
+          <HyperLink
+            url={"https://en.wikipedia.org/wiki/Greater_Vancouver"}
             className={css.thing}
+            color={"#62BE37"}
           >
             Greater Vancouver Area, BC
-          </Link>
+          </HyperLink>
           . Previously{" "}
-          <Link
-            href="https://en.wikipedia.org/wiki/Software_development"
-            onClick={preventDefault}
+          <HyperLink
+            url="https://en.wikipedia.org/wiki/Software_development"
             className={css.thing}
-            target="_blank"
-            rel="noreferrer noopener"
+            color={"#62BE37"}
           >
             Software Development
-          </Link>{" "}
+          </HyperLink>{" "}
           Intern{" "}
-          <Link
-            href="https://www.blackberry.com/us/en"
-            onClick={preventDefault}
+          <HyperLink
+            url="https://www.blackberry.com/us/en"
             className={css.thing}
-            target="_blank"
-            rel="noreferrer noopener"
+            color={"#62BE37"}
           >
             @BlackBerry
-          </Link>
+          </HyperLink>
           . My interests include Web Development, Embedded Software, Mobile
           Development, Cyber Security and the Cloud.
         </Typography>
-        <Typography variant="h6" gutterBottom>
-          Currently looking for full-time Co-op or New Graduate opportunities.
+        <Typography variant="h6" gutterBottom color="primary">
+          Currently looking for full-time Co-op or New Graduate opportunities
         </Typography>
       </Grid>
       <Grid item xs={12} md={10}>

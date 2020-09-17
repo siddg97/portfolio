@@ -24,6 +24,7 @@ let theme = createMuiTheme({
       linkedin: "#0e76a8",
       github: "#333",
       tag: "#DC4141",
+      resume: "#06d6a0",
     },
   },
   overrides: {

@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(7),
   },
   navBtn: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(0.5),
     borderRadius: 999,
   },
   drawerPaper: {

@@ -1,19 +1,19 @@
 import React from "react";
-import { Link } from "@material-ui/core";
 
 const HyperLink = (props) => {
-  const { url, className, children } = props;
-  const pd = (event) => event.preventDefault();
+  const { url, className, color, children } = props;
   return (
-    <Link
+    <a
       href={url}
-      onClick={pd}
       className={className}
       target="_blank"
       rel="noopener noreferrer"
+      style={{
+        color: color ? color : "#FCA311",
+      }}
     >
       {children}
-    </Link>
+    </a>
   );
 };
 
