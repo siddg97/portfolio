@@ -26,6 +26,14 @@ let theme = createMuiTheme({
       tag: "#DC4141",
     },
   },
+  overrides: {
+    MuiCard: {
+      root: {
+        maxWidth: 400,
+        borderRadius: 20,
+      },
+    },
+  },
 });
 
 theme = responsiveFontSizes(theme);
