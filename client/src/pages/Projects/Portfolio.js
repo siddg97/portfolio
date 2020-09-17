@@ -1,14 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-import {
-  Grid,
-  Avatar,
-  Typography,
-  makeStyles,
-  Paper,
-  Chip,
-} from "@material-ui/core";
-import { HyperLink } from "../common";
+import { Grid, Typography, makeStyles, Paper, Chip } from "@material-ui/core";
+import Charts from "./GhCharts.js";
+import GhCard from "./GhCard.js";
+
+const skills = [
+  "C",
+  "C++",
+  "JavaScript",
+  "NodeJS",
+  "Python",
+  "R",
+  "React",
+  "Redux",
+  "Express",
+  "Flask",
+  "SQL",
+  "MongoDB",
+  "Firebase",
+  "Git",
+  "Subversion",
+  "Docker",
+  "GNU/Linux",
+  "Windows",
+  "Postman",
+  "Heroku",
+  "Google Cloud Platform",
+  "Visual Studio",
+  "JIRA",
+];
+const otherSkills = [
+  "Critical Thinking",
+  "Communication Skills",
+  "Algorithms",
+  "Data Structures",
+  "Enthusiasm",
+  "Problem Solver",
+];
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -56,7 +84,8 @@ const GithubProfile = (props) => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`);
+        // Get user data
+        var res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`);
         let user = await res.data;
         setUserData(user);
       } catch (err) {
@@ -68,95 +97,14 @@ const GithubProfile = (props) => {
 
   return (
     userData && (
-      <Grid item xs={12} md={10}>
-        <Grid container spacing={1} alignItems="center">
-          {/* Avatar/Name/handle */}
-          <Grid item xs={12} md={4}>
-            <Avatar
-              alt="Github Avatar"
-              component={HyperLink}
-              src={userData.avatar_url}
-              className={css.ghAvatar}
-              url={userData.html_url}
-            />
-          </Grid>
-          {/* Stats */}
-          <Grid item xs={12} md={5}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={12}>
-                <Typography component="center" variant="h5">
-                  <HyperLink url={userData.html_url}>
-                    @{userData.login}
-                  </HyperLink>
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Paper elevation={0} className={css.ghStat}>
-                  <center>
-                    <Typography variant="h6">
-                      {userData.public_repos}
-                    </Typography>
-                    <Typography variant="button">Repositories</Typography>
-                  </center>
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Paper elevation={0} className={css.ghStat}>
-                  <center>
-                    <Typography variant="h6">{userData.followers}</Typography>
-                    <Typography variant="button">Followers</Typography>
-                  </center>
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Paper elevation={0} className={css.ghStat}>
-                  <center>
-                    <Typography variant="h6">{userData.following}</Typography>
-                    <Typography variant="button">Following</Typography>
-                  </center>
-                </Paper>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+      <Grid container spacing={1} justify="center" alignItems="center">
+        {/* Charts */}
+        <Charts user={userData} />
       </Grid>
     )
   );
 };
 
-const skills = [
-  "C",
-  "C++",
-  "JavaScript",
-  "NodeJS",
-  "Python",
-  "R",
-  "React",
-  "Redux",
-  "Express",
-  "Flask",
-  "SQL",
-  "MongoDB",
-  "Firebase",
-  "Git",
-  "Subversion",
-  "Docker",
-  "GNU/Linux",
-  "Windows",
-  "Postman",
-  "Heroku",
-  "Google Cloud Platform",
-  "Visual Studio",
-  "JIRA",
-];
-const otherSkills = [
-  "Critical Thinking",
-  "Communication Skills",
-  "Algorithms",
-  "Data Structures",
-  "Enthusiasm",
-  "Problem Solver",
-];
 const projects = [
   {
     name: "UniFYI",
@@ -170,7 +118,7 @@ const projects = [
     name: "Online Booking System",
     start: "May 2020",
     end: "June 2020",
-    tags: ["Firebase", "Flask", "React", "SocketIO", "GCP"],
+    tags: ["React", "Flask", "Firebase", "SocketIO", "GCP"],
     description:
       "An online scheduling system for booking appointments for nails salons",
   },
@@ -196,23 +144,18 @@ const Item = (props) => (
   </Paper>
 );
 
-// const ProjectCard = props => {
-//   const { projects } = props;
-//   return (
-
-//   )
-// }
-
 const Portfolio = (props) => {
   const css = useStyles();
   return (
-    <Grid container spacing={2} justify="center" alignItems="flex-start">
+    <Grid container spacing={2} justify="center" alignItems="center">
       <Grid item xs={12} md={10}>
         <Typography variant="h2" color="primary" className={css.gridItem}>
-          Github Profile
+          Portfolio
         </Typography>
       </Grid>
-      <GithubProfile css={css} />
+      <Grid item xs={12} md={10}>
+        <GithubProfile css={css} />
+      </Grid>
       {/* Skills */}
       <Grid item xs={12} md={10}>
         <Item title="Skills" paperStyle={css.paper}>
