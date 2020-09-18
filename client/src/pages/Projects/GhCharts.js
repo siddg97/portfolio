@@ -1,54 +1,41 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect } from "react";
 import buildChart from "./utils.js";
-import { Grid, Typography } from "@material-ui/core";
-import axios from "axios";
+import { Grid } from "@material-ui/core";
 
 import ChartCard from "./ChartCard.js";
 import GhCard from "./GhCard.js";
 
 const Charts = (props) => {
-  const { user } = props;
+  const { user, langData, repoData, starData } = props;
+
   const initLangChart = () => {
-    (async function () {
-      try {
-        const res = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/user/lang-stats`
-        );
-        let response = await res.data;
-        const langChartData = response.langStats;
-        const ctx = document.getElementById("langChart");
-        const labels = langChartData.map((lang) => lang.label);
-        const data = langChartData.map((lang) => lang.value);
-        if (data.length > 0) {
-          const backgroundColor = langChartData.map(
-            ({ color }) =>
-              `#${
-                color.length > 4 ? color.slice(1) : color.slice(1).repeat(2)
-              }B3`
-          );
-          const borderColor = langChartData.map((lang) => `${lang.color}`);
-          const chartType = "pie";
-          const axes = false;
-          const legend = true;
-          const config = {
-            ctx,
-            chartType,
-            labels,
-            data,
-            backgroundColor,
-            borderColor,
-            axes,
-            legend,
-          };
-          buildChart(config);
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
-    })();
+    const ctx = document.getElementById("langChart");
+    const labels = langData.map((lang) => lang.label);
+    const data = langData.map((lang) => lang.value);
+    if (data.length > 0) {
+      const backgroundColor = langData.map(
+        ({ color }) =>
+          `#${color.length > 4 ? color.slice(1) : color.slice(1).repeat(2)}B3`
+      );
+      const borderColor = langData.map((lang) => `${lang.color}`);
+      const chartType = "pie";
+      const axes = false;
+      const legend = true;
+      const config = {
+        ctx,
+        chartType,
+        labels,
+        data,
+        backgroundColor,
+        borderColor,
+        axes,
+        legend,
+      };
+      buildChart(config);
+    }
   };
 
-  const initStarChart = () => {
+  const initRepoChart = () => {
     const backgroundColor = [
       "rgba(255, 99, 132, 0.7)",
       "rgba(54, 162, 235, 0.7)",
@@ -69,87 +56,65 @@ const Charts = (props) => {
       "rgba(158, 42, 43, 1)",
       "rgba(51, 92, 103, 1)",
     ];
-    (async function () {
-      try {
-        const res = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/user/top-repos`
-        );
-        const response = await res.data;
-        const starChartData = response.topRepos;
-        const ctx = document.getElementById("starChart");
-        const labels = starChartData.map((repo) => repo.name);
-        const data = starChartData.map((repo) => repo.stargazers_count);
-        if (data.length > 0) {
-          const chartType = "bar";
-          const axes = true;
-          const legend = false;
-          const config = {
-            ctx,
-            chartType,
-            labels,
-            data,
-            backgroundColor,
-            borderColor,
-            axes,
-            legend,
-          };
-          buildChart(config);
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
-    })();
+    const ctx = document.getElementById("starChart");
+    const labels = repoData.map((repo) => repo.name);
+    const data = repoData.map((repo) => repo.stargazers_count);
+    if (data.length > 0) {
+      const chartType = "bar";
+      const axes = true;
+      const legend = false;
+      const config = {
+        ctx,
+        chartType,
+        labels,
+        data,
+        backgroundColor,
+        borderColor,
+        axes,
+        legend,
+      };
+      buildChart(config);
+    }
   };
 
-  const initLangStarChart = () => {
-    (async function () {
-      try {
-        const res = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/user/lang-stars`
-        );
-        const response = await res.data;
-        const langStarData = response.langStars;
-        const ctx = document.getElementById("langStarChart");
-        const labels = langStarData.map((l) => l.label);
-        const data = langStarData.map((l) => l.value);
-        if (data.length > 0) {
-          const chartType = "doughnut";
-          const axes = false;
-          const legend = true;
-          const borderColor = langStarData.map((l) => l.color);
-          const backgroundColor = langStarData.map((l) => `${l.color}B3`);
-          const config = {
-            ctx,
-            chartType,
-            labels,
-            data,
-            backgroundColor,
-            borderColor,
-            axes,
-            legend,
-          };
-          buildChart(config);
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
-    })();
+  const initStarChart = () => {
+    const ctx = document.getElementById("langStarChart");
+    const labels = starData.map((l) => l.label);
+    const data = starData.map((l) => l.value);
+    if (data.length > 0) {
+      const chartType = "doughnut";
+      const axes = false;
+      const legend = true;
+      const borderColor = starData.map((l) => l.color);
+      const backgroundColor = starData.map((l) => `${l.color}B3`);
+      const config = {
+        ctx,
+        chartType,
+        labels,
+        data,
+        backgroundColor,
+        borderColor,
+        axes,
+        legend,
+      };
+      buildChart(config);
+    }
   };
 
   useEffect(() => {
     initLangChart();
+    initRepoChart();
     initStarChart();
-    initLangStarChart();
-  }, []);
+  });
 
   const chartSize = 250;
   return (
     <Grid item xs={12}>
       <Grid container justify="center" alignItems="center" spacing={2}>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <GhCard user={user} />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <ChartCard
             title="Top Languages"
             chart={
@@ -157,7 +122,7 @@ const Charts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <ChartCard
             title="Most Starred"
             chart={
@@ -165,7 +130,7 @@ const Charts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <ChartCard
             title="Stars per Language"
             chart={

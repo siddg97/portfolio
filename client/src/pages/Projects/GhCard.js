@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Avatar, Card, CardHeader, CardContent } from "@material-ui/core";
+import { Card, CardHeader, CardContent } from "@material-ui/core";
 import { HyperLink } from "../../common";
 import buildChart from "./utils";
 import { useEffect } from "react";
@@ -48,7 +48,7 @@ const GhCard = (props) => {
     if (user) {
       initGhChart();
     }
-  }, [user]);
+  });
   const chartSize = 250;
 
   return (
