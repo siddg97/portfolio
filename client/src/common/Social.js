@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton, makeStyles, Button, Divider } from "@material-ui/core";
+import { IconButton, makeStyles, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
