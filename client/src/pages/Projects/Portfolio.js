@@ -1,8 +1,8 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Grid, Typography, makeStyles, Paper, Chip } from "@material-ui/core";
 import Charts from "./GhCharts.js";
-import GhCard from "./GhCard.js";
+import { Loading } from "../../common";
 
 const skills = [
   "C",
@@ -79,9 +79,11 @@ const useStyles = makeStyles((theme) => ({
 
 const GithubProfile = (props) => {
   const [userData, setUserData] = useState(null);
-  const { css } = props;
+  const [langData, setLangData] = useState(null);
+  const [repoData, setRepoData] = useState(null);
+  const [starData, setStarData] = useState(null);
 
-  useEffect(() => {
+  const initUserData = () => {
     (async () => {
       try {
         // Get user data
@@ -93,15 +95,76 @@ const GithubProfile = (props) => {
         setUserData(null);
       }
     })();
+  };
+
+  const initLangData = () => {
+    (async function () {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/user/lang-stats`
+        );
+        let response = await res.data;
+        const langChartData = response.langStats;
+        setLangData(langChartData);
+      } catch (err) {
+        console.log(err.message);
+        setLangData(null);
+      }
+    })();
+  };
+
+  const initRepoData = () => {
+    (async function () {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/user/top-repos`
+        );
+        const response = await res.data;
+        const repoChartData = response.topRepos;
+        setRepoData(repoChartData);
+      } catch (err) {
+        console.log(err.message);
+        setRepoData(null);
+      }
+    })();
+  };
+
+  const initStarData = () => {
+    (async function () {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/user/lang-stars`
+        );
+        const response = await res.data;
+        const starChartData = response.langStars;
+        setStarData(starChartData);
+      } catch (err) {
+        console.log(err.message);
+        setStarData(null);
+      }
+    })();
+  };
+
+  useEffect(() => {
+    initUserData();
+    initLangData();
+    initRepoData();
+    initStarData();
   }, []);
 
   return (
-    userData && (
-      <Grid container spacing={1} justify="center" alignItems="center">
-        {/* Charts */}
-        <Charts user={userData} />
-      </Grid>
-    )
+    <Grid container spacing={1} justify="center" alignItems="center">
+      {userData && langData && repoData && starData ? (
+        <Charts
+          user={userData}
+          langData={langData}
+          repoData={repoData}
+          starData={starData}
+        />
+      ) : (
+        <Loading />
+      )}
+    </Grid>
   );
 };
 
@@ -154,7 +217,7 @@ const Portfolio = (props) => {
         </Typography>
       </Grid>
       <Grid item xs={12} md={10}>
-        <GithubProfile css={css} />
+        <GithubProfile />
       </Grid>
       {/* Skills */}
       <Grid item xs={12} md={10}>
