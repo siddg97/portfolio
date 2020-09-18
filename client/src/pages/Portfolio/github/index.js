@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import { Grid } from "@material-ui/core";
-import Charts from "./GhCharts.js";
+import GhCharts from "./GhCharts.js";
 import { Loading, cache } from "../../../common";
 
 const GithubProfile = (props) => {
@@ -116,12 +116,14 @@ const GithubProfile = (props) => {
   return (
     <Grid container spacing={1} justify="center" alignItems="center">
       {userData && langData && repoData && starData ? (
-        <Charts
-          user={userData}
-          langData={langData}
-          repoData={repoData}
-          starData={starData}
-        />
+        <Fragment>
+          <GhCharts
+            user={userData}
+            langData={langData}
+            repoData={repoData}
+            starData={starData}
+          />
+        </Fragment>
       ) : (
         <Loading />
       )}

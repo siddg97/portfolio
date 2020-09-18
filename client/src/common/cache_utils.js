@@ -18,6 +18,7 @@ var cache = {
     return null;
   },
   remove: (key) => localStorage.removeItem(key.toString()),
+  reset: () => localStorage.clear(),
 };
 
 export default cache;

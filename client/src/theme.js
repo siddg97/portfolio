@@ -30,7 +30,7 @@ let theme = createMuiTheme({
   overrides: {
     MuiCard: {
       root: {
-        maxWidth: 400,
+        maxWidth: 500,
         borderRadius: 20,
       },
     },

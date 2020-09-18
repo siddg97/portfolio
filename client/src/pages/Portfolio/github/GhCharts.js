@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 import ChartCard from "./ChartCard.js";
 import { HyperLink } from "../../../common";
 
-const Charts = (props) => {
+const GhCharts = (props) => {
   const { user, langData, repoData, starData } = props;
 
   const initUserChart = () => {
@@ -86,8 +86,9 @@ const Charts = (props) => {
       "rgba(51, 92, 103, 1)",
     ];
     const ctx = document.getElementById("starChart");
-    const labels = repoData.map((repo) => repo.name);
-    const data = repoData.map((repo) => repo.stargazers_count);
+    const topRepos = repoData.slice(0, 5);
+    const labels = topRepos.map((repo) => repo.name);
+    const data = topRepos.map((repo) => repo.stargazers_count);
     if (data.length > 0) {
       const chartType = "bar";
       const axes = true;
@@ -141,7 +142,7 @@ const Charts = (props) => {
   return (
     <Grid item xs={12}>
       <Grid container justify="center" alignItems="center" spacing={2}>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title={
               <Fragment>
@@ -156,7 +157,7 @@ const Charts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title="Top Languages"
             chart={
@@ -164,7 +165,7 @@ const Charts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title="Most Starred"
             chart={
@@ -172,7 +173,7 @@ const Charts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title="Stars per Language"
             chart={
@@ -185,4 +186,4 @@ const Charts = (props) => {
   );
 };
 
-export default Charts;
+export default GhCharts;

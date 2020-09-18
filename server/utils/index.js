@@ -88,7 +88,7 @@ const getUserData = (response) => {
  * @param: response; express response object
  * @returns: N/A
  */
-const getTopRepos = (response, sortBy, limit = 5) => {
+const getTopRepos = (response, sortBy, limit = 8) => {
   (async function () {
     try {
       let repos = await fetchRepos();
