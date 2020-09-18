@@ -1,12 +1,41 @@
-import React, { useEffect } from "react";
-import buildChart from "./utils.js";
+import React, { useEffect, Fragment } from "react";
+import buildChart from "./chart_utils.js";
 import { Grid } from "@material-ui/core";
-
 import ChartCard from "./ChartCard.js";
-import GhCard from "./GhCard.js";
+import { HyperLink } from "../../../common";
 
 const Charts = (props) => {
   const { user, langData, repoData, starData } = props;
+
+  const initUserChart = () => {
+    const ctx = document.getElementById("ghStatChart");
+    const labels = ["Repositories", "Followers", "Following"];
+    const data = [user.public_repos, user.followers, user.following];
+    const backgroundColor = [
+      "rgba(239, 71, 111,0.7)",
+      "rgba(6, 214, 160, 0.7)",
+      "rgba(17, 138, 178, 0.7)",
+    ];
+    const borderColor = [
+      "rgba(239, 71, 111,1)",
+      "rgba(6, 214, 160, 1)",
+      "rgba(17, 138, 178, 1)",
+    ];
+    const chartType = "doughnut";
+    const axes = false;
+    const legend = true;
+    const config = {
+      ctx,
+      chartType,
+      labels,
+      data,
+      backgroundColor,
+      borderColor,
+      axes,
+      legend,
+    };
+    buildChart(config);
+  };
 
   const initLangChart = () => {
     const ctx = document.getElementById("langChart");
@@ -102,6 +131,7 @@ const Charts = (props) => {
   };
 
   useEffect(() => {
+    initUserChart();
     initLangChart();
     initRepoChart();
     initStarChart();
@@ -112,7 +142,19 @@ const Charts = (props) => {
     <Grid item xs={12}>
       <Grid container justify="center" alignItems="center" spacing={2}>
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <GhCard user={user} />
+          <ChartCard
+            title={
+              <Fragment>
+                Github{" "}
+                <HyperLink url={user.html_url} color="#0e76a8">
+                  @{user.login}
+                </HyperLink>
+              </Fragment>
+            }
+            chart={
+              <canvas id="ghStatChart" width={chartSize} height={chartSize} />
+            }
+          />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <ChartCard
