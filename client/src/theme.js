@@ -8,17 +8,17 @@ import {
 let theme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: {
-      main: "#FCA311",
-    },
-    secondary: {
-      main: "#F7263B",
-    },
-    background: {
-      default: "#14213D",
-      paper: "#141414",
-      input: "#0A111F",
-    },
+    // primary: {
+    //   main: "#FCA311",
+    // },
+    // secondary: {
+    //   main: "#F7263B",
+    // },
+    // background: {
+    //   default: "#14213D",
+    //   paper: "#141414",
+    //   input: "#0A111F",
+    // },
     custom: {
       date: "#62BE37",
       linkedin: "#0e76a8",

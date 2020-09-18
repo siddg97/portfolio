@@ -105,6 +105,7 @@ const getTopRepos = (response, sortBy, limit = 8) => {
             stargazers_count,
             size,
             forks_count,
+            language,
           } = r;
           return {
             name,
@@ -113,6 +114,8 @@ const getTopRepos = (response, sortBy, limit = 8) => {
             stargazers_count,
             size,
             forks_count,
+            language,
+            color: `${langColors[language]}`,
           };
         }),
       });

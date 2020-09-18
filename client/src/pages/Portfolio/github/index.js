@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import { Grid } from "@material-ui/core";
 import GhCharts from "./GhCharts.js";
+import GhRepos from "./GhRepos.js";
 import { Loading, cache } from "../../../common";
 
 const GithubProfile = (props) => {
@@ -123,6 +124,7 @@ const GithubProfile = (props) => {
             repoData={repoData}
             starData={starData}
           />
+          <GhRepos repos={repoData} />
         </Fragment>
       ) : (
         <Loading />
