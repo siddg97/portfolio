@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = (props) => {
   const css = useStyles();
-  const preventDefault = (e) => e.preventDefault();
   return (
     <Grid
       direction="column"
