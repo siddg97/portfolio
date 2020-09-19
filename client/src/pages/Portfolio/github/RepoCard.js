@@ -7,7 +7,9 @@ import {
   Chip,
   makeStyles,
   Typography,
+  IconButton,
 } from "@material-ui/core";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,20 +43,30 @@ const RepoCard = (props) => {
     description,
     html_url,
     stargazers_count,
-    forks_count,
+    // forks_count,
     size,
-    color,
     language,
   } = props;
   const cardStyles = useStyles();
   return (
     <Card classes={{ root: cardStyles.root }}>
-      <CardHeader title={name} />
+      <CardHeader
+        title={name}
+        action={
+          <IconButton
+            color="secondary"
+            href={html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <OpenInNewIcon />
+          </IconButton>
+        }
+      />
       <CardContent classes={{ root: cardStyles.content }}>
         <Typography variant="body1" gutterBottom>
           {description}
         </Typography>
-        {/*  */}
       </CardContent>
       <CardActions
         disableSpacing
@@ -64,22 +76,18 @@ const RepoCard = (props) => {
       >
         <Chip
           label={language}
-          style={{ color: "#fff", backgroundColor: color }}
+          color="primary"
           className={cardStyles.statItem}
         />
         <Chip
           label={`${stargazers_count} ${
             stargazers_count !== 1 ? "Stars" : "Star"
           }`}
-          variant="filled"
-          color="primary"
+          color="secondary"
           className={cardStyles.statItem}
         />
         <div className={cardStyles.statGap} />
-        <Typography
-          variant="button"
-          className={cardStyles.statItem}
-        >{`${size} KB`}</Typography>
+        <Chip label={`${size} KB`} className={cardStyles.statItem} />
       </CardActions>
     </Card>
   );

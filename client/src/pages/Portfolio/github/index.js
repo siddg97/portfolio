@@ -1,15 +1,23 @@
 import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography, makeStyles } from "@material-ui/core";
 import GhCharts from "./GhCharts.js";
 import GhRepos from "./GhRepos.js";
 import { Loading, cache } from "../../../common";
+
+const useStyles = makeStyles((theme) => ({
+  header: {
+    marginTop: theme.spacing(3),
+  },
+}));
 
 const GithubProfile = (props) => {
   const [userData, setUserData] = useState(null);
   const [langData, setLangData] = useState(null);
   const [repoData, setRepoData] = useState(null);
   const [starData, setStarData] = useState(null);
+
+  const classes = useStyles();
 
   const initUserData = () => {
     (async () => {
@@ -116,6 +124,16 @@ const GithubProfile = (props) => {
 
   return (
     <Grid container spacing={1} justify="center" alignItems="center">
+      <Grid item xs={12}>
+        <Typography
+          variant="h2"
+          color="primary"
+          className={classes.header}
+          gutterBottom
+        >
+          Github Summary
+        </Typography>
+      </Grid>
       {userData && langData && repoData && starData ? (
         <Fragment>
           <GhCharts

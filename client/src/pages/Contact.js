@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   input: {
     backgroundColor: theme.palette.background.input,
   },
+  btn: {
+    borderRadius: 999,
+  },
 }));
 
 function Notification(props) {
@@ -159,6 +162,7 @@ const Contact = (props) => {
             size="large"
             fullWidth
             onClick={handleSend}
+            className={css.btn}
           >
             Send
           </Button>
@@ -166,11 +170,12 @@ const Contact = (props) => {
         <Grid item xs={false} sm={4}></Grid>
         <Grid item xs={12} sm={3}>
           <Button
-            variant="contained"
+            variant="outlined"
             color="secondary"
             size="large"
             fullWidth
             onClick={handleReset}
+            className={css.btn}
           >
             Reset
           </Button>

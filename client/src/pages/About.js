@@ -28,21 +28,22 @@ const useStyles = makeStyles((theme) => ({
 
 const Intro = (props) => (
   <Typography variant="body1" gutterBottom className={props.text}>
-    Hello! I'm Siddharth, a software engineer and developer in the{" "}
+    I'm Siddharth, a software engineer and developer in the{" "}
     <HyperLink
       url="https://en.wikipedia.org/wiki/Greater_Vancouver"
       className={props.color}
     >
       Greater Vancouver Area, BC, Canada
     </HyperLink>
-    . I enjoy building things out of code. I am always looking to apply my
-    problem-solving skills into software I develop and have a knack for high
-    quality code.
+    . I enjoy building software in both individual and team environments. My
+    passion is fueled by my understanding of technologies in the field of
+    computing science and fascination of how two bits 0 and 1 have transformed
+    technology and software today.
     <br />
-    <br />I am an active member of the Stackoverflow online community where I
-    help other developers resolve their problems related to software
-    development. I am also an active reviewer for the content posted on
-    Stackoverflow.
+    <br />I am always looking to apply my problem-solving skills into software I
+    develop and have a knack for high quality code. I also am an active member
+    and reviewer of the stackoverflow online community where I help other
+    developers resolve their problems related to software development.
   </Typography>
 );
 
