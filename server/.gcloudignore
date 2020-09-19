@@ -1,0 +1,9 @@
+.gcloudignore
+.git
+.gitignore
+README.md
+node_modules/
+src/
+*env
+public/
+backend.example.yaml

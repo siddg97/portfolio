@@ -5,11 +5,14 @@ logs
 # Compiled directory and file
 client/build/
 client/bundle.js
+client/app.yaml
+
+server/backend.yaml
 
 # Dependency directories
-node_modules/
+*node_modules/
 
 # Other misc files
 package-lock.json
 npm-debug.log
-.env
+*.env
