@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
   "font-18": {
     fontSize: "18px",
   },
-  thing: {
-    color: theme.palette.custom.date,
-  },
 }));
 
 const Home = (props) => {
@@ -26,7 +23,7 @@ const Home = (props) => {
       justify="center"
       alignItems="center"
     >
-      <Grid item xs={12} md={10} className={css.gridItem}>
+      <Grid item xs={12} md={10} lg={6} className={css.gridItem}>
         <Typography variant="h3" color="primary">
           Hi, my name is
         </Typography>
@@ -37,33 +34,26 @@ const Home = (props) => {
           I am a{" "}
           <HyperLink
             url={"https://en.wikipedia.org/wiki/Software_engineer"}
-            className={css.thing}
-            color={"#62BE37"}
+            color={"#3a86ff"}
           >
             Software Engineer
           </HyperLink>{" "}
           based in the{" "}
           <HyperLink
             url={"https://en.wikipedia.org/wiki/Greater_Vancouver"}
-            className={css.thing}
-            color={"#62BE37"}
+            color={"#3a86ff"}
           >
             Greater Vancouver Area, BC
           </HyperLink>
           . Previously{" "}
           <HyperLink
             url="https://en.wikipedia.org/wiki/Software_development"
-            className={css.thing}
-            color={"#62BE37"}
+            color={"#3a86ff"}
           >
             Software Development
           </HyperLink>{" "}
           Intern{" "}
-          <HyperLink
-            url="https://www.blackberry.com/us/en"
-            className={css.thing}
-            color={"#62BE37"}
-          >
+          <HyperLink url="https://www.blackberry.com/us/en" color={"#3a86ff"}>
             @BlackBerry
           </HyperLink>
           . My interests include Web Development, Embedded Software, Mobile
@@ -73,7 +63,7 @@ const Home = (props) => {
           Currently looking for full-time Co-op or New Graduate opportunities
         </Typography>
       </Grid>
-      <Grid item xs={12} md={10}>
+      <Grid item xs={12} md={10} lg={6}>
         <SocialLinks />
       </Grid>
     </Grid>

@@ -11,13 +11,13 @@ const useStyles = makeStyles((theme) => ({
 const projects = [
   {
     name: "UniFYI",
-    tags: ["React", "MongoDB", "Flask", "GCP", "Firebase"],
+    tags: ["React", "MongoDB", "Flask"],
     description:
       "A full-stack web app with the primary focus on improving university experiences for new and existing university students. Frontend built with React, backend with flask. Additionally uses mongoDB as document-store and firebase for authentication.",
   },
   {
     name: "Online Booking System",
-    tags: ["React", "Flask", "Firebase", "SocketIO", "GCP"],
+    tags: ["React", "Flask", "Firebase"],
     description:
       "An online scheduling system for booking appointments for nails salons. Frontend made with react, backend utilizes the flask framework and firebase as database. Deployed on google app engine and utilizes socket programming for pushing realtime updates.",
   },
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     name: "Easy Terms",
-    tags: ["React", "flask", "NLP"],
+    tags: ["React", "Flask", "NLP"],
     description:
       "A web application that summarizes long terms and agreements into a few key points using the word-rank algorithm. Built using react, flask and nltk pip package.",
   },
@@ -57,7 +57,7 @@ const Projects = (props) => {
           </Typography>
         </Grid>
         {projects.map((p) => (
-          <Grid key={p.name} item xs={12} sm={6}>
+          <Grid key={p.name} item xs={12} sm={6} lg={4} xl={2}>
             <ProjectCard {...p} />
           </Grid>
         ))}

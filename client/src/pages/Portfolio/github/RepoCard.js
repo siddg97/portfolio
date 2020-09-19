@@ -76,7 +76,8 @@ const RepoCard = (props) => {
       >
         <Chip
           label={language}
-          color="primary"
+          color="secondary"
+          variant="outlined"
           className={cardStyles.statItem}
         />
         <Chip
@@ -84,10 +85,16 @@ const RepoCard = (props) => {
             stargazers_count !== 1 ? "Stars" : "Star"
           }`}
           color="secondary"
+          variant="outlined"
           className={cardStyles.statItem}
         />
         <div className={cardStyles.statGap} />
-        <Chip label={`${size} KB`} className={cardStyles.statItem} />
+        <Chip
+          label={`${size} KB`}
+          color="secondary"
+          variant="outlined"
+          className={cardStyles.statItem}
+        />
       </CardActions>
     </Card>
   );

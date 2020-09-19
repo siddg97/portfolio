@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, makeStyles, Paper, Chip } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import GithubProfile from "./github";
 import Projects from "./projects";
 

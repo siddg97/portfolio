@@ -9,12 +9,6 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
   },
-  green: {
-    color: theme.palette.custom.date,
-  },
-  red: {
-    color: theme.palette.custom.tag,
-  },
   text: {
     fontSize: 18,
   },
@@ -22,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(35),
     height: theme.spacing(35),
     marginTop: theme.spacing(1),
-    border: "5px solid " + theme.palette.secondary.main,
+    border: "5px solid " + theme.palette.primary.main,
   },
 }));
 
@@ -31,7 +25,7 @@ const Intro = (props) => (
     I'm Siddharth, a software engineer and developer in the{" "}
     <HyperLink
       url="https://en.wikipedia.org/wiki/Greater_Vancouver"
-      className={props.color}
+      color={props.color}
     >
       Greater Vancouver Area, BC, Canada
     </HyperLink>
@@ -50,10 +44,7 @@ const Intro = (props) => (
 const Education = (props) => (
   <Typography variant="body1" gutterBottom className={props.text}>
     After completing my secondary education from{" "}
-    <HyperLink
-      url="https://en.wikipedia.org/wiki/Gurgaon"
-      className={props.color}
-    >
+    <HyperLink url="https://en.wikipedia.org/wiki/Gurgaon" color={props.color}>
       Gurgaon, India
     </HyperLink>{" "}
     , I moved to Canada to pursue my post-secondary education. I am currently in
@@ -61,14 +52,14 @@ const Education = (props) => (
     from{" "}
     <HyperLink
       url="https://en.wikipedia.org/wiki/Simon_Fraser_University"
-      className={props.color}
+      color={props.color}
     >
       Simon Fraser University, Burnaby
     </HyperLink>
     . My expected graduation date is{" "}
     <HyperLink
       url="https://www.timeanddate.com/calendar/monthly.html?year=2021&month=6&country=27"
-      className={props.color}
+      color={props.color}
     >
       June, 2021
     </HyperLink>
@@ -82,14 +73,11 @@ const WorkExp = (props) => {
     <Fragment>
       <Typography variant="body1" className={text}>
         Recently completed an 8 month co-op{" "}
-        <HyperLink url="https://www.blackberry.com/us/en" className={color}>
+        <HyperLink url="https://www.blackberry.com/us/en" color={color}>
           @BlackBerry Inc
         </HyperLink>{" "}
         in{" "}
-        <HyperLink
-          url="https://en.wikipedia.org/wiki/Burnaby"
-          className={color}
-        >
+        <HyperLink url="https://en.wikipedia.org/wiki/Burnaby" color={color}>
           Burnaby, BC
         </HyperLink>
         . My daily activities included development of firmware and tools used in
@@ -104,8 +92,14 @@ const WorkExp = (props) => {
 const About = (props) => {
   const css = useStyles();
   return (
-    <Grid container spacing={1} justify="center" alignItems="flex-start">
-      <Grid item xs={12} md={10}>
+    <Grid
+      direction="column"
+      container
+      spacing={2}
+      justify="center"
+      alignItems="center"
+    >
+      <Grid item xs={12} md={10} lg={6}>
         <Typography
           variant="h2"
           color="primary"
@@ -114,15 +108,13 @@ const About = (props) => {
         >
           About Me
         </Typography>
-      </Grid>
-      <Grid item xs={12} md={10}>
-        <Intro color={css.green} text={css.text} />
+        <Intro color={"#3a86ff"} text={css.text} />
         <br />
-        <Education color={css.red} text={css.text} />
+        <Education color={"#3a86ff"} text={css.text} />
         <br />
-        <WorkExp text={css.text} />
+        <WorkExp color={"#3a86ff"} text={css.text} />
       </Grid>
-      <Grid item xs={12} md={10}>
+      <Grid item xs={12} md={10} lg={6}>
         <center>
           <Avatar
             className={css.avatar}

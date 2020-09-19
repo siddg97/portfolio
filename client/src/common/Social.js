@@ -1,6 +1,5 @@
 import React from "react";
 import { IconButton, makeStyles, Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
@@ -23,10 +22,6 @@ const useStyles = makeStyles((theme) => ({
   resume: {
     borderRadius: 999,
     margin: theme.spacing(1),
-  },
-  contactBtn: {
-    margin: theme.spacing(1),
-    borderRadius: 999,
   },
 }));
 
@@ -59,16 +54,6 @@ const SocialLinks = (props) => {
         className={css.resume}
       >
         Resume
-      </Button>
-      <Button
-        size="large"
-        variant="outlined"
-        color="secondary"
-        component={Link}
-        to="/contact"
-        className={css.contactBtn}
-      >
-        Get in touch
       </Button>
     </React.Fragment>
   );
