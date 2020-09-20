@@ -3,7 +3,7 @@ logs
 *.Logs
 
 # Compiled directory and file
-server/client/build/
+*build*
 server/app.yaml
 # Dependency directories
 *node_modules/
