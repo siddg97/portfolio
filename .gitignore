@@ -4,7 +4,7 @@ logs
 
 # Compiled directory and file
 *build*
-server/app.yaml
+app.yaml
 # Dependency directories
 *node_modules/
 # Other misc files
