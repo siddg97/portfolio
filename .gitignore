@@ -3,13 +3,10 @@ logs
 *.Logs
 
 # Compiled directory and file
-client/build/
-
+server/client/build/
 server/app.yaml
-
 # Dependency directories
 *node_modules/
-
 # Other misc files
 package-lock.json
 npm-debug.log

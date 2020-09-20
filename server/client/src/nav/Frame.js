@@ -135,7 +135,7 @@ function Frame(props) {
             <Hidden smUp implementation="js">
               <Avatar
                 alt="Siddharth Gupta"
-                src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
+                src={"https://siddharthgupta.me/assets/me.jpg"}
                 className={classes.avatar}
               />
             </Hidden>
