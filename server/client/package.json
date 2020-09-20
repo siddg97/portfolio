@@ -41,5 +41,6 @@
   "engines": {
     "node": "14.x",
     "yarn": ">=1.22.4 <2.0.0"
-  }
+  },
+  "proxy": "https://siddharthgupta.me"
 }

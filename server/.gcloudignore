@@ -2,8 +2,10 @@
 .git
 .gitignore
 README.md
-node_modules/
-src/
+*node_modules/
+*src/
 *env
-public/
-backend.example.yaml
+*public/
+client/yarn.lock
+client/package.json
+app.example.yaml

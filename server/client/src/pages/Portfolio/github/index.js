@@ -23,20 +23,20 @@ const GithubProfile = (props) => {
     (async () => {
       try {
         // Check cache first
-        const data = cache.get("/user");
+        const data = cache.get("/api/user");
         if (data) {
           setUserData(data);
         } else {
           // Get user data
-          var res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/user`);
+          var res = await axios.get("/api/user");
           let user = await res.data;
-          cache.set("/user", user, 3600);
+          cache.set("/api/user", user, 3600);
           setUserData(user);
         }
       } catch (err) {
         console.log(err.message);
         setUserData(null);
-        cache.remove("/user");
+        cache.remove("/api/user");
       }
     })();
   };
@@ -45,23 +45,21 @@ const GithubProfile = (props) => {
     (async function () {
       try {
         // Check cache
-        const data = cache.get("/user/lang-stats");
+        const data = cache.get("/api/user/lang-stats");
         if (data) {
           setLangData(data);
         } else {
           // Get data
-          const res = await axios.get(
-            `${process.env.REACT_APP_SERVER_URL}/user/lang-stats`
-          );
+          const res = await axios.get("/api/user/lang-stats");
           let response = await res.data;
           const langChartData = response.langStats;
-          cache.set("/user/lang-stats", langChartData, 3600);
+          cache.set("/api/user/lang-stats", langChartData, 3600);
           setLangData(langChartData);
         }
       } catch (err) {
         console.log(err.message);
         setLangData(null);
-        cache.remove("/user/lang-stats");
+        cache.remove("/api/user/lang-stats");
       }
     })();
   };
@@ -70,23 +68,21 @@ const GithubProfile = (props) => {
     (async function () {
       try {
         // Check cache first
-        const data = cache.get("/user/top-repos");
+        const data = cache.get("/api/user/top-repos");
         if (data) {
           setRepoData(data);
         } else {
           // Get data
-          const res = await axios.get(
-            `${process.env.REACT_APP_SERVER_URL}/user/top-repos`
-          );
+          const res = await axios.get("/api/user/top-repos");
           const response = await res.data;
           const repoChartData = response.topRepos;
-          cache.set("/user/top-repos", repoChartData, 3600);
+          cache.set("/api/user/top-repos", repoChartData, 3600);
           setRepoData(repoChartData);
         }
       } catch (err) {
         console.log(err.message);
         setRepoData(null);
-        cache.remove("/user/top-repos");
+        cache.remove("/api/user/top-repos");
       }
     })();
   };
@@ -95,22 +91,20 @@ const GithubProfile = (props) => {
     (async function () {
       try {
         // Check cache first
-        const data = cache.get("/user/lang-stars");
+        const data = cache.get("/api/user/lang-stars");
         if (data) {
           setStarData(data);
         } else {
-          const res = await axios.get(
-            `${process.env.REACT_APP_SERVER_URL}/user/lang-stars`
-          );
+          const res = await axios.get("/api/user/lang-stars");
           const response = await res.data;
           const starChartData = response.langStars;
-          cache.set("/user/lang-stars", starChartData, 3600);
+          cache.set("/api/user/lang-stars", starChartData, 3600);
           setStarData(starChartData);
         }
       } catch (err) {
         console.log(err.message);
         setStarData(null);
-        cache.remove("/user/lang-stars");
+        cache.remove("/api/user/lang-stars");
       }
     })();
   };

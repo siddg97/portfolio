@@ -1,0 +1,26 @@
+runtime: nodejs12
+instance_class: F1
+
+automatic_scaling:
+  max_instances: 1
+
+handlers:
+  - url: /assets/.*
+    script: auto
+  - url: /api.*
+    script: auto
+  # React handlers
+  - url: /(.*\..+)$
+    static_files: client/build/\1
+    upload: client/build/(.*\..+)$
+  - url: /.*
+    static_files: client/build/index.html
+    upload: client/build/index.html
+
+env_variables:
+  CPASS: "..."
+  CUSER: "..."
+  MHOST: "..."
+  CORS_ORIGIN: "..."
+  GITHUB_ACCESS_TOKEN: "..."
+  GITHUB_API: "..."
