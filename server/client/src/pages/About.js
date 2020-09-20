@@ -124,7 +124,7 @@ const About = (props) => {
         <center>
           <Avatar
             className={css.avatar}
-            src={`${process.env.REACT_APP_SERVER_URL}/assets/me.jpg`}
+            src={"https://siddharthgupta.me/assets/me.jpg"}
             alt="Siddharth Gupta"
           />
         </center>

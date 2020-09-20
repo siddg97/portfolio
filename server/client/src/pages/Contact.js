@@ -70,7 +70,7 @@ const Contact = (props) => {
   const handleSend = () => {
     const data = { name, email, subject, message };
     axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/send-mail`, data)
+      .post("/api/send-mail", data)
       .then((res) => res.data)
       .then((data) => {
         if (data.msg === "success") {
