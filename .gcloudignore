@@ -1,5 +1,6 @@
 .gcloudignore
 .git
+.github/
 .gitignore
 README.md
 *node_modules/

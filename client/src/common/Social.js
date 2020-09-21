@@ -55,16 +55,6 @@ const SocialLinks = (props) => {
       >
         Resume
       </Button>
-      <Button
-        size="large"
-        variant="outlined"
-        component="a"
-        color="secondary"
-        href={social.resume}
-        className={css.resume}
-      >
-        Resume
-      </Button>
     </React.Fragment>
   );
 };

@@ -18,12 +18,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     border: "5px solid " + theme.palette.primary.main,
   },
-  avatar: {
-    width: theme.spacing(35),
-    height: theme.spacing(35),
-    marginTop: theme.spacing(1),
-    border: "5px solid " + theme.palette.secondary.main,
-  },
 }));
 
 const Intro = (props) => (
