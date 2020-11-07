@@ -1,0 +1,33 @@
+name: Lint Express
+
+on: [push]
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [12.x, 14.x]
+
+        steps:
+            - name: Git checkout
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install ESLint
+              run: npm install eslint
+
+            - name: Lint express code
+              run: |
+                  npx eslint --color -c .eslintrc.json src/
+                  npx eslint -c .eslintrc.js src/ > lint.log
+
+            - name: Upload lint artifact
+              uses: actions/upload-artifact@v1
+              with:
+                  name: lint.log
+                  path: lint.log
