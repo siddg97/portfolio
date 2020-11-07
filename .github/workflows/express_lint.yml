@@ -23,9 +23,9 @@ jobs:
 
             - name: Lint express code
               run:
-                  ls
-                  # npx eslint --color -c ./.eslintrc.json src/
-                  # npx eslint -c ./.eslintrc.js src/ > lint.log
+                  pwd
+                  # npx eslint --color -c .eslintrc.json src/
+                  # npx eslint -c .eslintrc.js src/ > lint.log
 
             - name: Upload lint artifact
               uses: actions/upload-artifact@v1
