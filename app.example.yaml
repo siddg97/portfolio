@@ -28,5 +28,5 @@ env_variables:
     CUSER: "..."
     MHOST: "..."
     CORS_ORIGIN: "..."
-    GITHUB_ACCESS_TOKEN: "..."
-    GITHUB_API: "..."
+    PAT: "..."
+    API: "..."
