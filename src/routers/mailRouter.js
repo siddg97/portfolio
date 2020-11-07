@@ -13,7 +13,8 @@ var transport = {
 };
 
 var transporter = nodeMailer.createTransport(transport);
-transporter.verify((error, success) => {
+// eslint-disable-next-line no-unused-vars
+transporter.verify((error, _) => {
     if (error) {
         console.log(error);
     } else {
@@ -67,8 +68,8 @@ router.post("/", (req, res) => {
             text: mailContent,
             subject: "[Personal Website]: " + subject,
         };
-
-        transporter.sendMail(mail, (err, data) => {
+        // eslint-disable-next-line no-unused-vars
+        transporter.sendMail(mail, (err, _) => {
             if (err) {
                 res.json({
                     msg: "fail",

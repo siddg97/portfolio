@@ -61,7 +61,7 @@ const getUserData = (response) => {
                 name,
                 html_url,
             } = user;
-            payload = {
+            const payload = {
                 login,
                 created_at,
                 avatar_url,
@@ -204,7 +204,6 @@ const langColors = {
     Kotlin: "#F18E33",
     Opal: "#f7ede0",
     Crystal: "#776791",
-    "Objective-C": "#438eff",
     "ColdFusion CFC": "#ed2cd6",
     Oz: "#fab738",
     Mirah: "#c7a938",

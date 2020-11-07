@@ -1,6 +1,6 @@
 require("dotenv").config();
 var express = require("express");
-const { setupExpress } = require("./routes.js");
+const { setupExpress } = require("./src/routes.js");
 
 var app = express();
 
