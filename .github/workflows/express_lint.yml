@@ -12,6 +12,8 @@ jobs:
         steps:
             - name: Git checkout
               uses: actions/checkout@v2
+              with:
+                  ref: "ci"
 
             - name: Setup Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -22,10 +24,9 @@ jobs:
               run: npm install eslint
 
             - name: Lint express code
-              run:
-                  pwd
-                  # npx eslint --color -c .eslintrc.json src/
-                  # npx eslint -c .eslintrc.js src/ > lint.log
+              run: |
+                  npx eslint --color -c .eslintrc.json src/
+                  npx eslint -c .eslintrc.js src/ > lint.log
 
             - name: Upload lint artifact
               uses: actions/upload-artifact@v1
