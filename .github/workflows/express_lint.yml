@@ -12,8 +12,6 @@ jobs:
         steps:
             - name: Git checkout
               uses: actions/checkout@v2
-              with:
-                  ref: "ci"
 
             - name: Setup Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
