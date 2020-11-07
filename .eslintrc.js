@@ -1,4 +1,4 @@
-{
+module.exports = {
     "env": {
         "commonjs": true,
         "es2021": true,
@@ -9,7 +9,5 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "no-cond-assign": ["error", "always"],
-        "block-scoped-var": "error"
     }
-}
+};
