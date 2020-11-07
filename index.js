@@ -12,16 +12,16 @@ app.use(bodyParser.json());
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
-  })
+    cors({
+        origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+    })
 );
 
 app.get("/api", (req, res) => res.json({ msg: "Hello World!" }));
 app.use("/api/user", portfolioStat);
 app.use("/api/send-mail", mailer);
 app.get("/*", (req, res) =>
-  res.sendFile(path.join(__dirname, "client/build/index.html"))
+    res.sendFile(path.join(__dirname, "client/build/index.html"))
 );
 
 const port = process.env.PORT;

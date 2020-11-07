@@ -30,43 +30,43 @@ import Projects from "./projects";
 // ];
 
 const useStyles = makeStyles((theme) => ({
-  firstGridItem: {
-    [theme.breakpoints.up("md")]: {
-      marginTop: theme.spacing(3),
+    firstGridItem: {
+        [theme.breakpoints.up("md")]: {
+            marginTop: theme.spacing(3),
+        },
     },
-  },
-  paper: {
-    padding: theme.spacing(2),
-  },
-  chip: {
-    margin: theme.spacing(1),
-  },
-  otherSkillsChip: {
-    backgroundColor: theme.palette.custom.location,
-  },
-  projectTag: {
-    backgroundColor: theme.palette.custom.tag,
-    margin: theme.spacing(1),
-  },
-  educationTag: {
-    backgroundColor: theme.palette.custom.tag,
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
+    paper: {
+        padding: theme.spacing(2),
+    },
+    chip: {
+        margin: theme.spacing(1),
+    },
+    otherSkillsChip: {
+        backgroundColor: theme.palette.custom.location,
+    },
+    projectTag: {
+        backgroundColor: theme.palette.custom.tag,
+        margin: theme.spacing(1),
+    },
+    educationTag: {
+        backgroundColor: theme.palette.custom.tag,
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+    },
 }));
 
 const Portfolio = (props) => {
-  const css = useStyles();
-  return (
-    <Grid container spacing={2} justify="center" alignItems="center">
-      <Grid item xs={12} md={10} className={css.firsGridItem}>
-        <Projects />
-      </Grid>
-      <Grid item xs={12} md={10}>
-        <GithubProfile />
-      </Grid>
-    </Grid>
-  );
+    const css = useStyles();
+    return (
+        <Grid container spacing={2} justify="center" alignItems="center">
+            <Grid item xs={12} md={10} className={css.firsGridItem}>
+                <Projects />
+            </Grid>
+            <Grid item xs={12} md={10}>
+                <GithubProfile />
+            </Grid>
+        </Grid>
+    );
 };
 
 export default Portfolio;

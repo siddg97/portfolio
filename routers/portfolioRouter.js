@@ -1,27 +1,22 @@
 var express = require("express");
 var router = express.Router();
 
-const {
-  getUserData,
-  getTopRepos,
-  getLangStars,
-  getLangStats,
-} = require("../utils");
+const { getUserData, getTopRepos, getLangStars, getLangStats } = require("../utils");
 
 router.get("/", (_, res) => {
-  getUserData(res);
+    getUserData(res);
 });
 
 router.get("/lang-stats", (_, res) => {
-  getLangStats(res);
+    getLangStats(res);
 });
 
 router.get("/lang-stars", (_, res) => {
-  getLangStars(res);
+    getLangStars(res);
 });
 
 router.get("/top-repos", (req, res) => {
-  getTopRepos(res, "stargazers_count");
+    getTopRepos(res, "stargazers_count");
 });
 
 module.exports = router;

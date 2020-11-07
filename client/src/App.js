@@ -6,28 +6,28 @@ import { routes, Frame } from "./nav";
 import { cache } from "./common";
 
 function App() {
-  useEffect(() => {
-    // ComponentDidMount
-    cache.reset();
-    window.addEventListener("beforeunload", () => cache.reset());
+    useEffect(() => {
+        // ComponentDidMount
+        cache.reset();
+        window.addEventListener("beforeunload", () => cache.reset());
 
-    // ComponentWillUnmount
-    return window.removeEventListener("beforeunload", () => cache.reset());
-  }, []);
+        // ComponentWillUnmount
+        return window.removeEventListener("beforeunload", () => cache.reset());
+    }, []);
 
-  return (
-    <Themer>
-      <Frame>
-        <Switch>
-          {routes.map((r) => (
-            <Route key={r.path} path={r.path} exact>
-              {r.component}
-            </Route>
-          ))}
-        </Switch>
-      </Frame>
-    </Themer>
-  );
+    return (
+        <Themer>
+            <Frame>
+                <Switch>
+                    {routes.map((r) => (
+                        <Route key={r.path} path={r.path} exact>
+                            {r.component}
+                        </Route>
+                    ))}
+                </Switch>
+            </Frame>
+        </Themer>
+    );
 }
 
 export default App;
