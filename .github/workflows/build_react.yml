@@ -5,6 +5,8 @@ on: [push]
 jobs:
     lint:
         runs-on: ubuntu-latest
+        env:
+            SKIP_PREFLIGHT_CHECK: true
         strategy:
             matrix:
                 node-version: [12.x, 14.x]
