@@ -15,7 +15,7 @@ router.get("/lang-stars", (_, res) => {
     getLangStars(res);
 });
 
-router.get("/top-repos", (req, res) => {
+router.get("/top-repos", (_, res) => {
     getTopRepos(res, "stargazers_count");
 });
 
