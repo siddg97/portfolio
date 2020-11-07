@@ -25,7 +25,7 @@ const GhRepos = (props) => {
           </Typography>
         </Grid>
         {repos.map((repo) => (
-          <Grid item xs={12} sm={6} lg={4} xl={2} key={repo.html_url}>
+          <Grid item xs={12} sm={6} lg={4} key={repo.html_url}>
             <RepoCard {...repo} />
           </Grid>
         ))}

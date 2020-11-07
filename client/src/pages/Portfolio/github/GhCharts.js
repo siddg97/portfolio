@@ -142,7 +142,7 @@ const GhCharts = (props) => {
   return (
     <Grid item xs={12}>
       <Grid container justify="flex-start" alignItems="center" spacing={2}>
-        <Grid item xs={12} sm={6} lg={3} xl={2}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title={
               <Fragment>
@@ -157,7 +157,7 @@ const GhCharts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3} xl={2}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title="Top Languages"
             chart={
@@ -165,7 +165,7 @@ const GhCharts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3} xl={2}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title="Most Starred"
             chart={
@@ -173,7 +173,7 @@ const GhCharts = (props) => {
             }
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3} xl={2}>
+        <Grid item xs={12} sm={6} lg={3}>
           <ChartCard
             title="Stars per Language"
             chart={

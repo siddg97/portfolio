@@ -57,7 +57,7 @@ const Projects = (props) => {
           </Typography>
         </Grid>
         {projects.map((p) => (
-          <Grid key={p.name} item xs={12} sm={6} lg={4} xl={2}>
+          <Grid key={p.name} item xs={12} sm={6} lg={4}>
             <ProjectCard {...p} />
           </Grid>
         ))}
