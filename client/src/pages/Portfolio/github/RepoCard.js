@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
     Card,
     CardHeader,
@@ -98,6 +99,15 @@ const RepoCard = (props) => {
             </CardActions>
         </Card>
     );
+};
+
+RepoCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    html_url: PropTypes.string.isRequired,
+    stargazers_count: PropTypes.number.isRequired,
+    size: PropTypes.number.isRequired,
+    language: PropTypes.string.isRequired,
 };
 
 export default RepoCard;

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-
+import PropTypes from "prop-types";
 import { Grid, Typography, makeStyles, Avatar } from "@material-ui/core";
 import { HyperLink } from "../common";
 
@@ -20,51 +20,70 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Intro = (props) => (
-    <Typography variant="body1" gutterBottom className={props.text}>
-        I'm Siddharth, a software engineer and developer in the{" "}
-        <HyperLink
-            url="https://en.wikipedia.org/wiki/Greater_Vancouver"
-            color={props.color}
-        >
-            Greater Vancouver Area, BC, Canada
-        </HyperLink>
-        . I enjoy building software in both individual and team environments. My passion
-        is fueled by my understanding of technologies in the field of computing science
-        and fascination of how two bits 0 and 1 have transformed technology and software
-        today.
-        <br />
-        <br />I am always looking to apply my problem-solving skills into software I
-        develop and have a knack for high quality code. I also am an active member and
-        reviewer of the stackoverflow online community where I help other developers
-        resolve their problems related to software development.
-    </Typography>
-);
+const Intro = (props) => {
+    const { text, color } = props;
+    return (
+        <Typography variant="body1" gutterBottom className={text}>
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            I'm Siddharth, a software engineer and developer in the{" "}
+            <HyperLink
+                url="https://en.wikipedia.org/wiki/Greater_Vancouver"
+                color={color}
+            >
+                Greater Vancouver Area, BC, Canada
+            </HyperLink>
+            . I enjoy building software in both individual and team environments. My
+            passion is fueled by my understanding of technologies in the field of
+            computing science and fascination of how two bits 0 and 1 have transformed
+            technology and software today.
+            <br />
+            <br />I am always looking to apply my problem-solving skills into software I
+            develop and have a knack for high quality code. I also am an active member and
+            reviewer of the stackoverflow online community where I help other developers
+            resolve their problems related to software development.
+        </Typography>
+    );
+};
 
-const Education = (props) => (
-    <Typography variant="body1" gutterBottom className={props.text}>
-        After completing my secondary education from{" "}
-        <HyperLink url="https://en.wikipedia.org/wiki/Gurgaon" color={props.color}>
-            Gurgaon, India
-        </HyperLink>{" "}
-        , I moved to Canada to pursue my post-secondary education. I am currently in my
-        final year of studies whilst pursuing a Bachelor's in Computing Science from{" "}
-        <HyperLink
-            url="https://en.wikipedia.org/wiki/Simon_Fraser_University"
-            color={props.color}
-        >
-            Simon Fraser University, Burnaby
-        </HyperLink>
-        . My expected graduation date is{" "}
-        <HyperLink
-            url="https://www.timeanddate.com/calendar/monthly.html?year=2021&month=6&country=27"
-            color={props.color}
-        >
-            June, 2021
-        </HyperLink>
-        .
-    </Typography>
-);
+Intro.propTypes = {
+    text: PropTypes.string,
+    color: PropTypes.string,
+};
+
+const Education = (props) => {
+    const { text, color } = props;
+    return (
+        <Typography variant="body1" gutterBottom className={text}>
+            After completing my secondary education from{" "}
+            <HyperLink url="https://en.wikipedia.org/wiki/Gurgaon" color={color}>
+                Gurgaon, India
+            </HyperLink>{" "}
+            , I moved to Canada to pursue my post-secondary education. I am currently in
+            my
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            final year of studies whilst pursuing a Bachelor's in Computing Science from{" "}
+            <HyperLink
+                url="https://en.wikipedia.org/wiki/Simon_Fraser_University"
+                color={color}
+            >
+                Simon Fraser University, Burnaby
+            </HyperLink>
+            . My expected graduation date is{" "}
+            <HyperLink
+                url="https://www.timeanddate.com/calendar/monthly.html?year=2021&month=6&country=27"
+                color={color}
+            >
+                June, 2021
+            </HyperLink>
+            .
+        </Typography>
+    );
+};
+
+Education.propTypes = {
+    text: PropTypes.string,
+    color: PropTypes.string,
+};
 
 const WorkExp = (props) => {
     const { color, text } = props;
@@ -87,7 +106,12 @@ const WorkExp = (props) => {
     );
 };
 
-const About = (props) => {
+WorkExp.propTypes = {
+    text: PropTypes.string,
+    color: PropTypes.string,
+};
+
+const About = () => {
     const css = useStyles();
     return (
         <Grid

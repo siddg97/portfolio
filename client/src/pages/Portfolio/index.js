@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Portfolio = (props) => {
+const Portfolio = () => {
     const css = useStyles();
     return (
         <Grid container spacing={2} justify="center" alignItems="center">

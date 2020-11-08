@@ -1,4 +1,5 @@
 import React, { useEffect, Fragment } from "react";
+import PropTypes from "prop-types";
 import buildChart from "./chart_utils.js";
 import { Grid } from "@material-ui/core";
 import ChartCard from "./ChartCard.js";
@@ -192,6 +193,13 @@ const GhCharts = (props) => {
             </Grid>
         </Grid>
     );
+};
+
+GhCharts.propTypes = {
+    user: PropTypes.object,
+    langData: PropTypes.array,
+    repoData: PropTypes.array,
+    starData: PropTypes.array,
 };
 
 export default GhCharts;

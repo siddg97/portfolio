@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SocialLinks = (props) => {
+const SocialLinks = () => {
     const css = useStyles();
     return (
         <React.Fragment>

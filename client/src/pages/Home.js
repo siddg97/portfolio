@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Home = (props) => {
+const Home = () => {
     const css = useStyles();
     return (
         <Grid

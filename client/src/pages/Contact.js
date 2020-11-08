@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
 import isEmail from "validator/lib/isEmail";
 import {
@@ -51,7 +52,14 @@ function Notification(props) {
     );
 }
 
-const Contact = (props) => {
+Notification.propTypes = {
+    type: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    open: PropTypes.bool.isRequired,
+    setOpen: PropTypes.func.isRequired,
+};
+
+const Contact = () => {
     const css = useStyles();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -100,6 +108,7 @@ const Contact = (props) => {
                                 gutterBottom
                                 className={css.subtitle}
                             >
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
                                 I'm currently looking for full-time and co-op
                                 opportunities. If you want to hire me, ask me a question
                                 or just say hi, send me a message and I will get back to

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
     Card,
@@ -51,6 +52,12 @@ const ProjectCard = (props) => {
             </CardActions>
         </Card>
     );
+};
+
+ProjectCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    tags: PropTypes.array.isRequired,
 };
 
 export default ProjectCard;

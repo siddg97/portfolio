@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const GithubProfile = (props) => {
+const GithubProfile = () => {
     const [userData, setUserData] = useState(null);
     const [langData, setLangData] = useState(null);
     const [repoData, setRepoData] = useState(null);
