@@ -3,7 +3,7 @@ name: Express Build
 on: [push]
 
 jobs:
-    lint:
+    Build:
         runs-on: ubuntu-latest
         env:
             CPASS: ${{ secrets.CPASS }}
