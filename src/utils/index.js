@@ -1,8 +1,8 @@
 const axios = require("axios").default;
 const GhPolyglot = require("gh-polyglot");
 
-const me = new GhPolyglot("siddg97", process.env.GITHUB_ACCESS_TOKEN);
-axios.defaults.headers["Authorization"] = `token ${process.env.GITHUB_ACCESS_TOKEN}`;
+const me = new GhPolyglot("siddg97", process.env.PAT);
+axios.defaults.headers["Authorization"] = `token ${process.env.PAT}`;
 
 /*
  * Get all repos from github
@@ -12,7 +12,7 @@ axios.defaults.headers["Authorization"] = `token ${process.env.GITHUB_ACCESS_TOK
  */
 async function fetchRepos() {
     try {
-        var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97/repos`, {
+        var res = await axios.get(`${process.env.API}/users/siddg97/repos`, {
             params: {
                 per_page: 100,
             },
@@ -32,7 +32,7 @@ async function fetchRepos() {
  */
 async function fetchUser() {
     try {
-        var res = await axios.get(`${process.env.GITHUB_API}/users/siddg97`);
+        var res = await axios.get(`${process.env.API}/users/siddg97`);
         return await res.data;
     } catch (err) {
         console.log(err.message);
@@ -61,7 +61,7 @@ const getUserData = (response) => {
                 name,
                 html_url,
             } = user;
-            payload = {
+            const payload = {
                 login,
                 created_at,
                 avatar_url,
@@ -204,7 +204,6 @@ const langColors = {
     Kotlin: "#F18E33",
     Opal: "#f7ede0",
     Crystal: "#776791",
-    "Objective-C": "#438eff",
     "ColdFusion CFC": "#ed2cd6",
     Oz: "#fab738",
     Mirah: "#c7a938",

@@ -3,10 +3,14 @@
 .github/
 .gitignore
 README.md
+LICENSE
+
 *node_modules/
-*src/
+client/src/
 *env
-*public/
+client/public/
 client/yarn.lock
 client/package.json
 app.example.yaml
+*.eslintrc.js
+yarn.lock

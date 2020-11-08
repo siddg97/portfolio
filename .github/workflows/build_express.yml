@@ -1,0 +1,35 @@
+name: Express Build
+
+on: [push]
+
+jobs:
+    Build:
+        runs-on: ubuntu-latest
+        env:
+            CPASS: ${{ secrets.CPASS }}
+            CUSER: ${{ secrets.CUSER }}
+            MHOST: ${{ secrets.MHOST }}
+            PORT: ${{ secrets.PORT }}
+            PAT: ${{ secrets.PAT }}
+            API: ${{ secrets.API}}
+        strategy:
+            matrix:
+                node-version: [12.x, 14.x]
+
+        steps:
+            - name: Git checkout
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run express server
+              run: |
+                  npm run start &
+                  sleep 2
+                  kill -9 `lsof -i:5000 -t`
