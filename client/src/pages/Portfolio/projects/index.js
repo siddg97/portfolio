@@ -41,7 +41,7 @@ const projects = [
     },
 ];
 
-const Projects = (props) => {
+const Projects = () => {
     const classes = useStyles();
     return (
         <Grid item xs={12}>

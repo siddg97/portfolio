@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardHeader, CardContent } from "@material-ui/core";
 
@@ -17,6 +18,11 @@ const ChartCard = (props) => {
             <CardContent className={cardStyle.content}>{chart}</CardContent>
         </Card>
     );
+};
+
+ChartCard.propTypes = {
+    chart: PropTypes.element.isRequired,
+    title: PropTypes.element.isRequired,
 };
 
 export default ChartCard;

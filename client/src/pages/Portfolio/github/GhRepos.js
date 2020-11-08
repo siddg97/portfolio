@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Grid, Typography, makeStyles } from "@material-ui/core";
 import RepoCard from "./RepoCard.js";
 
@@ -32,6 +33,10 @@ const GhRepos = (props) => {
             </Grid>
         </Grid>
     );
+};
+
+GhRepos.propTypes = {
+    repos: PropTypes.array.isRequired,
 };
 
 export default GhRepos;

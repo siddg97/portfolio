@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
     createMuiTheme,
     ThemeProvider,
@@ -38,5 +39,9 @@ let theme = createMuiTheme({
 theme = responsiveFontSizes(theme);
 
 const Themer = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+
+Themer.propTypes = {
+    children: PropTypes.any.isRequired,
+};
 
 export default Themer;

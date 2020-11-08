@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const HyperLink = (props) => {
     const { url, className, color, children } = props;
@@ -15,6 +16,13 @@ const HyperLink = (props) => {
             {children}
         </a>
     );
+};
+
+HyperLink.propTypes = {
+    url: PropTypes.string,
+    className: PropTypes.string,
+    color: PropTypes.string,
+    children: PropTypes.any,
 };
 
 export default HyperLink;
