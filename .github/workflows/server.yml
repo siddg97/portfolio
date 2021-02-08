@@ -1,0 +1,62 @@
+name: Server CI
+
+on: [push]
+
+jobs:
+    Lint:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [15.x]
+
+        steps:
+            - name: Git checkout
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install ESLint
+              run: |
+                  cd server
+                  npm install eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+
+            - name: Lint code
+              run: |
+                  cd server
+                  npx eslint --color -c .eslintrc.js src/
+                  npx eslint -c .eslintrc.js src/ > lint.log
+
+            - name: Upload lint artifact
+              uses: actions/upload-artifact@v1
+              with:
+                  name: lint.log
+                  path: server/lint.log
+
+    Test:
+        runs-on: ubuntu-latest
+        needs: Lint
+        strategy:
+            matrix:
+                node-version: [15.x]
+
+        steps:
+            - name: Git checkout
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install dependencies
+              run: |
+                  cd server
+                  npm install
+
+            - name: Run tests
+              run: |
+                  cd server
+                  npm run test:ci
