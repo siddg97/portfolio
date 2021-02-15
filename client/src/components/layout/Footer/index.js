@@ -14,7 +14,7 @@ const styles = ({ spacing, palette: { type, grey } }) => ({
         marginTop: 'auto',
         padding: spacing(4),
         bottom: 0,
-        background: type === 'light' ? grey[100] : grey[900],
+        background: type === 'light' ? grey[100] : grey['A400'],
         textAlign: 'center',
     },
 });

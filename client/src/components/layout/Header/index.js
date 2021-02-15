@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
@@ -25,7 +24,7 @@ const styles = ({ spacing, palette: { type, grey } }) => ({
     toolbar: {
         paddingTop: spacing(1),
         paddingBottom: spacing(1),
-        background: type === 'light' ? grey[100] : grey[900],
+        background: type === 'light' ? grey[200] : grey[900],
     },
 });
 
@@ -33,9 +32,6 @@ const Header = ({ classes, darkThemeToggle, setDarkThemeToggle }) => (
     <BaseHeader>
         <Toolbar className={classes.toolbar}>
             <SidebarTrigger sidebarId='primarySidebar' />
-            <Typography noWrap color={'textSecondary'} className={classes.header}>
-                S.G.
-            </Typography>
             <div className={classes.grow} />
             <SocialLinks type={'header'} />
             <IconButton

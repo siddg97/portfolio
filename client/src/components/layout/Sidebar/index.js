@@ -14,7 +14,7 @@ const styles = ({ palette: { type, grey } }) => {
     console.log(grey);
     return {
         drawerBg: {
-            background: type === 'light' ? grey[100] : grey[900],
+            background: type === 'light' ? grey[100] : grey['A400'],
         },
     };
 };

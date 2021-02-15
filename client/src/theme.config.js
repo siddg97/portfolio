@@ -2,7 +2,7 @@ let lightTheme = {
     palette: {
         type: 'light',
         background: {
-            default: '#f5f5f5',
+            default: '#eeeeee',
             paper: '#fafafa',
         },
     },

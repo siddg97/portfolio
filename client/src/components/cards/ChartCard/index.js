@@ -12,7 +12,6 @@ const useStyles = makeStyles(({ spacing }) => ({
         padding: `${spacing(2)} ${spacing(3)}`,
     },
     card: {
-        borderRadius: spacing(2),
         height: '100%',
     },
 }));

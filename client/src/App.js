@@ -33,6 +33,9 @@ const styles = () => ({
         flexDirection: 'column',
         minHeight: '100vh',
     },
+    grow: {
+        flexGrow: 1,
+    },
 });
 
 const App = ({ classes }) => {
@@ -53,6 +56,7 @@ const App = ({ classes }) => {
                         <Content>
                             <Switch>{routes.map(renderRoute)}</Switch>
                         </Content>
+                        <div className={classes.grow} />
                         <Divider />
                         <Footer />
                     </div>

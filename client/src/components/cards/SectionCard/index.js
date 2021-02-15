@@ -6,7 +6,6 @@ import GridN from 'components/layout/GridN/index';
 
 const useStyles = makeStyles(({ spacing }) => ({
     card: {
-        borderRadius: spacing(2),
         height: '100%',
         padding: spacing(2),
     },
@@ -18,7 +17,7 @@ const SectionCard = ({ title, overline, subtitle, content }) => {
         <>
             <Typography variant={'overline'}>{overline}</Typography>
             {title}
-            <Typography gutterBottom>{subtitle}</Typography>
+            {subtitle && <Typography gutterBottom>{subtitle}</Typography>}
         </>
     );
 
@@ -35,9 +34,13 @@ const SectionCard = ({ title, overline, subtitle, content }) => {
 
 SectionCard.propTypes = {
     title: PropTypes.node.isRequired,
-    subtitle: PropTypes.node.isRequired,
+    subtitle: PropTypes.node,
     overline: PropTypes.node.isRequired,
     content: PropTypes.node.isRequired,
+};
+
+SectionCard.defaultProps = {
+    subtitle: '',
 };
 
 export default SectionCard;
