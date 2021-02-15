@@ -4,7 +4,7 @@ services:
     # Load balancer
     nginx:
         build: ./nginx
-        container_name: nginx_lb
+        container_name: nginx_gateway
         restart: always
         links:
             - server

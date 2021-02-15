@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-const Portfolio = () => (
+const Contact = () => (
     <>
         <Typography variant={'overline'}>INTRODUCING</Typography>
         <Typography weight={'bold'} variant={'h4'} gutterBottom>
@@ -105,4 +105,4 @@ const Portfolio = () => (
     </>
 );
 
-export default Portfolio;
+export default Contact;

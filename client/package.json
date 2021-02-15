@@ -2,26 +2,47 @@
     "name": "client",
     "version": "0.1.0",
     "private": true,
-    "dependencies": {
-        "@material-ui/core": "^4.11.0",
-        "@material-ui/icons": "^4.9.1",
-        "@material-ui/lab": "^4.0.0-alpha.56",
-        "axios": "^0.21.1",
-        "chart.js": "^2.9.3",
-        "dotenv": "^8.2.0",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "react-router-dom": "^5.2.0",
-        "react-scripts": "3.4.3",
-        "serve": "^11.3.2",
-        "validator": "^13.1.1"
-    },
     "scripts": {
-        "start": "serve -s build",
-        "dev": "react-scripts start",
+        "start": "react-scripts start",
+        "lint": "eslint --color -c .eslintrc.js src",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "DEBUG_PRINT_LIMIT=1000 react-scripts test --env=jsdom --watchAll",
+        "test:ci": "react-scripts test --env=jsdom --watchAll=false",
         "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "dependencies": {
+        "@material-ui/core": "^4.11.3",
+        "@material-ui/icons": "^4.11.2",
+        "@mui-treasury/components": "^1.10.1",
+        "@mui-treasury/layout": "^4.5.0",
+        "@mui-treasury/mockup": "^1.2.12",
+        "axios": "^0.21.1",
+        "chart.js": "^2.9.4",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-query": "^3.8.2",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.2",
+        "styled-components": "^5.2.1",
+        "web-vitals": "^1.0.1"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.9",
+        "@testing-library/react": "^11.2.5",
+        "@testing-library/react-hooks": "^5.0.3",
+        "@testing-library/user-event": "^12.1.10",
+        "eslint": "^7.19.0",
+        "eslint-plugin-react": "^7.22.0",
+        "jest-environment-jsdom": "^26.6.2",
+        "msw": "^0.26.1",
+        "react-test-renderer": "^17.0.1",
+        "typescript": "^4.1.3"
     },
     "browserslist": {
         "production": [
@@ -34,10 +55,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "proxy": "https://siddharthgupta.me",
-    "devDependencies": {
-        "eslint": "^7.13.0",
-        "eslint-plugin-react": "^7.21.5"
     }
 }

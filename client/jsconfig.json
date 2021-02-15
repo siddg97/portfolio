@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "baseUrl": "src",
+        "paths": {
+            "tests": ["./tests"]
+        }
+    },
+    "include": ["src"]
+}

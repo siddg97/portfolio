@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-const Portfolio = () => (
+const About = () => (
     <>
         <Typography variant={'overline'}>INTRODUCING</Typography>
         <Typography weight={'bold'} variant={'h4'} gutterBottom>
@@ -102,7 +102,42 @@ const Portfolio = () => (
         <br />
         <br />
         <br />
+        <Typography weight={'bold'} variant={'h5'} gutterBottom>
+            Solution
+        </Typography>
+        <Typography>Separate layout into 5 components</Typography>
+        <Typography component={'div'}>
+            <ul>
+                <li>Root</li>
+                <li>Header (AppBar)</li>
+                <li>Nav (Drawer)</li>
+                <li>Content</li>
+                <li>Footer</li>
+            </ul>
+        </Typography>
+        <Typography>
+            <b>Root</b> will provide context to other components to sync states across
+            them.
+        </Typography>
+        <Typography>
+            <b>Behavior</b> of your layout will be controlled by using config (just a
+            plain object) that will be injected to the Root.
+        </Typography>
+        <Typography>
+            <b>Presets</b> is a set of predefined config that I can come up with after
+            researching a lot of the real world websites and also the{' '}
+            <Link
+                href={
+                    'https://material.io/design/components/navigation-drawer.html#usage'
+                }
+            >
+                official Material specs
+            </Link>
+        </Typography>
+        <br />
+        <br />
+        <br />
     </>
 );
 
-export default Portfolio;
+export default About;

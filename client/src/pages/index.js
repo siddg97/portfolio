@@ -1,6 +1,7 @@
-import Home from "./Home.js";
-import About from "./About.js";
-import Contact from "./Contact.js";
-import Portfolio from "./Portfolio";
+import About from './About';
+import Contact from './Contact';
+import Home from './Home';
+import Portfolio from './Portfolio';
+import Projects from './Projects';
 
-export { Home, About, Portfolio, Contact };
+export { Home, About, Projects, Portfolio, Contact };
