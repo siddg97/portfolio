@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '@material-ui/core/Link';
+import PropTypes from 'prop-types';
 
 // URLS for various topics
 const VAN_URL = 'https://en.wikipedia.org/wiki/Vancouver';
@@ -32,3 +33,9 @@ export const linkToDevOps = renderLink(DEVOPS_URL, 'DevOps');
 export const linkToCyberSec = renderLink(CYBER_SEC_URL, 'Cyber Security');
 export const linkToBB = renderLink(BB_URL, 'BlackBerry');
 export const linkToTeradici = renderLink(TERADICI_URL, 'Teradici');
+
+// PropTypes
+export const childrenPropType = PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+]).isRequired;

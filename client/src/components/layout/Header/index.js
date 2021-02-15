@@ -35,7 +35,7 @@ const Header = ({ classes, darkThemeToggle, setDarkThemeToggle }) => (
             <div className={classes.grow} />
             <SocialLinks type={'header'} />
             <IconButton
-                color='secondary'
+                color='primary'
                 onClick={() => setDarkThemeToggle(!darkThemeToggle)}
                 component='span'
             >

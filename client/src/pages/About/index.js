@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import SectionCard from 'components/cards/SectionCard/index';
 import { linkToSFU, linkToTeradici, linkToVancouver } from 'constants/index';
 
@@ -37,11 +36,7 @@ const About = () => {
             </Typography>
         </>
     );
-    const title = (
-        <Typography weight={'bold'} variant={'h4'} gutterBottom>
-            <Link underline={'none'}>About Me</Link>
-        </Typography>
-    );
+    const title = 'About Me';
     return <SectionCard overline={overline} title={title} content={content} />;
 };
 

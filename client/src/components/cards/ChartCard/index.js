@@ -2,24 +2,27 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
-import { LoadingIndicator } from 'components/common/LoadingIndicator/index';
 import { useTheme } from '@material-ui/core/styles';
 import { getAxesColor, getChartFontColor } from 'utils/chart_utils';
 import GridN from 'components/layout/GridN/index';
+import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles(({ spacing }) => ({
     content: {
-        padding: `${spacing(2)} ${spacing(3)}`,
+        padding: spacing(2),
     },
     card: {
         height: '100%',
     },
+    skeleton: {
+        height: 350,
+    },
 }));
 
-const ChartCard = (props) => {
-    const cardStyle = useStyles();
+const ChartCard = ({ title, status, chartData, chartFn, chartId }) => {
     const [chartObj, setChartObj] = useState({});
-    const { title, status, chartData, chartFn, chartId } = props;
+
+    const cardStyle = useStyles();
     const {
         palette: { type: themeType },
     } = useTheme();
@@ -49,19 +52,15 @@ const ChartCard = (props) => {
             chartObj.update();
         }
     }, [themeType]);
-
-    const content = (
-        <>
-            {status === 'loading' && (
-                <center>
-                    <LoadingIndicator />
-                </center>
-            )}
+    const chartSize = 200;
+    const content =
+        status === 'loading' ? (
+            <Skeleton animation='wave' variant='rect' className={cardStyle.skeleton} />
+        ) : (
             <CardContent className={cardStyle.content}>
-                <canvas id={chartId} />
+                <canvas id={chartId} width={chartSize} height={chartSize} />
             </CardContent>
-        </>
-    );
+        );
     const header = <CardHeader title={title} />;
     return (
         <Card elevation={0} classes={{ root: cardStyle.card }}>

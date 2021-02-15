@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { childrenPropType } from 'constants/index';
 
 const queryClient = new QueryClient();
 
@@ -23,7 +23,7 @@ const ProviderWrapper = ({ children }) => {
 };
 
 ProviderWrapper.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: childrenPropType,
 };
 
 ReactDOM.render(

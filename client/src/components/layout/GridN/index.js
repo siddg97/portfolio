@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
+import { childrenPropType } from 'constants/index';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -9,31 +10,40 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const GridN = ({ children, cols }) => {
+const GridN = ({ children, xsCols, smCols, mdCols }) => {
     const classes = useStyles();
-    const xs = 12;
-    const md = 12 / cols;
+    const xs = 12 / xsCols;
+    const sm = 12 / smCols;
+    const md = 12 / mdCols;
+
+    let elements = React.Children.toArray(children);
+    const content = elements.map((child, key) => (
+        <Grid item xs={xs} sm={sm} md={md} key={key}>
+            {child}
+        </Grid>
+    ));
+
     return (
         <div className={classes.root}>
             <Grid container spacing={2}>
-                {children.map((child, key) => (
-                    <Grid item xs={xs} md={md} key={key}>
-                        {child}
-                    </Grid>
-                ))}
+                {content}
             </Grid>
         </div>
     );
 };
 
 GridN.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
-    cols: PropTypes.number,
+    children: childrenPropType,
+    xsCols: PropTypes.number,
+    smCols: PropTypes.number,
+    mdCols: PropTypes.number,
 };
 
 GridN.defaultProps = {
     children: [],
-    cols: 1,
+    xsCols: 1,
+    smCols: 1,
+    mdCols: 1,
 };
 
 export default GridN;

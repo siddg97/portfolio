@@ -115,13 +115,16 @@ export const initUserChart = (data, themeType, chartId) => {
 
 export const initLangChart = (data, themeType, chartId) => {
     const ctx = document.getElementById(chartId);
-    const labels = data.map((lang) => lang.label);
-    if (data.length > 0) {
-        const backgroundColor = data.map(
+    const langs = data.filter(
+        ({ label }) => !['Others', 'R', 'Makefile', 'Haskell', 'Scheme'].includes(label)
+    );
+    const labels = langs.map((lang) => lang.label);
+    if (langs.length > 0) {
+        const backgroundColor = langs.map(
             ({ color }) =>
                 `#${color.length > 4 ? color.slice(1) : color.slice(1).repeat(2)}B3`
         );
-        const borderColor = data.map((lang) => `${lang.color}`);
+        const borderColor = langs.map((lang) => `${lang.color}`);
         const chartType = 'doughnut';
         const axes = false;
         const legend = true;
@@ -129,7 +132,7 @@ export const initLangChart = (data, themeType, chartId) => {
             ctx,
             chartType,
             labels,
-            data: data.map((lang) => lang.value),
+            data: langs.map((lang) => lang.value),
             backgroundColor,
             borderColor,
             axes,
@@ -183,18 +186,21 @@ export const initRepoChart = (data, themeType, chartId) => {
 
 export const initStarChart = (data, themeType, chartId) => {
     const ctx = document.getElementById(chartId);
-    const labels = data.map((l) => l.label);
-    if (data.length > 0) {
+    const stars = data.filter(
+        ({ label }) => !['Others', 'R', 'Makefile', 'Haskell', 'Scheme'].includes(label)
+    );
+    const labels = stars.map((l) => l.label);
+    if (stars.length > 0) {
         const chartType = 'doughnut';
         const axes = false;
         const legend = true;
-        const borderColor = data.map((l) => l.color);
-        const backgroundColor = data.map((l) => `${l.color}B3`);
+        const borderColor = stars.map((l) => l.color);
+        const backgroundColor = stars.map((l) => `${l.color}B3`);
         const config = {
             ctx,
             chartType,
             labels,
-            data: data.map((l) => l.value),
+            data: stars.map((l) => l.value),
             backgroundColor,
             borderColor,
             axes,
@@ -205,5 +211,6 @@ export const initStarChart = (data, themeType, chartId) => {
 };
 
 export const getChartFontColor = (themeType) => (themeType === 'dark' ? '#fff' : '#000');
+
 export const getAxesColor = (themeType) =>
     themeType === 'dark' ? 'rgba(255,255,255, 0.5)' : 'rgba(0,0,0, 0.5)';

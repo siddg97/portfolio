@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { getContent } from '@mui-treasury/layout';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { childrenPropType } from 'constants/index';
 
 const styles = ({ breakpoints, transitions }) => ({
     root: {
@@ -31,7 +32,7 @@ const Content = ({ classes, children }) => {
 
 Content.propTypes = {
     classes: PropTypes.object.isRequired,
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    children: childrenPropType,
 };
 
 export default withStyles(styles)(Content);

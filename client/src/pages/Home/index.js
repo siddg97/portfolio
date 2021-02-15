@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import {
     useGhLangStars,
     useGhLangStats,
@@ -63,11 +62,7 @@ const Home = () => {
         },
     ];
 
-    const cardTitle = (
-        <Typography weight={'bold'} variant={'h4'} gutterBottom>
-            Hi, I&apos;m Siddharth <Link underline={'none'}>Gupta</Link>
-        </Typography>
-    );
+    const cardTitle = <>Hi, I&apos;m Siddharth Gupta</>;
 
     const cardOverline = 'A little bit about me';
     const cardSubtitle = <b>Student @ {linkToSFU}</b>;
@@ -92,7 +87,7 @@ const Home = () => {
     );
 
     const chartsGrid = (
-        <GridN cols={2}>
+        <GridN smCols={2} mdCols={2}>
             {charts.map((c) => (
                 <ChartCard {...c} key={c.chartId} />
             ))}

@@ -10,14 +10,11 @@ import SidebarNavLinks from './SidebarNavLinks';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-const styles = ({ palette: { type, grey } }) => {
-    console.log(grey);
-    return {
-        drawerBg: {
-            background: type === 'light' ? grey[100] : grey['A400'],
-        },
-    };
-};
+const styles = ({ palette: { type, grey } }) => ({
+    drawerBg: {
+        background: type === 'light' ? grey[100] : grey['A400'],
+    },
+});
 
 const DrawerSidebar = getDrawerSidebar(styled);
 const SidebarContent = getSidebarContent(styled);

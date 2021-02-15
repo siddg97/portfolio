@@ -2,6 +2,33 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
+const items = [
+    {
+        title: 'Associate Frontend Developer',
+        org: 'Teradici',
+        from: 'Jan 2021', // TODO: Convert to time stamps
+        to: 'Aug 2021', // TODO: Convert to time stamps
+        current: true,
+        accomps: [],
+    },
+    {
+        title: 'Software Development Intern',
+        org: 'BlackBerry Inc',
+        from: 'Jan 2020', // TODO: Convert to time stamps
+        to: 'Aug 2020', // TODO: Convert to time stamps
+        current: false,
+        accomps: [],
+    },
+    {
+        title: 'Undergraduate Student',
+        org: 'Simon Fraser University',
+        from: 'Jan 2018', // TODO: Convert to time stamps
+        to: 'Dec 2021', // TODO: Convert to time stamps
+        current: true,
+        accomps: [],
+    },
+];
+
 const Portfolio = () => (
     <>
         <Typography variant={'overline'}>INTRODUCING</Typography>
