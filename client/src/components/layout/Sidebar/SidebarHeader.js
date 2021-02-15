@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import MyAvatar from 'components/MyAvatar/index';
-import SocialLinks from 'components/SocialLink/index';
+import MyAvatar from 'components/common/MyAvatar';
+import SocialLinks from 'components/common/SocialLink';
 
 const SidebarHeader = ({ collapsed }) => {
     return (

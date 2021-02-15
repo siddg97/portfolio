@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardContent, Grid } from '@material-ui/core';
-import { LoadingIndicator } from 'components/LoadingIndicator/index';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
+import { LoadingIndicator } from 'components/common/LoadingIndicator/index';
 import { useTheme } from '@material-ui/core/styles';
-import { getAxesColor } from 'utils/chart_utils';
-import { getChartFontColor } from '../../utils/chart_utils';
+import { getAxesColor, getChartFontColor } from 'utils/chart_utils';
+import GridN from 'components/layout/GridN/index';
 
 const useStyles = makeStyles(({ spacing }) => ({
     content: {
@@ -52,7 +52,7 @@ const ChartCard = (props) => {
     }, [themeType]);
 
     const content = (
-        <Grid item xs={12}>
+        <>
             {status === 'loading' && (
                 <center>
                     <LoadingIndicator />
@@ -61,19 +61,15 @@ const ChartCard = (props) => {
             <CardContent className={cardStyle.content}>
                 <canvas id={chartId} />
             </CardContent>
-        </Grid>
+        </>
     );
-    const header = (
-        <Grid item xs={12}>
-            <CardHeader title={title} />
-        </Grid>
-    );
+    const header = <CardHeader title={title} />;
     return (
-        <Card classes={{ root: cardStyle.card }}>
-            <Grid container justify='center' alignItems='center'>
+        <Card elevation={0} classes={{ root: cardStyle.card }}>
+            <GridN>
                 {header}
                 {content}
-            </Grid>
+            </GridN>
         </Card>
     );
 };

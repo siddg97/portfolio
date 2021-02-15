@@ -5,10 +5,10 @@ import { Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Root } from '@mui-treasury/layout';
-import Header from 'components/Header';
-import Sidebar from 'components/Sidebar';
-import Footer from 'components/Footer';
-import Content from 'components/Content/index';
+import Header from 'components/layout/Header';
+import Sidebar from 'components/layout/Sidebar';
+import Footer from 'components/layout/Footer';
+import Content from 'components/layout/Content';
 import {
     createMuiTheme,
     ThemeProvider,

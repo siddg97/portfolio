@@ -5,9 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import MyAvatar from 'components/MyAvatar/index';
-import GridN from 'components/GridN/index';
-import SocialLinks from 'components/SocialLink/index';
+import MyAvatar from 'components/common/MyAvatar';
+import GridN from 'components/layout/GridN';
+import SocialLinks from 'components/common/SocialLink';
 
 const styles = ({ spacing, palette: { type, grey } }) => ({
     root: {

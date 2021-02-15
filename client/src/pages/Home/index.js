@@ -1,5 +1,4 @@
 import React from 'react';
-import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import {
@@ -23,8 +22,9 @@ import {
     initStarChart,
     initUserChart,
 } from 'utils/chart_utils';
-import ChartCard from 'components/ChartCard/index';
-import GridN from 'components/GridN/index';
+import GridN from 'components/layout/GridN/index';
+import SectionCard from 'components/cards/SectionCard/index';
+import ChartCard from 'components/cards/ChartCard/index';
 
 const Home = () => {
     const renderLink = (url, content) => (
@@ -77,37 +77,51 @@ const Home = () => {
         },
     ];
 
+    const cardTitle = (
+        <Typography weight={'bold'} variant={'h4'} gutterBottom>
+            Hi, I&apos;m Siddharth <Link underline={'none'}>Gupta</Link>
+        </Typography>
+    );
+
+    const cardOverline = 'A little bit about me';
+    const cardSubtitle = <b>Student @ {linkToSFU}</b>;
+    const cardContent = (
+        <>
+            <Typography indent={'small'}>
+                I&apos;m <b>Siddharth Gupta</b>, Currently in my final year of studies at{' '}
+                {linkToSFU}, {linkToVancouver}. I love programming in my free time and
+                have a knack for keeping up with the latest technologies. My area of
+                interests include:
+            </Typography>
+            <Typography component={'div'}>
+                <ul>
+                    <li>{linkToWebDev}</li>
+                    <li>{linkToAppDev}</li>
+                    <li>{linkToCloud}</li>
+                    <li>{linkToDevOps}</li>
+                    <li>{linkToCyberSec}</li>
+                </ul>
+            </Typography>
+        </>
+    );
+
+    const chartsGrid = (
+        <GridN cols={2}>
+            {charts.map((c) => (
+                <ChartCard {...c} key={c.chartId} />
+            ))}
+        </GridN>
+    );
+
     return (
         <GridN>
-            <>
-                <Typography variant={'overline'}>A little bit about me</Typography>
-                <Typography weight={'bold'} variant={'h4'} gutterBottom>
-                    Hi, I&apos;m Siddharth <Link underline={'none'}>Gupta</Link>
-                </Typography>
-                <Typography gutterBottom>
-                    <b>Student @ {linkToSFU}</b>
-                </Typography>
-                <Typography indent={'small'}>
-                    I&apos;m <b>Siddharth Gupta</b>, Currently in my final year of studies
-                    at {linkToSFU}, {linkToVancouver}. I love programming in my free time
-                    and have a knack for keeping up with the latest technologies. My area
-                    of interests include:
-                </Typography>
-                <Typography component={'div'}>
-                    <ul>
-                        <li>{linkToWebDev}</li>
-                        <li>{linkToAppDev}</li>
-                        <li>{linkToCloud}</li>
-                        <li>{linkToDevOps}</li>
-                        <li>{linkToCyberSec}</li>
-                    </ul>
-                </Typography>
-            </>
-            <GridN cols={2}>
-                {charts.map((c) => (
-                    <ChartCard {...c} key={c.chartId} />
-                ))}
-            </GridN>
+            <SectionCard
+                title={cardTitle}
+                subtitle={cardSubtitle}
+                overline={cardOverline}
+                content={cardContent}
+            />
+            {chartsGrid}
         </GridN>
     );
 };

@@ -8,7 +8,7 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Toolbar from '@material-ui/core/Toolbar';
 import { getHeader, getSidebarTrigger } from '@mui-treasury/layout';
 import styled from 'styled-components';
-import SocialLinks from 'components/SocialLink/index';
+import SocialLinks from 'components/common/SocialLink/index';
 
 const SidebarTrigger = getSidebarTrigger(styled);
 const BaseHeader = getHeader(styled);
