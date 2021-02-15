@@ -8,15 +8,6 @@ import {
     useGhUserData,
 } from 'hooks/queries';
 import {
-    APP_DEV_URL,
-    CLOUD_URL,
-    CYBER_SEC_URL,
-    DEVOPS_URL,
-    SFU_URL,
-    VAN_URL,
-    WEB_DEV_URL,
-} from 'constants/index';
-import {
     initLangChart,
     initRepoChart,
     initStarChart,
@@ -25,26 +16,21 @@ import {
 import GridN from 'components/layout/GridN/index';
 import SectionCard from 'components/cards/SectionCard/index';
 import ChartCard from 'components/cards/ChartCard/index';
+import {
+    linkToAppDev,
+    linkToCloud,
+    linkToCyberSec,
+    linkToDevOps,
+    linkToSFU,
+    linkToVancouver,
+    linkToWebDev,
+} from 'constants/index';
 
 const Home = () => {
-    const renderLink = (url, content) => (
-        <Link href={url} target='_blank' rel='noopener noreferrer'>
-            <b>{content}</b>
-        </Link>
-    );
-
     const { data: userData, status: userDataStatus } = useGhUserData();
     const { data: topReposData, status: topReposStatus } = useGhTopRepos();
     const { data: langStatsData, status: langStatsStatus } = useGhLangStats();
     const { data: langStarsData, status: langStarsStatus } = useGhLangStars();
-
-    const linkToSFU = renderLink(SFU_URL, 'Simon Fraser University');
-    const linkToVancouver = renderLink(VAN_URL, 'Vancouver, BC');
-    const linkToWebDev = renderLink(WEB_DEV_URL, 'Web Development');
-    const linkToAppDev = renderLink(APP_DEV_URL, 'Application Development');
-    const linkToCloud = renderLink(CLOUD_URL, 'Cloud Computing');
-    const linkToDevOps = renderLink(DEVOPS_URL, 'DevOps');
-    const linkToCyberSec = renderLink(CYBER_SEC_URL, 'Cyber Security');
 
     const charts = [
         {
