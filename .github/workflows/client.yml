@@ -1,4 +1,4 @@
-name: Server CI
+name: Client CI
 
 on: [push]
 
@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node-version: [15.x]
+                node-version: [12.x]
 
         steps:
             - name: Git checkout
@@ -20,12 +20,12 @@ jobs:
 
             - name: Install ESLint
               run: |
-                  cd server
-                  npm install eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+                  cd client
+                  npm install eslint eslint-plugin-react@latest
 
             - name: Lint code
               run: |
-                  cd server
+                  cd client
                   npx eslint --color -c .eslintrc.js src/
 
     Test:
@@ -33,7 +33,7 @@ jobs:
         needs: Lint
         strategy:
             matrix:
-                node-version: [15.x]
+                node-version: [12.x]
 
         steps:
             - name: Git checkout
@@ -46,10 +46,10 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  cd server
+                  cd client
                   npm install
 
             - name: Run tests
               run: |
-                  cd server
+                  cd client
                   npm run test:ci
