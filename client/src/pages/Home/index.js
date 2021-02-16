@@ -24,6 +24,7 @@ import {
     linkToVancouver,
     linkToWebDev,
 } from 'constants/index';
+import BaseCard from 'components/cards/BaseCard/index';
 
 const Home = () => {
     const { data: userData, status: userDataStatus } = useGhUserData();
@@ -64,15 +65,15 @@ const Home = () => {
 
     const cardTitle = <>Hi, I&apos;m Siddharth Gupta</>;
 
-    const cardOverline = 'A little bit about me';
+    const cardOverline = 'welcome to my corner of the internet';
     const cardSubtitle = <b>Student @ {linkToSFU}</b>;
     const cardContent = (
         <>
             <Typography indent={'small'}>
-                I&apos;m <b>Siddharth Gupta</b>, Currently in my final year of studies at{' '}
-                {linkToSFU}, {linkToVancouver}. I love programming in my free time and
-                have a knack for keeping up with the latest technologies. My area of
-                interests include:
+                Hello! I&apos;m <b>Siddharth Gupta</b>, I am an undergraduate student in
+                my final year of studies at {linkToSFU}, {linkToVancouver}. I love
+                programming in my free time and have a knack for keeping up with the
+                latest technologies. My area of interests include:
             </Typography>
             <Typography component={'div'}>
                 <ul>
@@ -100,8 +101,10 @@ const Home = () => {
                 title={cardTitle}
                 subtitle={cardSubtitle}
                 overline={cardOverline}
-                content={cardContent}
             />
+            <BaseCard>
+                <GridN>{cardContent}</GridN>
+            </BaseCard>
             {chartsGrid}
         </GridN>
     );

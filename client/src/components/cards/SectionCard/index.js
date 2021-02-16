@@ -27,7 +27,7 @@ const SectionCard = ({ title, overline, subtitle, content }) => {
         </>
     );
 
-    const body = <>{content}</>;
+    const body = content ? content : null;
     return (
         <Card elevation={0} classes={{ root: cardStyle.card }}>
             <GridN>
@@ -42,11 +42,12 @@ SectionCard.propTypes = {
     title: PropTypes.node.isRequired,
     subtitle: PropTypes.node,
     overline: PropTypes.node.isRequired,
-    content: PropTypes.node.isRequired,
+    content: PropTypes.node,
 };
 
 SectionCard.defaultProps = {
     subtitle: '',
+    content: '',
 };
 
 export default SectionCard;

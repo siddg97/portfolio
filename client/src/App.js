@@ -39,7 +39,7 @@ const styles = () => ({
 });
 
 const App = ({ classes }) => {
-    const [darkThemeToggle, setDarkThemeToggle] = useState(true);
+    const [darkThemeToggle, setDarkThemeToggle] = useState(false);
     const theme = createMuiTheme(darkThemeToggle ? darkTheme : lightTheme);
 
     return (

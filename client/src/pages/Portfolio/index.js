@@ -10,10 +10,11 @@ import TimelineCard from 'components/cards/TimelineCard/index';
 import GridN from 'components/layout/GridN/index';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import SectionCard from 'components/cards/SectionCard/index';
 
 const useStyles = makeStyles(() => ({
     oppositeContent: {
-        flex: 0.2,
+        flex: 0,
     },
 }));
 
@@ -23,9 +24,10 @@ const items = [
         org: 'Teradici',
         from: 'Jan 2021', // TODO: Convert to time stamps
         to: 'Aug 2021', // TODO: Convert to time stamps
+        location: 'Burnaby, BC',
         current: true,
         accomps: [
-            'Developed features for admin panel used to manage remote desktops in public/private clouds',
+            'Developed UI features for admin panel used to manage remote desktops in public/private cloud',
             'Follow CI/CD concepts to integrate new features whilst maintaining quality standards',
             'Assist backend developers in fixing support tickets and identifying potential problems',
             'Follow agile methodologies to accomplish results and compare progress',
@@ -39,6 +41,7 @@ const items = [
         org: 'BlackBerry Inc',
         from: 'Jan 2020', // TODO: Convert to time stamps
         to: 'Aug 2020', // TODO: Convert to time stamps
+        location: 'Burnaby, BC',
         current: false,
         accomps: [
             'Developed standalone programs using C and Python for acoustic analysis',
@@ -55,6 +58,7 @@ const items = [
         org: 'Simon Fraser University',
         from: 'Jan 2018', // TODO: Convert to time stamps
         to: 'Dec 2021', // TODO: Convert to time stamps
+        location: 'Burnaby, BC',
         current: true,
         accomps: ['Bachelors of Science', 'Majoring in Computing Sciences'],
     },
@@ -62,16 +66,12 @@ const items = [
 
 const Portfolio = () => {
     const classes = useStyles();
-    const renderTimelineItem = ({ title, org, from, to, current, accomps }, i) => (
+    const renderTimelineItem = (
+        { title, org, from, to, current, accomps, location },
+        i
+    ) => (
         <TimelineItem key={`timeline-${org}`}>
-            <TimelineOppositeContent
-                className={classes.oppositeContent}
-                color='textSecondary'
-            >
-                <Typography color='primary' variant='body2'>{`${from} - ${
-                    current ? 'Present' : to
-                }`}</Typography>
-            </TimelineOppositeContent>
+            <TimelineOppositeContent className={classes.oppositeContent} />
             <TimelineSeparator>
                 <TimelineDot color='secondary' variant='outlined' />
                 {i !== items.length - 1 && <TimelineConnector />}
@@ -80,14 +80,29 @@ const Portfolio = () => {
                 <TimelineCard
                     title={title}
                     org={org}
+                    from={from}
+                    to={to}
                     current={current}
                     accomps={accomps}
+                    location={location}
                 />
             </TimelineContent>
         </TimelineItem>
     );
+    const headerContent = (
+        <Typography indent={'small'}>
+            Here is a timeline for my <b>undergraduate career</b> and{' '}
+            <b>work experiences</b>
+        </Typography>
+    );
+
     return (
         <GridN>
+            <SectionCard
+                title={'Experience Timeline'}
+                overline={'Siddharth Gupta'}
+                content={headerContent}
+            />
             <Timeline align='left'>{items.map(renderTimelineItem)}</Timeline>
         </GridN>
     );

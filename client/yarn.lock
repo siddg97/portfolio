@@ -1517,16 +1517,6 @@
     deepmerge "^4.2.2"
     lodash.mapvalues "^4.6.0"
 
-"@mui-treasury/mockup@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mui-treasury/mockup/-/mockup-1.2.12.tgz#0964dbac636f3f86194a73ef2d4052851c56b616"
-  integrity sha512-8BASN2W080YsCLRScKenI680k4xnw3LwljvniHGIuyDDa1z7j1S0f8dm+Ljbmalsvch+o6NTUkFPObWVSeiPig==
-  dependencies:
-    "@mui-treasury/components" "^1.10.1"
-    "@mui-treasury/styles" "^1.13.1"
-    prop-types "^15.7.2"
-    react-router-dom "^5.1.2"
-
 "@mui-treasury/styles@^1.13.1":
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/@mui-treasury/styles/-/styles-1.13.1.tgz#96c86f362056eaeb528740bf4cf128d3cd5c56b7"
@@ -9553,7 +9543,7 @@ react-refresh@^0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-router-dom@^5.1.2, react-router-dom@^5.2.0:
+react-router-dom@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"
   integrity sha512-gxAmfylo2QUjcwxI63RhQ5G85Qqt4voZpUXSEqCwykV0baaOTQDR1f0PmY8AELqIyVc0NEZUj0Gov5lNGcXgsA==

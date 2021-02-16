@@ -2,9 +2,11 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import SectionCard from 'components/cards/SectionCard/index';
 import { linkToSFU, linkToTeradici, linkToVancouver } from 'constants/index';
+import GridN from 'components/layout/GridN/index';
+import BaseCard from 'components/cards/BaseCard/index';
 
 const About = () => {
-    const overline = 'Siddharth Gupta';
+    const overline = 'A little bit';
     const content = (
         <>
             <Typography gutterBottom>
@@ -37,7 +39,12 @@ const About = () => {
         </>
     );
     const title = 'About Me';
-    return <SectionCard overline={overline} title={title} content={content} />;
+    return (
+        <GridN>
+            <SectionCard overline={overline} title={title} />
+            <BaseCard>{content}</BaseCard>
+        </GridN>
+    );
 };
 
 export default About;

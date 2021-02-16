@@ -1,6 +1,6 @@
 import React from 'react';
 import BaseCard from '../BaseCard';
-import { Typography, Link } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import GridN from 'components/layout/GridN/index';
 import List from '@material-ui/core/List';
@@ -14,16 +14,18 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const TimelineCard = ({ title, org, accomps }) => {
+const TimelineCard = ({ title, org, accomps, location, from, to, current }) => {
     const classes = useStyles();
     const header = (
         <>
-            <Typography variant={'overline'}>{org}</Typography>
-            <br />
-            <Typography weight={'bold'} variant={'button'}>
-                <Link color='secondary' underline={'none'}>
-                    {title}
-                </Link>
+            <Typography variant={'overline'}>
+                {org} : {`${from} - ${current ? 'Present' : to}`}
+            </Typography>
+            <Typography color='secondary' gutterBottom>
+                <b>{title}</b>
+            </Typography>
+            <Typography weight={'bold'} variant={'subtitle'}>
+                <b>{location}</b>
             </Typography>
         </>
     );
@@ -49,6 +51,10 @@ const TimelineCard = ({ title, org, accomps }) => {
 TimelineCard.propTypes = {
     title: PropTypes.string.isRequired,
     org: PropTypes.string.isRequired,
+    from: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    current: PropTypes.bool.isRequired,
     accomps: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
