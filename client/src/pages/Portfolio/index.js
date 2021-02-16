@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
+// eslint-disable-next-line no-unused-vars
 const items = [
     {
         title: 'Associate Frontend Developer',
