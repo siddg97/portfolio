@@ -5,10 +5,12 @@ import GridN from 'components/layout/GridN/index';
 import SectionCard from 'components/cards/SectionCard/index';
 import BaseCard from 'components/cards/BaseCard/index';
 import { makeStyles, Button } from '@material-ui/core';
+import { useSendMail } from 'hooks/queries';
+import Notification from 'components/common/Notification/index';
 
 const useStyles = makeStyles(({ spacing }) => ({
     btn: {
-        marginLeft: spacing(2),
+        marginRight: spacing(2),
     },
 }));
 
@@ -18,12 +20,33 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
+    const [successNotification, setSuccessNotification] = useState(false);
+    const [errorNotification, setErrorNotification] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const onChange = (modifier) => ({ target: { value } }) => modifier(value);
 
-    const onSendClick = () => {
-        console.log({ name, email, subject, message });
+    const sendMailOpts = {
+        onSuccess() {
+            onClearAllClick();
+            setSuccessNotification(true);
+        },
+        onError(error) {
+            const msg = error.response.data.reason[0].details;
+            setErrorMessage(msg);
+            setErrorNotification(true);
+        },
     };
+
+    const { refetch: onSendClick } = useSendMail(
+        {
+            name,
+            email,
+            subject,
+            message,
+        },
+        sendMailOpts
+    );
 
     const onClearAllClick = () => {
         setName('');
@@ -39,7 +62,6 @@ const Contact = () => {
             value: name,
             onChange: onChange(setName),
             placeholder: 'Enter full name',
-            // error: name === '',
         },
         {
             type: 'text',
@@ -47,7 +69,6 @@ const Contact = () => {
             value: email,
             onChange: onChange(setEmail),
             placeholder: 'Enter email address',
-            // error: email === '',
         },
         {
             type: 'text',
@@ -55,15 +76,13 @@ const Contact = () => {
             value: subject,
             onChange: onChange(setSubject),
             placeholder: 'This message is regarding...',
-            // error: subject === '',
         },
         {
             type: 'text',
             label: 'Message',
             value: message,
             onChange: onChange(setMessage),
-            placeholder: 'Enter message ...',
-            // error: message === '',
+            placeholder: 'Enter message...',
             rows: 12,
             multiline: true,
         },
@@ -100,14 +119,14 @@ const Contact = () => {
         />
     );
 
-    const renderActionBtn = ({ text, handler, color, ...rest }, i) => (
+    const renderActionBtn = ({ text, handler, color, ...rest }) => (
         <Button
             variant='contained'
             color={color}
             key={`contact-${text}-btn`}
             size='large'
             onClick={handler}
-            className={i > 0 ? classes.btn : ''}
+            className={classes.btn}
             disableElevation
             {...rest}
         >
@@ -124,20 +143,34 @@ const Contact = () => {
     );
 
     return (
-        <GridN>
-            <SectionCard
-                title={'Get In Touch'}
-                overline={'Siddharth Gupta'}
-                subtitle={'g.sidd97@gmail.com'}
-                content={headerContent}
+        <>
+            <GridN>
+                <SectionCard
+                    title={'Get In Touch'}
+                    overline={'Siddharth Gupta'}
+                    subtitle={'g.sidd97@gmail.com'}
+                    content={headerContent}
+                />
+                <BaseCard>
+                    <GridN>
+                        {fields.map(renderTextField)}
+                        <Fragment>{actions.map(renderActionBtn)}</Fragment>
+                    </GridN>
+                </BaseCard>
+            </GridN>
+            <Notification
+                open={successNotification}
+                setOpen={setSuccessNotification}
+                type='success'
+                message='Your message was sent successfully!'
             />
-            <BaseCard>
-                <GridN>
-                    {fields.map(renderTextField)}
-                    <Fragment>{actions.map(renderActionBtn)}</Fragment>
-                </GridN>
-            </BaseCard>
-        </GridN>
+            <Notification
+                open={errorNotification}
+                setOpen={setErrorNotification}
+                type='error'
+                message={errorMessage}
+            />
+        </>
     );
 };
 
