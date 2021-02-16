@@ -1,6 +1,9 @@
 name: Server CI
 
-on: [push]
+on:
+    push:
+        paths:
+            - 'server/**.js'
 
 jobs:
     Lint:
