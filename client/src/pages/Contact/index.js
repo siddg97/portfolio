@@ -7,10 +7,16 @@ import BaseCard from 'components/cards/BaseCard/index';
 import { makeStyles, Button } from '@material-ui/core';
 import { useSendMail } from 'hooks/queries';
 import Notification from 'components/common/Notification/index';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, zIndex }) => ({
     btn: {
         marginRight: spacing(2),
+    },
+    backdrop: {
+        zIndex: zIndex.drawer + 1,
+        color: '#fff',
     },
 }));
 
@@ -38,7 +44,7 @@ const Contact = () => {
         },
     };
 
-    const { refetch: onSendClick } = useSendMail(
+    const { status, refetch: onSendClick } = useSendMail(
         {
             name,
             email,
@@ -170,6 +176,9 @@ const Contact = () => {
                 type='error'
                 message={errorMessage}
             />
+            <Backdrop className={classes.backdrop} open={status === 'loading'}>
+                <CircularProgress color='primary' />
+            </Backdrop>
         </>
     );
 };
