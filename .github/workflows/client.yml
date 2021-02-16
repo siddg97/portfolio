@@ -4,6 +4,7 @@ on:
     push:
         paths:
             - 'client/**.js'
+            - '.github/workflows/client.yml'
 
 jobs:
     Lint:

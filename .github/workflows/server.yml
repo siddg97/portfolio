@@ -4,6 +4,7 @@ on:
     push:
         paths:
             - 'server/**.js'
+            - '.github/workflows/server.yml'
 
 jobs:
     Lint:
