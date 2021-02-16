@@ -34,10 +34,12 @@
         "web-vitals": "^1.0.1"
     },
     "devDependencies": {
+        "@testing-library/dom": "^7.29.4",
         "@testing-library/jest-dom": "^5.11.9",
         "@testing-library/react": "^11.2.5",
         "@testing-library/react-hooks": "^5.0.3",
         "@testing-library/user-event": "^12.1.10",
+        "@types/jest": "^26.0.20",
         "eslint": "^7.19.0",
         "eslint-plugin-react": "^7.22.0",
         "jest-environment-jsdom": "^26.6.2",

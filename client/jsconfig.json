@@ -6,5 +6,8 @@
             "tests": ["./tests"]
         }
     },
+    "typeAcquisition": {
+        "include": ["jest"]
+    },
     "include": ["src"]
 }

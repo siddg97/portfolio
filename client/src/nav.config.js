@@ -1,11 +1,11 @@
 import React from 'react';
+import { Home, About, Projects, Portfolio, Contact } from 'pages';
 // Icons
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import InfoIcon from '@material-ui/icons/Info';
 import Star from '@material-ui/icons/Star';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import { Home, About, Projects, Portfolio, Contact } from 'pages';
 
 export const routes = [
     {
