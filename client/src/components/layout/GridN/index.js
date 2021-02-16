@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const GridN = ({ children, xsCols, smCols, mdCols }) => {
+const GridN = ({ children, xsCols, smCols, mdCols, spacing }) => {
     const classes = useStyles();
     const xs = 12 / xsCols;
     const sm = 12 / smCols;
@@ -25,7 +25,7 @@ const GridN = ({ children, xsCols, smCols, mdCols }) => {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={2}>
+            <Grid container spacing={spacing}>
                 {content}
             </Grid>
         </div>
@@ -37,6 +37,7 @@ GridN.propTypes = {
     xsCols: PropTypes.number,
     smCols: PropTypes.number,
     mdCols: PropTypes.number,
+    spacing: PropTypes.number,
 };
 
 GridN.defaultProps = {
@@ -44,6 +45,7 @@ GridN.defaultProps = {
     xsCols: 1,
     smCols: 1,
     mdCols: 1,
+    spacing: 2,
 };
 
 export default GridN;

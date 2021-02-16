@@ -1,8 +1,22 @@
 import React from 'react';
+import Timeline from '@material-ui/lab/Timeline';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import TimelineDot from '@material-ui/lab/TimelineDot';
+import TimelineCard from 'components/cards/TimelineCard/index';
+import GridN from 'components/layout/GridN/index';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
 
-// eslint-disable-next-line no-unused-vars
+const useStyles = makeStyles(() => ({
+    oppositeContent: {
+        flex: 0.2,
+    },
+}));
+
 const items = [
     {
         title: 'Associate Frontend Developer',
@@ -18,7 +32,15 @@ const items = [
         from: 'Jan 2020', // TODO: Convert to time stamps
         to: 'Aug 2020', // TODO: Convert to time stamps
         current: false,
-        accomps: [],
+        accomps: [
+            'Developed standalone programs using C and Python for acoustic analysis',
+            'Optimized existing tools to achieve over 40% performance gains',
+            'Devised test scripts to validate voice detection in audio wave files',
+            'Developed testing tools for identification of bugs in existing software',
+            'Participated extensively in code reviews',
+            'Resolved over 100+ issue tickets over 8 months',
+            'Completed internal training programs for the QNX Neutrino RTOS',
+        ],
     },
     {
         title: 'Undergraduate Student',
@@ -26,111 +48,41 @@ const items = [
         from: 'Jan 2018', // TODO: Convert to time stamps
         to: 'Dec 2021', // TODO: Convert to time stamps
         current: true,
-        accomps: [],
+        accomps: ['Bachelors of Science', 'Majoring in Computing Sciences'],
     },
 ];
 
-const Portfolio = () => (
-    <>
-        <Typography variant={'overline'}>INTRODUCING</Typography>
-        <Typography weight={'bold'} variant={'h4'} gutterBottom>
-            Material UI <Link underline={'none'}>Layout</Link>
-        </Typography>
-        <Typography gutterBottom>
-            <b>Version 3.1</b>
-        </Typography>
-        <Typography indent={'small'}>
-            Layout is a group of Material-UI components that are enhanced and combined to
-            create dynamic, easy-to-maintain and easy-to-code as much as possible.
-        </Typography>
-        <br />
-        <br />
-        <br />
-        <Typography weight={'bold'} variant={'h5'} gutterBottom>
-            {"Let's start with Why?"}
-        </Typography>
-        <Typography gutterBottom>
-            I created this because
-            <br />
-        </Typography>
-        <Typography component={'div'}>
-            <ol>
-                <li>
-                    It took me a lot of time to initialize dashboard layout when I have
-                    new projects and I’m sure that a lot of you guys agree with me.
-                </li>
-                <li>
-                    Sometimes it is hard to refactor because the structure is so poor
-                    because someone isn’t deeply understand what he/she was doing, as a
-                    result, rewrite the whole layout (it actually happened, at least in my
-                    experience).
-                </li>
-                <li>
-                    Because we need to be fast to let others continue our work, we
-                    frequently write poor and a lot of code. However, we say we don’t have
-                    time to fix them. Eventually, spend all day paying technical debts.
-                </li>
-            </ol>
-        </Typography>
-        <br />
-        <br />
-        <br />
-        <Typography weight={'bold'} variant={'h5'} gutterBottom>
-            Objectives
-        </Typography>
-        <Typography>
-            It must be easy enough to use, however still be able to adjust to compat with
-            real word examples and usages. More importantly, it need to follow{' '}
-            <Link
-                target={'_blank'}
-                rel='noopener'
-                href={'https://material.io/design/components/navigation-drawer.html#'}
-                underline={'none'}
+const Portfolio = () => {
+    const classes = useStyles();
+    const renderTimelineItem = ({ title, org, from, to, current, accomps }, i) => (
+        <TimelineItem key={`timeline-${org}`}>
+            <TimelineOppositeContent
+                className={classes.oppositeContent}
+                color='textSecondary'
             >
-                Material specs
-            </Link>{' '}
-            since we are 100% based on Material-UI with no other styling libraries. Last
-            but not least, responsive is a must.
-        </Typography>
-        <br />
-        <br />
-        <br />
-        <Typography weight={'bold'} variant={'h5'} gutterBottom>
-            Solution
-        </Typography>
-        <Typography>Separate layout into 5 components</Typography>
-        <Typography component={'div'}>
-            <ul>
-                <li>Root</li>
-                <li>Header (AppBar)</li>
-                <li>Nav (Drawer)</li>
-                <li>Content</li>
-                <li>Footer</li>
-            </ul>
-        </Typography>
-        <Typography>
-            <b>Root</b> will provide context to other components to sync states across
-            them.
-        </Typography>
-        <Typography>
-            <b>Behavior</b> of your layout will be controlled by using config (just a
-            plain object) that will be injected to the Root.
-        </Typography>
-        <Typography>
-            <b>Presets</b> is a set of predefined config that I can come up with after
-            researching a lot of the real world websites and also the{' '}
-            <Link
-                href={
-                    'https://material.io/design/components/navigation-drawer.html#usage'
-                }
-            >
-                official Material specs
-            </Link>
-        </Typography>
-        <br />
-        <br />
-        <br />
-    </>
-);
+                <Typography color='primary' variant='body2'>{`${from} - ${
+                    current ? 'Present' : to
+                }`}</Typography>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+                <TimelineDot color='secondary' variant='outlined' />
+                {i !== items.length - 1 && <TimelineConnector />}
+            </TimelineSeparator>
+            <TimelineContent>
+                <TimelineCard
+                    title={title}
+                    org={org}
+                    current={current}
+                    accomps={accomps}
+                />
+            </TimelineContent>
+        </TimelineItem>
+    );
+    return (
+        <GridN>
+            <Timeline align='left'>{items.map(renderTimelineItem)}</Timeline>
+        </GridN>
+    );
+};
 
 export default Portfolio;
