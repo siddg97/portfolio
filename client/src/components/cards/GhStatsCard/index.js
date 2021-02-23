@@ -13,7 +13,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
         [breakpoints.down('sm')]: {
             marginBottom: spacing(1),
         },
-        [breakpoints.up('sm')]: {
+        [breakpoints.up('md')]: {
             marginRight: spacing(1),
         },
     },
@@ -38,13 +38,13 @@ const GhStatsCard = ({ repos, followers, following }) => {
 
     return (
         <Grid container justify='center' alignItems='center'>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={12} md={2}>
                 {repoStat}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={12} md={2}>
                 {followerStat}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={12} md={2}>
                 {followingStat}
             </Grid>
         </Grid>

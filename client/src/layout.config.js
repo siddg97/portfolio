@@ -16,15 +16,15 @@ export const buildLayoutScheme = () => {
                 anchor: 'left',
             })
             .registerTemporaryConfig('xs', {
-                width: 230,
+                width: 256,
             })
-            .registerPersistentConfig('sm', {
-                persistentBehavior: 'flexible',
-                width: 230,
+            .registerPersistentConfig('md', {
+                persistentBehavior: 'fit',
+                width: 256,
                 collapsible: false,
             })
-            .registerPermanentConfig('md', {
-                width: 230,
+            .registerPermanentConfig('lg', {
+                width: 256,
                 collapsible: false,
                 persistentBehavior: 'flexible',
                 autoExpanded: true,

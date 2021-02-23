@@ -12,16 +12,15 @@ import SocialLinks from 'components/common/SocialLink';
 const styles = ({
     spacing,
     palette: {
-        type,
-        grey,
-        background: { default: darkBg },
+        background: { default: bg },
     },
 }) => ({
     root: {
         marginTop: 'auto',
         padding: spacing(4),
         bottom: 0,
-        background: type === 'light' ? grey[100] : darkBg,
+        // background: type === 'light' ? grey[100] : bg,
+        background: bg,
         textAlign: 'center',
     },
 });

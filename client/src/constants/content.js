@@ -1,13 +1,13 @@
 export const projects = [
     {
         name: 'UniFYI',
-        tags: ['React', 'MongoDB', 'Typescript', 'k8s'],
+        tags: ['React', 'MongoDB', 'Typescript'],
         description:
             'A full-stack web app with the primary focus on improving university experiences for new and existing university students. Utilized micro-services architecture to ensure high scalability.',
     },
     {
         name: 'Interview Buddy',
-        tags: ['React', 'Flask', 'MongoDB', 'Google Cloud'],
+        tags: ['React', 'Flask', 'Google Cloud'],
         description:
             'A full-stack web application where students can conduct mock interviews with peers or a in-house AI bot and receive helpful metrics and feedback about how they answer questions. Second place winner for StormHacks 2021 event',
     },
@@ -25,7 +25,7 @@ export const projects = [
     },
     {
         name: 'TrackIT',
-        tags: ['Swift', 'SQL', 'REST'],
+        tags: ['Swift', 'SQL', 'Xcode'],
         description:
             'An iOS application focused on providing a simple way to track their DASH diet on a meal-to-meal basis. Providing personalized suggestions and analysis of users diet.',
     },

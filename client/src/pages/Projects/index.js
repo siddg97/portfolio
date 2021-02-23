@@ -34,7 +34,7 @@ const Projects = () => {
 
     const projectsTitle = 'Selected Projects';
     const projectsContent = (
-        <GridN mdCols={2}>
+        <GridN smCols={1} mdCols={2} lgCols={3}>
             {projects.map((proj) => (
                 <ProjectCard key={proj.name} {...proj} />
             ))}
@@ -44,7 +44,7 @@ const Projects = () => {
     const reposTitle = 'Popular Repositories';
     const { data: topRepos, status: topReposStatus } = useGhTopRepos();
     const reposContent = topReposStatus === 'success' && (
-        <GridN mdCols={2}>
+        <GridN smCols={1} mdCols={2} lgCols={3}>
             {topRepos.map((repo) => (
                 <RepoCard key={repo.html_url} {...repo} />
             ))}

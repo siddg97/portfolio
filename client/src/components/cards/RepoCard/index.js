@@ -91,9 +91,9 @@ RepoCard.propTypes = {
     name: PropTypes.string,
     html_url: PropTypes.string,
     description: PropTypes.string,
-    stargazers_count: PropTypes.string,
-    size: PropTypes.string,
-    forks_count: PropTypes.string,
+    stargazers_count: PropTypes.number,
+    size: PropTypes.number,
+    forks_count: PropTypes.number,
     language: PropTypes.string,
 };
 

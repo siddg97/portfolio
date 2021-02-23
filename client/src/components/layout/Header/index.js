@@ -15,9 +15,7 @@ const BaseHeader = getHeader(styled);
 const styles = ({
     spacing,
     palette: {
-        type,
-        grey,
-        background: { default: darkBg },
+        background: { default: bg },
     },
 }) => ({
     header: {
@@ -31,7 +29,7 @@ const styles = ({
     toolbar: {
         paddingTop: spacing(1),
         paddingBottom: spacing(1),
-        background: type === 'light' ? grey[200] : darkBg, //grey[900],
+        background: bg,
     },
 });
 

@@ -12,13 +12,11 @@ import PropTypes from 'prop-types';
 
 const styles = ({
     palette: {
-        type,
-        grey,
-        background: { default: darkBg },
+        background: { default: bg },
     },
 }) => ({
     drawerBg: {
-        background: type === 'light' ? grey[100] : darkBg, //grey['A400'],
+        background: bg,
     },
 });
 
@@ -41,7 +39,6 @@ const Sidebar = ({ classes, sidebar }) => {
 Sidebar.propTypes = {
     classes: PropTypes.object.isRequired,
     sidebar: PropTypes.object.isRequired,
-    // setOpen: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Sidebar);

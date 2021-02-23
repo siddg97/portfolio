@@ -1,19 +1,28 @@
-let lightTheme = {
+const lightTheme = {
     palette: {
         type: 'light',
         background: {
-            default: '#eeeeee',
-            paper: '#fafafa',
+            default: '#e9ecef',
+            paper: '#f8f9fa',
         },
+        // primary: {
+        //     main: '',
+        // },
+        // secondary: {
+        //     main: '',
+        // },
     },
 };
 
-let darkTheme = {
+const darkTheme = {
     palette: {
         type: 'dark',
         background: {
-            default: '#212121',
-            paper: '#303030',
+            default: '#041f1e',
+            paper: '#1e2d2f',
+        },
+        primary: {
+            main: '#FDA10D',
         },
     },
 };
