@@ -63,7 +63,7 @@ const Home = () => {
         },
     ];
 
-    const cardTitle = <>Hi, I&apos;m Siddharth Gupta</>;
+    const cardTitle = 'Siddharth Gupta';
 
     const cardOverline = 'welcome to my corner of the internet';
     const cardSubtitle = <b>Student @ {linkToSFU}</b>;

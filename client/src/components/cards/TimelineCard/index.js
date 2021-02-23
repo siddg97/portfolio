@@ -14,18 +14,12 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const TimelineCard = ({ title, org, accomps, location, from, to, current }) => {
+const TimelineCard = ({ title, org, accomps, mobile }) => {
     const classes = useStyles();
     const header = (
         <>
-            <Typography variant={'overline'}>
-                {org} : {`${from} - ${current ? 'Present' : to}`}
-            </Typography>
             <Typography color='secondary' gutterBottom>
                 <b>{title}</b>
-            </Typography>
-            <Typography weight={'bold'} variant={'subtitle'}>
-                <b>{location}</b>
             </Typography>
         </>
     );
@@ -38,6 +32,16 @@ const TimelineCard = ({ title, org, accomps, location, from, to, current }) => {
             ))}
         </List>
     );
+
+    if (mobile) {
+        return (
+            <>
+                {header}
+                {content}
+            </>
+        );
+    }
+
     return (
         <BaseCard>
             <GridN spacing={1}>
@@ -51,11 +55,12 @@ const TimelineCard = ({ title, org, accomps, location, from, to, current }) => {
 TimelineCard.propTypes = {
     title: PropTypes.string.isRequired,
     org: PropTypes.string.isRequired,
-    from: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    current: PropTypes.bool.isRequired,
     accomps: PropTypes.arrayOf(PropTypes.string).isRequired,
+    mobile: PropTypes.bool,
+};
+
+TimelineCard.defaultProps = {
+    mobile: false,
 };
 
 export default TimelineCard;

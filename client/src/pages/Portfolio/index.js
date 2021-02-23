@@ -11,10 +11,14 @@ import GridN from 'components/layout/GridN/index';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import SectionCard from 'components/cards/SectionCard/index';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import BaseCard from 'components/cards/BaseCard/index';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
     oppositeContent: {
-        flex: 0,
+        flex: 0.3,
+        textAlign: 'center',
     },
 }));
 
@@ -65,35 +69,73 @@ const items = [
 ];
 
 const Portfolio = () => {
+    const theme = useTheme();
+    const smUp = useMediaQuery(theme.breakpoints.up('sm'));
     const classes = useStyles();
+
     const renderTimelineItem = (
         { title, org, from, to, current, accomps, location },
         i
     ) => (
         <TimelineItem key={`timeline-${org}`}>
-            <TimelineOppositeContent className={classes.oppositeContent} />
+            <TimelineOppositeContent className={classes.oppositeContent}>
+                <Typography variant={'overline'}>
+                    {`${from} - ${current ? 'Present' : to}`}
+                </Typography>
+                <Typography
+                    weight={'bold'}
+                    variant={'subtitle1'}
+                    color='primary'
+                    gutterBottom
+                >
+                    {org}
+                </Typography>
+                <Typography weight={'bold'} variant={'subtitle2'}>
+                    {location}
+                </Typography>
+            </TimelineOppositeContent>
             <TimelineSeparator>
                 <TimelineDot color='secondary' variant='outlined' />
                 {i !== items.length - 1 && <TimelineConnector />}
             </TimelineSeparator>
             <TimelineContent>
-                <TimelineCard
-                    title={title}
-                    org={org}
-                    from={from}
-                    to={to}
-                    current={current}
-                    accomps={accomps}
-                    location={location}
-                />
+                <TimelineCard title={title} org={org} accomps={accomps} />
             </TimelineContent>
         </TimelineItem>
     );
+
     const headerContent = (
         <Typography indent={'small'}>
-            Here is a timeline for my <b>undergraduate career</b> and{' '}
-            <b>work experiences</b>
+            Here is a timeline of my <b>work experience</b> and{' '}
+            <b>undergraduate career</b>
         </Typography>
+    );
+
+    const renderMobileTimelineItem = ({
+        title,
+        org,
+        from,
+        to,
+        current,
+        accomps,
+        location,
+    }) => (
+        <BaseCard key={`timeline-${org}`}>
+            <GridN>
+                <Typography variant={'overline'}>
+                    {`${from} - ${current ? 'Present' : to}`}
+                </Typography>
+                <Typography
+                    variant={'subtitle1'}
+                    weight={'bold'}
+                    color='primary'
+                    gutterBottom
+                >
+                    {org}, {location}
+                </Typography>
+                <TimelineCard title={title} org={org} accomps={accomps} mobile={true} />
+            </GridN>
+        </BaseCard>
     );
 
     return (
@@ -103,7 +145,8 @@ const Portfolio = () => {
                 overline={'Siddharth Gupta'}
                 content={headerContent}
             />
-            <Timeline align='left'>{items.map(renderTimelineItem)}</Timeline>
+            {smUp && <Timeline align='left'>{items.map(renderTimelineItem)}</Timeline>}
+            {!smUp && <GridN>{items.map(renderMobileTimelineItem)}</GridN>}
         </GridN>
     );
 };
