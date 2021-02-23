@@ -16,7 +16,7 @@ const TERADICI_URL = 'https://teradici.com/';
 export const BASE_URL = '/api';
 
 // Chart constants
-export const chartSize = 100;
+export const chartSize = 256;
 
 const renderLink = (url, content) => (
     <Link href={url} target='_blank' rel='noopener noreferrer'>

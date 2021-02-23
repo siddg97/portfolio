@@ -6,6 +6,7 @@ import { useTheme } from '@material-ui/core/styles';
 import { getAxesColor, getChartFontColor } from 'utils/chart_utils';
 import GridN from 'components/layout/GridN/index';
 import Skeleton from '@material-ui/lab/Skeleton';
+import { chartSize } from 'constants/index';
 
 const useStyles = makeStyles(({ spacing }) => ({
     content: {
@@ -53,7 +54,6 @@ const ChartCard = ({ title, status, chartData, chartFn, chartId }) => {
             chartObj.update();
         }
     }, [themeType]);
-    const chartSize = 256;
     const content =
         status === 'loading' ? (
             <Skeleton animation='wave' variant='rect' className={classes.skeleton} />

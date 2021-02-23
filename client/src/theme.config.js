@@ -5,12 +5,6 @@ const lightTheme = {
             default: '#e9ecef',
             paper: '#f8f9fa',
         },
-        // primary: {
-        //     main: '',
-        // },
-        // secondary: {
-        //     main: '',
-        // },
     },
 };
 
