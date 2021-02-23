@@ -7,6 +7,7 @@ import BaseCard from 'components/cards/BaseCard/index';
 
 const About = () => {
     const overline = 'A little bit';
+    const title = 'About Me';
     const content = (
         <>
             <Typography gutterBottom>
@@ -38,7 +39,7 @@ const About = () => {
             </Typography>
         </>
     );
-    const title = 'About Me';
+
     return (
         <GridN>
             <SectionCard overline={overline} title={title} />
