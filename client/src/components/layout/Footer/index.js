@@ -9,12 +9,19 @@ import MyAvatar from 'components/common/MyAvatar';
 import GridN from 'components/layout/GridN';
 import SocialLinks from 'components/common/SocialLink';
 
-const styles = ({ spacing, palette: { type, grey } }) => ({
+const styles = ({
+    spacing,
+    palette: {
+        type,
+        grey,
+        background: { default: darkBg },
+    },
+}) => ({
     root: {
         marginTop: 'auto',
         padding: spacing(4),
         bottom: 0,
-        background: type === 'light' ? grey[100] : grey['A400'],
+        background: type === 'light' ? grey[100] : darkBg,
         textAlign: 'center',
     },
 });

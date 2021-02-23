@@ -29,7 +29,7 @@ const SectionCard = ({ title, overline, subtitle, content }) => {
 
     const body = content ? content : null;
     return (
-        <Card variant='outlined' elevation={0} classes={{ root: cardStyle.card }}>
+        <Card elevation={0} classes={{ root: cardStyle.card }}>
             <GridN>
                 {header}
                 {body}

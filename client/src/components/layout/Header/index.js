@@ -12,7 +12,14 @@ import SocialLinks from 'components/common/SocialLink/index';
 const SidebarTrigger = getSidebarTrigger(styled);
 const BaseHeader = getHeader(styled);
 
-const styles = ({ spacing, palette: { type, grey } }) => ({
+const styles = ({
+    spacing,
+    palette: {
+        type,
+        grey,
+        background: { default: darkBg },
+    },
+}) => ({
     header: {
         fontWeight: 900,
         minWidth: 0,
@@ -24,7 +31,7 @@ const styles = ({ spacing, palette: { type, grey } }) => ({
     toolbar: {
         paddingTop: spacing(1),
         paddingBottom: spacing(1),
-        background: type === 'light' ? grey[200] : grey[900],
+        background: type === 'light' ? grey[200] : darkBg, //grey[900],
     },
 });
 

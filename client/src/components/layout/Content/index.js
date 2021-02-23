@@ -15,7 +15,7 @@ const styles = ({ breakpoints, transitions }) => ({
             margin: 'auto',
         },
         [breakpoints.up('md')]: {
-            maxWidth: 960,
+            maxWidth: breakpoints.values.lg,
         },
     },
 });

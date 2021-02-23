@@ -62,7 +62,9 @@ const ChartCard = ({ title, status, chartData, chartFn, chartId }) => {
                 <canvas id={chartId} width={chartSize} height={chartSize} />
             </CardContent>
         );
-    const header = <CardHeader title={title} />;
+    const header = (
+        <CardHeader title={title} titleTypographyProps={{ color: 'primary' }} />
+    );
     return (
         <Card variant='outlined' elevation={0} classes={{ root: classes.card }}>
             <GridN>
