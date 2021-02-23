@@ -18,8 +18,8 @@ const TimelineCard = ({ title, org, accomps, mobile }) => {
     const classes = useStyles();
     const header = (
         <>
-            <Typography color='secondary' gutterBottom>
-                <b>{title}</b>
+            <Typography weight={'bold'} color='secondary' gutterBottom>
+                {title}
             </Typography>
         </>
     );

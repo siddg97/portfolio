@@ -6,7 +6,7 @@ import GridN from 'components/layout/GridN/index';
 import BaseCard from 'components/cards/BaseCard/index';
 
 const About = () => {
-    const overline = 'A little bit';
+    const overline = 'Siddharth Gupta';
     const title = 'About Me';
     const content = (
         <>

@@ -1,21 +1,21 @@
 export const projects = [
     {
         name: 'UniFYI',
-        tags: ['React', 'MongoDB', 'Typescript', 'k8s', 'CI/CD'],
+        tags: ['React', 'MongoDB', 'Typescript', 'k8s'],
         description:
-            'A full-stack web app with the primary focus on improving university experiences for new and existing university students. Utilized microservice architecture to ensure high scalability.',
+            'A full-stack web app with the primary focus on improving university experiences for new and existing university students. Utilized micro-services architecture to ensure high scalability.',
+    },
+    {
+        name: 'Interview Buddy',
+        tags: ['React', 'Flask', 'MongoDB', 'Google Cloud'],
+        description:
+            'A full-stack web application where students can conduct mock interviews with peers or a in-house AI bot and receive helpful metrics and feedback about how they answer questions. Second place winner for StormHacks 2021 event',
     },
     {
         name: 'Online Booking System',
         tags: ['React', 'Flask', 'Firebase'],
         description:
             'An online scheduling system for booking appointments for nails salons. Frontend made with react, backend utilizes the flask framework and firebase as database. Utilizes socketIO for pushing realtime updates.',
-    },
-    {
-        name: 'Interview Buddy',
-        tags: ['React', 'Flask', 'MongoDB', 'Google Cloud'],
-        description:
-            'A full-stack web application where students can conduct mock interviews with peers or a in-house AI bot and receive helpful metrics and feedback about how they answer questions',
     },
     {
         name: 'Easy Terms',

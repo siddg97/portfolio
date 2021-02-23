@@ -3,6 +3,7 @@ import GridN from 'components/layout/GridN/index';
 import SectionCard from 'components/cards/SectionCard/index';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
     loader: {
@@ -20,6 +21,7 @@ import ProjectCard from 'components/cards/ProjectCard/index';
 
 const Projects = () => {
     const classes = useStyles();
+    const overline = 'Siddharth Gupta';
 
     const loadingIndicator = (
         <div className={classes.loader}>
@@ -30,8 +32,7 @@ const Projects = () => {
         </div>
     );
 
-    const projectsOverline = 'Selected';
-    const projectsTitle = 'Projects';
+    const projectsTitle = 'Selected Projects';
     const projectsContent = (
         <GridN mdCols={2}>
             {projects.map((proj) => (
@@ -40,12 +41,10 @@ const Projects = () => {
         </GridN>
     );
 
-    const reposOverline = 'Popular';
-    const reposTitle = 'Repositories';
-
+    const reposTitle = 'Popular Repositories';
     const { data: topRepos, status: topReposStatus } = useGhTopRepos();
     const reposContent = topReposStatus === 'success' && (
-        <GridN smCols={2} mdCols={3}>
+        <GridN mdCols={2}>
             {topRepos.map((repo) => (
                 <RepoCard key={repo.html_url} {...repo} />
             ))}
@@ -54,10 +53,10 @@ const Projects = () => {
 
     return (
         <GridN>
-            <SectionCard overline={projectsOverline} title={projectsTitle} />
+            <SectionCard overline={overline} title={projectsTitle} />
             {projectsContent}
-            <br />
-            <SectionCard overline={reposOverline} title={reposTitle} />
+            <Divider />
+            <SectionCard overline={overline} title={reposTitle} />
             {topReposStatus === 'loading' && loadingIndicator}
             {reposContent}
         </GridN>

@@ -88,7 +88,7 @@ const Portfolio = () => {
                     color='primary'
                     gutterBottom
                 >
-                    {org}
+                    <b>{org}</b>
                 </Typography>
                 <Typography weight={'bold'} variant={'subtitle2'}>
                     {location}
@@ -141,7 +141,7 @@ const Portfolio = () => {
     return (
         <GridN>
             <SectionCard
-                title={'Experience Timeline'}
+                title={'Portfolio'}
                 overline={'Siddharth Gupta'}
                 content={headerContent}
             />

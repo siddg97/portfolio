@@ -154,7 +154,6 @@ const Contact = () => {
                 <SectionCard
                     title={'Get In Touch'}
                     overline={'Siddharth Gupta'}
-                    subtitle={'g.sidd97@gmail.com'}
                     content={headerContent}
                 />
                 <BaseCard>
