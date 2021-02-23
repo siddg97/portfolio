@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const doRequest = (method, path, body = {}) => {
+const makeRequest = (method, path, body = {}) => {
     const url = path;
     const config = {
         method,
@@ -12,6 +12,6 @@ const doRequest = (method, path, body = {}) => {
     return axios(config);
 };
 
-export const getReq = (path) => doRequest('get', path);
+export const getReq = (path) => makeRequest('get', path);
 
-export const postReq = (path, body) => doRequest('post', path, body);
+export const postReq = (path, body) => makeRequest('post', path, body);

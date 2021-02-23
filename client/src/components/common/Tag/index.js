@@ -2,7 +2,6 @@ import React from 'react';
 import Chip from '@material-ui/core/Chip';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
-import { useTheme } from '@material-ui/core';
 
 const useStyles = makeStyles(({ spacing }) => ({
     tag: {
@@ -12,12 +11,8 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 const Tag = ({ text }) => {
     const classes = useStyles();
-    const {
-        palette: { type: themeType },
-    } = useTheme();
-    const variant = themeType === 'light' ? 'default' : 'outlined';
     return (
-        <Chip variant={variant} className={classes.tag} label={text} color='secondary' />
+        <Chip variant={'outlined'} className={classes.tag} label={text} color='primary' />
     );
 };
 

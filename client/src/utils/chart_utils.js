@@ -82,37 +82,6 @@ const buildChart = (config, themeType) => {
     });
 };
 
-export const initUserChart = (data, themeType, chartId) => {
-    const ctx = document.getElementById(chartId);
-    const labels = ['Repositories', 'Followers', 'Following'];
-    const { public_repos, followers, following } = data;
-    const backgroundColor = [
-        'rgba(239, 71, 111,0.5)',
-        'rgba(6, 214, 160, 0.5)',
-        'rgba(17, 138, 178, 0.5)',
-    ];
-    const borderColor = [
-        'rgba(239, 71, 111,1)',
-        'rgba(6, 214, 160, 1)',
-        'rgba(17, 138, 178, 1)',
-    ];
-
-    const chartType = 'doughnut';
-    const axes = false;
-    const legend = true;
-    const config = {
-        ctx,
-        chartType,
-        labels,
-        data: [public_repos, followers, following],
-        backgroundColor,
-        borderColor,
-        axes,
-        legend,
-    };
-    return buildChart(config, themeType);
-};
-
 export const initLangChart = (data, themeType, chartId) => {
     const ctx = document.getElementById(chartId);
     const langs = data.filter(

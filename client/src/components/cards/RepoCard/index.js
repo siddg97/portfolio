@@ -7,8 +7,10 @@ import {
     CardContent,
     Typography,
     CardActions,
+    IconButton,
 } from '@material-ui/core';
 import Tag from 'components/common/Tag/index';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
@@ -36,7 +38,21 @@ const useStyles = makeStyles(({ spacing }) => ({
 const RepoCard = ({ name, html_url, description, stargazers_count, size, language }) => {
     const classes = useStyles();
 
-    const header = <CardHeader title={name} />;
+    const header = (
+        <CardHeader
+            title={name}
+            action={
+                <IconButton
+                    color='secondary'
+                    href={html_url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    <OpenInNewIcon />
+                </IconButton>
+            }
+        />
+    );
     const content = (
         <CardContent classes={{ root: classes.content }}>
             <Typography variant={'body1'} weight='bold'>

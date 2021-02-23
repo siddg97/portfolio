@@ -10,19 +10,20 @@ import Skeleton from '@material-ui/lab/Skeleton';
 const useStyles = makeStyles(({ spacing }) => ({
     content: {
         padding: spacing(2),
+        paddingTop: 0,
     },
     card: {
         height: '100%',
     },
     skeleton: {
-        height: 350,
+        height: 270,
     },
 }));
 
 const ChartCard = ({ title, status, chartData, chartFn, chartId }) => {
     const [chartObj, setChartObj] = useState({});
 
-    const cardStyle = useStyles();
+    const classes = useStyles();
     const {
         palette: { type: themeType },
     } = useTheme();
@@ -52,18 +53,18 @@ const ChartCard = ({ title, status, chartData, chartFn, chartId }) => {
             chartObj.update();
         }
     }, [themeType]);
-    const chartSize = 200;
+    const chartSize = 256;
     const content =
         status === 'loading' ? (
-            <Skeleton animation='wave' variant='rect' className={cardStyle.skeleton} />
+            <Skeleton animation='wave' variant='rect' className={classes.skeleton} />
         ) : (
-            <CardContent className={cardStyle.content}>
+            <CardContent classes={{ root: classes.content }}>
                 <canvas id={chartId} width={chartSize} height={chartSize} />
             </CardContent>
         );
     const header = <CardHeader title={title} />;
     return (
-        <Card elevation={0} classes={{ root: cardStyle.card }}>
+        <Card variant='outlined' elevation={0} classes={{ root: classes.card }}>
             <GridN>
                 {header}
                 {content}

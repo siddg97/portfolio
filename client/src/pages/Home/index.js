@@ -1,17 +1,13 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 import {
     useGhLangStars,
     useGhLangStats,
     useGhTopRepos,
     useGhUserData,
 } from 'hooks/queries';
-import {
-    initLangChart,
-    initRepoChart,
-    initStarChart,
-    initUserChart,
-} from 'utils/chart_utils';
+import { initLangChart, initRepoChart, initStarChart } from 'utils/chart_utils';
 import GridN from 'components/layout/GridN/index';
 import SectionCard from 'components/cards/SectionCard/index';
 import ChartCard from 'components/cards/ChartCard/index';
@@ -25,6 +21,7 @@ import {
     linkToWebDev,
 } from 'constants/index';
 import BaseCard from 'components/cards/BaseCard/index';
+import GhStatsCard from 'components/cards/GhStatsCard/index';
 
 const Home = () => {
     const { data: userData, status: userDataStatus } = useGhUserData();
@@ -34,14 +31,7 @@ const Home = () => {
 
     const charts = [
         {
-            title: 'Github Summary',
-            status: userDataStatus,
-            chartId: 'userChart',
-            chartData: userData,
-            chartFn: initUserChart,
-        },
-        {
-            title: 'Top Languages',
+            title: 'Repos Per Language',
             status: langStatsStatus,
             chartId: 'langStatsChart',
             chartData: langStatsData,
@@ -63,11 +53,10 @@ const Home = () => {
         },
     ];
 
-    const cardTitle = 'Siddharth Gupta';
-
-    const cardOverline = 'welcome to my corner of the internet';
-    const cardSubtitle = <b>Student @ {linkToSFU}</b>;
-    const cardContent = (
+    const introTitle = 'Siddharth Gupta';
+    const introOverline = 'welcome to my corner of the internet';
+    const introSubtitle = <b>Student @ {linkToSFU}</b>;
+    const introContent = (
         <>
             <Typography indent={'small'}>
                 Hello! I&apos;m <b>Siddharth Gupta</b>, I am an undergraduate student in
@@ -87,25 +76,50 @@ const Home = () => {
         </>
     );
 
+    const renderGithubStats = () => {
+        if (userDataStatus === 'loading') {
+            return null;
+        }
+        return (
+            <GhStatsCard
+                repos={userData.public_repos}
+                followers={userData.followers}
+                following={userData.following}
+            />
+        );
+    };
+    const githubTitle = 'Github';
+    const githubOverline = 'At a Glance';
     const chartsGrid = (
-        <GridN smCols={2} mdCols={2}>
+        <GridN mdCols={3}>
             {charts.map((c) => (
                 <ChartCard {...c} key={c.chartId} />
             ))}
         </GridN>
     );
 
+    const ghCard = (
+        <BaseCard>
+            <GridN>
+                {renderGithubStats()}
+                {chartsGrid}
+            </GridN>
+        </BaseCard>
+    );
+
     return (
         <GridN>
             <SectionCard
-                title={cardTitle}
-                subtitle={cardSubtitle}
-                overline={cardOverline}
+                title={introTitle}
+                subtitle={introSubtitle}
+                overline={introOverline}
             />
             <BaseCard>
-                <GridN>{cardContent}</GridN>
+                <GridN>{introContent}</GridN>
             </BaseCard>
-            {chartsGrid}
+            <Divider />
+            <SectionCard title={githubTitle} overline={githubOverline} />
+            {ghCard}
         </GridN>
     );
 };
