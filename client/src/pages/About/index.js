@@ -4,6 +4,7 @@ import SectionCard from 'components/cards/SectionCard/index';
 import { linkToSFU, linkToTeradici, linkToVancouver } from 'constants/index';
 import GridN from 'components/layout/GridN/index';
 import BaseCard from 'components/cards/BaseCard/index';
+import MyAvatar from 'components/common/MyAvatar/index';
 
 const About = () => {
     const overline = 'Siddharth Gupta';
@@ -30,7 +31,7 @@ const About = () => {
                 Canada to pursue my post-secondary education. I am currently in my final
                 year of studies whilst pursuing a Bachelor&apos;s in Computing Science
                 from <b>{linkToSFU}</b>, Burnaby. My expected graduation date is{' '}
-                <b>June, 2021</b>.
+                <b>December, 2021</b>.
             </Typography>
             <br />
             <Typography gutterBottom>
@@ -41,9 +42,12 @@ const About = () => {
     );
 
     return (
-        <GridN>
+        <GridN centered>
             <SectionCard overline={overline} title={title} />
             <BaseCard>{content}</BaseCard>
+            <center>
+                <MyAvatar avatarSize={450} />
+            </center>
         </GridN>
     );
 };

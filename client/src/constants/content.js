@@ -3,7 +3,7 @@ export const projects = [
         name: 'UniFYI',
         tags: ['React', 'MongoDB', 'Typescript'],
         description:
-            'A full-stack web app with the primary focus on improving university experiences for new and existing university students. Utilized micro-services architecture to ensure high scalability.',
+            'A full-stack web app with the primary focus on improving university experiences for new and existing university students. Implemented within microservices approach',
     },
     {
         name: 'Interview Buddy',

@@ -113,13 +113,10 @@ const Home = () => {
                 title={introTitle}
                 subtitle={introSubtitle}
                 overline={introOverline}
+                content={introContent}
             />
-            <BaseCard>
-                <GridN>{introContent}</GridN>
-            </BaseCard>
             <Divider />
-            <SectionCard title={githubTitle} overline={githubOverline} />
-            {ghCard}
+            <SectionCard title={githubTitle} overline={githubOverline} content={ghCard} />
         </GridN>
     );
 };

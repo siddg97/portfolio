@@ -27,7 +27,7 @@ const TimelineCard = ({ title, org, accomps, mobile }) => {
         <List dense className={classes.list}>
             {accomps.map((acc, i) => (
                 <ListItem key={`${org}-accomps-${i}`}>
-                    <ListItemText primary={acc} />
+                    <ListItemText primary={`- ${acc}`} />
                 </ListItem>
             ))}
         </List>
