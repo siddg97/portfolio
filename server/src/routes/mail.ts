@@ -1,3 +1,4 @@
+import escapeHTML from 'escape-html';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import { validateRequest } from '../middlewares';
@@ -15,7 +16,13 @@ router.post(
     ],
     validateRequest,
     async (req: Request, res: Response) => {
-        const { name, email, subject, message } = req.body;
+        let { name, email, subject, message } = req.body;
+
+        name = escapeHTML(name);
+        email = escapeHTML(email);
+        subject = escapeHTML(subject);
+        message = escapeHTML(message);
+
         const text = `
         Name:    ${name}
         Email:   ${email}

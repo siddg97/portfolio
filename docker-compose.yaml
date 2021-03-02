@@ -32,7 +32,9 @@ services:
 
     # Backend
     server:
-        build: ./server
+        build:
+            context: ./server
+            target: base
         container_name: server
         restart: always
         environment:

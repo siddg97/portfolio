@@ -1,6 +1,7 @@
-*/node_modules
-*/build
+node_modules
+build
 */coverage
 env.sh
 .env
 env.sh
+app/
