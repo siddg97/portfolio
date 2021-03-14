@@ -8,6 +8,9 @@ import { configureRoutes } from './routes';
 
 const app = express();
 app.set('trust proxy', true);
+
+// serve react build only if its a prod env
+
 // json parser
 app.use(json());
 
@@ -15,8 +18,12 @@ app.use(json());
 app.get('/api/ping', (_, res) => res.send({ ping: 'pong' }));
 app.use('/api/assets', express.static(path.join(__dirname, '../assets')));
 
+app.use(express.static(path.join(__dirname, 'react')));
+
 // enable API endpoints
 configureRoutes(app);
+
+app.get('/*', (_, res) => res.sendFile(path.join(__dirname, 'react/index.html')));
 
 // 404
 app.all('*', async () => {

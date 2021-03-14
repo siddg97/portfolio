@@ -20,7 +20,7 @@ RUN yarn install --prod --frozen-lockfile --network-timeout 1000000
 
 FROM node:alpine as prod
 WORKDIR /app
-COPY --from=base /app/assets /app
+COPY --from=base /app/assets /assets
 COPY --from=deps /app/node_modules /node_modules
 COPY --from=build /app/build .
 CMD ["node", "index.js"]

@@ -20,7 +20,7 @@ services:
     # React app
     client:
         container_name: client
-        build: ./client
+        build: ../../client
         restart: always
         environment:
             - CI=true
@@ -28,12 +28,12 @@ services:
         expose:
             - 3000
         volumes:
-            - ./client:/app
+            - ../../client:/app
 
     # Backend
     server:
         build:
-            context: ./server
+            context: ../../server
             target: base
         container_name: server
         restart: always
@@ -47,4 +47,4 @@ services:
         expose:
             - 3000
         volumes:
-            - ./server:/app
+            - ../../server:/app

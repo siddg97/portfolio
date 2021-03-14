@@ -1,0 +1,10 @@
+infra
+.github
+.git
+.env
+server/node_modules
+client/node_modules
+server/build
+client/build
+LICENSE
+README.md
