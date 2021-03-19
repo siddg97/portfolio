@@ -17,13 +17,6 @@ COPY ./server/package.json .
 COPY ./server/yarn.lock .
 RUN yarn install --prod --frozen-lockfile --network-timeout 1000000
 
-FROM node:alpine as react-base
-WORKDIR /app
-COPY ./client/package.json .
-COPY ./client/yarn.lock .
-RUN yarn install --network-timeout 1000000
-COPY ./client .
-
 FROM node:alpine as react-build
 WORKDIR /app
 COPY ./client/package.json .
