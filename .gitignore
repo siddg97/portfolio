@@ -6,4 +6,5 @@ env.sh
 env.sh
 app/
 server/react
-key.json
+*key.json
+.terraform

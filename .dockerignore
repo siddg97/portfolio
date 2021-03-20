@@ -1,11 +1,15 @@
+# Folders
 infra
 .github
 .git
-.env
 server/node_modules
 client/node_modules
 server/build
 client/build
+terraform
+
+# Files
+*key.json
+.env
 LICENSE
 README.md
-terraform
