@@ -5,8 +5,6 @@ on:
         # Turning off staging for now...
         # branches:
         #   - master
-        tags:
-            - v\d+\.\d+\.\d+
 
 env:
     PROJECT_ID: portfolio-sidd
