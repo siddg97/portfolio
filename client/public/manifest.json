@@ -1,5 +1,5 @@
 {
-  "short_name": "Profile",
+  "short_name": "Portfolio Website",
   "name": "S.G. | Profile",
   "icons": [
     {
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "./static",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

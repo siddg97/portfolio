@@ -1,0 +1,16 @@
+# Folders
+infra
+.github
+.git
+server/node_modules
+client/node_modules
+server/build
+server/src/tests
+client/build
+terraform
+
+# Files
+*key.json
+.env
+LICENSE
+README.md

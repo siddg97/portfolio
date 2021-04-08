@@ -1,13 +1,10 @@
-# Logs
-logs
-*.Logs
-
-# Compiled directory and file
-client/build/
-app.yaml
-# Dependency directories
-*node_modules/
-# Other misc files
-package-lock.json
-npm-debug.log
-*.env
+node_modules
+build
+*/coverage
+env.sh
+.env
+env.sh
+app/
+server/react
+*key.json
+.terraform
