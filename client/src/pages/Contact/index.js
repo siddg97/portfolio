@@ -109,7 +109,7 @@ const Contact = () => {
         },
     ];
 
-    const renderTextField = ({ type, label, value, modifier, placeholder, ...rest }) => (
+    const renderTextField = ({ type, label, onChange, value, placeholder, ...rest }) => (
         <TextField
             color='primary'
             key={`${type}-${label}`}
@@ -119,7 +119,7 @@ const Contact = () => {
             type={type}
             label={label}
             value={value}
-            onChange={onChange(modifier)}
+            onChange={onChange}
             placeholder={placeholder}
             {...rest}
         />

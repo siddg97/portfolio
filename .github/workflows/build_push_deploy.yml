@@ -1,32 +1,26 @@
-name: Build and Deploy to Google Compute Engine
+name: CD
 
 on:
     push:
-        # Turning off staging for now...
-        # branches:
-        #   - master
+        branches:
+            - master
 
 env:
     PROJECT_ID: portfolio-sidd
 
 jobs:
-    setup-build-publish-deploy:
+    build-publish-deploy:
         name: Setup, Build, Publish, and Deploy
         runs-on: ubuntu-latest
+        env:
+          ENV: 'staging'
 
         steps:
-            - name: Set ENV
-              run: |-
-                  if [ ${GITHUB_REF##*/} = "master" ]; then
-                    echo "ENV=staging" >> $GITHUB_ENV
-                  else
-                    echo "ENV=prod" >> $GITHUB_ENV
-                  fi
             - name: Checkout
               uses: actions/checkout@v2
 
             # Setup gcloud CLI
-            - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+            - uses: google-github-actions/setup-gcloud@master
               with:
                   version: '290.0.1'
                   service_account_key: ${{ secrets.GCLOUD_SA_KEY }}
@@ -36,14 +30,17 @@ jobs:
             # helper for authentication
             - run: |-
                   gcloud --quiet auth configure-docker
+
             # Build the Docker image
             - name: Build
               run: |-
                   make build
+
             # Push the Docker image to Google Container Registry
             - name: Publish
               run: |-
                   make push
+
             - name: Deploy
               run: |-
                   make deploy

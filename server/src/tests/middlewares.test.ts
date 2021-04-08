@@ -1,6 +1,6 @@
-import { errorHandler, validateRequest } from '..';
+import { errorHandler, validateRequest } from '../middlewares';
 import { Response, Request } from 'express';
-import { BadRequestError, NotFoundError, RequestValidationError } from '../../errors';
+import { BadRequestError, NotFoundError, RequestValidationError } from '../errors';
 import { ValidationChain } from 'express-validator';
 
 const initializeMocks = () => {

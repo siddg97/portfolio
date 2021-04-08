@@ -17,13 +17,11 @@ app.use(json());
 // health check and static files
 app.get('/api/ping', (_, res) => res.send({ ping: 'pong' }));
 app.use('/api/assets', express.static(path.join(__dirname, '../assets')));
-
-app.use(express.static(path.join(__dirname, 'react')));
+app.use(express.static(path.join(__dirname, '../react')));
 
 // enable API endpoints
 configureRoutes(app);
-
-app.get('/*', (_, res) => res.sendFile(path.join(__dirname, 'react/index.html')));
+app.get('/*', (_, res) => res.sendFile(path.join(__dirname, '../react/index.html')));
 
 // 404
 app.all('*', async () => {

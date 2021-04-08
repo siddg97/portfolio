@@ -1,6 +1,6 @@
 import request from 'supertest';
 import app from '../../app';
-import { mockAxios } from '../../tests/setup';
+import { mockAxios } from '../setup';
 
 describe('/api/github/user', () => {
     const url = '/api/github/user';

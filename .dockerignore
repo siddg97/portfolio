@@ -5,6 +5,7 @@ infra
 server/node_modules
 client/node_modules
 server/build
+server/src/tests
 client/build
 terraform
 

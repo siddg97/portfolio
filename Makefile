@@ -1,7 +1,11 @@
 PROJECT_ID=portfolio-sidd
 ZONE=us-west1-a
-ENV=staging
 TF_ACTION?=plan
+
+check-env:
+ifndef ENV
+	$(error Please set ENV=[staging|prod])
+endif
 
 define get-secret
 $(shell gcloud secrets versions access latest --secret=$(1) --project=$(PROJECT_ID))
@@ -14,16 +18,16 @@ run-local:
 tf-create-bucket:
 	gsutil mb -p ${PROJECT_ID} gs://${PROJECT_ID}-terraform
 
-tf-create-workspace:
+tf-create-workspace: check-env
 	cd terraform && \
 		terraform workspace new ${ENV}
 
-tf-init:
+tf-init: check-env
 	cd terraform && \
 		terraform workspace select ${ENV} && \
 		terraform init
 
-tf-action:
+tf-action: check-env
 	cd terraform && \
 		terraform workspace select ${ENV} && \
 		terraform ${TF_ACTION} \
@@ -33,12 +37,12 @@ tf-action:
 
 SSH_STR=sgupta@portfolio-vm-$(ENV)
 
-ssh:
+ssh: check-env
 	gcloud compute ssh $(SSH_STR) \
 		--project=$(PROJECT_ID) \
 		--zone=$(ZONE)
 
-ssh-cmd:
+ssh-cmd: check-env
 	@gcloud compute ssh $(SSH_STR) \
 		--project=$(PROJECT_ID) \
 		--zone=$(ZONE) \
@@ -62,7 +66,7 @@ push:
 	docker tag $(LOCAL_TAG) $(REMOTE_TAG)
 	docker push $(REMOTE_TAG)
 
-deploy:
+deploy: check-env
 	$(MAKE) ssh-cmd CMD='docker-credential-gcr configure-docker'
 	@echo "Pulling latest docker image..."
 	$(MAKE) ssh-cmd CMD='docker pull $(REMOTE_TAG)'
