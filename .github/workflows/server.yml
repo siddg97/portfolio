@@ -3,7 +3,7 @@ name: Server CI
 on:
     push:
         paths:
-            - 'server/**.js'
+            - 'server/**.ts'
             - '.github/workflows/server.yml'
 
 jobs:
