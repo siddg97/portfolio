@@ -46,13 +46,13 @@ const App = ({ classes }) => {
         <ThemeProvider theme={responsiveFontSizes(theme)}>
             <CssBaseline />
             <Root themeProviderOmitted scheme={scheme}>
-                {({ state: { sidebar } }) => (
+                {({ state: { sidebar }, setOpen }) => (
                     <div className={classes.root}>
                         <Header
                             darkThemeToggle={darkThemeToggle}
                             setDarkThemeToggle={setDarkThemeToggle}
                         />
-                        <Sidebar sidebar={sidebar} />
+                        <Sidebar sidebar={sidebar} setOpen={setOpen} />
                         <Content>
                             <Switch>{routes.map(renderRoute)}</Switch>
                         </Content>

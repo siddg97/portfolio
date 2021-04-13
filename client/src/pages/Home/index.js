@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import {
@@ -17,6 +17,7 @@ import {
     linkToCyberSec,
     linkToDevOps,
     linkToSFU,
+    linkToTeradici,
     linkToVancouver,
     linkToWebDev,
 } from 'constants/index';
@@ -55,14 +56,18 @@ const Home = () => {
 
     const introTitle = 'Siddharth Gupta';
     const introOverline = 'welcome to my corner of the internet';
-    const introSubtitle = <b>Student @ {linkToSFU}</b>;
+    const introSubtitle = <b>Associate Frontend Developer @{linkToTeradici}</b>;
     const introContent = (
         <>
-            <Typography indent={'small'}>
-                Hello! I&apos;m <b>Siddharth Gupta</b>, I am an undergraduate student in
-                my final year of studies at {linkToSFU}, {linkToVancouver}. I love
-                programming in my free time and have a knack for keeping up with the
-                latest technologies. My area of interests include:
+            <Typography gutterBottom>
+                Hello! I&apos;m <b>Siddharth Gupta</b>, I am currently an undergraduate
+                student in my final year of studies at {linkToSFU}, {linkToVancouver}. My
+                expected graduation date is <b>December, 2021</b>. I enjoy building
+                software in both individual and team environments. My passion is fueled by
+                my understanding of technologies in the field of computing science and
+                fascination of how two bits 0 and 1 have transformed technology and
+                software today. I love programming in my free time and have a knack for
+                keeping up with the latest technologies. My area of interests include:
             </Typography>
             <Typography component={'div'}>
                 <ul>
@@ -106,6 +111,10 @@ const Home = () => {
             </GridN>
         </BaseCard>
     );
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <GridN>

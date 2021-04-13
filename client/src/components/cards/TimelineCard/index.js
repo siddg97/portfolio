@@ -4,8 +4,6 @@ import { Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import GridN from 'components/layout/GridN/index';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
@@ -18,18 +16,20 @@ const TimelineCard = ({ title, org, accomps, mobile }) => {
     const classes = useStyles();
     const header = (
         <>
-            <Typography weight={'bold'} color='secondary' gutterBottom>
+            <Typography weight={'bold'} color='secondary' variant='h6' gutterBottom>
                 {title}
             </Typography>
         </>
     );
     const content = (
         <List dense className={classes.list}>
-            {accomps.map((acc, i) => (
-                <ListItem key={`${org}-accomps-${i}`}>
-                    <ListItemText primary={`- ${acc}`} />
-                </ListItem>
-            ))}
+            <ul>
+                {accomps.map((acc, i) => (
+                    <li key={`${org}-accomps-${i}`}>
+                        <Typography variant='body1'>{acc}</Typography>
+                    </li>
+                ))}
+            </ul>
         </List>
     );
 
