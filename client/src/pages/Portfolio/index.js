@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -72,6 +72,10 @@ const Portfolio = () => {
     const theme = useTheme();
     const smUp = useMediaQuery(theme.breakpoints.up('sm'));
     const classes = useStyles();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const renderTimelineItem = (
         { title, org, from, to, current, accomps, location },

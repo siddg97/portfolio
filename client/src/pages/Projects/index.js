@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GridN from 'components/layout/GridN/index';
 import SectionCard from 'components/cards/SectionCard/index';
 import { makeStyles } from '@material-ui/core/styles';
@@ -50,6 +50,10 @@ const Projects = () => {
             ))}
         </GridN>
     );
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <GridN>

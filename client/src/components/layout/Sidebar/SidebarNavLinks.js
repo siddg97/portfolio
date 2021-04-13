@@ -9,8 +9,8 @@ import { routes } from 'nav.config';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const SidebarLink = ({ route }) => {
-    const { exact, primaryText, path, icon, onClick } = route;
+const SidebarLink = ({ route, onClick }) => {
+    const { exact, primaryText, path, icon } = route;
     return (
         <ListItem
             button
@@ -33,6 +33,7 @@ const SidebarLink = ({ route }) => {
 
 SidebarLink.propTypes = {
     route: PropTypes.object.isRequired,
+    onClick: PropTypes.func,
 };
 
 const sanitizeRoutesList = (routes) => {
@@ -47,21 +48,32 @@ const sanitizeRoutesList = (routes) => {
     return { routesWithoutContact, contactRoute };
 };
 
-const SidebarNavLinks = () => {
+const SidebarNavLinks = ({ setOpen }) => {
     const { routesWithoutContact, contactRoute } = sanitizeRoutesList(routes);
+    const handleNavLinkClick = () => {
+        setOpen('primarySidebar', false);
+    };
     return (
         <List>
             {routesWithoutContact.map((route) => (
-                <SidebarLink key={route.path} route={route} />
+                <SidebarLink
+                    key={route.path}
+                    route={route}
+                    onClick={handleNavLinkClick}
+                />
             ))}
             <Divider style={{ margin: '12px 0' }} />
-            <SidebarLink route={contactRoute} />
+            <SidebarLink route={contactRoute} onClick={handleNavLinkClick} />
         </List>
     );
 };
 
 SidebarNavLinks.propTypes = {
-    // onClickItem: PropTypes.func.isRequired,
+    setOpen: PropTypes.func,
+};
+
+SidebarNavLinks.defaultProps = {
+    setOpen: () => {},
 };
 
 export default SidebarNavLinks;

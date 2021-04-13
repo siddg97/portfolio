@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import GridN from 'components/layout/GridN/index';
@@ -31,6 +31,10 @@ const Contact = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
     const onChange = (modifier) => ({ target: { value } }) => modifier(value);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const sendMailOpts = {
         onSuccess() {

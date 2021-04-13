@@ -24,12 +24,12 @@ const DrawerSidebar = getDrawerSidebar(styled);
 const SidebarContent = getSidebarContent(styled);
 const CollapseBtn = getCollapseBtn(styled);
 
-const Sidebar = ({ classes, sidebar }) => {
+const Sidebar = ({ classes, sidebar, setOpen }) => {
     return (
         <DrawerSidebar classes={{ paper: classes.drawerBg }} sidebarId='primarySidebar'>
             <SidebarContent>
                 <SidebarHeader collapsed={sidebar.primarySidebar.collapsed} />
-                <SidebarNavLinks />
+                <SidebarNavLinks setOpen={setOpen} />
             </SidebarContent>
             <CollapseBtn />
         </DrawerSidebar>
@@ -39,6 +39,7 @@ const Sidebar = ({ classes, sidebar }) => {
 Sidebar.propTypes = {
     classes: PropTypes.object.isRequired,
     sidebar: PropTypes.object.isRequired,
+    setOpen: PropTypes.func,
 };
 
 export default withStyles(styles)(Sidebar);
