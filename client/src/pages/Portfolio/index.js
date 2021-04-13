@@ -29,7 +29,6 @@ const items = [
         from: 'Jan 2021', // TODO: Convert to time stamps
         to: 'Aug 2021', // TODO: Convert to time stamps
         location: 'Burnaby, BC',
-        current: true,
         accomps: [
             'Developed UI features for admin panel used to manage remote desktops in public/private cloud',
             'Follow CI/CD concepts to integrate new features whilst maintaining quality standards',
@@ -46,7 +45,6 @@ const items = [
         from: 'Jan 2020', // TODO: Convert to time stamps
         to: 'Aug 2020', // TODO: Convert to time stamps
         location: 'Burnaby, BC',
-        current: false,
         accomps: [
             'Developed standalone programs using C and Python for acoustic analysis',
             'Optimized existing tools to achieve over 40% performance gains',
@@ -63,8 +61,11 @@ const items = [
         from: 'Jan 2018', // TODO: Convert to time stamps
         to: 'Dec 2021', // TODO: Convert to time stamps
         location: 'Burnaby, BC',
-        current: true,
-        accomps: ['Bachelors of Science', 'Majoring in Computing Sciences'],
+        accomps: [
+            'Bachelors of Science',
+            'Majoring in Computing Sciences',
+            'Co-op Designation',
+        ],
     },
 ];
 
@@ -77,15 +78,10 @@ const Portfolio = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const renderTimelineItem = (
-        { title, org, from, to, current, accomps, location },
-        i
-    ) => (
+    const renderTimelineItem = ({ title, org, from, to, accomps, location }, i) => (
         <TimelineItem key={`timeline-${org}`}>
             <TimelineOppositeContent className={classes.oppositeContent}>
-                <Typography variant={'overline'}>
-                    {`${from} - ${current ? 'Present' : to}`}
-                </Typography>
+                <Typography variant={'overline'}>{`${from} - ${to}`}</Typography>
                 <Typography
                     weight={'bold'}
                     variant={'subtitle1'}

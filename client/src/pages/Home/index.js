@@ -32,13 +32,6 @@ const Home = () => {
 
     const charts = [
         {
-            title: 'Top Repositories',
-            status: topReposStatus,
-            chartId: 'topReposChart',
-            chartData: topReposData,
-            chartFn: initRepoChart,
-        },
-        {
             title: 'Repos Per Language',
             status: langStatsStatus,
             chartId: 'langStatsChart',
@@ -51,6 +44,13 @@ const Home = () => {
             chartId: 'langStarsChart',
             chartData: langStarsData,
             chartFn: initStarChart,
+        },
+        {
+            title: 'Top Repositories',
+            status: topReposStatus,
+            chartId: 'topReposChart',
+            chartData: topReposData,
+            chartFn: initRepoChart,
         },
     ];
 
