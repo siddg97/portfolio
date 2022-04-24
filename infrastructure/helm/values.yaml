@@ -24,9 +24,9 @@ oauth:
 # Deployment configs
 # --------------------------------------------------------
 
-react:
-  name: react
-  repository: localhost:5000/react
+website:
+  name: website
+  repository: localhost:5000/website
   tag: latest
   port: 3000
 

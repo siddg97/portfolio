@@ -15,9 +15,9 @@ build:
         docker:
           dockerfile: Dockerfile
 
-      # React
-      - image: localhost:5000/react
-        context: ./react
+      # Website
+      - image: localhost:5000/website
+        context: ./website
         docker:
           dockerfile: Dockerfile
           target: dev
@@ -43,7 +43,7 @@ deploy:
         upgradeOnChange: true
         artifactOverrides:
           backend: localhost:5000/backend
-          react: localhost:5000/react
+          website: localhost:5000/website
           gateway: localhost:5000/gateway
         imageStrategy:
           helm: {}

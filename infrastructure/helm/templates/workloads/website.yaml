@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "srv.svc.name" .Values.website }}
+spec:
+  selector:
+    {{- include "srv.labels" .Values.website | indent 4 }}
+    {{- include "resource.labels" . | indent 4 }}
+  ports:
+    - name: website
+      protocol: TCP
+      port: {{ .Values.website.port }}
+      targetPort: {{ .Values.website.port }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "svc.depl.name" .Values.website }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "srv.labels" .Values.website | indent 6 }}
+      {{- include "resource.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "srv.labels" .Values.website | indent 8 }}
+        {{- include "resource.labels" . | indent 8 }}
+    spec:
+      containers:
+        - name: website
+          {{- include "srv.image" .Values.website | indent 10 }}
+          {{- include "srv.probes" .Values.website | indent 10 }}
+          ports:
+            - containerPort: {{ .Values.website.port }}
