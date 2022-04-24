@@ -1,0 +1,43 @@
+# Global config
+# --------------------------------------------------------
+global:
+  local: true
+  env: testing
+  hostname: localhost:6000
+  logLevel: debug
+  traceEnabled: true
+  traceProbability: 1
+  traceHost: jaeger-collector
+  adminEmail: sg8797@gmail.com
+
+mail:
+  host: smtp.ethereal.email
+  port: !!str 587
+  from: sg8797@gmail.com
+  user: elmore.gottlieb@ethereal.email
+  password: qW4Nyz7RWCHrzA6vNs
+
+oauth:
+  google_client_id:
+  google_client_secret:
+
+# Deployment configs
+# --------------------------------------------------------
+
+react:
+  name: react
+  repository: localhost:5000/react
+  tag: latest
+  port: 3000
+
+backend:
+  name: backend
+  repository: localhost:5000/backend
+  tag: latest
+  port: 3000
+
+gateway:
+  name: gateway
+  repository: localhost:5000/gateway
+  tag: latest
+  port: 3000

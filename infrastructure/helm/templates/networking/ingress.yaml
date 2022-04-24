@@ -1,0 +1,47 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio-ingress
+  annotations:
+    kubernetes.io/ingress.class:  nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    {{- if eq .Values.global.env "prod" }}
+    service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    {{- end }}
+
+spec:
+  {{- if eq .Values.global.env "prod" }}
+  tls:
+  - hosts:
+    - {{  .Values.global.hostname }}
+    - "www.{{  .Values.global.hostname }}"
+    secretName: "{{ .Values.global.env }}-tls"
+  {{- end }}
+  rules:
+  - {{ if eq .Values.global.env "prod" }}
+    host: {{  .Values.global.hostname }}
+    {{ end -}}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "srv.svc.name" .Values.gateway }}
+            port:
+              number: {{ .Values.gateway.port }}
+  - {{ if eq .Values.global.env "prod" }}
+    host: "www.{{  .Values.global.hostname }}"
+    {{ end -}}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "srv.svc.name" .Values.gateway }}
+            port:
+              number: {{ .Values.gateway.port }}

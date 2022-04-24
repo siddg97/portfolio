@@ -1,0 +1,49 @@
+apiVersion: skaffold/v2beta6
+kind: Config
+
+build:
+  local:
+    push: true
+  tagPolicy:
+    sha256: {}
+  insecureRegistries:
+    - localhost:5000
+  artifacts:
+      # Backend
+      - image: localhost:5000/backend
+        context: ./backend
+        docker:
+          dockerfile: Dockerfile
+
+      # React
+      - image: localhost:5000/react
+        context: ./react
+        docker:
+          dockerfile: Dockerfile
+          target: dev
+        sync:
+          infer:
+            - 'src/**/*.tsx'
+            - 'src/**/*.ts'
+            - 'src/**/*.jsx'
+            - 'src/**/*.js'
+
+      # Gateway
+      - image: localhost:5000/gateway
+        context: ./gateway
+        docker:
+          dockerfile: Dockerfile
+
+deploy:
+  helm:
+    releases:
+      - name: portfolio
+        chartPath: ./infrastructure/helm
+        skipBuildDependencies: true
+        upgradeOnChange: true
+        artifactOverrides:
+          backend: localhost:5000/backend
+          react: localhost:5000/react
+          gateway: localhost:5000/gateway
+        imageStrategy:
+          helm: {}

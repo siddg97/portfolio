@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "srv.svc.name" .Values.gateway }}
+spec:
+  selector:
+    {{- include "srv.labels" .Values.gateway | indent 4 }}
+    {{- include "resource.labels" . | indent 4 }}
+  ports:
+    - name: gateway
+      protocol: TCP
+      port: {{ .Values.gateway.port }}
+      targetPort: {{ .Values.gateway.port }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "svc.depl.name" .Values.gateway }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "srv.labels" .Values.gateway | indent 6 }}
+      {{- include "resource.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "srv.labels" .Values.gateway | indent 8 }}
+        {{- include "resource.labels" . | indent 8 }}
+    spec:
+      containers:
+        - name: gateway
+          {{- include "srv.image" .Values.gateway | indent 10 }}
+          ports:
+            - containerPort: {{ .Values.gateway.port }}
+          env:
+            {{- include "env.global" . | indent 12 }}
+            - name: REACT_HOST
+              value: {{ include "srv.svc.hostname" .Values.react }}
+            - name: BAACKEND_HOST
+              value: {{ include "srv.svc.hostname" .Values.backend }}

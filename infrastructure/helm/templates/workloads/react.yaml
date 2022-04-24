@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "srv.svc.name" .Values.react }}
+spec:
+  selector:
+    {{- include "srv.labels" .Values.react | indent 4 }}
+    {{- include "resource.labels" . | indent 4 }}
+  ports:
+    - name: react
+      protocol: TCP
+      port: {{ .Values.react.port }}
+      targetPort: {{ .Values.react.port }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "svc.depl.name" .Values.react }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "srv.labels" .Values.react | indent 6 }}
+      {{- include "resource.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "srv.labels" .Values.react | indent 8 }}
+        {{- include "resource.labels" . | indent 8 }}
+    spec:
+      containers:
+        - name: react
+          {{- include "srv.image" .Values.react | indent 10 }}
+          {{- include "srv.probes" .Values.react | indent 10 }}
+          ports:
+            - containerPort: {{ .Values.react.port }}

@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "srv.svc.name" .Values.backend }}
+spec:
+  selector:
+    {{- include "srv.labels" .Values.backend | indent 4 }}
+    {{- include "resource.labels" . | indent 4 }}
+  ports:
+    - name: backend
+      protocol: TCP
+      port: {{ .Values.backend.port }}
+      targetPort: {{ .Values.backend.port }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "svc.depl.name" .Values.backend }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "srv.labels" .Values.backend | indent 6 }}
+      {{- include "resource.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "srv.labels" .Values.backend | indent 8 }}
+        {{- include "resource.labels" . | indent 8 }}
+    spec:
+      containers:
+        - name: backend
+          {{- include "srv.image" .Values.backend | indent 10 }}
+          ports:
+            - containerPort: {{ .Values.backend.port }}
+          env:
+            {{- include "env.global" . | indent 12 }}
