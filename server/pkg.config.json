@@ -1,6 +1,0 @@
-{
-    "scripts": "src/**/*.js",
-    "assets": ["assets/**/*", "react/**/*"],
-    "targets": ["node14-linux"],
-    "outputPath": "/app/build"
-}
