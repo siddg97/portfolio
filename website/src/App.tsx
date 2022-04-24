@@ -1,7 +1,31 @@
-import { Button } from '@mantine/core';
+import {
+  MantineProvider,
+  Button,
+  ColorSchemeProvider,
+  ColorScheme,
+} from '@mantine/core';
+import { useState } from 'react';
+import AppFrame from 'src/components/AppFrame/AppFrame';
 
 function App() {
-  return <Button>Hello world!</Button>;
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('dark');
+
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(
+      value || (colorScheme === 'dark' ? 'light' : 'dark')
+    );
+  return (
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider theme={{ colorScheme }} withGlobalStyles>
+        <AppFrame>
+          <Button>Hello world!</Button>
+        </AppFrame>
+      </MantineProvider>
+    </ColorSchemeProvider>
+  );
 }
 
 export default App;
