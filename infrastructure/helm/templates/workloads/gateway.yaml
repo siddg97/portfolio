@@ -35,7 +35,7 @@ spec:
             - containerPort: {{ .Values.gateway.port }}
           env:
             {{- include "env.global" . | indent 12 }}
-            - name: REACT_HOST
-              value: {{ include "srv.svc.hostname" .Values.react }}
-            - name: BAACKEND_HOST
+            - name: WEBSITE_HOST
+              value: {{ include "srv.svc.hostname" .Values.website }}
+            - name: BACKEND_HOST
               value: {{ include "srv.svc.hostname" .Values.backend }}

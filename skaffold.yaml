@@ -9,11 +9,11 @@ build:
   insecureRegistries:
     - localhost:5000
   artifacts:
-      # Backend
-      - image: localhost:5000/backend
-        context: ./backend
-        docker:
-          dockerfile: Dockerfile
+      # # Backend
+      # - image: localhost:5000/backend
+      #   context: ./backend
+      #   docker:
+      #     dockerfile: Dockerfile
 
       # Website
       - image: localhost:5000/website
@@ -42,7 +42,7 @@ deploy:
         skipBuildDependencies: true
         upgradeOnChange: true
         artifactOverrides:
-          backend: localhost:5000/backend
+          # backend: localhost:5000/backend
           website: localhost:5000/website
           gateway: localhost:5000/gateway
         imageStrategy:

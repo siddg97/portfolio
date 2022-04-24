@@ -1,0 +1,33 @@
+worker_processes auto;
+
+events {
+    # Maximum number of ALL (client/proxied servers) simultaneous connections that can be opened by a worker process.
+    # 512 default
+    worker_connections 512;
+}
+
+http {
+    lua_package_path ';;/usr/local/openresty/nginx/conf/lua_src/?.lua;;';
+
+    include       mime.types;
+    default_type  application/json;
+
+    resolver local=on;
+
+    server {
+        # This is a public server which includes all the exposed endpoints
+        lua_code_cache ${LUA_CACHE};
+        listen ${PORT};
+
+#        location /api  {
+#            include headers.conf;
+#            rewrite  ^/api/(.*) /$1 break;
+#            proxy_pass http://${BACKEND_HOST};
+#        }
+
+        location / {
+            include headers.conf;
+            proxy_pass http://${WEBSITE_HOST};        }
+            ${WEBSITE_DEV_MODE}
+    }
+}

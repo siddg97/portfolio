@@ -13,3 +13,12 @@
 - name: TRACE_HOST
   value: {{ .Values.global.traceHost | quote }}
 {{- end }}
+
+{{/* react dev env vars */}}
+{{- define "env.react.dev" }}
+{{- if .Values.global.local }}
+env:
+  - name: WDS_SOCKET_PORT
+    value: '6001'
+{{- end }}
+{{- end }}

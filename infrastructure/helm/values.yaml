@@ -3,7 +3,7 @@
 global:
   local: true
   env: testing
-  hostname: localhost:6000
+  hostname: localhost
   logLevel: debug
   traceEnabled: true
   traceProbability: 1
@@ -12,7 +12,7 @@ global:
 
 mail:
   host: smtp.ethereal.email
-  port: !!str 587
+  port: '587'
   from: sg8797@gmail.com
   user: elmore.gottlieb@ethereal.email
   password: qW4Nyz7RWCHrzA6vNs

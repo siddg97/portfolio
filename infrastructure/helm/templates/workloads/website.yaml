@@ -31,6 +31,6 @@ spec:
       containers:
         - name: website
           {{- include "srv.image" .Values.website | indent 10 }}
-          {{- include "srv.probes" .Values.website | indent 10 }}
           ports:
             - containerPort: {{ .Values.website.port }}
+          {{- include "env.react.dev" . | indent 10 }}

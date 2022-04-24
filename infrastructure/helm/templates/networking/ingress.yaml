@@ -13,6 +13,7 @@ metadata:
     {{- end }}
 
 spec:
+
   {{- if eq .Values.global.env "prod" }}
   tls:
   - hosts:
@@ -20,6 +21,7 @@ spec:
     - "www.{{  .Values.global.hostname }}"
     secretName: "{{ .Values.global.env }}-tls"
   {{- end }}
+
   rules:
   - {{ if eq .Values.global.env "prod" }}
     host: {{  .Values.global.hostname }}
@@ -33,9 +35,8 @@ spec:
             name: {{ include "srv.svc.name" .Values.gateway }}
             port:
               number: {{ .Values.gateway.port }}
-  - {{ if eq .Values.global.env "prod" }}
-    host: "www.{{  .Values.global.hostname }}"
-    {{ end -}}
+{{ if eq .Values.global.env "prod" }}
+  - host: "www.{{  .Values.global.hostname }}"
     http:
       paths:
       - path: /
@@ -45,3 +46,4 @@ spec:
             name: {{ include "srv.svc.name" .Values.gateway }}
             port:
               number: {{ .Values.gateway.port }}
+{{ end -}}
