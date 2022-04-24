@@ -5,30 +5,52 @@ import {
   Text,
   useMantineColorScheme,
 } from '@mantine/core';
-import { tNavLinkProps } from './types';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-function NavLink({ icon, color, label }: tNavLinkProps) {
+export type NavLinkProps = {
+  icon: React.ReactNode;
+  color: string;
+  label: string;
+  path: string;
+};
+
+function NavLink({ icon, color, label, path }: NavLinkProps) {
   const { colorScheme } = useMantineColorScheme();
+
+  const resolved = useResolvedPath(path);
+  const match = useMatch({ path: resolved.pathname, end: true });
 
   return (
     <UnstyledButton
-      sx={theme => ({
-        display: 'block',
-        width: '100%',
-        padding: theme.spacing.xs,
-        borderRadius: theme.radius.sm,
-        color:
+      component={Link}
+      to={path}
+      sx={theme => {
+        const hoverBackground =
           theme.colorScheme === 'dark'
-            ? theme.colors.dark[0]
-            : theme.black,
+            ? theme.colors.dark[6]
+            : theme.colors.gray[0];
 
-        '&:hover': {
-          backgroundColor:
+        const activeBackground =
+          theme.colorScheme === 'dark'
+            ? theme.colors.dark[5]
+            : theme.colors.gray[2];
+
+        return {
+          display: 'block',
+          width: '100%',
+          padding: theme.spacing.xs,
+          borderRadius: theme.radius.sm,
+          color:
             theme.colorScheme === 'dark'
-              ? theme.colors.dark[6]
-              : theme.colors.gray[0],
-        },
-      })}
+              ? theme.colors.dark[0]
+              : theme.black,
+          backgroundColor: match ? activeBackground : 'transparent',
+
+          '&:hover': {
+            backgroundColor: match ? activeBackground : hoverBackground,
+          },
+        };
+      }}
     >
       <Group>
         <ThemeIcon

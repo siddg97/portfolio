@@ -21,7 +21,6 @@ import {
   ActionIcon,
   Title,
 } from '@mantine/core';
-import { tFrameProps } from './types';
 import NavLink from './NavLink';
 import { User } from './User';
 
@@ -30,30 +29,39 @@ const navLinks = [
     icon: <UserCircle size={24} />,
     color: 'red',
     label: 'About Me',
+    path: '/about'
   },
   {
     icon: <Award size={24} />,
     color: 'blue',
     label: 'Experience',
+    path: '/experience'
   },
   {
     icon: <Code size={24} />,
     color: 'green',
     label: 'Projects',
+    path: '/projects'
   },
   {
     icon: <Stars size={24} />,
     color: 'yellow',
     label: 'Skills',
+    path: '/skills'
   },
   {
     icon: <Messages size={24} />,
     color: 'grape',
     label: 'Contact Me',
+    path: '/contact'
   },
 ];
 
-export default function AppFrame({ children }: tFrameProps) {
+type AppFrameProps = {
+  children: React.ReactNode;
+};
+
+export default function AppFrame({ children }: AppFrameProps) {
   const theme = useMantineTheme();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const [opened, setOpened] = useState(false);
