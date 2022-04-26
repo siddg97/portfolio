@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "ts-node src/index.ts",
     "test": "jest --watchAll --no-cache --passWithNoTests",
     "test:ci": "jest --watchAll=false --no-cache --passWithNoTests",
     "coverage": "jest --collect-coverage",
