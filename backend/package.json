@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "test": "jest --watchAll --no-cache --passWithNoTests",
+    "test:ci": "jest --watchAll=false --no-cache --passWithNoTests",
+    "coverage": "jest --collect-coverage",
+    "lint": "eslint --ext ts --color -c .eslintrc.js src/",
+    "build": "tsc"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^26.0.19",
+    "@types/morgan": "^1.9.3",
+    "@types/nodemailer": "^6.4.4",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^27.4.0",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.4",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.0",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.14.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.3",
+    "winston": "^3.7.2"
+  }
+}

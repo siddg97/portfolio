@@ -19,11 +19,11 @@ http {
         lua_code_cache ${LUA_CACHE};
         listen ${PORT};
 
-#        location /api  {
-#            include headers.conf;
-#            rewrite  ^/api/(.*) /$1 break;
-#            proxy_pass http://${BACKEND_HOST};
-#        }
+        location /api  {
+            include headers.conf;
+            rewrite  ^/api/(.*) /$1 break;
+            proxy_pass http://${BACKEND_HOST};
+        }
 
         location / {
             include headers.conf;

@@ -9,11 +9,11 @@ build:
   insecureRegistries:
     - localhost:5000
   artifacts:
-      # # Backend
-      # - image: localhost:5000/backend
-      #   context: ./backend
-      #   docker:
-      #     dockerfile: Dockerfile
+      # Backend
+      - image: localhost:5000/backend
+        context: ./backend
+        docker:
+          dockerfile: Dockerfile
 
       # Website
       - image: localhost:5000/website
