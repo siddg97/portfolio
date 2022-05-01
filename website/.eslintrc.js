@@ -43,5 +43,9 @@ module.exports = {
     'object-curly-newline': ['warn', { consistent: true }],
     'operator-linebreak': 'off',
     'import/extensions': 'off',
+    'import/no-unresolved': [
+      2,
+      { ignore: ['.png$', '.webp$', '.jpg$'] },
+    ],
   },
 };

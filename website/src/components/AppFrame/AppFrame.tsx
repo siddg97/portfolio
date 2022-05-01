@@ -20,6 +20,7 @@ import {
   Group,
   ActionIcon,
   Title,
+  Container,
 } from '@mantine/core';
 import NavLink from './NavLink';
 import User from './User';
@@ -68,17 +69,22 @@ export default function AppFrame({ children }: AppFrameProps) {
 
   const header = (
     <Header height={70} px='md'>
-      <MediaQuery largerThan='sm' styles={{ display: 'none' }}>
-        <Burger
-          opened={opened}
-          onClick={() => setOpened(o => !o)}
-          size='sm'
-          color={theme.colors.gray[6]}
-          mr='xl'
-        />
-      </MediaQuery>
-      <Group sx={{ height: '100%' }} position='apart'>
-        <Title order={1}>Siddharth Gupta</Title>
+      <Group sx={{ height: 70 }} position='left'>
+        <MediaQuery largerThan='sm' styles={{ display: 'none' }}>
+          <Burger
+            opened={opened}
+            onClick={() => setOpened(o => !o)}
+            size='sm'
+            color={theme.colors.gray[6]}
+          />
+        </MediaQuery>
+
+        <MediaQuery smallerThan='xs' styles={{ display: 'none' }}>
+          <Title order={1}>Siddharth Gupta</Title>
+        </MediaQuery>
+
+        <Container sx={{ flexGrow: 1 }} />
+
         <ActionIcon
           variant='default'
           onClick={() => toggleColorScheme()}
@@ -121,6 +127,10 @@ export default function AppFrame({ children }: AppFrameProps) {
             theme.colorScheme === 'dark'
               ? theme.colors.dark[8]
               : theme.colors.gray[0],
+          // borderColor:
+          //   theme.colorScheme === 'dark'
+          //     ? theme.colors.gray[8]
+          //     : theme.colors.dark[8],
         },
       }}
       navbarOffsetBreakpoint='sm'
