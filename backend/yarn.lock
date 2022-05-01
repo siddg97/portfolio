@@ -717,7 +717,7 @@
 
 "@types/nodemailer@^6.4.4":
   version "6.4.4"
-  resolved "https://registry.npmjs.org/@types/nodemailer/-/nodemailer-6.4.4.tgz"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.4.tgz#c265f7e7a51df587597b3a49a023acaf0c741f4b"
   integrity sha512-Ksw4t7iliXeYGvIQcSIgWQ5BLuC/mljIEbjf615svhZL10PE9t+ei8O9gDaD3FPCasUJn9KTLwz2JFJyiiyuqw==
   dependencies:
     "@types/node" "*"
@@ -1633,6 +1633,11 @@ escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
+
+escape-html@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
+  integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
 escape-html@~1.0.3:
   version "1.0.3"
@@ -3243,10 +3248,10 @@ node-releases@^2.0.3:
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.3.tgz"
   integrity sha512-maHFz6OLqYxz+VQyCAtA3PTX4UP/53pa05fyDNc9CwjvJ0yEh6+xBwKsgCxMNhS8taUKBFYxfuiaD9U/55iFaw==
 
-nodemailer@^6.7.3:
-  version "6.7.3"
-  resolved "https://registry.npmjs.org/nodemailer/-/nodemailer-6.7.3.tgz"
-  integrity sha512-KUdDsspqx89sD4UUyUKzdlUOper3hRkDVkrKh/89G+d9WKsU5ox51NWS4tB1XR5dPUdR4SP0E3molyEfOvSa3g==
+nodemailer@^6.7.4:
+  version "6.7.4"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.4.tgz#28771bda3dda8f2dad1912aca0f8727ce7f09d89"
+  integrity sha512-TBSS3qS8WG45ycUwEvEA/3UM1o3sLz9jUl4TPUKPz4ImWWM6UgRCb5pLO+HOouDKEj57yNLOrzQlO8+9IjWZoA==
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"

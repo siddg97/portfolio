@@ -35,3 +35,4 @@ spec:
             - containerPort: {{ .Values.backend.port }}
           env:
             {{- include "env.global" . | indent 12 }}
+            {{- include "env.mail" . | indent 12 }}

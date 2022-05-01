@@ -3,6 +3,7 @@ import 'express-async-errors';
 import { json } from 'body-parser';
 import { NotFoundError } from './errors';
 import { errorHandler } from './middlewares';
+import configureRoutes from './routes';
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.set('trust proxy', true);
 app.use(json());
 
 app.get('/api/ping', (_, res) => res.send({ ping: 'pong' }));
+
+configureRoutes(app);
 
 // 404
 app.all('*', async () => {

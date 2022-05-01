@@ -22,38 +22,38 @@ import {
   Title,
 } from '@mantine/core';
 import NavLink from './NavLink';
-import { User } from './User';
+import User from './User';
 
 const navLinks = [
   {
     icon: <UserCircle size={24} />,
     color: 'red',
     label: 'About Me',
-    path: '/about'
+    path: '/about',
   },
   {
     icon: <Award size={24} />,
     color: 'blue',
     label: 'Experience',
-    path: '/experience'
+    path: '/experience',
   },
   {
     icon: <Code size={24} />,
     color: 'green',
     label: 'Projects',
-    path: '/projects'
+    path: '/projects',
   },
   {
     icon: <Stars size={24} />,
     color: 'yellow',
     label: 'Skills',
-    path: '/skills'
+    path: '/skills',
   },
   {
     icon: <Messages size={24} />,
     color: 'grape',
     label: 'Contact Me',
-    path: '/contact'
+    path: '/contact',
   },
 ];
 

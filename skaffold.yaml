@@ -15,6 +15,9 @@ build:
         docker:
           dockerfile: Dockerfile
           target: dev
+        sync:
+          infer:
+            - 'src/**/*.ts'
 
       # Website
       - image: localhost:5000/website
@@ -43,7 +46,7 @@ deploy:
         skipBuildDependencies: true
         upgradeOnChange: true
         artifactOverrides:
-          # backend: localhost:5000/backend
+          backend: localhost:5000/backend
           website: localhost:5000/website
           gateway: localhost:5000/gateway
         imageStrategy:

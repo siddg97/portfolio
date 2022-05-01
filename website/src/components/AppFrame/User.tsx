@@ -8,7 +8,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 
-export function User() {
+export default function User() {
   const theme = useMantineTheme();
   return (
     <Box

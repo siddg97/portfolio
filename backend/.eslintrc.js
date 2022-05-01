@@ -28,6 +28,8 @@ module.exports = {
       'warn',
       { devDependencies: ['!./src/**/*.test.ts'] },
     ],
+    'no-underscore-dangle': 'off',
+    'object-curly-newline': ['warn', { consistent: true }],
     'lines-between-class-members': 'off',
     'no-unused-vars': ['off', { args: 'after-used' }],
     '@typescript-eslint/no-unused-vars': 'off',

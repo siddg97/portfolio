@@ -13,9 +13,9 @@ global:
 mail:
   host: smtp.ethereal.email
   port: '587'
-  from: sg8797@gmail.com
   user: elmore.gottlieb@ethereal.email
   password: qW4Nyz7RWCHrzA6vNs
+  sender: sg8797@gmail.com
 
 oauth:
   google_client_id:
