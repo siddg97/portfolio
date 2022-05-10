@@ -29,7 +29,7 @@ export const routes = [
   },
 ];
 
-const Router = () => {
+function Router() {
   return (
     <Suspense
       fallback={
@@ -56,6 +56,6 @@ const Router = () => {
       </Routes>
     </Suspense>
   );
-};
+}
 
 export default Router;

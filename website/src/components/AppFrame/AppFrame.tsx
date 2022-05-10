@@ -22,6 +22,7 @@ import {
   Title,
   Container,
 } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
 import NavLink from './NavLink';
 import User from './User';
 
@@ -64,6 +65,7 @@ type AppFrameProps = {
 
 export default function AppFrame({ children }: AppFrameProps) {
   const theme = useMantineTheme();
+  const navigate = useNavigate();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const [opened, setOpened] = useState(false);
 
@@ -80,7 +82,15 @@ export default function AppFrame({ children }: AppFrameProps) {
         </MediaQuery>
 
         <MediaQuery smallerThan='xs' styles={{ display: 'none' }}>
-          <Title order={1}>Siddharth Gupta</Title>
+          <Title
+            sx={{
+              cursor: 'pointer',
+            }}
+            onClick={() => navigate('/')}
+            order={1}
+          >
+            Siddharth Gupta
+          </Title>
         </MediaQuery>
 
         <Container sx={{ flexGrow: 1 }} />
