@@ -2,3 +2,28 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+@font-face {
+  font-family: 'Fira-Light';
+  src: url(./fonts/FiraSans-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Fira-Medium';
+  src: url(./fonts/FiraSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Fira-SemiBold';
+  src: url(./fonts/FiraSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Fira-Bold';
+  src: url(./fonts/FiraSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Fira-ExtraBold';
+  src: url(./fonts/FiraSans-ExtraBold.ttf);
+}

@@ -6,30 +6,21 @@ export const routes = [
   {
     path: '/',
     component: lazy(() => import('src/pages/Home')),
+    name: 'About',
   },
   {
-    path: '/about',
-    component: lazy(() => import('src/pages/About')),
-  },
-  {
-    path: '/experience',
-    component: lazy(() => import('src/pages/Experience')),
-  },
-  {
-    path: '/projects',
-    component: lazy(() => import('src/pages/Projects')),
-  },
-  {
-    path: '/skills',
-    component: lazy(() => import('src/pages/Skills')),
+    path: '/work',
+    component: lazy(() => import('src/pages/Work')),
+    name: 'Work',
   },
   {
     path: '/contact',
     component: lazy(() => import('src/pages/Contact')),
+    name: 'Contact',
   },
 ];
 
-function Router() {
+function AppRouter() {
   return (
     <Suspense
       fallback={
@@ -58,4 +49,4 @@ function Router() {
   );
 }
 
-export default Router;
+export default AppRouter;
