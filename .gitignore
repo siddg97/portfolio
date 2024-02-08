@@ -8,3 +8,5 @@ app/
 server/react
 *key.json
 .terraform
+*.iml
+.idea

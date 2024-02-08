@@ -1,4 +1,0 @@
-src/tests/
-src/*/__tests__
-.eslintrc.js
-jsconfig.json
