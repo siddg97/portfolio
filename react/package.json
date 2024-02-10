@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "prebuild": "yarn lint",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "echo 'No tests for now'",
+    "test:ci": "echo 'No tests for now'",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.1",
+    "use-dark-mode": "^2.3.1",
     "usehooks-ts": "^2.13.0"
   },
   "devDependencies": {

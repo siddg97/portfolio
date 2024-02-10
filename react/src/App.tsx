@@ -1,14 +1,17 @@
-import Navigation from "./components/Navigation.tsx";
+import { useDarkMode } from 'usehooks-ts';
+import Navigation from './components/Navigation.tsx';
 
 function App() {
-    return (
-        <div className="w-full">
-            <Navigation/>
-            <main className="mt-6 flex w-full flex-col items-center">
-                Hello
-            </main>
-        </div>
-    )
+  const { isDarkMode } = useDarkMode();
+
+  return (
+    <main
+      className={`${isDarkMode ? 'dark' : ''} w-full min-h-screen p-2 text-foreground bg-background`}
+    >
+      <Navigation />
+      <div className='mt-6 flex w-full flex-col items-center'>Hello</div>
+    </main>
+  );
 }
 
-export default App
+export default App;
