@@ -1,32 +1,43 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
   },
-  "extends": [
-    "standard-with-typescript",
-    "plugin:react/recommended"
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'prettier',
   ],
-  "overrides": [
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  overrides: [
     {
-      "env": {
-        "node": true
+      env: {
+        node: true,
       },
-      "files": [
-        ".eslintrc.{js,cjs}"
-      ],
-      "parserOptions": {
-        "sourceType": "script"
-      }
-    }
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+    },
   ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+  parserOptions: {
+    ecmaVersion: 'latest',
+    ecmaFeatures: {
+      jsx: true,
+    },
+    sourceType: 'module',
   },
-  "plugins": [
-    "react"
-  ],
-  "rules": {}
-}
+  plugins: ['react'],
+  rules: {
+    'spaced-comment': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'warn',
+    '@typescript-eslint/triple-slash-reference': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'warn',
+  },
+};

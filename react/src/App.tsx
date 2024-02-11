@@ -21,7 +21,7 @@ function App() {
           }
         >
           {routes.map(r => (
-            <Route index={r.path === '/'} path={r.path} element={r.component} />
+            <Route key={`route-${r.path}`} index={r.path === '/'} path={r.path} element={r.component} />
           ))}
           {/*<Route path='*' element={<NoMatch />} />*/}
         </Route>
