@@ -1,59 +1,38 @@
 name: Client CI
 
 on:
-    push:
-        paths:
-            - 'react/**'
-            - '.github/workflows/react.yml'
+  push:
+    paths:
+      - 'react/**'
+      - '.github/workflows/react.yml'
 
 jobs:
-    Test:
-        runs-on: ubuntu-latest
-        needs: Lint
-        strategy:
-            matrix:
-                node-version: [12.x]
+  Test-and-Build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
 
-        steps:
-            - name: Git checkout
-              uses: actions/checkout@v2
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
 
-            - name: Setup Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-            - name: Install dependencies
-              run: |
-                  cd react
-                  yarn install
+      - name: Install dependencies
+        run: |
+          cd react
+          yarn install
 
-            - name: Run tests
-              run: |
-                  cd react
-                  yarn test:ci
-    Build:
-        runs-on: ubuntu-latest
-        needs: Test
-        strategy:
-            matrix:
-                node-version: [12.x]
+      - name: Run tests
+        run: |
+          cd react
+          yarn test:ci
 
-        steps:
-            - name: Git checkout
-              uses: actions/checkout@v2
-
-            - name: Setup Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Install dependencies
-              run: |
-                  cd react
-                  yarn install
-
-            - name: Build react artifacts
-              run: |
-                  cd react
-                  yarn build
+      - name: Build react artifacts
+        run: |
+          cd react
+          yarn build
